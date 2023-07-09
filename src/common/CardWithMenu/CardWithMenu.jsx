@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
-import editIcon from 'images/edit.svg';
 import deleteIcon from 'images/delete.svg';
+import editIcon from 'images/edit.svg';
 import s from './CardWithMenu.module.css';
+import { useState } from 'react';
 
-const CardWithMenu = ({ text, onEdit, onDelete }) => {
+const CardWithMenu = ({ text, onEdit, onDelete, isEditing }) => {
   const handleEdit = () => {
     onEdit();
   };
@@ -22,7 +22,7 @@ const CardWithMenu = ({ text, onEdit, onDelete }) => {
         aria-label="Menu"
       >
         <img src={editIcon} alt="Edit" />
-        <p>Edit</p>
+        <p style={isEditing ? {backgroundColor: "green"} : {}}>Edit</p>
       </button>
 
       <button

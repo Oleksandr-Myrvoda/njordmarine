@@ -1,7 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
 import ship from 'images/hero-bg-mob.png';
 import SendInfo from 'common/SendInfo';
-
 import s from './HeroBlock.module.css';
 
 const HeroBlock = () => {
@@ -17,6 +16,7 @@ const HeroBlock = () => {
             Ваш надежный <br /> помощник <br />
             по сервису судов
           </h1>
+
           <p className={s.description}>
             NJORDMARINE заботится о своих клиентах и ​​ценит их время, поэтому
             мы предоставляем необходимое оборудование, оригинальные и OEM

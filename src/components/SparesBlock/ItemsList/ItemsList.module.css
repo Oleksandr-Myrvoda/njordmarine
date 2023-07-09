@@ -4,74 +4,11 @@
   gap: 10px;
 }
 
-.item {
-  background-color: aqua;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  gap: 32px;
-}
-.imgWrapper {
-  align-self: center;
-  background-color: tomato;
-}
-.img {
-  width: 227px;
-  height: 137px;
-}
-.itemMenu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.title {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 27px;
-  display: flex;
-
-  letter-spacing: 0.24px;
-  color: var(--big-button-color);
-}
-
-.button {
-  display: block;
-  border: none;
-  background-color: transparent;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  display: flex;
-
-  letter-spacing: 0.24px;
-  color: var(--big-button-color);
-  cursor: pointer;
-}
-
-.button::after {
-  display: block;
-  padding-left: 15px;
-  align-items: center;
-  content: url('../../../images/arrowRight.svg');
-}
-
 @media screen and (min-width: 1440px) {
   .listWrapper {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-  }
-
-  .item {
-    width: 285px;
-    height: 281px;
-    justify-content: space-between;
   }
 }

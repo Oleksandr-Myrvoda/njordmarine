@@ -1,22 +1,24 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useRouteMatch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import SendInfo from 'common/SendInfo';
+import AddItemForm from 'common/AddItemForm';
+import ItemsList from './ItemsList';
 import * as api from 'services/api';
 import s from './SparesBlock.module.css';
 
-import engine from 'images/spares/bridge-automation.png';
-import SendInfo from 'common/SendInfo/SendInfo';
-import ItemsList from './ItemsList';
-
 const SparesBlock = ({ path, name }) => {
+  const match = useRouteMatch();
+  const inputRef = useRef(null);
   const [spares, setSpares] = useState([]);
-  const [activeSpare, setActiveSpare] = useState(null);
+  const [itemTitle, setItemTitle] = useState('');
+  const [imgUrl, setImgUrl] = useState('');
 
   // GET =======
 
   useEffect(() => {
     const fetchSpares = async () => {
       const spares = await api.getData(path);
-      console.log(spares);
       setSpares(spares);
     };
     fetchSpares();
@@ -24,62 +26,64 @@ const SparesBlock = ({ path, name }) => {
 
   // ADD =======
 
-  const confirmAdd = ({ itemTitle, imgUrl, brends }) => {
-    setActiveSpare({ itemTitle, imgUrl, brends });
-  };
-
-  useEffect(() => {
-    const addSpare = async () => {
-      const newSpare = await api.saveItem(path, activeSpare);
-      setSpares(prevSpares => [...prevSpares, newSpare]);
-    };
-    addSpare();
-  }, [activeSpare, path]);
-
-  // EDIT
-
-  // useEffect(() => {
-  //   const editSpare = async () => {
-  //     const editedSpare = await api.editItem(path, activeSpare);
-  //     setSpares(prevSpares =>
-  //       prevSpares.map(spare =>
-  //         spare.id === editedSpare.id ? editedSpare : spare,
-
-  //       ),
-  //     );
-  //   };
-  //   editSpare();
-  // }, [activeSpare, path]);
-
-  //ADD FORM ======================================================
-  const [itemTitle, setItemTitle] = useState('');
-  const [imgUrl, setImgUrl] = useState('');
-  const [brends, setBrends] = useState([]);
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    inputRef.current.focus();
-  }, []);
-
-  const handleSubmit = e => {
+  const addData = async e => {
     e.preventDefault();
-    // onSubmit({ itemTitle, imgUrl, brends });
-    confirmAdd({ itemTitle, imgUrl, brends });
-    reset();
+    try {
+      const newSpare = await api.addItemApi(path, {
+        itemTitle,
+        imgUrl,
+      });
+      setSpares(prevData => [...prevData, newSpare]);
+    } catch (error) {
+      console.log(error.messgae);
+    } finally {
+      reset();
+    }
   };
+
+  // EDIT =======
+
+  const editData = (id, editedData) => {
+    return api
+      .editItemApi({ endpoint: match.url, item: editedData, id })
+      .then(data => {
+        setSpares(prevData =>
+          prevData.map(el => (el.id !== data.id ? el : { ...el, ...data })),
+        );
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+  };
+
+  // DELETE =======
+
+  const deleteData = (id, deletedData) => {
+    return api
+      .deleteItemApi({ endpoint: match.url, item: deletedData, id })
+      .then(data => {
+        setSpares(prevSpares => prevSpares.filter(el => el.id !== data.id));
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+  };
+
+  // ===============================================
+
   const reset = () => {
     setItemTitle('');
     setImgUrl('');
-    setBrends([]);
   };
-  // =============================================================
 
   return (
     <div className={s.blockWrapper}>
       <h2 className={s.headTitle}>{name}</h2>
-      <ItemsList items={spares} />
+      <ItemsList items={spares} editData={editData} deleteData={deleteData} />
 
-      <form onSubmit={handleSubmit}>
+      {/* <AddItemForm onSubmit={addData} /> */}
+
+      <form onSubmit={addData}>
         <input
           ref={inputRef}
           value={itemTitle}
@@ -95,14 +99,6 @@ const SparesBlock = ({ path, name }) => {
           required
           onChange={e => setImgUrl(e.target.value)}
           placeholder="imgUrl"
-        />
-        <input
-          ref={inputRef}
-          value={brends}
-          type="text"
-          required
-          onChange={e => setBrends(e.target.value)}
-          placeholder="brends"
         />
 
         <button type="submit" text="Добавить">
