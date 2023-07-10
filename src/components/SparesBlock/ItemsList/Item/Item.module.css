@@ -4,7 +4,7 @@
   gap: 10px;
 }
 .item {
-  background-color: aqua;
+  background-color: var(--bg-light-color);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 }
 .imgWrapper {
   align-self: center;
-  background-color: tomato;
+  background-color: #94a3c7;
 }
 .img {
   width: 227px;
@@ -60,7 +60,7 @@
 @media screen and (min-width: 1440px) {
   .item {
     width: 285px;
-    height: 281px;
+    /* height: 281px; */
     justify-content: space-between;
   }
 }

@@ -10,7 +10,7 @@ const Item = ({ itemTitle, imgUrl, brends, id, editData, deleteData }) => {
   const [editedData, setEditedData] = useState({
     imgUrl: null, // url
     itemTitle: null, // title
-  });
+  }); 
   // const [isModalOpen, setIsModalOpen] = useState(false);
   const match = useRouteMatch();
   const history = useHistory();

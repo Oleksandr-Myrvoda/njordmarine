@@ -16,23 +16,22 @@ const CardWithMenu = ({ text, onEdit, onDelete, isEditing }) => {
   return (
     <div className={s.cardStyles}>
       <button
-        className={s.menuItem}
+        className={s.button}
         type="button"
         onClick={handleEdit}
         aria-label="Menu"
       >
-        <img src={editIcon} alt="Edit" />
-        <p style={isEditing ? {backgroundColor: "green"} : {}}>Edit</p>
+        {/* <img className={s.icon} src={editIcon} alt="Edit" /> */}
+        Edit
       </button>
 
       <button
-        className={s.menuItem}
+        className={s.button}
         type="button"
         onClick={handleDelete}
         aria-label="Menu"
       >
-        <img src={deleteIcon} alt="Delete" />
-        <p>Delete</p>
+        Delete
       </button>
     </div>
   );

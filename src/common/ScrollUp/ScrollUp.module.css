@@ -1,8 +1,10 @@
 .scroll {
   position: absolute;
   z-index: 30;
-  bottom: 195px;
-  right: 96px;
+  /* bottom: 195px;
+  right: 96px; */
+  bottom: 254px;
+  right: 36px;
 
   width: 43px;
   height: 43px;
@@ -22,7 +24,7 @@
 
 @media screen and (min-width: 1440px) {
   .scroll {
-    bottom: 195px;
+    bottom: 160px;
     right: 96px;
 
     width: 64px;

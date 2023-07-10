@@ -83,8 +83,9 @@ const SparesBlock = ({ path, name }) => {
 
       {/* <AddItemForm onSubmit={addData} /> */}
 
-      <form onSubmit={addData}>
+      <form className={s.addForm} onSubmit={addData}>
         <input
+          className={s.addFormInput}
           ref={inputRef}
           value={itemTitle}
           type="text"
@@ -93,6 +94,7 @@ const SparesBlock = ({ path, name }) => {
           placeholder="itemTitle"
         />
         <input
+          className={s.addFormInput}
           ref={inputRef}
           value={imgUrl}
           type="text"
@@ -101,8 +103,8 @@ const SparesBlock = ({ path, name }) => {
           placeholder="imgUrl"
         />
 
-        <button type="submit" text="Добавить">
-          Добавить
+        <button className={s.addFormButton} type="submit" text="Добавить">
+          Add
         </button>
       </form>
 

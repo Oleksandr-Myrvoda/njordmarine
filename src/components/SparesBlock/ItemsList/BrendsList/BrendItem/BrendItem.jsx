@@ -7,7 +7,7 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
   const [isAuth] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [editedBrend, setEditedBrend] = useState({
-    brend: null, // url
+    brend: null, // brend
   });
 
   const handleEditData = () => {
@@ -39,10 +39,6 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
           onEdit={handleEditData}
           onDelete={handleDeleteData}
         />
-        // <>
-        //   <button type="button">Remove</button>
-        //   <button type="button">Edit</button>
-        // </>
       )}
     </li>
   );

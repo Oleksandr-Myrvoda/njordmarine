@@ -8,35 +8,6 @@ import * as api from 'services/api';
 import s from './BrendsList.module.css';
 import BrendItem from './BrendItem/BrendItem';
 
-// const BrendItem = ({ brend, id }) => {
-//   const [isAuth] = useState(true);
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//   return (
-//     <li
-//       key={id}
-//       className={s.item}
-//       onClick={e => {
-//         if (e.target !== e.currentTarget) return;
-//         setIsMenuOpen(prevState => !prevState);
-//       }}
-//     >
-//       {brend}
-//       {isAuth && isMenuOpen && (
-//         <CardWithMenu
-//         // isEditing={editedData.itemTitle}
-//         // onEdit={handleEditData}
-//         // onDelete={handleDeleteData}
-//         />
-//         // <>
-//         //   <button type="button">Remove</button>
-//         //   <button type="button">Edit</button>
-//         // </>
-//       )}
-//     </li>
-//   );
-// };
-
 const BrendsList = ({ brends = [], onClose }) => {
   const match = useRouteMatch();
 
@@ -74,7 +45,7 @@ const BrendsList = ({ brends = [], onClose }) => {
       reset();
     }
   };
-
+ 
   // EDIT =======
 
   const editBrend = (id, editedData) => {
@@ -121,13 +92,16 @@ const BrendsList = ({ brends = [], onClose }) => {
         ))}
       </ul>
 
-      <form onSubmit={addBrend}>
+      <form onSubmit={addBrend} className={s.addForm}>
         <input
+          className={s.input}
           type="text"
           value={newBrend}
           onChange={e => setNewBrend(e.target.value)}
         />
-        <button type="submit">Ok</button>
+        <button type="submit" className={s.button}>
+          Ok
+        </button>
       </form>
       <BigButton onClick={onClose} text="Закрыть" />
     </div>

@@ -1,22 +1,21 @@
-.list {
+.nav {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
 
-.item {
-  display: flex;
   align-items: center;
 }
 
+.navBlock {
+  display: flex;
+  gap: 8px;
+}
+
 @media screen and (min-width: 1440px) {
-  .list {
-    display: flex;
+  .nav {
+    gap: 24px;
     flex-direction: row;
   }
-
-  .item {
-    display: flex;
-    align-items: center;
+  .navBlock {
+    gap: 24px;
   }
 }

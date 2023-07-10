@@ -3,6 +3,16 @@
   padding: 0;
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 15;
+}
+
 .mainHeader {
   display: flex;
   justify-content: space-between;
@@ -69,25 +79,6 @@
   letter-spacing: 0.24px;
 }
 
-/* @media screen and (min-width: 1280px) {
-  .mainHeader {
-    position: absolute;
-    width: 84.5%;
-    padding: 0 96px;
-    height: 102px;
-    background-color: transparent;
-  }
-
-  .block {
-    position: absolute;
-    width: 84.5%;
-    right: 0;
-    top: 0;
-    display: flex;
-    padding: 24px 96px 0 96px;
-    background-color: transparent;
-  }
-} */
 @media screen and (min-width: 1440px) {
   .mainHeader {
     position: absolute;

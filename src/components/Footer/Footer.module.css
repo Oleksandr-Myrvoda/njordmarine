@@ -1,11 +1,13 @@
 .footer {
   position: relative;
-  padding: 96px;
   display: flex;
+  padding: 32px;
   flex-direction: column;
+
   align-items: center;
   background-color: var(--bg-medium-color);
   border-top: 2px solid var(--footer-stroke);
+  gap: 16px;
 }
 
 .copyright {
@@ -21,4 +23,9 @@
   text-transform: uppercase;
 
   color: var(--text-light-color);
+}
+@media screen and (min-width: 1440px) {
+  .footer {
+    padding: 80px;
+  }
 }

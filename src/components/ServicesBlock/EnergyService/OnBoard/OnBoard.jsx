@@ -18,6 +18,11 @@ import RoundButton from 'common/RoundButton';
 const OnBoard = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [configList, setConfigList] = useState(consumersConfig);
+  console.log('configList', configList);
+
+  // useEffect(() => {
+  //   setConfigList(consumersConfig);
+  // }, []);
 
   // const onClick = e => {
   //   let list = consumersConfig;
@@ -29,19 +34,25 @@ const OnBoard = () => {
   //   return setConfigList(list);
   // };
 
+  // console.log('configList', consumersConfig);
+
   const onClick = e => {
-    let list;
+    console.log(e.target.id);
+    let list = consumersConfig;
     if (e.target.id === 1) {
       list = consumersConfig;
+      // setConfigList(consumersConfig);
     } else if (e.target.id === 2) {
       list = controlConfig;
+      // setConfigList(controlConfig);
     } else if (e.target.id === 3) {
       list = optionConfig;
+      // setConfigList(optionConfig);
     } else {
       list = additionalConfig;
+      // setConfigList(additionalConfig);
     }
-
-    console.log(e.target);
+    console.log('list', list);
 
     return setConfigList(list);
   };

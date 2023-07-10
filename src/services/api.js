@@ -38,9 +38,9 @@ const addBrendApi = ({ endpoint, brend }) => {
 };
 
 const editBrendApi = ({ endpoint, item, id }) => {
-  // return axios
-  //   .patch(`${endpoint}/${id}.json`, item)
-  //   .then(response => ({ ...response.data, id }));
+  return axios
+    .patch(`${endpoint}/${id}.json`, item)
+    .then(response => console.log(response));
 };
 
 const deleteBrendApi = ({ endpoint, brend, id }) => {

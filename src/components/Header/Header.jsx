@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import BigButton from 'common/BigButton';
+import BrochureButton from 'common/BrochureButton';
 import Contacts from 'common/Contacts';
 import Sidebar from 'components/Sidebar';
 import { contactsConfig } from 'data/contacts';
@@ -33,7 +34,11 @@ const Header = () => {
             <li>|</li>
             <li>EN</li>
           </ul>
-          <BigButton text="Скачать брошюру" isGray={true} />
+          <BrochureButton />
+          {/* <button className={s.brochureBtn} type="button">
+            Скачать брошюру
+          </button> */}
+          {/* <BigButton text="Скачать брошюру" isGray={true} /> */}
         </>
       ) : (
         <>

@@ -10,7 +10,8 @@
 .sidebar {
   position: absolute;
   width: 260px;
-  height: 60vh;
+  /* height: 60vh; */
+  padding-bottom: 36px;
   top: 68px;
   left: 100%;
   z-index: 50;
@@ -25,7 +26,17 @@
 .logo {
   padding-bottom: 179px;
 }
-
+.mobMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.mob {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+}
 @media screen and (min-width: 1440px) {
   .sidebar {
     /* position: inherit; */

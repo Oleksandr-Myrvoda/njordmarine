@@ -7,6 +7,7 @@ import Logo from 'images/Logo_footer.svg';
 
 import s from './Footer.module.css';
 import ScrollUp from 'common/ScrollUp/ScrollUp';
+import NavigationFooter from 'components/NavigationFooter/NavigationFooter';
 
 const Footer = () => {
   const logo1 = Logo;
@@ -18,7 +19,8 @@ const Footer = () => {
         <img src={logo1} alt="logo" />
       </div>
       <div>
-        <Navigation navConfig={navConfig} />
+        <NavigationFooter />
+        {/* <Navigation navConfig={navConfig} /> */}
       </div>
       <Contacts contactsConfig={contactsConfig} />
       <div className={s.copyright}>NJORDMARINE &copy; 2019-{date}</div>
