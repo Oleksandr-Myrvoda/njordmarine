@@ -103,7 +103,7 @@ const SparesBlock = ({ path, name }) => {
           placeholder="imgUrl"
         />
 
-        <button className={s.addFormButton} type="submit" text="Добавить">
+        <button className={s.addFormButton} type="submit" text="Add">
           Add
         </button>
       </form>

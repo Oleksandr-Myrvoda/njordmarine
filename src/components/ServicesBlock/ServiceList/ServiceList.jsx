@@ -1,20 +1,21 @@
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import Paper from 'common/Paper';
 import s from './ServiceList.module.css';
 
 const ServiceList = ({ serviceConfig }) => {
   return (
     <ul className={s.list}>
-      {serviceConfig.map(({ imgUrl, text, alt }, index) => (
+      {serviceConfig.map(({ imgUrl, text, alt, to }, index) => (
         <li key={index}>
           <Paper>
-            <div className={s.item}>
-              <img className={s.image} src={imgUrl} alt={alt} />
-              <p className={s.descr}>{text}</p>
-              <a href="/" className={s.link}>
-                Подробнее
-              </a>
-            </div>
+            <NavLink to={to}>
+              <div className={s.item}>
+                <img className={s.image} src={imgUrl} alt={alt} />
+                <p className={s.descr}>{text}</p>
+                <p className={s.link}>Подробнее</p>
+              </div>
+            </NavLink>
           </Paper>
         </li>
       ))}

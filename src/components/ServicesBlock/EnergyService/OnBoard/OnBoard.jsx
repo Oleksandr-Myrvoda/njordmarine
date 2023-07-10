@@ -18,7 +18,7 @@ import RoundButton from 'common/RoundButton';
 const OnBoard = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [configList, setConfigList] = useState(consumersConfig);
-  console.log('configList', configList);
+  // console.log('configList', configList);
 
   // useEffect(() => {
   //   setConfigList(consumersConfig);

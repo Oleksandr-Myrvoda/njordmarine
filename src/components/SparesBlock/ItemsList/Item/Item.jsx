@@ -5,18 +5,19 @@ import PropTypes from 'prop-types';
 import s from './Item.module.css';
 import BrendsList from '../BrendsList/BrendsList';
 
-const Item = ({ itemTitle, imgUrl, brends, id, editData, deleteData }) => {
+const Item = ({ itemTitle, imgUrl, id, editData, deleteData }) => {
   const [isAuth] = useState(true);
   const [editedData, setEditedData] = useState({
     imgUrl: null, // url
     itemTitle: null, // title
-  }); 
+  });
   // const [isModalOpen, setIsModalOpen] = useState(false);
   const match = useRouteMatch();
   const history = useHistory();
   // const openModal = () => setIsModalOpen(true);
   // const closeModal = () => setIsModalOpen(false);
   const openModal = () => history.push({ pathname: `${match.url}/${id}` });
+
   const handleEditData = () => {
     !editedData.imgUrl
       ? setEditedData({ imgUrl, itemTitle })
@@ -27,8 +28,6 @@ const Item = ({ itemTitle, imgUrl, brends, id, editData, deleteData }) => {
   const handleDeleteData = () => {
     deleteData(id);
   };
-
-  // console.log('brends', brends);
 
   return (
     <li key={id} className={s.item}>
@@ -55,7 +54,10 @@ const Item = ({ itemTitle, imgUrl, brends, id, editData, deleteData }) => {
             value={editedData.itemTitle}
             name="itemTitle"
             onChange={e =>
-              setEditedData(p => ({ ...p, [e.target.name]: e.target.value }))
+              setEditedData(prev => ({
+                ...prev,
+                [e.target.name]: e.target.value,
+              }))
             }
           />
         )}

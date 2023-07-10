@@ -16,18 +16,31 @@ const ItemsList = ({
 }) => {
   const match = useRouteMatch();
 
+  const itemsNormalize = [...items].map(
+    ({ itemTitle = '', imgUrl, brends = [], id }) => {
+      const brendsNormalize = Object.entries(brends).map(([id, brend = []]) => {
+        if (typeof brend === 'string') {
+          return { id, brend };
+        }
+        return { id, ...brend };
+      });
+      // console.log('brendsNormal', brendsNormalize);
+      return { itemTitle, imgUrl, brends: [...brendsNormalize], id };
+    },
+  );
+
+  // console.log('itemsNorma', itemsNormalize);
+
   return (
     <>
       <ul className={s.listWrapper}>
-        {items.map(({ itemTitle, imgUrl, brends, id }, index) => {
+        {itemsNormalize.map(({ itemTitle, imgUrl, id }) => {
           return (
             <Item
               key={id}
               id={id}
               itemTitle={itemTitle}
               imgUrl={imgUrl}
-              brends={brends}
-              index={index}
               editData={editData}
               deleteData={deleteData}
             />
@@ -35,28 +48,23 @@ const ItemsList = ({
         })}
       </ul>
       <Route
-        path={match.path + '/:itemId'}
+        path={`${match.path}/:itemId`}
         render={routerProps => {
           const { match, history } = routerProps;
           const { itemId } = match.params;
-          const { itemTitle, brends = {} } = items.find(el => el.id === itemId);
+          const { itemTitle, brends } = itemsNormalize.find(
+            el => el.id === itemId,
+          );
 
           const closeModal = () => {
             history.goBack();
           };
 
-          const brendsNormalize = Object.entries(brends).map(([id, brend]) => {
-            if (typeof brend === 'string') {
-              return { id, brend };
-            }
-            return { id, ...brend };
-          });
-          console.log('brendsNormalize', brendsNormalize);
           return (
             <Modal title={itemTitle} onClose={closeModal}>
               <BrendsList
                 // path={match.path}
-                brends={brendsNormalize}
+                brends={brends}
                 onClose={closeModal}
               />
               {/* <BrendsList brends={brends} onClose={closeModal} /> */}

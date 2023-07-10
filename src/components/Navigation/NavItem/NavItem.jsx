@@ -15,6 +15,7 @@ const NavItem = ({ name, path }) => {
       activeClassName={s.NavItemActive}
     >
       <span className={s.itemName}>{name}</span>
+      {/* <p className={s.itemName}>{name}</p> */}
     </NavLink>
   );
 };

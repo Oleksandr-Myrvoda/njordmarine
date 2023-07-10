@@ -8,16 +8,15 @@ import * as api from 'services/api';
 import s from './BrendsList.module.css';
 import BrendItem from './BrendItem/BrendItem';
 
-const BrendsList = ({ brends = [], onClose }) => {
+const BrendsList = ({ brends, onClose }) => {
   const match = useRouteMatch();
-
   // const [brendList, setBrendList] = useState([]);
-  const [brendList, setBrendList] = useState(brends);
+  const [brendsList, setBrendsList] = useState([]);
   const [newBrend, setNewBrend] = useState('');
 
-  // useEffect(() => {
-  //   setBrendList(brendList);
-  // }, [brendList]);
+  useEffect(() => {
+    setBrendsList(brends);
+  }, [brends]);
 
   // GET =======
   // console.log('path', path);
@@ -38,21 +37,21 @@ const BrendsList = ({ brends = [], onClose }) => {
         endpoint: match.url,
         brend: newBrend,
       });
-      setBrendList(prevData => [...prevData, newBrendAdd]);
+      setBrendsList(prevData => [...prevData, newBrendAdd]);
     } catch (error) {
       console.log(error.message);
     } finally {
       reset();
     }
   };
- 
+
   // EDIT =======
 
   const editBrend = (id, editedData) => {
     return api
       .editBrendApi({ endpoint: match.url, item: editedData, id })
       .then(data => {
-        setBrendList(prevData =>
+        setBrendsList(prevData =>
           prevData.map(el => (el.id !== data.id ? el : { ...el, ...data })),
         );
       })
@@ -65,10 +64,10 @@ const BrendsList = ({ brends = [], onClose }) => {
 
   const deleteBrend = (id, deletedData) => {
     return api
-      .deleteItemApi({ endpoint: match.url, item: deletedData, id })
+      .deleteBrendApi({ endpoint: match.url, brend: deletedData, id })
       .then(data => {
-        console.log('data', data);
-        setBrendList(prevSpares => prevSpares.filter(el => el.id !== data.id));
+        console.log(data.id);
+        setBrendsList(prevBrends => prevBrends.filter(el => el.id !== data.id));
       })
       .catch(err => {
         console.log(err.message);
@@ -78,14 +77,15 @@ const BrendsList = ({ brends = [], onClose }) => {
   const reset = () => {
     setNewBrend('');
   };
-
+  console.log('brendsList', brendsList);
   return (
     <div className={s.listWrapper}>
       <ul className={s.list}>
-        {brendList.map(({ id, brend }) => (
+        {brendsList.map(({ id, brend }) => (
           <BrendItem
-            brend={brend}
             key={id}
+            id={id}
+            brend={brend}
             editBrend={editBrend}
             deleteBrend={deleteBrend}
           />
@@ -99,8 +99,8 @@ const BrendsList = ({ brends = [], onClose }) => {
           value={newBrend}
           onChange={e => setNewBrend(e.target.value)}
         />
-        <button type="submit" className={s.button}>
-          Ok
+        <button type="submit" className={s.button} text="Add">
+          Add
         </button>
       </form>
       <BigButton onClick={onClose} text="Закрыть" />

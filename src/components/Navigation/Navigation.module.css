@@ -1,5 +1,9 @@
 .nav {
   padding-left: 36px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 1440px) {
