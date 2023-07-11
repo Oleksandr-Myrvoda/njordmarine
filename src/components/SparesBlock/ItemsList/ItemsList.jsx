@@ -13,28 +13,30 @@ const ItemsList = ({
   onDeleteItem,
   editData,
   deleteData,
+  editBrend,
+  setSpares,
 }) => {
   const match = useRouteMatch();
 
-  const itemsNormalize = [...items].map(
-    ({ itemTitle = '', imgUrl, brends = [], id }) => {
-      const brendsNormalize = Object.entries(brends).map(([id, brend = []]) => {
-        if (typeof brend === 'string') {
-          return { id, brend };
-        }
-        return { id, ...brend };
-      });
-      // console.log('brendsNormal', brendsNormalize);
-      return { itemTitle, imgUrl, brends: [...brendsNormalize], id };
-    },
-  );
+  // const itemsNormalize = [...items].map(
+  //   ({ itemTitle = '', imgUrl, brends = [], id }) => {
+  //     const brendsNormalize = Object.entries(brends).map(([id, brend = []]) => {
+  //       if (typeof brend === 'string') {
+  //         return { id, brend };
+  //       }
+  //       return { id, ...brend };
+  //     });
+  //     // console.log('brendsNormal', brendsNormalize);
+  //     return { itemTitle, imgUrl, brends: [...brendsNormalize], id };
+  //   },
+  // );
 
   // console.log('itemsNorma', itemsNormalize);
 
   return (
     <>
       <ul className={s.listWrapper}>
-        {itemsNormalize.map(({ itemTitle, imgUrl, id }) => {
+        {items.map(({ itemTitle, imgUrl, id }) => {
           return (
             <Item
               key={id}
@@ -47,15 +49,14 @@ const ItemsList = ({
           );
         })}
       </ul>
+
       <Route
         path={`${match.path}/:itemId`}
         render={routerProps => {
           const { match, history } = routerProps;
           const { itemId } = match.params;
-          const { itemTitle, brends } = itemsNormalize.find(
-            el => el.id === itemId,
-          );
-
+          const { itemTitle, brends } = items.find(el => el.id === itemId);
+          // console.log('items', items);
           const closeModal = () => {
             history.goBack();
           };
@@ -66,6 +67,8 @@ const ItemsList = ({
                 // path={match.path}
                 brends={brends}
                 onClose={closeModal}
+                editBrend={editBrend}
+                setSpares={setSpares}
               />
               {/* <BrendsList brends={brends} onClose={closeModal} /> */}
             </Modal>

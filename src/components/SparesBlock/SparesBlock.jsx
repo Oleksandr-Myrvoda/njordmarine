@@ -14,6 +14,34 @@ const SparesBlock = ({ path, name }) => {
   const [itemTitle, setItemTitle] = useState('');
   const [imgUrl, setImgUrl] = useState('');
 
+  // const addBrend = ({ itemId, brendId, newBrend }) => {
+  //   setSpares(prev =>
+  //     prev.map(spare => {
+  //       if (spare.id !== itemId) return spare;
+
+  //       const newBrends = spare.brends.map(brend => {
+  //         if (brend.id !== brendId) return brend;
+  //         return { ...brend, brend: newBrend };
+  //       });
+  //       return { ...spare, brends: newBrends };
+  //     }),
+  //   );
+  // };
+
+  // const editBrend = ({ itemId, brendId, newBrend }) => {
+  //   setSpares(prev =>
+  //     prev.map(spare => {
+  //       if (spare.id !== itemId) return spare;
+
+  //       const newBrends = spare.brends.map(brend => {
+  //         if (brend.id !== brendId) return brend;
+  //         return { ...brend, brend: newBrend };
+  //       });
+  //       return { ...spare, brends: newBrends };
+  //     }),
+  //   );
+  // };
+
   // GET =======
 
   useEffect(() => {
@@ -79,7 +107,13 @@ const SparesBlock = ({ path, name }) => {
   return (
     <div className={s.blockWrapper}>
       <h2 className={s.headTitle}>{name}</h2>
-      <ItemsList items={spares} editData={editData} deleteData={deleteData} />
+      <ItemsList
+        items={spares}
+        editData={editData}
+        deleteData={deleteData}
+        // editBrend={editBrend}
+        setSpares={setSpares}
+      />
 
       {/* <AddItemForm onSubmit={addData} /> */}
 
