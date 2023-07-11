@@ -44,6 +44,16 @@ const additionalConfig = {
     { text: 'Система дистанционного управления клапанами' },
   ],
 };
+const focusConfig = {
+  title: 'Focus',
+  list: [
+    { text: 'Сокращаем время на выполнение всех процессов статистики' },
+    { text: 'Высокая точность отображения параметров' },
+    { text: 'Безопасный доступ' },
+    { text: 'Хранение данных на удобной для клиента площадке' },
+    { text: 'Выдаваемые рекомендации системой на снижение расходов' },
+  ],
+};
 
 // export const energyOptionsConfig = [
 //   consumersConfig,
@@ -52,4 +62,10 @@ const additionalConfig = {
 //   additionalConfig,
 // ];
 
-export { consumersConfig, controlConfig, optionConfig, additionalConfig };
+export {
+  consumersConfig,
+  controlConfig,
+  optionConfig,
+  additionalConfig,
+  focusConfig,
+};

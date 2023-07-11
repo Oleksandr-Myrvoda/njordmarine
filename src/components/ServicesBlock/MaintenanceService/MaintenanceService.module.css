@@ -1,6 +1,7 @@
 .blockWrapper {
   display: flex;
   flex-direction: column;
+
   /* padding: 24px 16px 48px 16px; */
   background-color: var(--bg-light-color);
   /* gap: 24px; */
@@ -19,6 +20,7 @@
 }
 
 .title {
+  align-self: center;
   text-align: center;
 
   font-family: 'Ruberoid';

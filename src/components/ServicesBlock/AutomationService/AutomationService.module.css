@@ -19,6 +19,7 @@
 
 .title {
   text-align: center;
+  align-self: center;
 
   font-family: 'Ruberoid';
   font-style: normal;

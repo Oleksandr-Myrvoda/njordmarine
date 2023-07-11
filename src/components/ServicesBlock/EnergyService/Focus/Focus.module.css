@@ -1,0 +1,142 @@
+.blockWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background-color: var(--bg-light-color);
+  color: rgb(217, 217, 217);
+  gap: 24px;
+  height: 100%;
+}
+
+.hero {
+  display: flex;
+  width: 343px;
+  height: 220px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
+    url('../../../../images/serv-energy-bg2-mob.png');
+}
+
+.title {
+  align-self: center;
+  width: calc(80%);
+
+  margin: 0 auto;
+  font-family: 'Ruberoid';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: var(--sidebar-text-color);
+}
+
+.headblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.head {
+  font-family: 'Ruberoid';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+  color: var(--text-light-color);
+}
+
+.span {
+  font-weight: 600;
+}
+.text {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.24px;
+  color: var(--text-light-color);
+}
+
+.titleBottom {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.24px;
+  color: var(--text-light-color);
+}
+.listOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.itemOptions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.textOptions {
+  margin-left: 5px;
+  font-family: 'Gilroy';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.24px;
+  color: var(--text-color);
+}
+@media screen and (min-width: 1440px) {
+  .blockWrapper {
+    gap: 60px;
+  }
+
+  .hero {
+    width: 1027px;
+    height: 376px;
+    border-radius: 0;
+    background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
+      url('../../../../images/serv-energy-bg2.png');
+  }
+
+  .title {
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  .text {
+    width: calc(65%);
+  }
+
+  .titleBottom {
+    font-size: 26px;
+    line-height: 40px;
+
+    color: var(--text-color);
+  }
+
+  .listOptions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .itemOptions {
+    width: calc(48%);
+  }
+}

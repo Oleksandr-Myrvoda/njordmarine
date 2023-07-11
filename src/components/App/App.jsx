@@ -42,3 +42,5 @@ export default App;
 // npm install axios
 // npm install --save react-spinners
 // npm i react-use
+
+// CI=false npm run build - netlify

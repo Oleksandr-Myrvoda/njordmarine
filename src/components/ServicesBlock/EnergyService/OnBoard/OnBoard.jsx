@@ -10,10 +10,10 @@ import {
 // import { energyOptionsConfig } from 'data/energy-options';
 
 import SendInfo from 'common/SendInfo';
+import RoundButton from 'common/RoundButton';
+import OptionsList from './OptionsList';
 import quotes from 'images/quotes.svg';
 import s from './OnBoard.module.css';
-import OptionsList from './OptionsList';
-import RoundButton from 'common/RoundButton';
 
 const OnBoard = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });

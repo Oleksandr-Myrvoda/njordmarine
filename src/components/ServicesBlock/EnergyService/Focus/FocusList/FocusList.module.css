@@ -1,0 +1,48 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 16px;
+  gap: 16px;
+
+  border-radius: 8px;
+  background-color: var(--bg-medium-color);
+  text-align: start;
+}
+
+.img {
+  width: 134px;
+  height: 134px;
+  align-self: center;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 34px;
+}
+
+.title::before {
+  padding-right: 5px;
+  content: ' \2022 ';
+  color: var(--accent-color);
+}
+
+.text {
+  font-size: 18px;
+  line-height: 27px;
+}
+@media screen and (min-width: 1440px) {
+  .list {
+    flex-direction: row;
+  }
+
+  .item {
+    width: calc(25%);
+  }
+}

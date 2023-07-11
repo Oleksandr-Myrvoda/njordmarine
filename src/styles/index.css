@@ -78,7 +78,7 @@ p {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   letter-spacing: 0.24px;
 
