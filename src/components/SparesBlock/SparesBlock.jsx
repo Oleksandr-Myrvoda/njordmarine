@@ -1,11 +1,13 @@
+import * as api from 'services/api';
+
 import { useEffect, useRef, useState } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+
+import FileUploader from './ItemsList/FileUploader';
+import ItemsList from './ItemsList';
 import PropTypes from 'prop-types';
 import SendInfo from 'common/SendInfo';
-import AddItemForm from 'common/AddItemForm';
-import ItemsList from './ItemsList';
-import * as api from 'services/api';
 import s from './SparesBlock.module.css';
+import { useRouteMatch } from 'react-router-dom';
 
 const SparesBlock = ({ path, name }) => {
   const match = useRouteMatch();
@@ -13,34 +15,6 @@ const SparesBlock = ({ path, name }) => {
   const [spares, setSpares] = useState([]);
   const [itemTitle, setItemTitle] = useState('');
   const [imgUrl, setImgUrl] = useState('');
-
-  // const addBrend = ({ itemId, brendId, newBrend }) => {
-  //   setSpares(prev =>
-  //     prev.map(spare => {
-  //       if (spare.id !== itemId) return spare;
-
-  //       const newBrends = spare.brends.map(brend => {
-  //         if (brend.id !== brendId) return brend;
-  //         return { ...brend, brend: newBrend };
-  //       });
-  //       return { ...spare, brends: newBrends };
-  //     }),
-  //   );
-  // };
-
-  // const editBrend = ({ itemId, brendId, newBrend }) => {
-  //   setSpares(prev =>
-  //     prev.map(spare => {
-  //       if (spare.id !== itemId) return spare;
-
-  //       const newBrends = spare.brends.map(brend => {
-  //         if (brend.id !== brendId) return brend;
-  //         return { ...brend, brend: newBrend };
-  //       });
-  //       return { ...spare, brends: newBrends };
-  //     }),
-  //   );
-  // };
 
   // GET =======
 
@@ -60,6 +34,7 @@ const SparesBlock = ({ path, name }) => {
       const newSpare = await api.addItemApi(path, {
         itemTitle,
         imgUrl,
+        brends: [],
       });
       setSpares(prevData => [...prevData, newSpare]);
     } catch (error) {
@@ -111,8 +86,8 @@ const SparesBlock = ({ path, name }) => {
         items={spares}
         editData={editData}
         deleteData={deleteData}
-        // editBrend={editBrend}
         setSpares={setSpares}
+        setImage={setImgUrl}
       />
 
       {/* <AddItemForm onSubmit={addData} /> */}
@@ -127,19 +102,11 @@ const SparesBlock = ({ path, name }) => {
           onChange={e => setItemTitle(e.target.value)}
           placeholder="itemTitle"
         />
-        <input
-          className={s.addFormInput}
-          ref={inputRef}
-          value={imgUrl}
-          type="text"
-          required
-          onChange={e => setImgUrl(e.target.value)}
-          placeholder="imgUrl"
-        />
+        <FileUploader setImage={setImgUrl} />
 
-        <button className={s.addFormButton} type="submit" text="Add">
+        {/* <button className={s.addFormButton} type="submit" text="Add">
           Add
-        </button>
+        </button> */}
       </form>
 
       <SendInfo linkName="Палуба" linkPath="/" hideLink={false} />

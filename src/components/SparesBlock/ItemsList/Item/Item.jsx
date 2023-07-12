@@ -4,18 +4,18 @@ import CardWithMenu from 'common/CardWithMenu';
 import PropTypes from 'prop-types';
 import s from './Item.module.css';
 import BrendsList from '../BrendsList/BrendsList';
+import FileUploader from '../FileUploader';
 
-const Item = ({ itemTitle, imgUrl, id, editData, deleteData }) => {
+const Item = ({ itemTitle, imgUrl, id, editData, deleteData, setImage }) => {
   const [isAuth] = useState(true);
   const [editedData, setEditedData] = useState({
     imgUrl: null, // url
     itemTitle: null, // title
   });
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+
   const match = useRouteMatch();
   const history = useHistory();
-  // const openModal = () => setIsModalOpen(true);
-  // const closeModal = () => setIsModalOpen(false);
+
   const openModal = () => history.push({ pathname: `${match.url}/${id}` });
 
   const handleEditData = () => {
@@ -25,6 +25,7 @@ const Item = ({ itemTitle, imgUrl, id, editData, deleteData }) => {
           setEditedData({ itemTitle: null, imgUrl: null }),
         );
   };
+
   const handleDeleteData = () => {
     deleteData(id);
   };
@@ -32,6 +33,21 @@ const Item = ({ itemTitle, imgUrl, id, editData, deleteData }) => {
   return (
     <li key={id} className={s.item}>
       <div className={s.imgWrapper}>
+        {!editedData.imgUrl ? (
+          <img className={s.img} src={imgUrl} alt={itemTitle}></img>
+        ) : (
+          <FileUploader setImage={setImage} />
+          // <input
+          //   type="text"
+          //   value={editedData.imgUrl}
+          //   name="imgUrl"
+          //   onChange={e =>
+          //     setEditedData(p => ({ ...p, [e.target.name]: e.target.value }))
+          //   }
+          // />
+        )}
+      </div>
+      {/* <div className={s.imgWrapper}>
         {!editedData.imgUrl ? (
           <img className={s.img} src={imgUrl} alt={itemTitle}></img>
         ) : (
@@ -44,7 +60,7 @@ const Item = ({ itemTitle, imgUrl, id, editData, deleteData }) => {
             }
           />
         )}
-      </div>
+      </div> */}
       <div className={s.itemMenu}>
         {!editedData.itemTitle ? (
           <p className={s.title}> {itemTitle}</p>

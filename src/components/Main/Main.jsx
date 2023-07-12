@@ -4,11 +4,10 @@ import AboutCompanyPage from 'pages/AboutCompanyPage';
 import AboutCompanyTeamPage from 'pages/AboutCompanyPage';
 import ContactsPage from 'pages/ContactsPage';
 import HomePage from 'pages/HomePage';
+import NotFound from 'pages/NotFound';
 import ServicesListPage from 'pages/ServicesListPage';
 // import ServicePage from 'pages/ServicePage';
 import SparesPage from 'pages/SparesPage';
-
-import NotFound from 'pages/NotFound';
 
 // import s from './Main.module.css';
 

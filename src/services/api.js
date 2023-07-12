@@ -4,25 +4,23 @@ axios.defaults.baseURL =
   'https://njordmarineapp-default-rtdb.europe-west1.firebasedatabase.app';
 
 const normalizeBrends = items => {
-  const itemsNormalize = items.map(
-    ({ itemTitle = '', imgUrl, brends = [], id }) => {
-      const brendsNormalize = Object.entries(brends).map(([id, brend = []]) => {
-        if (typeof brend === 'string') {
-          return { id, brend };
-        }
-        return { id, ...brend };
-      });
-      // console.log('brendsNormal', brendsNormalize);
-      return { itemTitle, imgUrl, brends: [...brendsNormalize], id };
-    },
-  );
+  const itemsNormalize = items.map(({ itemTitle = '', imgUrl, brends, id }) => {
+    const brendsNormalize = Object.entries(brends).map(([id, brend = []]) => {
+      if (typeof brend === 'string') {
+        return { id, brend };
+      }
+      return { id, ...brend };
+    });
+
+    return { itemTitle, imgUrl, brends: [...brendsNormalize], id };
+  });
   return itemsNormalize;
 };
 
 const getData = endpoint => {
   return axios
     .get(`${endpoint}.json`)
-    .then(({ data }) =>
+    .then(({ data = [] }) =>
       data ? Object.entries(data).map(([id, data]) => ({ id, ...data })) : [],
     )
     .then(items => normalizeBrends(items));
@@ -35,6 +33,7 @@ const addItemApi = (endpoint, item) => {
 };
 
 const editItemApi = ({ endpoint, item, id }) => {
+  console.log('item', item);
   return axios
     .patch(`${endpoint}/${id}.json`, item)
     .then(response => ({ ...response.data, id }));
@@ -62,7 +61,7 @@ const editBrendApi = ({ endpoint, item, id }) => {
 };
 
 const deleteBrendApi = ({ endpoint, id }) => {
-  console.log('endpoint', endpoint);
+  // console.log('endpoint', endpoint);
   return axios
     .delete(`${endpoint}/brends/${id}.json`)
     .then(response => ({ ...response.data, id }));

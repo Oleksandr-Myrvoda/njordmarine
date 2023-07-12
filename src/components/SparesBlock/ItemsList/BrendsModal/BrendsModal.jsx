@@ -1,12 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Modal from 'common/Modal/Modal';
-import BrendsList from '../BrendsList/BrendsList';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
-const BrendsModal = ({ routerProps, items }) => {
-  const { match, history } = routerProps;
+import BrendsList from '../BrendsList/BrendsList';
+import Modal from 'common/Modal/Modal';
+import PropTypes from 'prop-types';
+import React from 'react';
+
+const BrendsModal = ({ items, setSpares }) => {
+  const match = useRouteMatch();
+  const history = useHistory();
   const { itemId } = match.params;
-  const { itemTitle, brends } = items.find(el => el.id === itemId);
+  const curentItem = items.find(el => el.id === itemId);
+
+  const { itemTitle, brends } = curentItem ? curentItem : {};
 
   const closeModal = () => {
     history.goBack();
@@ -14,7 +19,7 @@ const BrendsModal = ({ routerProps, items }) => {
 
   return (
     <Modal title={itemTitle} onClose={closeModal}>
-      <BrendsList brends={brends} onClose={closeModal} />
+      <BrendsList brends={brends} onClose={closeModal} setSpares={setSpares} />
     </Modal>
   );
 };

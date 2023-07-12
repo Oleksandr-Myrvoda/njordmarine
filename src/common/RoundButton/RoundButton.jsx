@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
-
 import s from './RoundButton.module.css';
 
 const RoundButton = props => {
-  const { onClick = () => {}, type = 'button', id = '' } = props;
-
+  const { onClick = () => {}, type = 'button', configName } = props;
+  const handleClick = () => {
+    onClick(configName);
+  };
   return (
-    <button type={type} onClick={onClick} className={s.button} id={id}></button>
+    <button
+      type={type}
+      onClick={handleClick}
+      className={s.button}
+      // id={id}
+    ></button>
   );
 };
 

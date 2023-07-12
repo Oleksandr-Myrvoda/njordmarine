@@ -1,37 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import BigButton from 'common/BigButton';
-import CardWithMenu from 'common/CardWithMenu';
 import PropTypes from 'prop-types';
-import { addBrendApi } from 'services/api';
-import * as api from 'services/api';
-import s from './BrendsList.module.css';
+
+import BigButton from 'common/BigButton';
 import BrendItem from './BrendItem/BrendItem';
+import * as api from 'services/api';
 
-const BrendsList = ({
-  brends,
-  onClose,
-  // editBrend: editBrendState,
-  setSpares,
-}) => {
+import s from './BrendsList.module.css';
+
+const BrendsList = ({ brends = [], onClose, setSpares }) => {
   const match = useRouteMatch();
-  // const [brendList, setBrendList] = useState([]);
-  // const [brendsList, setBrendsList] = useState(brends);
   const [newBrend, setNewBrend] = useState('');
-
-  // useEffect(() => {
-  //   setBrendsList(brends);
-  // }, [brends]);
-
-  // GET =======
-  // console.log('path', path);
-  // useEffect(() => {
-  //   const fetchBrends = async () => {
-  //     const brendsApi = await api.getData(path);
-  //     setBrendList(brendsApi);
-  //   };
-  //   fetchBrends();
-  // }, [path]);
 
   // ADD ===============================================
 
@@ -64,7 +43,7 @@ const BrendsList = ({
     }
   };
 
-  // EDIT =======
+  // EDIT ===============================================
 
   const editBrendState = ({ itemId, brendId, newBrend }) => {
     setSpares(prev =>
@@ -81,28 +60,21 @@ const BrendsList = ({
   };
 
   const editBrend = (id, editedData) => {
-    return (
-      api
-        .editBrendApi({ endpoint: match.url, item: editedData, id })
-        .then(brend =>
-          editBrendState({
-            itemId: match.params.itemId,
-            brendId: brend.id,
-            newBrend: brend.brend,
-          }),
-        )
-        // .then(data => {
-        //   setBrendsList(prevData =>
-        //     prevData.map(el => (el.id !== data.id ? el : { ...el, ...data })),
-        //   );
-        // })
-        .catch(err => {
-          console.log(err.message);
-        })
-    );
+    return api
+      .editBrendApi({ endpoint: match.url, item: editedData, id })
+      .then(brend =>
+        editBrendState({
+          itemId: match.params.itemId,
+          brendId: brend.id,
+          newBrend: brend.brend,
+        }),
+      )
+      .catch(err => {
+        console.log(err.message);
+      });
   };
 
-  // DELETE =======
+  // DELETE ===============================================
 
   const deleteBrendState = ({ itemId, brendId }) => {
     setSpares(prev =>
@@ -125,11 +97,13 @@ const BrendsList = ({
         console.log(err.message);
       });
   };
+
   // ===============================================
+
   const reset = () => {
     setNewBrend('');
   };
-  // console.log('brendsList', brendsList);
+
   return (
     <div className={s.listWrapper}>
       <ul className={s.list}>
