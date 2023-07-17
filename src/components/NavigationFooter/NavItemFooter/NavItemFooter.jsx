@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import s from './NavItemFooter.module.css';
 
-const NavItemFooter = ({ name, path }) => {
+const NavItemFooter = ({ name, path, scrollToTop }) => {
   const isActive = false;
 
   const navItemStyles = [s.NavItem];
@@ -12,6 +12,7 @@ const NavItemFooter = ({ name, path }) => {
       to={path}
       className={navItemStyles.join(' ')}
       activeClassName={s.NavItemActive}
+      onClick={scrollToTop}
     >
       <span className={s.itemName}>{name}</span>
     </NavLink>

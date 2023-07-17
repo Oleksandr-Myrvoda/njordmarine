@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { NavLink } from 'react-router-dom';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 
 import BrochureButton from 'common/BrochureButton';
@@ -41,7 +42,10 @@ const Header = () => {
       ) : (
         <>
           <div className={s.headerMob}>
-            <img src={logoHeaderMob} alt="logo" />
+            <NavLink to="/">
+              <img src={logoHeaderMob} alt="logo" />
+            </NavLink>
+
             <button type="button" className={s.menuBtn} onClick={toggleSidebar}>
               Меню <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
             </button>

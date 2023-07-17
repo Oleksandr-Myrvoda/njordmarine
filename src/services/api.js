@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-axios.defaults.baseURL =
-  'https://njordmarineapp-default-rtdb.europe-west1.firebasedatabase.app';
+const { REACT_APP_DATABASE_URL } = process.env;
+
+axios.defaults.baseURL = REACT_APP_DATABASE_URL;
 
 const normalizeBrends = items => {
   const itemsNormalize = items.map(({ itemTitle = '', imgUrl, brends, id }) => {
@@ -33,7 +34,6 @@ const addItemApi = (endpoint, item) => {
 };
 
 const editItemApi = ({ endpoint, item, id }) => {
-  console.log('item', item);
   return axios
     .patch(`${endpoint}/${id}.json`, item)
     .then(response => ({ ...response.data, id }));

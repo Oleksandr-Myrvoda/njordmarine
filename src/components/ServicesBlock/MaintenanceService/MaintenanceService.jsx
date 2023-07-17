@@ -28,7 +28,7 @@ const MaintenanceService = () => {
 
       <SendInfo
         linkName="Система энергоэффективности судна"
-        linkPath="/"
+        linkPath="/services/energy"
         hideLink={false}
       />
     </div>

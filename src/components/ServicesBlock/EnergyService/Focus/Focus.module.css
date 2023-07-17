@@ -79,28 +79,7 @@
   letter-spacing: 0.24px;
   color: var(--text-light-color);
 }
-.listOptions {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
 
-.itemOptions {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.textOptions {
-  margin-left: 5px;
-  font-family: 'Gilroy';
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  letter-spacing: 0.24px;
-  color: var(--text-color);
-}
 @media screen and (min-width: 1440px) {
   .blockWrapper {
     gap: 60px;
@@ -129,14 +108,5 @@
     line-height: 40px;
 
     color: var(--text-color);
-  }
-
-  .listOptions {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .itemOptions {
-    width: calc(48%);
   }
 }

@@ -2,12 +2,15 @@ import PropTypes from 'prop-types';
 
 import s from './Contacts.module.css';
 
-const Contacts = ({ contactsConfig }) => {
+const Contacts = ({ contactsConfig, isContactsPage }) => {
+  const listStyles = [s.list];
+  isContactsPage && listStyles.push(s.contactsPage);
+
   return (
-    <ul className={s.list}>
+    <ul className={listStyles.join(' ')}>
       {contactsConfig.map(({ imgUrl, text, alt }, index) => (
         <li key={index} className={s.item}>
-          <img src={imgUrl} alt={alt} />
+          <img className={s.img} src={imgUrl} alt={alt} />
           <a href={`tel:${text}`}>{text}</a>
         </li>
       ))}

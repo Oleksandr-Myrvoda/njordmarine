@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import Container from 'common/Container';
 import HeroAboutBlock from 'components/HeroAboutBlock';

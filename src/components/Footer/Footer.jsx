@@ -1,28 +1,29 @@
-import { navConfig } from 'data/navigation';
+import { NavLink } from 'react-router-dom';
 import { contactsConfig } from 'data/contacts';
-// import Navigation from '../Navigation/Navigation';
-import Navigation from 'components/Navigation';
+
 import Contacts from 'common/Contacts';
-import Logo from 'images/Logo_footer.svg';
+import logo from 'images/Logo_footer.svg';
 
 import s from './Footer.module.css';
 import ScrollUp from 'common/ScrollUp/ScrollUp';
-import NavigationFooter from 'components/NavigationFooter/NavigationFooter';
+import NavigationFooter from 'components/NavigationFooter';
 
 const Footer = () => {
-  const logo1 = Logo;
   const date = new Date().getFullYear();
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className={s.footer}>
-      <div className={s.logo}>
-        <img src={logo1} alt="logo" />
-      </div>
+      <NavLink to="/" className={s.logo} onClick={scrollToTop}>
+        <img src={logo} alt="logo" />
+      </NavLink>
+
       <div>
-        <NavigationFooter />
-        {/* <Navigation navConfig={navConfig} /> */}
+        <NavigationFooter scrollToTop={scrollToTop} />
       </div>
-      <Contacts contactsConfig={contactsConfig} />
+      <Contacts contactsConfig={contactsConfig} isContactsPage={false} />
       <div className={s.copyright}>NJORDMARINE &copy; 2019-{date}</div>
 
       <ScrollUp />

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import s from './Form.module.css';
 import { useState } from 'react';
 
-const Form = ({ onSubmit }) => {
+const Form = ({ onSubmit, isTitle }) => {
   const [customerName, setCustomerName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -26,6 +26,7 @@ const Form = ({ onSubmit }) => {
 
   return (
     <div className={s.container}>
+      {isTitle && <h2 className="tagline">Оставить заявку</h2>}
       <form onSubmit={handleSubmit} className={s.inner}>
         <label>
           <p className={s.label}>Ваше Имя*</p>

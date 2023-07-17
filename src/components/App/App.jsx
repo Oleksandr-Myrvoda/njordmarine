@@ -5,6 +5,7 @@ import Header from 'components/Header/Header';
 import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
 import { useMediaQuery } from 'react-responsive';
+// import AuthProvider from 'services/AuthProvider';
 
 // import db from '../../services/firebase';
 
@@ -16,6 +17,7 @@ function App() {
       {isDesktop && <Sidebar />}
       <div className="main-wrapper">
         <Header />
+        {/* <AuthProvider /> */}
         <Main />
         <Footer />
       </div>
@@ -25,7 +27,7 @@ function App() {
 
 export default App;
 
-// sk - ke8HMPcm5FFaUFhFojTkT3BlbkFJCnqcjHeOwlIiOWlVlhcc
+//
 // npm install --save-dev prettier eslint
 // npx mrm@2 lint-staged
 // npm i @emotion/react

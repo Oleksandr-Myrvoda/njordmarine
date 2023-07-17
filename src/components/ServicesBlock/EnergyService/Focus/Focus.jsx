@@ -4,6 +4,7 @@ import { focusConfig, focusOptionsConfig } from 'data/focus';
 import dot from 'images/serv-auto-dotlist.svg';
 import s from './Focus.module.css';
 import FocusList from './FocusList/FocusList';
+import ListWithDot from '../ListWithDot/ListWithDot';
 
 const Focus = () => {
   return (
@@ -31,16 +32,13 @@ const Focus = () => {
         единый продукт
       </h2>
 
-      <ul className={s.listOptions}>
-        {focusOptionsConfig.map(({ text }, index) => (
-          <li key={index} className={s.itemOptions}>
-            <img src={dot} alt="dot"></img>
-            <div className={s.textOptions}>{text}</div>
-          </li>
-        ))}
-      </ul>
+      <ListWithDot config={focusOptionsConfig} />
 
-      <SendInfo linkName="Офисное решение" linkPath="/" hideLink={false} />
+      <SendInfo
+        linkName="Офисное решение"
+        linkPath="/services/energy/office"
+        hideLink={false}
+      />
     </div>
   );
 };

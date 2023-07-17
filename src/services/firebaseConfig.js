@@ -1,25 +1,44 @@
-// Import the functions you need from the SDKs you need
+import { getStorage } from 'firebase/storage';
 import { initializeApp } from 'firebase/app';
 
-import { getStorage } from 'firebase/storage'; // npm install firebase
+const {
+  REACT_APP_API_KEY,
+  REACT_APP_AUTH_DOMAIN,
+  REACT_APP_DATABASE_URL,
+  REACT_APP_PROJECT_ID,
+  REACT_APP_STORAGE_BUCKET,
+  REACT_APP_MESSAGING_SENDER_ID,
+  REACT_APP_APP_ID,
+} = process.env;
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'API_KEY',
-  authDomain: 'AUTH_DAMAIN',
-  databaseURL: 'DATABASE_URL',
-  projectId: 'PROJECT_ID',
-  storageBucket: 'STORAGE_BUCKET',
-  messagingSenderId: 'MESSAGING_SENDER_ID',
-  appId: 'APP_ID',
+  apiKey: REACT_APP_API_KEY,
+  authDomain: REACT_APP_AUTH_DOMAIN,
+  databaseURL: REACT_APP_DATABASE_URL,
+  projectId: REACT_APP_PROJECT_ID,
+  storageBucket: REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: REACT_APP_MESSAGING_SENDER_ID,
+  appId: REACT_APP_APP_ID,
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
-// Firebase storage reference
-const storage = getStorage(app);
-export default storage;
+export default getStorage(app);
+
+// {
+//   "rules": {
+//     "users": {
+//       "$uid": {
+//         ".read": "auth !== null && auth.uid === $uid",
+//         ".write": "auth !== null && auth.uid === $uid"
+//       }
+//     }
+//   }
+// }
+
+// {
+//   "rules": {
+//         ".read": true,
+//         ".write": true
+//   }
+// }

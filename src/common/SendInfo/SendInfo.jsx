@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import BigButton from 'common/BigButton';
@@ -19,18 +20,25 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
     closeModal();
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className={s.contacts}>
       <BigButton onClick={openModal} text="Оставить заявку" />
-      <div className={clsx(hideLink && s.isHideLink)}>
-        <a href={linkPath} className={s.link}>
-          {linkName}
-        </a>
-      </div>
+      <NavLink
+        to={linkPath}
+        className={clsx(hideLink && s.isHideLink)}
+        activeClassName={s.NavItemActive}
+        onClick={scrollToTop}
+      >
+        <span className={s.link}>{linkName}</span>
+      </NavLink>
 
       {isModalOpen && (
         <Modal title="Оставить заявку" onClose={closeModal}>
-          <Form onSubmit={sendForm} />
+          <Form onSubmit={sendForm} isTitle={false} />
         </Modal>
       )}
     </div>

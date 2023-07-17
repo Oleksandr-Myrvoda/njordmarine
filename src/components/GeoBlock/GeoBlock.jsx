@@ -5,7 +5,6 @@ import s from './GeoBlock.module.css';
 import BigButton from 'common/BigButton';
 
 const GeoBlock = () => {
-  // const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const globeImage = isDesktop ? globe : globeMob;
 
@@ -30,7 +29,7 @@ const GeoBlock = () => {
         {!isDesktop && (
           <>
             <BigButton text="Контакты" />
-            <a href="/" className={s.link}>
+            <a href="/services" className={s.link}>
               Ознакомиться с услугами
             </a>
           </>

@@ -29,7 +29,7 @@ const HeroBlock = () => {
 
         <SendInfo
           linkName="Ознакомиться с услугами"
-          linkPath="/"
+          linkPath="/services"
           hideLink={false}
         />
 

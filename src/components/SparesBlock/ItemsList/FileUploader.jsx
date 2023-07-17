@@ -1,6 +1,6 @@
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { useEffect, useState } from 'react';
-import storage from '../../../firebaseConfig';
+import storage from '../../../services/firebaseConfig';
 import s from './FileUploader.module.css';
 
 const FileUploader = ({ setImage }) => {

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import dot from 'images/serv-auto-dotlist.svg';
 import s from './OptionsList.module.css';
 
-const OptionsList = ({ config }) => {
+const OptionsList = ({ config }) => { 
   const { title, list } = config;
   return (
     <div className={s.blockWrapper}>

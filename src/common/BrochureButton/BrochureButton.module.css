@@ -14,6 +14,7 @@
   width: 182px;
   height: 54px;
   align-self: center;
+  border-bottom: 1.5px solid var(--big-button-color);
 }
 
 .brochureBtn:hover {

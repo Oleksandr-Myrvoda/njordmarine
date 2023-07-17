@@ -1,23 +1,22 @@
 import { useMediaQuery } from 'react-responsive';
+import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import BrochureButton from 'common/BrochureButton';
 import Contacts from 'common/Contacts';
 import Navigation from '../Navigation/Navigation';
-import Logo from 'images/Logo.svg';
+import logo from 'images/Logo.svg';
 import { contactsConfig } from 'data/contacts';
 import s from './Sidebar.module.css';
 
 const Sidebar = ({ isOpen }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  const logo1 = Logo;
-
   return (
     <div className={clsx(s.sidebar, isOpen && s.isOpen)}>
       {isDesktop && (
-        <div className={s.logo}>
-          <img src={logo1} alt="logo" />
-        </div>
+        <NavLink to="/" className={s.logo}>
+          <img src={logo} alt="logo" />
+        </NavLink>
       )}
       <div className={s.mobMenu}>
         <Navigation />

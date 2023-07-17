@@ -31,13 +31,25 @@ const SparesPage = () => {
               <SparesBlock
                 path={`${match.path}/engine-room`}
                 name="Машинное отделение"
+                linkPath={!isDesktop ? `${match.path}/deck` : '/contacts'} // props for <SendInfo />
+                linkName={!isDesktop ? 'Палуба' : 'Контакты'} // props for <SendInfo />
               />
             </Route>
             <Route path={`${match.path}/deck`}>
-              <SparesBlock path={`${match.path}/deck`} name="Палуба" />
+              <SparesBlock
+                path={`${match.path}/deck`}
+                name="Палуба"
+                linkPath={!isDesktop ? `${match.path}/bridge` : '/contacts'} // props for <SendInfo />
+                linkName={!isDesktop ? 'Мостик' : 'Контакты'} // props for <SendInfo />
+              />
             </Route>
             <Route path={`${match.path}/bridge`}>
-              <SparesBlock path={`${match.path}/bridge`} name="Мостик" />
+              <SparesBlock
+                path={`${match.path}/bridge`}
+                name="Мостик"
+                linkPath="/contacts" // props for <SendInfo />
+                linkName="Контакты" // props for <SendInfo />
+              />
             </Route>
           </Switch>
         </div>

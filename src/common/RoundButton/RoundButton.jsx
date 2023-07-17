@@ -7,12 +7,7 @@ const RoundButton = props => {
     onClick(configName);
   };
   return (
-    <button
-      type={type}
-      onClick={handleClick}
-      className={s.button}
-      // id={id}
-    ></button>
+    <button type={type} onClick={handleClick} className={s.button}></button>
   );
 };
 

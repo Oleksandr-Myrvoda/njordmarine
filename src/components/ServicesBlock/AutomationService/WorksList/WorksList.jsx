@@ -20,7 +20,7 @@ const WorksList = ({ worksConfig }) => {
 
       <SendInfo
         linkName="Техническое обслуживание"
-        linkPath="/"
+        linkPath="/services/maintenance"
         hideLink={false}
       />
     </div>

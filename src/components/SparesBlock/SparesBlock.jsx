@@ -1,15 +1,14 @@
-import * as api from 'services/api';
-
 import { useEffect, useRef, useState } from 'react';
+import { useRouteMatch } from 'react-router-dom';
 
+import SendInfo from 'common/SendInfo';
 import FileUploader from './ItemsList/FileUploader';
 import ItemsList from './ItemsList';
 import PropTypes from 'prop-types';
-import SendInfo from 'common/SendInfo';
+import * as api from 'services/api';
 import s from './SparesBlock.module.css';
-import { useRouteMatch } from 'react-router-dom';
 
-const SparesBlock = ({ path, name }) => {
+const SparesBlock = ({ path, name, linkName, linkPath }) => {
   const match = useRouteMatch();
   const inputRef = useRef(null);
   const [spares, setSpares] = useState([]);
@@ -90,8 +89,6 @@ const SparesBlock = ({ path, name }) => {
         setImage={setImgUrl}
       />
 
-      {/* <AddItemForm onSubmit={addData} /> */}
-
       <form className={s.addForm} onSubmit={addData}>
         <input
           className={s.addFormInput}
@@ -102,14 +99,11 @@ const SparesBlock = ({ path, name }) => {
           onChange={e => setItemTitle(e.target.value)}
           placeholder="itemTitle"
         />
-        <FileUploader setImage={setImgUrl} />
 
-        {/* <button className={s.addFormButton} type="submit" text="Add">
-          Add
-        </button> */}
+        <FileUploader setImage={setImgUrl} />
       </form>
 
-      <SendInfo linkName="Палуба" linkPath="/" hideLink={false} />
+      <SendInfo linkName={linkName} linkPath={linkPath} hideLink={false} />
     </div>
   );
 };

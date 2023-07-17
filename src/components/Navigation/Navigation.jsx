@@ -6,30 +6,39 @@ import { sparesListConfig } from 'data/spares-list';
 import s from './Navigation.module.css';
 
 const Navigation = () => {
-  const [isActive, setIsActive] = useState(true);
-
+  const [activeMenu, setActiveMenu] = useState(null);
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+
+  const handleMenuClick = menuName => {
+    setActiveMenu(activeMenu === menuName ? null : menuName);
+  };
 
   return (
     <nav className={s.nav}>
       {/* <NavItem name="01. Главная" path="/" /> */}
-      <NavItem name="01. Главная" path="/home" />
+      <div onClick={() => handleMenuClick('home')}>
+        <NavItem name="01. Главная" path="/home" />
+      </div>
 
       {/* ======= ABOUT COMPANY ======= */}
 
-      <NavItem name="02. О Компании" path="/about-company" />
-      {isActive && (
+      <div onClick={() => handleMenuClick('company')}>
+        <NavItem name="02. О Компании" path="/about-company" />
+      </div>
+      {activeMenu === 'company' && (
         <>
           <NavItem name="О нас" path="/about-company/about-us" />
           <NavItem name="Наша команда" path="/about-company/our-team" />
         </>
       )}
 
-      {/* ======= SERVISES ======= */}
+      {/* ======= SERVICES ======= */}
 
-      <NavItem name="03. Услуги" path="/services" />
+      <div onClick={() => handleMenuClick('services')}>
+        <NavItem name="03. Услуги" path="/services" />
+      </div>
 
-      {isActive && !isDesktop && (
+      {activeMenu === 'services' && !isDesktop && (
         <ul>
           {servicesListConfig.map(({ name, to }, index) => (
             <li key={index}>
@@ -40,10 +49,11 @@ const Navigation = () => {
       )}
 
       {/* ======= SPARES ======= */}
+      <div onClick={() => handleMenuClick('spares')}>
+        <NavItem name="04. Запчасти" path="/spares" />
+      </div>
 
-      <NavItem name="04. Запчасти" path="/spares" />
-
-      {isActive && !isDesktop && (
+      {activeMenu === 'spares' && !isDesktop && (
         <ul>
           {sparesListConfig.map(({ name, to }, index) => (
             <li key={index}>
@@ -54,8 +64,9 @@ const Navigation = () => {
       )}
 
       {/* ======= CONTACTS ======= */}
-
-      <NavItem name="05. Контакты" path="/contacts" />
+      <div onClick={() => handleMenuClick('contacts')}>
+        <NavItem name="05. Контакты" path="/contacts" />
+      </div>
     </nav>
   );
 };

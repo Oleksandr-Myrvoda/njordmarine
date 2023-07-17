@@ -4,12 +4,16 @@ import Paper from 'common/Paper';
 import s from './ServiceList.module.css';
 
 const ServiceList = ({ serviceConfig }) => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <ul className={s.list}>
       {serviceConfig.map(({ imgUrl, text, alt, to }, index) => (
         <li key={index}>
           <Paper>
-            <NavLink to={to}>
+            <NavLink to={to} onClick={scrollToTop}>
               <div className={s.item}>
                 <img className={s.image} src={imgUrl} alt={alt} />
                 <p className={s.descr}>{text}</p>

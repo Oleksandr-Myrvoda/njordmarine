@@ -1,19 +1,17 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import AboutCompanyPage from 'pages/AboutCompanyPage';
-import AboutCompanyTeamPage from 'pages/AboutCompanyPage';
 import ContactsPage from 'pages/ContactsPage';
 import HomePage from 'pages/HomePage';
 import NotFound from 'pages/NotFound';
 import ServicesListPage from 'pages/ServicesListPage';
-// import ServicePage from 'pages/ServicePage';
 import SparesPage from 'pages/SparesPage';
 
-// import s from './Main.module.css';
+import s from './Main.module.css';
 
 const Main = () => {
   return (
-    <main>
+    <main className={s.main}>
       <Switch>
         <Route exact path="/" render={() => <Redirect to="/home" />} />
 
