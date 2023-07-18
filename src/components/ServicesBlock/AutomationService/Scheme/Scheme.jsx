@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 import bg from 'images/serv-auto-ship.png';
@@ -5,12 +6,11 @@ import bgMob from 'images/serv-auto-ship-mob.png';
 import s from './Scheme.module.css';
 
 const Scheme = ({ schemeConfig }) => {
+  const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   return (
     <div className={s.blockWrapper}>
-      <h2 className={s.tagline}>
-        Схема выполнения услуг <br /> по автоматизации:
-      </h2>
+      <h2 className={s.tagline}>{t('services.auto.schemeTagline')}:</h2>
       <div className={s.listWrapper}>
         <div>
           <img src={isDesktop ? bg : bgMob} alt="ship" />

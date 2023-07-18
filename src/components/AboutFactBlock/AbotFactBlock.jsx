@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { aboutFactConfig } from 'data/about-fact';
 import { useMediaQuery } from 'react-responsive';
 import ScrollUp from 'common/ScrollUp';
@@ -6,19 +7,18 @@ import AboutFactList from './AboutFactList';
 import s from './AboutFactBlock.module.css';
 
 const AbotFactBlock = () => {
+  const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   return (
     <div className={s.aboutFactBlock}>
       <div className={s.taglineAbout}>
-        <p className="tagline">
-          3 факта о нашей компании, <br /> которые вас заинтересуют
-        </p>
+        <p className="tagline">{t('abotFactBlock.tagline')}</p>
       </div>
       <AboutFactList aboutFactConfig={aboutFactConfig} />
 
       <SendInfo
-        linkName="Ознакомиться с услугами"
+        linkName={t('sendInfo.services')}
         linkPath="/services"
         hideLink={false}
       />

@@ -53,7 +53,7 @@
   color: var(--text-light-color);
 }
 
-.text {
+/* .text {
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
@@ -61,7 +61,7 @@
   line-height: 27px;
   letter-spacing: 0.24px;
   color: var(--text-light-color);
-}
+} */
 
 .quotes {
   width: 93px;

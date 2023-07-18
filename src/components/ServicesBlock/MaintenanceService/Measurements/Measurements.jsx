@@ -1,11 +1,13 @@
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import s from './Measurements.module.css';
 
 const Measurements = ({ measurementsConfig }) => {
+  const { t } = useTranslation();
   return (
     <div className={s.blockWrapper}>
-      <h2 className={s.tagline}>Замер толщин состоит из следующих этапов:</h2>
+      <h2 className={s.tagline}>{t('services.meintenance.measurTagline')}:</h2>
 
       <ul className={s.list}>
         {measurementsConfig.map(

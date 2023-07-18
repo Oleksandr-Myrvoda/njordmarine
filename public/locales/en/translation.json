@@ -1,0 +1,132 @@
+{
+  "heroBlock": {
+    "head": "European company with high quality solutions",
+    "taglineBig": "Your trusted ship service assistant",
+    "description": "NJORDMARINE cares about its customers and appreciates their time, so we provide the necessary equipment, original and OEM parts, as well as service in the shortest possible time and at a reasonable price.",
+    "top1": "800+",
+    "bot1": "Completed projects",
+    "top2": "5 years",
+    "bot2": "On the market",
+    "top3": "20",
+    "bot3": "Countries",
+    "sendInfo": "Get to know the services"
+  },
+
+  "servicesBlock": {
+    "heading": "Our services",
+    "tagline": "We care about our customers and provide the best service",
+    "list": {
+      "link": "More",
+      "text1": "Ship automation services",
+      "alt1": "Automation",
+      "text2": "Maintenance",
+      "alt2": "Maintenance",
+      "text3": "Spare parts",
+      "alt3": "Spare",
+      "text4": "Vessel Energy Efficiency System",
+      "alt4": "Energy"
+    }
+  },
+
+  "advantagesBlock": {
+    "heading": "Our competitive advantages",
+    "tagline": "What can you expect from us"
+  },
+
+  "geoBlock": {
+    "heading": "Coverage map",
+    "tagline": "Work in progress around the world",
+    "text": "We provide ship service worldwide, ensuring that our team of experienced professionals is always ready to provide qualified assistance to your vessel, no matter where in the world it is located.",
+    "taglineBig": "Contact us",
+    "text2": "We are always ready to help you!",
+    "bigButtonText": "Contacts",
+    "bigButtonLinkMob": "Get to know the services",
+    "bigButtonLink": "Download our brochure"
+  },
+
+  "heroAboutBlock": {
+    "taglineBig": "About company",
+    "tagline": "About Us",
+    "text": "NJORDMARINE is a family business based on trust and willingness to help in difficult times. Our team of specialists is ready for requests of any complexity.",
+    "link": "Скачать нашу брошюру"
+  },
+
+  "abotFactBlock": {
+    "tagline": "3 facts about our company that will interest you"
+  },
+
+  "ourTeamBlock": {
+    "taglineBig": "Our team",
+    "text": "Our team of experienced professionals is always ready to provide qualified assistance."
+  },
+
+  "services": {
+    "taglineBig": "Services",
+    "auto": {
+      "title": "Process automation on board",
+      "text": "Our goal is to help customers automate processes that are critical in terms of operational safety, as well as the most time-consuming and regularly recurring operations.",
+      "schemeTagline": "Scheme for the implementation of automation services",
+      "workTitle": "We carry out the following types of automation work"
+    },
+    "meintenance": {
+      "title": "Meintenance",
+      "text1": "We provide services of ultrasonic thickness measurements on all types of ships, we have certificates of classification societies - BV, DNV, ABS, RINA and RMRS.",
+      "text2": "Height measurements are taken by our technical climbers who are certified by the DNV and ABS classification societies to carry out the relevant work.",
+      "measurTagline": "Thickness measurement consists of the following steps"
+    },
+    "energy": {
+      "onBoard": {
+        "title": "Solution on board",
+        "head": "Your first step towards reducing fuel consumption and improving boat performance",
+        "text": "Our system integrates perfectly with other systems installed on board the ship, allowing you to display all the necessary parameters.",
+        "optionsTitle": "Parameters controlled by the system installed on the ship"
+      }
+    }
+  },
+
+  "spares": {
+    "taglineBig": "Spare parts",
+    "engine": "Engine room",
+    "deck": "Deck",
+    "bridge": "Bridge"
+  },
+
+  "contacts": {
+    "taglineBig": "Contacts",
+    "text": "Fill out the form and our team will contact you shortly."
+  },
+
+  "form": {
+    "tagline": "Submit your application",
+
+    "name": "Your Name*",
+    "nameInput": "Your Name*",
+    "email": "E-mail*",
+    "emailInput": "Your e-mail*",
+    "phone": "Phone (optional)",
+    "phoneInput": "Phone number",
+    "subjMessage": "Subject of the message (optional)",
+    "subjMessageInput": "Subject of the message",
+    "message": "Message",
+    "messageInput": "Message",
+
+    "bigBtn": "Send",
+    "privacyTerms": "Read the privacy policy"
+  },
+
+  "common": {
+    "brochure": "Download our brochure",
+    "brochureBtn": "Download brochure"
+  },
+
+  "sendInfo": {
+    "bigBtn": "Submit application",
+    "services": "Get to know the services",
+    "maintenance": "Maintenance",
+    "energy": "Vessel Energy Efficiency System",
+    "focus": "FOCUS system for the fleet",
+    "contacts": "Contacts",
+    "deck": "Deck",
+    "bridge": "Bridge"
+  }
+}

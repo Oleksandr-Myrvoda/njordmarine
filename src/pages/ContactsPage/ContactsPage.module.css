@@ -13,6 +13,16 @@
   padding: 48px 16px 0 16px;
 }
 
+.text {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.24px;
+  color: var(--text-light-color);
+}
+
 @media screen and (min-width: 1440px) {
   .pageWrapper {
     /* padding: 176px 96px 96px 96px; */

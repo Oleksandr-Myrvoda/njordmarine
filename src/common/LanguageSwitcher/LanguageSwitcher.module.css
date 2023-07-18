@@ -1,0 +1,43 @@
+.switcher {
+  display: flex;
+  align-items: center;
+  min-height: 45px;
+}
+
+.btnWrapper {
+  min-width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: 'Gilroy';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-light-color);
+  transition: all 200ms;
+}
+
+button:hover {
+  scale: 1.1;
+}
+
+.active {
+  width: 30px;
+  scale: 1.1;
+  border: none;
+  background: none;
+  font: 'Gilroy';
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-color);
+
+  transition: all 200ms;
+}

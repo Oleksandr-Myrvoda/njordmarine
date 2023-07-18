@@ -1,23 +1,22 @@
+import { useTranslation } from 'react-i18next';
 import { ourTeamConfig } from 'data/our-team';
 import OurTeamList from './OurTeamList';
 import s from './OurTeamBlock.module.css';
 import SendInfo from 'common/SendInfo/SendInfo';
 
 const OurTeamBlock = () => {
+  const { t } = useTranslation();
   return (
     <div className={s.ourTeamBlock}>
       <div className={s.descr}>
-        <h1 className="taglineBig">Наша команда</h1>
-        <p className="text">
-          Наша команда опытных профессионалов всегда готова оказать
-          квалифицированную помощь.
-        </p>
+        <h1 className="taglineBig">{t('ourTeamBlock.taglineBig')}</h1>
+        <p className="text">{t('ourTeamBlock.text')}</p>
       </div>
 
       <OurTeamList ourTeamConfig={ourTeamConfig} />
 
       <SendInfo
-        linkName="Ознакомиться с услугами"
+        linkName={t('sendInfo.services')}
         linkPath="/services"
         hideLink={false}
       />

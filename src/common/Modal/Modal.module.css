@@ -9,6 +9,8 @@
 }
 
 .modal {
+  padding: 0 16px 36px 16px;
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,8 +24,10 @@
 }
 
 .header {
+  /* padding-left: 16px; */
+  align-items: center;
   display: flex;
-  padding: 40px 24px 0 24px;
+  padding: 36px 24px 16px 24px;
 }
 
 .closeBtn {
@@ -37,20 +41,16 @@
   text-align: center;
 }
 
-.imageWrapper {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: center;
-}
-
 @media screen and (min-width: 1440px) {
   .header {
     display: flex;
-    padding: 48px 32px 0 32px;
+    padding: 48px 32px 48px 32px;
   }
 
   .modal {
-    max-width: 640px;
-    height: 729px;
+    padding: 0 32px 36px 32px;
+    max-width: 576px;
+    /* max-width: 640px; */
+    /* height: 729px; */
   }
 }

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -9,6 +10,8 @@ import Modal from 'common/Modal';
 import s from './SendInfo.module.css';
 
 const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
+  const { t } = useTranslation();
+
   const [formsList, setFormsList] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -26,7 +29,7 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
 
   return (
     <div className={s.contacts}>
-      <BigButton onClick={openModal} text="Оставить заявку" />
+      <BigButton onClick={openModal} text={t('sendInfo.bigBtn')} />
       <NavLink
         to={linkPath}
         className={clsx(hideLink && s.isHideLink)}
@@ -37,7 +40,7 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
       </NavLink>
 
       {isModalOpen && (
-        <Modal title="Оставить заявку" onClose={closeModal}>
+        <Modal title={t('sendInfo.bigBtn')} onClose={closeModal}>
           <Form onSubmit={sendForm} isTitle={false} />
         </Modal>
       )}
@@ -46,8 +49,8 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
 };
 
 SendInfo.propTypes = {
-  linkName: PropTypes.string.isRequired,
-  linkPath: PropTypes.string.isRequired,
+  linkName: PropTypes.string,
+  linkPath: PropTypes.string,
   hideLink: PropTypes.bool.isRequired,
 };
 

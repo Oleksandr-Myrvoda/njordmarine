@@ -8,46 +8,49 @@ import ServicesListPage from 'pages/ServicesListPage';
 import SparesPage from 'pages/SparesPage';
 
 import s from './Main.module.css';
+import { Suspense } from 'react';
 
 const Main = () => {
   return (
     <main className={s.main}>
-      <Switch>
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
+      <Suspense fallback="Loading...">
+        <Switch>
+          <Route exact path="/" render={() => <Redirect to="/home" />} />
 
-        <Route exact path="/home">
-          <HomePage />
-        </Route>
+          <Route exact path="/home">
+            <HomePage />
+          </Route>
 
-        {/*--- ABOUT COMPANY ----------------------*/}
-        <Route
-          exact
-          path="/about-company"
-          render={() => <Redirect to="/about-company/about-us" />}
-        />
+          {/*--- ABOUT COMPANY ----------------------*/}
+          <Route
+            exact
+            path="/about-company"
+            render={() => <Redirect to="/about-company/about-us" />}
+          />
 
-        <Route path="/about-company">
-          <AboutCompanyPage />
-        </Route>
+          <Route path="/about-company">
+            <AboutCompanyPage />
+          </Route>
 
-        {/*--- SERVICES ----------------------*/}
-        <Route path="/services">
-          <ServicesListPage />
-        </Route>
+          {/*--- SERVICES ----------------------*/}
+          <Route path="/services">
+            <ServicesListPage />
+          </Route>
 
-        {/*--- SPARES ------------------------*/}
-        <Route path="/spares">
-          <SparesPage />
-        </Route>
+          {/*--- SPARES ------------------------*/}
+          <Route path="/spares">
+            <SparesPage />
+          </Route>
 
-        <Route path="/contacts">
-          <ContactsPage />
-        </Route>
+          <Route path="/contacts">
+            <ContactsPage />
+          </Route>
 
-        <Route>
-          <NotFound />
-        </Route>
-      </Switch>
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
+      </Suspense>
     </main>
   );
 };

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import RoundButton from 'common/RoundButton';
@@ -16,6 +17,7 @@ import arrow4 from 'images/energy-dots/arrow4.svg';
 import s from './OptionsBlock.module.css';
 
 const OptionsBlock = () => {
+  const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [cardOptions, setCardOptions] = useState(configs.consumers);
   const [activeButton, setActiveButton] = useState('consumers');
@@ -28,7 +30,7 @@ const OptionsBlock = () => {
   return (
     <div className={s.optionsWrapper}>
       <h2 className={s.optionsTitle}>
-        Параметры контролируемые системой установленной на судне:
+        {t('services.energy.onBoard.optionsTitle')}:
       </h2>
 
       {/* BUTTON 1 */}

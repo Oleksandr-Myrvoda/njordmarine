@@ -11,6 +11,7 @@ import burgerOpen from '../../images/List-Right.svg';
 import burgerClose from '../../images/List-Close.png';
 import logoHeaderMob from '../../images/Logo-header-mob.svg';
 import s from './Header.module.css';
+import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
 
 const Header = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -32,11 +33,13 @@ const Header = () => {
         <>
           <Contacts contactsConfig={contactsConfig} />
 
-          <ul className={s.language}>
+          <LanguageSwitcher />
+
+          {/* <ul className={s.language}>
             <li>RU</li>
             <li>|</li>
             <li>EN</li>
-          </ul>
+          </ul> */}
           <BrochureButton />
         </>
       ) : (

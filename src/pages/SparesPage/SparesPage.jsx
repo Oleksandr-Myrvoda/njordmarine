@@ -1,4 +1,5 @@
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { sparesListConfig } from 'data/spares-list';
 import Container from 'common/Container';
@@ -7,13 +8,18 @@ import SparesBlock from 'components/SparesBlock';
 import BlockNavigation from 'components/BlockNavigation/BlockNavigation';
 
 const SparesPage = () => {
+  const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const match = useRouteMatch();
+
+  const contactsLang = t('sendInfo.contacts');
+  const deckLang = t('sendInfo.deck');
+  const bridgeLang = t('sendInfo.bridge');
 
   return (
     <div className={s.pageWrapper}>
       <div className={s.taglineWrapper}>
-        <h1 className="taglineBig">Запчасти</h1>
+        <h1 className="taglineBig">{t('spares.taglineBig')}</h1>
 
         {isDesktop && <BlockNavigation navConfig={sparesListConfig} />}
       </div>
@@ -30,25 +36,25 @@ const SparesPage = () => {
             <Route path={`${match.path}/engine-room`}>
               <SparesBlock
                 path={`${match.path}/engine-room`}
-                name="Машинное отделение"
+                name={t('spares.engine')}
                 linkPath={!isDesktop ? `${match.path}/deck` : '/contacts'} // props for <SendInfo />
-                linkName={!isDesktop ? 'Палуба' : 'Контакты'} // props for <SendInfo />
+                linkName={!isDesktop ? deckLang : contactsLang} // props for <SendInfo />
               />
             </Route>
             <Route path={`${match.path}/deck`}>
               <SparesBlock
                 path={`${match.path}/deck`}
-                name="Палуба"
+                name={t('spares.deck')}
                 linkPath={!isDesktop ? `${match.path}/bridge` : '/contacts'} // props for <SendInfo />
-                linkName={!isDesktop ? 'Мостик' : 'Контакты'} // props for <SendInfo />
+                linkName={!isDesktop ? bridgeLang : contactsLang} // props for <SendInfo />
               />
             </Route>
             <Route path={`${match.path}/bridge`}>
               <SparesBlock
                 path={`${match.path}/bridge`}
-                name="Мостик"
+                name={t('spares.bridge')}
                 linkPath="/contacts" // props for <SendInfo />
-                linkName="Контакты" // props for <SendInfo />
+                linkName={contactsLang} // props for <SendInfo />
               />
             </Route>
           </Switch>

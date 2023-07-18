@@ -36,6 +36,11 @@ export default App;
 // npm i express mongodb --save
 // npm i nodemon --save-dev
 
+// languages-----------------------------------
+// npm install react-i18next i18next --save
+// # if you'd like to detect user language and load translation
+// npm install i18next-http-backend i18next-browser-languagedetector --save
+
 // npm install --save-dev prop-types
 // npm install react-icons --save
 // npm install modern-normalize

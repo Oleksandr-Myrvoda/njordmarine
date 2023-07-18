@@ -1,33 +1,27 @@
+import { useTranslation } from 'react-i18next';
 import SendInfo from 'common/SendInfo/SendInfo';
-import s from './MaintenanceService.module.css';
 import Measurements from './Measurements';
 import { measurementsConfig } from 'data/measurements';
+import s from './MaintenanceService.module.css';
 
 const MaintenanceService = () => {
+  const { t } = useTranslation();
   return (
     <div className={s.blockWrapper}>
       <div className={s.hero}>
-        <p className={s.title}>Техническое обслуживание</p>
+        <p className={s.title}>{t('services.meintenance.title')}</p>
       </div>
 
       <div>
-        <p className={s.text}>
-          Мы предоставляем услуги ультразвуковых измерений толщин на всех типах
-          судов , имеем сертификаты классификационных обществ - BV, DNV, ABS,
-          RINA и РМРС.
-        </p>
-        <p className={s.text}>
-          Замеры на высоте производятся нашими техническими альпинистами,
-          имеющими сертификаты DNV и ABS классификационных обществ для
-          выполнения соответствующих работ.
-        </p>
+        <p className={s.text}>{t('services.meintenance.text1')}</p>
+        <p className={s.text}>{t('services.meintenance.text2')}</p>
       </div>
       <div className={s.paginationBlock}>
         <Measurements measurementsConfig={measurementsConfig} />
       </div>
 
       <SendInfo
-        linkName="Система энергоэффективности судна"
+        linkName={t('sendInfo.energy')}
         linkPath="/services/energy"
         hideLink={false}
       />
