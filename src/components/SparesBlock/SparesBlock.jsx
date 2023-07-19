@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import * as api from 'services/api';
 import s from './SparesBlock.module.css';
 
-const SparesBlock = ({ path, name, linkName, linkPath }) => {
+const SparesBlock = ({ path, name, linkName, linkPath, token }) => {
   const match = useRouteMatch();
   const inputRef = useRef(null);
   const [spares, setSpares] = useState([]);
@@ -30,11 +30,15 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
   const addData = async e => {
     e.preventDefault();
     try {
-      const newSpare = await api.addItemApi(path, {
-        itemTitle,
-        imgUrl,
-        brends: [],
-      });
+      const newSpare = await api.addItemApi(
+        path,
+        {
+          itemTitle,
+          imgUrl,
+          brends: [],
+        },
+        token,
+      );
       setSpares(prevData => [...prevData, newSpare]);
     } catch (error) {
       console.log(error.messgae);
@@ -47,7 +51,7 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
 
   const editData = (id, editedData) => {
     return api
-      .editItemApi({ endpoint: match.url, item: editedData, id })
+      .editItemApi({ endpoint: match.url, item: editedData, id, token })
       .then(data => {
         setSpares(prevData =>
           prevData.map(el => (el.id !== data.id ? el : { ...el, ...data })),

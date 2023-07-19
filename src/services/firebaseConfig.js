@@ -39,6 +39,6 @@ export default getStorage(app);
 // {
 //   "rules": {
 //         ".read": true,
-//         ".write": true
+//          ".write": "auth !== null"
 //   }
 // }

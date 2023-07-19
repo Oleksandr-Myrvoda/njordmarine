@@ -12,7 +12,7 @@ const SparesBlock = lazy(() =>
   import('components/SparesBlock' /* webpackChunkName: "SparesBlock___page" */),
 );
 
-const SparesPage = () => {
+const SparesPage = ({ token }) => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const match = useRouteMatch();
@@ -41,6 +41,7 @@ const SparesPage = () => {
 
               <Route path={`${match.path}/engine-room`}>
                 <SparesBlock
+                  token={token}
                   path={`${match.path}/engine-room`}
                   name={t('spares.engine')}
                   linkPath={!isDesktop ? `${match.path}/deck` : '/contacts'} // props for <SendInfo />

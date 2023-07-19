@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
-
 import BigButton from 'common/BigButton';
 import PropTypes from 'prop-types';
 import s from './Form.module.css';

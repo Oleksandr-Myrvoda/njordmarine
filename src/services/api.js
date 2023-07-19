@@ -6,12 +6,14 @@ axios.defaults.baseURL = REACT_APP_DATABASE_URL;
 
 const normalizeBrends = items => {
   const itemsNormalize = items.map(({ itemTitle = '', imgUrl, brends, id }) => {
-    const brendsNormalize = Object.entries(brends).map(([id, brend = []]) => {
-      if (typeof brend === 'string') {
-        return { id, brend };
-      }
-      return { id, ...brend };
-    });
+    const brendsNormalize = brends
+      ? Object.entries(brends).map(([id, brend = []]) => {
+          if (typeof brend === 'string') {
+            return { id, brend };
+          }
+          return { id, ...brend };
+        })
+      : [];
 
     return { itemTitle, imgUrl, brends: [...brendsNormalize], id };
   });
@@ -27,15 +29,23 @@ const getData = endpoint => {
     .then(items => normalizeBrends(items));
 };
 
-const addItemApi = (endpoint, item) => {
+const addItemApi = (endpoint, item, token) => {
   return axios
-    .post(`${endpoint}.json`, item)
+    .post(`${endpoint}.json`, item, {
+      params: {
+        auth: token,
+      },
+    })
     .then(response => ({ ...item, id: response.data.name }));
 };
 
-const editItemApi = ({ endpoint, item, id }) => {
+const editItemApi = ({ endpoint, item, id, token }) => {
   return axios
-    .patch(`${endpoint}/${id}.json`, item)
+    .patch(`${endpoint}/${id}.json`, item, {
+      params: {
+        auth: token,
+      },
+    })
     .then(response => ({ ...response.data, id }));
 };
 
