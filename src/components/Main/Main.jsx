@@ -1,19 +1,40 @@
+import { Suspense, lazy } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import AboutCompanyPage from 'pages/AboutCompanyPage';
-import ContactsPage from 'pages/ContactsPage';
-import HomePage from 'pages/HomePage';
-import NotFound from 'pages/NotFound';
-import ServicesListPage from 'pages/ServicesListPage';
-import SparesPage from 'pages/SparesPage';
-
+// import AboutCompanyPage from 'pages/AboutCompanyPage';
+// import HomePage from 'pages/HomePage';
+// import ServicesListPage from 'pages/ServicesListPage';
+// import SparesPage from 'pages/SparesPage';
+// import ContactsPage from 'pages/ContactsPage';
+// import NotFound from 'pages/NotFound';
 import s from './Main.module.css';
-import { Suspense } from 'react';
+
+const HomePage = lazy(() =>
+  import('pages/HomePage' /* webpackChunkName: "Home___page" */),
+);
+const AboutCompanyPage = lazy(() =>
+  import(
+    'pages/AboutCompanyPage' /* webpackChunkName: "AboutCompany___page" */
+  ),
+);
+const ServicesListPage = lazy(() =>
+  import(
+    'pages/ServicesListPage' /* webpackChunkName: "ServicesList___page" */
+  ),
+);
+const SparesPage = lazy(() =>
+  import('pages/SparesPage' /* webpackChunkName: "Spares___page" */),
+);
+const ContactsPage = lazy(() =>
+  import(
+    '../../pages/ContactsPage/ContactsPage' /* webpackChunkName: "Contacts___page" */
+  ),
+);
 
 const Main = () => {
   return (
     <main className={s.main}>
-      <Suspense fallback="Loading...">
+      <Suspense fallback={<h2>"Loading..."</h2>}>
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/home" />} />
 
@@ -42,13 +63,12 @@ const Main = () => {
             <SparesPage />
           </Route>
 
+          {/*--- CONTACTS ------------------------*/}
           <Route path="/contacts">
             <ContactsPage />
           </Route>
 
-          <Route>
-            <NotFound />
-          </Route>
+          <Route>{/* <NotFound /> */}</Route>
         </Switch>
       </Suspense>
     </main>

@@ -16,8 +16,10 @@ const AutomationService = () => {
 
       <p className={s.text}>{t('services.auto.text')}</p>
 
-      <Scheme schemeConfig={schemeConfig} />
-      <WorksList worksConfig={worksConfig} />
+      <div className={s.blockContent}>
+        <Scheme schemeConfig={schemeConfig} />
+        <WorksList worksConfig={worksConfig} />
+      </div>
     </div>
   );
 };

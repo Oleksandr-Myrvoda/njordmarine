@@ -3,11 +3,12 @@
   flex-direction: column;
   background-color: var(--bg-light-color);
   color: rgb(217, 217, 217);
+  gap: 36px;
 }
 
 .hero {
   display: flex;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
 
   width: 343px;
   height: 220px;
@@ -45,8 +46,16 @@
 .target {
   font-weight: 600;
 }
-
+.blockContent {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
 @media screen and (min-width: 1440px) {
+  .blockWrapper {
+    gap: 48px;
+  }
+
   .hero {
     margin-bottom: 48px;
 
@@ -64,5 +73,8 @@
   .text {
     margin: 0 auto;
     width: calc(65%);
+  }
+  .blockContent {
+    gap: 48px;
   }
 }

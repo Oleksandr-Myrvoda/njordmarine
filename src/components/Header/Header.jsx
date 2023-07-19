@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
@@ -33,13 +33,9 @@ const Header = () => {
         <>
           <Contacts contactsConfig={contactsConfig} />
 
-          <LanguageSwitcher />
-
-          {/* <ul className={s.language}>
-            <li>RU</li>
-            <li>|</li>
-            <li>EN</li>
-          </ul> */}
+          <Suspense fallback={<h2>"Loading..."</h2>}>
+            <LanguageSwitcher />
+          </Suspense>
           <BrochureButton />
         </>
       ) : (

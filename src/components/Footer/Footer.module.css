@@ -5,8 +5,8 @@
   flex-direction: column;
 
   align-items: center;
-  background-color: var(--bg-medium-color);
-  border-top: 2px solid var(--footer-stroke);
+  /* background-color: var(--bg-medium-color);
+  border-top: 2px solid var(--footer-stroke); */
   gap: 16px;
 }
 
@@ -26,6 +26,8 @@
 }
 @media screen and (min-width: 1440px) {
   .footer {
-    padding: 80px;
+    padding: 80px 0;
+    width: 84.5%;
+    /* padding: 80px; */
   }
 }

@@ -26,6 +26,7 @@
 @media screen and (min-width: 1440px) {
   .pageWrapper {
     /* padding: 176px 96px 96px 96px; */
+    padding-bottom: 96px;
     gap: 60px;
     background-image: url('../../images/contacts-bg.png');
   }

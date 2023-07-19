@@ -10,7 +10,6 @@
 .sidebar {
   position: absolute;
   width: 260px;
-  /* height: 60vh; */
   padding-bottom: 36px;
   top: 68px;
   left: 100%;
@@ -39,15 +38,11 @@
 }
 @media screen and (min-width: 1440px) {
   .sidebar {
-    /* position: inherit; */
     display: flex;
     flex-direction: column;
     background-color: var(--bg-dark-color);
-    /* width: 15.5%; */
     width: 223px;
-
     position: static;
-    height: 100vh;
     z-index: 0;
   }
 

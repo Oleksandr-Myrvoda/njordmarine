@@ -11,7 +11,6 @@ const ContactsPage = () => {
         <h1 className="taglineBig">{t('contacts.taglineBig')}</h1>
         <p>{t('contacts.text')}</p>
       </div>
-
       <Container>
         <ContactsBlock />
       </Container>

@@ -1,6 +1,5 @@
 .container {
   margin-bottom: 0;
-  /* padding: 16px; */
 }
 
 .inner {
@@ -93,7 +92,7 @@
   }
 
   .inner input {
-    width: 280px;
+    width: 275px;
   }
 
   .labelTextarea {

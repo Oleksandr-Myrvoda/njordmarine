@@ -4,22 +4,35 @@ import Footer from 'components/Footer';
 import Header from 'components/Header/Header';
 import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
+import { Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
 // import AuthProvider from 'services/AuthProvider';
-
-// import db from '../../services/firebase';
 
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   return (
     <div className="main-container">
-      {isDesktop && <Sidebar />}
+      {isDesktop && (
+        <Suspense fallback={<h2>"Loading..."</h2>}>
+          <Sidebar />
+        </Suspense>
+      )}
+
       <div className="main-wrapper">
-        <Header />
-        {/* <AuthProvider /> */}
-        <Main />
-        <Footer />
+        <div className="container">
+          <div className="content">
+            <Suspense fallback={<h2>"Loading..."</h2>}>
+              <Header />
+              {/* <AuthProvider /> */}
+            </Suspense>
+            <Main />
+          </div>
+
+          <div className="footer">
+            <Footer />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -40,6 +53,8 @@ export default App;
 // npm install react-i18next i18next --save
 // # if you'd like to detect user language and load translation
 // npm install i18next-http-backend i18next-browser-languagedetector --save
+
+// npm install react-hook-form
 
 // npm install --save-dev prop-types
 // npm install react-icons --save

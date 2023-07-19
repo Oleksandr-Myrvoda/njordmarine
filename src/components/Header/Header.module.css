@@ -82,7 +82,8 @@
 @media screen and (min-width: 1440px) {
   .mainHeader {
     position: absolute;
-    width: 84.5%;
+    width: 1025px;
+    /* width: 84.5%; */
     padding: 0 96px;
     height: 102px;
     background-color: transparent;
