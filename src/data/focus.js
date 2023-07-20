@@ -6,36 +6,36 @@ import doc from 'images/serv-focus-doc.svg';
 const focusConfig = [
   {
     imgUrl: server,
-    title: 'Шаг 1',
-    text: 'Сбор данных со всего флота',
-    alt: 'server',
+    title: 'focus.config.title1',
+    text: 'focus.config.text1',
+    alt: 'focus.config.alt1',
   },
   {
     imgUrl: satellite,
-    title: 'Шаг 2',
-    text: 'Передача данных в офис',
-    alt: 'satellite',
+    title: 'focus.config.title2',
+    text: 'focus.config.text2',
+    alt: 'focus.config.alt2',
   },
   {
     imgUrl: headphones,
-    title: 'Шаг 3',
-    text: 'Обработка полученных данных',
-    alt: 'headphones',
+    title: 'focus.config.title3',
+    text: 'focus.config.text3',
+    alt: 'focus.config.alt3',
   },
   {
     imgUrl: doc,
-    title: 'Шаг 4',
-    text: 'Выдача рекомендаций для увеличения энергоэффективности судна',
-    alt: 'doc',
+    title: 'focus.config.title4',
+    text: 'focus.config.text4',
+    alt: 'focus.config.alt4',
   },
 ];
 
 const focusOptionsConfig = [
-  { text: 'Сокращаем время на выполнение всех процессов статистики' },
-  { text: 'Высокая точность отображения параметров' },
-  { text: 'Безопасный доступ' },
-  { text: 'Хранение данных на удобной для клиента площадке' },
-  { text: 'Выдаваемые рекомендации системой на снижение расходов' },
+  { text: 'focus.options.text1' },
+  { text: 'focus.options.text2' },
+  { text: 'focus.options.text3' },
+  { text: 'focus.options.text4' },
+  { text: 'focus.options.text5' },
 ];
 
 export { focusConfig, focusOptionsConfig };

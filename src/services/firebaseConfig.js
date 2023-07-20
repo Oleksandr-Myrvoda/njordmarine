@@ -27,6 +27,13 @@ export default getStorage(app);
 
 // {
 //   "rules": {
+//         ".read": true,
+//          ".write": "auth !== null"
+//   }
+// }
+
+// {
+//   "rules": {
 //     "users": {
 //       "$uid": {
 //         ".read": "auth !== null && auth.uid === $uid",

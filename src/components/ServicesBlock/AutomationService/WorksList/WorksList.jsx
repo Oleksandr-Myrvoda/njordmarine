@@ -13,7 +13,7 @@ const WorksList = ({ worksConfig }) => {
         {worksConfig.map(({ text }, index) => (
           <li key={index} className={s.item}>
             <img src={dot} alt="dot"></img>
-            <div className={s.text}>{text}</div>
+            <div className={s.text}>{t(text)}</div>
           </li>
         ))}
       </ul>

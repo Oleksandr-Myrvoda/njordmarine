@@ -6,19 +6,19 @@ export const aboutFactConfig = [
   {
     imgUrl: fact01,
     count: '01.',
-    alt: 'lamp',
-    text: 'Предлагаем современные инновационные решения',
+    text: 'abotFactBlock.list.text1',
+    alt: 'abotFactBlock.list.text1',
   },
   {
     imgUrl: fact02,
     count: '02.',
-    alt: 'gear',
-    text: 'Оказываем помощь в совершенствовании технических процессов на судне',
+    text: 'abotFactBlock.list.text2',
+    alt: 'abotFactBlock.list.text2',
   },
   {
     imgUrl: fact03,
     count: '03.',
-    alt: 'puzzle',
-    text: 'Беремся за задачи любой сложности',
+    text: 'abotFactBlock.list.text3',
+    alt: 'abotFactBlock.list.text3',
   },
 ];

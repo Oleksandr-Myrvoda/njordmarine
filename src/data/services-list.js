@@ -5,19 +5,19 @@ import diagramUp from 'images/service-DiagramUp.svg';
 export const servicesListConfig = [
   {
     imgUrl: refreshSquare,
-    name: 'Автоматизация процессов на судне',
+    name: 'navigation.servicesListConfig.name1',
     alt: 'refreshSquare',
     to: 'automation',
   },
   {
     imgUrl: settings,
-    name: 'Техническое обслуживание',
+    name: 'navigation.servicesListConfig.name2',
     alt: 'settings',
     to: 'maintenance',
   },
   {
     imgUrl: diagramUp,
-    name: 'Система  энергоэффективности судна',
+    name: 'navigation.servicesListConfig.name3',
     alt: 'diagramUp',
     to: 'energy',
   },

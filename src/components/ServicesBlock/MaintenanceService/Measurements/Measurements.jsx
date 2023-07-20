@@ -13,12 +13,12 @@ const Measurements = ({ measurementsConfig }) => {
         {measurementsConfig.map(
           ({ imgUrl, count, title, text, alt }, index) => (
             <li key={index} className={s.item}>
-              <img className={s.image} src={imgUrl} alt={alt} />
+              <img className={s.image} src={imgUrl} alt={t(alt)} />
               <div className={s.titleWrapper}>
                 <p className={s.count}>{count}</p>
-                <p className={s.title}>{title}</p>
+                <p className={s.title}>{t(title)}</p>
               </div>
-              <p className={s.text}>{text}</p>
+              <p className={s.text}>{t(text)}</p>
             </li>
           ),
         )}

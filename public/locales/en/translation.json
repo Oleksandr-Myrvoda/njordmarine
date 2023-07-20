@@ -52,7 +52,15 @@
   },
 
   "abotFactBlock": {
-    "tagline": "3 facts about our company that will interest you"
+    "tagline": "3 facts about our company that will interest you",
+    "list": {
+      "text1": "We offer modern innovative solutions",
+      "alt1": "lamp",
+      "text2": "We provide assistance in improving the technical processes on board",
+      "alt2": "gear",
+      "text3": "We take on tasks of any complexity",
+      "alt3": "puzzle"
+    }
   },
 
   "ourTeamBlock": {
@@ -114,6 +122,182 @@
     "privacyTerms": "Read the privacy policy"
   },
 
+  "navigation": {
+    "mobileMenu": "Menu",
+    "nav1": "Main",
+    "nav2": "Company",
+    "nav3": "Services",
+    "nav4": "Spare parts",
+    "nav5": "Contacts",
+    "aboutCompany": {
+      "name1": "Abot us",
+      "name2": "Our team"
+    },
+    "servicesListConfig": {
+      "name1": "Process automation on board",
+      "name2": "Maintenance",
+      "name3": "Vessel Energy Efficiency System"
+    },
+    "sparesListConfig": {
+      "name1": "Engine room",
+      "name2": "Deck",
+      "name3": "Bridge"
+    }
+  },
+
+  "advantages": {
+    "head1": "We work 24/7",
+    "text1": "We offer our service 24/7, seven days a week",
+    "alt1": "clock",
+    "head2": "We comply expectations",
+    "text2": "The best prices and high quality of spare parts, equipment and work",
+    "alt2": "cup",
+    "head3": "Prompt delivery",
+    "text3": "High delivery speed with minimal logistics costs",
+    "alt3": "delivery",
+    "head4": "Time control",
+    "text4": "We constantly monitor the time of spare parts readiness and delivery of pending orders.",
+    "alt4": "hourglass",
+    "head5": "Quality assurance",
+    "text5": "Minimum six months warranty on all parts and labor",
+    "alt5": "shild",
+    "head6": "Modern approach",
+    "text6": "Advanced technology solutions for efficient fleet management",
+    "alt6": "star"
+  },
+
+  "scheme": {
+    "text1": "Parameter management",
+    "alt1": "panel",
+    "text2": "Parameter control",
+    "alt2": "document",
+    "text3": "Alarm list",
+    "alt3": "bell",
+    "text4": "Report",
+    "alt4": "reports"
+  },
+
+  "works": {
+    "text1": "Automation of the processes of starting, stopping and monitoring the operation of the main engines, diesel generators, boilers, pumps and other equipment",
+    "text2": "Automatic control over the operation of mechanisms and maintenance of operational documentation",
+    "text3": "Propulsion automation",
+    "text4": "Measurements of levels in tanks with the display of information on the ship's panels",
+    "text5": "Winch control",
+    "text6": "Fuel consumption accounting system and control of the state of ship machinery",
+    "text7": "Cargo equipment automation system",
+    "text8": "Installation/Modernization of alarm systems",
+    "text9": "Management of the trawl complex",
+    "text10": "Vessel Scheduled Maintenance System"
+  },
+
+  "measurements": {
+    "title1": "Preliminary inspection",
+    "text1": "Preliminary inspection of the place of measurements of residual thicknesses and coordination of the scope of work",
+    "alt1": "magnifer",
+    "title2": "Coordination",
+    "text2": "Coordination of survey programs with the inspector of the classification society",
+    "alt2": "engeneer",
+    "title3": "Measurement",
+    "text3": "Thickness measurement of steel structures of ships and land terminals",
+    "alt3": "angular",
+    "title4": "Documentation",
+    "text4": "Drawing up reports on the work performed in accordance with the rules of classification societies",
+    "alt4": "document",
+    "title5": "Blueprints",
+    "text5": "Preparation of repair drawings using detailed weight tables",
+    "alt5": "pen"
+  },
+
+  "configs": {
+    "consumers": {
+      "title": "Main consumers",
+      "text1": "Fuel consumption by Main, Auxiliary engines, Boilers (costs - hourly, total, for a certain, selected period of time)",
+      "text2": "Operating time of mechanisms",
+      "text3": "Turnovers and load of Main and Diesel generators",
+      "text4": "Temperature of fuel, gases, coolant",
+      "text5": "Working condition of engines",
+      "text6": "Generating reports (daily, weekly, monthly, navigation)"
+    },
+    "control": {
+      "title": "Bunker control",
+      "text1": "The volume of received / issued cargo",
+      "text2": "Mass, density and temperature of fuel during bunkering",
+      "text3": "The time of the process of receiving / issuing cargo",
+      "text4": "Automatic report generation"
+    },
+    "option": {
+      "title": "Vessel parameters",
+      "text1": "Position and course of the vessel",
+      "text2": "Vessel speed",
+      "text3": "Monitoring the state of ship consumers",
+      "text4": "Vessel roll / trim",
+      "text5": "Ship Energy (HVAC)",
+      "text6": "Cost Efficiency / Vessel Efficiency"
+    },
+    "additional": {
+      "title": "Extra options",
+      "text1": "Alarm control",
+      "text2": "Level measurements in tanks",
+      "text3": "Valve remote control system"
+    }
+  },
+
+  "energyMenu": {
+    "name1": "Solution on board",
+    "name2": "FOCUS system for the fleet",
+    "name3": "Office solution"
+  },
+
+  "focus": {
+    "title": "Fleet Focus System",
+    "textBold": "Fleet FOCUS System ",
+    "text": "this is a system for monitoring, accounting for fuel and energy efficiency of the fleet",
+    "head": "How FOCUS works",
+    "text2": "A clear interaction between the fleet and the office will help to build all processes at a high level and reduce further costs.",
+    "titleBottom": "The FOCUS system has been designed to carry out all these processes as a single product.",
+
+    "config": {
+      "title1": "Step 1",
+      "text1": "Collection of data of the entire fleet",
+      "alt1": "server",
+      "title2": "Step 2",
+      "text2": "Data transfer to the office",
+      "alt2": "satellite",
+      "title3": "Step 3",
+      "text3": "Processing of received data",
+      "alt3": "headphones",
+      "title4": "Step 4",
+      "text4": "Issuance of recommendations to increase the energy efficiency of the vessel",
+      "alt4": "document"
+    },
+
+    "options": {
+      "text1": "We reduce the time to complete all statistical processes",
+      "text2": "High accuracy of parameter display",
+      "text3": "Secure access",
+      "text4": "Storing data on a site convenient for the client",
+      "text5": "Recommendations issued by the system to reduce costs"
+    }
+  },
+
+  "office": {
+    "title": "Office solution",
+    "text1": "Thanks to our office solution",
+    "text2": "you can easily control all indicators of the operating parameters of the vessel with subsequent online adjustment",
+    "head": "The system displays and allows you to control the following parameters",
+    "list": {
+      "text1": "Instant flow, temperature, fuel density of Main Engines, Diesel Generators and Boiler",
+      "text2": "Main parameters for the shaft (power, revolutions, loads)",
+      "text3": "Vessel efficiency",
+      "text4": "The speed and position of the vessel on the chart at the time",
+      "text5": "Angle of roll/draft of the ship",
+      "text6": "The strength and direction of the wind relative to the ship",
+      "text7": "Control of the bunkering process with the subsequent creation of a report",
+      "text8": "History of vessel passages/berths in port",
+      "text9": "Fuel consumption by consumers over a certain period of time (history)"
+    }
+  },
+
   "common": {
     "brochure": "Download our brochure",
     "brochureBtn": "Download brochure"
@@ -127,6 +311,8 @@
     "focus": "FOCUS system for the fleet",
     "contacts": "Contacts",
     "deck": "Deck",
-    "bridge": "Bridge"
+    "bridge": "Bridge",
+    "office": "Office solution",
+    "spares": "Spare parts"
   }
 }

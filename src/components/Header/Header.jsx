@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 
 import BrochureButton from 'common/BrochureButton';
@@ -15,7 +16,7 @@ import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
 
 const Header = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
-
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
@@ -46,7 +47,8 @@ const Header = () => {
             </NavLink>
 
             <button type="button" className={s.menuBtn} onClick={toggleSidebar}>
-              Меню <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
+              {t('navigation.mobileMenu')}
+              <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
             </button>
 
             <Sidebar isOpen={isOpen} />
