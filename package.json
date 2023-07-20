@@ -27,7 +27,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "nodemon server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -57,7 +56,6 @@
     "eslint": "^8.42.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
     "prop-types": "^15.8.1"
   },
