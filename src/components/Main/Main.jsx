@@ -9,7 +9,6 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 // import NotFound from 'pages/NotFound';
 import AuthPage from 'components/AuthPage/AuthPage';
 import s from './Main.module.css';
-import { json } from 'express';
 
 const HomePage = lazy(() =>
   import('pages/HomePage' /* webpackChunkName: "Home___page" */),

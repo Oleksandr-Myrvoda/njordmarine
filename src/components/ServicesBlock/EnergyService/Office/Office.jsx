@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import SendInfo from 'common/SendInfo';
 import ListWithDot from '../ListWithDot';
 import { officeConfig } from 'data/office';
@@ -5,26 +6,27 @@ import { officeConfig } from 'data/office';
 import s from './Office.module.css';
 
 const Office = () => {
+  const { t } = useTranslation();
   return (
     <div className={s.blockWrapper}>
       <div className={s.hero}>
-        <p className={s.title}>Офисное решение</p>
+        <p className={s.title}>{t('office.title')}</p>
       </div>
 
       <p className={s.text}>
-        Благодаря нашему офисному решению
-        <span className={s.focus}>“FOCUS Onshore”</span>, Вы легко сможете
-        контролировать все показатели рабочих параметров судна с последующей
-        корректировкой в режиме онлайн.
+        {t('office.text1')}
+        <span className={s.focus}> “FOCUS Onshore”</span>, {t('office.text2')}.
       </p>
 
-      <h2 className={s.head}>
-        Система отображает и позволяет контролировать следующие параметры:
-      </h2>
+      <h2 className={s.head}>{t('office.head')}:</h2>
 
       <ListWithDot config={officeConfig} />
 
-      <SendInfo linkName="Запчасти" linkPath="/spares" hideLink={false} />
+      <SendInfo
+        linkName={t('sendInfo.spares')}
+        linkPath="/spares"
+        hideLink={false}
+      />
     </div>
   );
 };

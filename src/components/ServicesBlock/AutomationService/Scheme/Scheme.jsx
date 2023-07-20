@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
+import PropTypes from 'prop-types';
 import bg from 'images/serv-auto-ship.png';
 import bgMob from 'images/serv-auto-ship-mob.png';
 import s from './Scheme.module.css';
@@ -18,10 +18,10 @@ const Scheme = ({ schemeConfig }) => {
         <ul className={s.list}>
           {schemeConfig.map(({ imgUrl, count, text, alt }, index) => (
             <li key={index} className={s.item}>
-              <img className={s.image} src={imgUrl} alt={alt} />
+              <img className={s.image} src={imgUrl} alt={t(alt)} />
               <div>
                 <p className={s.count}>{count}</p>
-                <p className={s.descr}>{text}</p>
+                <p className={s.descr}>{t(text)}</p>
               </div>
             </li>
           ))}

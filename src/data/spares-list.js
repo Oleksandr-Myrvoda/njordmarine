@@ -5,19 +5,19 @@ import wheel from 'images/spares-steering-wheel.svg';
 export const sparesListConfig = [
   {
     imgUrl: engine,
-    name: 'Машинное отделение',
+    name: 'navigation.sparesListConfig.name1',
     alt: 'engine',
     to: 'engine-room',
   },
   {
     imgUrl: lifebuoy,
-    name: 'Палуба',
+    name: 'navigation.sparesListConfig.name2',
     alt: 'lifebuoy',
     to: 'deck',
   },
   {
     imgUrl: wheel,
-    name: 'Мостик',
+    name: 'navigation.sparesListConfig.name3',
     alt: 'wheel',
     to: 'bridge',
   },

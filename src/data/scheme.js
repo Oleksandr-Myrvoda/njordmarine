@@ -7,25 +7,25 @@ export const schemeConfig = [
   {
     imgUrl: panel,
     count: '01.',
-    text: 'Управление параметрами',
-    alt: 'panel',
+    text: 'scheme.text1',
+    alt: 'scheme.alt1',
   },
   {
     imgUrl: doc,
     count: '02.',
-    text: 'Контроль параметров',
-    alt: 'doc',
+    text: 'scheme.text2',
+    alt: 'scheme.alt2',
   },
   {
     imgUrl: bell,
     count: '03.',
-    text: 'Лист тревог',
-    alt: 'bell',
+    text: 'scheme.text3',
+    alt: 'scheme.alt3',
   },
   {
     imgUrl: raports,
     count: '04.',
-    text: 'Рапорта',
-    alt: 'raports',
+    text: 'scheme.text4',
+    alt: 'scheme.alt4',
   },
 ];

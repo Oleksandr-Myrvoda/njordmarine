@@ -1,47 +1,43 @@
 const consumersConfig = {
-  title: 'Главные потребители',
+  title: 'configs.consumers.title',
   list: [
-    {
-      text: 'Расход топлива Главными, Вспомогательными двигателями, Котлами (расходы - часовой, суммарный, за определенный, выбранный промежуток времени)',
-    },
-    { text: 'Время работы механизмов' },
-    { text: 'Обороты и нагрузка Главных и Дизель генераторов' },
-    { text: 'Температура топлива, газов, охлаждающей жидкости' },
-    { text: 'Рабочее состояние двигателей' },
-    {
-      text: 'Генерирование рапортов (суточный, еженедельный, ежемесячный, навигацию)',
-    },
+    { text: 'configs.consumers.text1' },
+    { text: 'configs.consumers.text2' },
+    { text: 'configs.consumers.text3' },
+    { text: 'configs.consumers.text4' },
+    { text: 'configs.consumers.text5' },
+    { text: 'configs.consumers.text6' },
   ],
 };
 
 const controlConfig = {
-  title: 'Контроль бункеровки',
+  title: 'configs.control.title',
   list: [
-    { text: 'Объем полученного/выданного груза' },
-    { text: 'Масса, плотность и температура топлива при бункеровке' },
-    { text: 'Время процесса приема/выдачи груза' },
-    { text: 'Автоматическое генерирование рапортов' },
+    { text: 'configs.control.text1' },
+    { text: 'configs.control.text2' },
+    { text: 'configs.control.text3' },
+    { text: 'configs.control.text4' },
   ],
 };
 
 const optionConfig = {
-  title: 'Параметры судна',
+  title: 'configs.option.title',
   list: [
-    { text: 'Местоположение и курс судна' },
-    { text: 'Скорость судна' },
-    { text: 'Контроль состояния судовых потребителей' },
-    { text: 'Крен / дифферент судна' },
-    { text: 'Энергетика судна (HVAC)' },
-    { text: 'Эффективность расходов / эффективность судна' },
+    { text: 'configs.option.text1' },
+    { text: 'configs.option.text2' },
+    { text: 'configs.option.text3' },
+    { text: 'configs.option.text4' },
+    { text: 'configs.option.text5' },
+    { text: 'configs.option.text6' },
   ],
 };
 
 const additionalConfig = {
-  title: 'Дополнительные параметры',
+  title: 'configs.additional.title',
   list: [
-    { text: 'Контроль аварийной сигнализации' },
-    { text: 'Замеры уровней в танках' },
-    { text: 'Система дистанционного управления клапанами' },
+    { text: 'configs.additional.text1' },
+    { text: 'configs.additional.text2' },
+    { text: 'configs.additional.text3' },
   ],
 };
 
