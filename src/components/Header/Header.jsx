@@ -14,10 +14,13 @@ import logoHeaderMob from '../../images/Logo-header-mob.svg';
 import s from './Header.module.css';
 import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
 
+import { useAuthContext } from 'services/AuthProvider';
+
 const Header = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const { isLogin, unsetToken } = useAuthContext();
   const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
   const cardRef = useRef(null);
@@ -30,6 +33,12 @@ const Header = () => {
 
   return (
     <header ref={cardRef} className={s.mainHeader}>
+      {isLogin && (
+        <button type="button" onClick={() => unsetToken()}>
+          Logout
+        </button>
+      )}
+
       {isDesktop ? (
         <>
           <Contacts contactsConfig={contactsConfig} />

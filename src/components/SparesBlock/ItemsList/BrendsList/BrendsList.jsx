@@ -8,9 +8,12 @@ import * as api from 'services/api';
 
 import s from './BrendsList.module.css';
 
+import { useAuthContext } from 'services/AuthProvider';
+
 const BrendsList = ({ brends = [], onClose, setSpares }) => {
   const match = useRouteMatch();
   const [newBrend, setNewBrend] = useState('');
+  const { isLogin, token } = useAuthContext();
 
   // ADD ===============================================
 
@@ -31,6 +34,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
       const newBrendAdd = await api.addBrendApi({
         endpoint: match.url,
         brend: newBrend,
+        token,
       });
       addBrendState({
         itemId: match.params.itemId,
@@ -61,7 +65,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
 
   const editBrend = (id, editedData) => {
     return api
-      .editBrendApi({ endpoint: match.url, item: editedData, id })
+      .editBrendApi({ endpoint: match.url, item: editedData, id, token })
       .then(brend =>
         editBrendState({
           itemId: match.params.itemId,
@@ -89,7 +93,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
 
   const deleteBrend = id => {
     return api
-      .deleteBrendApi({ endpoint: match.url, id })
+      .deleteBrendApi({ endpoint: match.url, id, token })
       .then(() =>
         deleteBrendState({ itemId: match.params.itemId, brendId: id }),
       )
@@ -118,17 +122,19 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
         ))}
       </ul>
 
-      <form onSubmit={addBrend} className={s.addForm}>
-        <input
-          className={s.input}
-          type="text"
-          value={newBrend}
-          onChange={e => setNewBrend(e.target.value)}
-        />
-        <button type="submit" className={s.button} text="Add">
-          Add
-        </button>
-      </form>
+      {isLogin && (
+        <form onSubmit={addBrend} className={s.addForm}>
+          <input
+            className={s.input}
+            type="text"
+            value={newBrend}
+            onChange={e => setNewBrend(e.target.value)}
+          />
+          <button type="submit" className={s.button} text="Add">
+            Add
+          </button>
+        </form>
+      )}
       <BigButton onClick={onClose} text="Закрыть" />
     </div>
   );

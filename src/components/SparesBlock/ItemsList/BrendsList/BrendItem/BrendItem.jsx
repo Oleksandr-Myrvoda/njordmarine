@@ -3,6 +3,7 @@ import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import PropTypes from 'prop-types';
 import CardWithMenu from 'common/CardWithMenu';
 import s from './BrendItem.module.css';
+import { useAuthContext } from 'services/AuthProvider';
 
 const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
   const [isAuth] = useState(true);
@@ -10,6 +11,7 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
   const [editedData, setEditedData] = useState({
     brend: null, // brend
   });
+  const { isLogin } = useAuthContext();
 
   const cardRef = useRef(null);
   const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
@@ -56,7 +58,7 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
       )}
 
       {/* ================= */}
-      {isAuth && isMenuOpen && (
+      {isLogin && isMenuOpen && (
         <CardWithMenu
           // isEditing={editedData.brend}
           onEdit={handleEditData}

@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { Suspense, lazy } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 // import AboutCompanyPage from 'pages/AboutCompanyPage';
@@ -7,8 +7,9 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 // import SparesPage from 'pages/SparesPage';
 // import ContactsPage from 'pages/ContactsPage';
 // import NotFound from 'pages/NotFound';
-import AuthPage from 'components/AuthPage/AuthPage';
+import AdminPage from 'pages/AdminPage';
 import s from './Main.module.css';
+import { ErrorProvider } from 'context/ErrorProvider';
 
 const HomePage = lazy(() =>
   import('pages/HomePage' /* webpackChunkName: "Home___page" */),
@@ -33,15 +34,6 @@ const ContactsPage = lazy(() =>
 );
 
 const Main = () => {
-  const [token, setToken] = useState(null);
-  // const [token, setToken] = useState(() =>
-  //   JSON.parse(localStorage.getItem('token')),
-  // );
-
-  // useEffect(() => {
-  //   localStorage.setItem(JSON.stringify('token', token));
-  // }, [token]);
-
   return (
     <main className={s.main}>
       <Suspense fallback={<h2>"Loading..."</h2>}>
@@ -70,7 +62,9 @@ const Main = () => {
 
           {/*--- SPARES ------------------------*/}
           <Route path="/spares">
-            <SparesPage token={token} />
+            <ErrorProvider>
+              <SparesPage />
+            </ErrorProvider>
           </Route>
 
           {/*--- CONTACTS ------------------------*/}
@@ -79,7 +73,8 @@ const Main = () => {
           </Route>
 
           <Route path="/admin">
-            <AuthPage setToken={setToken} />
+            {/* <AuthPage setToken={setToken} /> */}
+            <AdminPage />
           </Route>
         </Switch>
       </Suspense>

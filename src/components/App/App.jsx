@@ -54,7 +54,9 @@ export default App;
 // # if you'd like to detect user language and load translation
 // npm install i18next-http-backend i18next-browser-languagedetector --save
 
+//form -------------------------------
 // npm install react-hook-form
+// npm i @emailjs/browser
 
 // npm install --save-dev prop-types
 // npm install react-icons --save

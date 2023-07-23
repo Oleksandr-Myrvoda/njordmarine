@@ -1,0 +1,21 @@
+.pageWrapper {
+  /* padding: 48px 0; */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--bg-light-color);
+  height: 65vh;
+}
+.taglineWrapper {
+  padding: 48px 16px 0 16px;
+}
+
+@media screen and (min-width: 1440px) {
+  .pageWrapper {
+    padding-bottom: 96px;
+    gap: 60px;
+  }
+  .taglineWrapper {
+    padding: 176px 96px 0 96px;
+  }
+}

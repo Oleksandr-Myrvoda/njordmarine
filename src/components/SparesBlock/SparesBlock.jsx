@@ -8,12 +8,18 @@ import PropTypes from 'prop-types';
 import * as api from 'services/api';
 import s from './SparesBlock.module.css';
 
-const SparesBlock = ({ path, name, linkName, linkPath, token }) => {
+import { useAuthContext } from 'services/AuthProvider';
+import { useSetError } from 'context/ErrorProvider';
+
+const SparesBlock = ({ path, name, linkName, linkPath }) => {
   const match = useRouteMatch();
   const inputRef = useRef(null);
   const [spares, setSpares] = useState([]);
   const [itemTitle, setItemTitle] = useState('');
   const [imgUrl, setImgUrl] = useState('');
+  const { isLogin, token } = useAuthContext();
+
+  const setError = useSetError();
 
   // GET =======
 
@@ -27,8 +33,8 @@ const SparesBlock = ({ path, name, linkName, linkPath, token }) => {
 
   // ADD =======
 
-  const addData = async e => {
-    e.preventDefault();
+  const addData = async (imgUrl = null, newToken) => {
+    // e.preventDefault();
     try {
       const newSpare = await api.addItemApi(
         path,
@@ -37,16 +43,18 @@ const SparesBlock = ({ path, name, linkName, linkPath, token }) => {
           imgUrl,
           brends: [],
         },
-        token,
+        newToken ? newToken : token,
       );
       setSpares(prevData => [...prevData, newSpare]);
     } catch (error) {
-      console.log(error.messgae);
+      setError({ error, cb: token => addData(imgUrl, token) });
+      // console.log(error.messgae);
     } finally {
       reset();
     }
   };
 
+  // const handleAddData = () => {};
   // EDIT =======
 
   const editData = (id, editedData) => {
@@ -66,7 +74,7 @@ const SparesBlock = ({ path, name, linkName, linkPath, token }) => {
 
   const deleteData = (id, deletedData) => {
     return api
-      .deleteItemApi({ endpoint: match.url, item: deletedData, id })
+      .deleteItemApi({ endpoint: match.url, item: deletedData, id, token })
       .then(data => {
         setSpares(prevSpares => prevSpares.filter(el => el.id !== data.id));
       })
@@ -93,19 +101,21 @@ const SparesBlock = ({ path, name, linkName, linkPath, token }) => {
         setImage={setImgUrl}
       />
 
-      <form className={s.addForm} onSubmit={addData}>
-        <input
-          className={s.addFormInput}
-          ref={inputRef}
-          value={itemTitle}
-          type="text"
-          required
-          onChange={e => setItemTitle(e.target.value)}
-          placeholder="itemTitle"
-        />
+      {isLogin && (
+        <form className={s.addForm}>
+          <input
+            className={s.addFormInput}
+            ref={inputRef}
+            value={itemTitle}
+            type="text"
+            required
+            onChange={e => setItemTitle(e.target.value)}
+            placeholder="itemTitle"
+          />
 
-        <FileUploader setImage={setImgUrl} />
-      </form>
+          <FileUploader uploadData={addData} />
+        </form>
+      )}
 
       <SendInfo linkName={linkName} linkPath={linkPath} hideLink={false} />
     </div>

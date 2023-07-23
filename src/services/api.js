@@ -49,33 +49,50 @@ const editItemApi = ({ endpoint, item, id, token }) => {
     .then(response => ({ ...response.data, id }));
 };
 
-const deleteItemApi = ({ endpoint, item, id }) => {
+const deleteItemApi = ({ endpoint, id, token }) => {
   return axios
-    .delete(`${endpoint}/${id}.json`, item)
+    .delete(`${endpoint}/${id}.json`, {
+      params: {
+        auth: token,
+      },
+    })
     .then(response => ({ ...response.data, id }));
 };
 
 // BREND =======
 
-const addBrendApi = ({ endpoint, brend }) => {
+const addBrendApi = ({ endpoint, brend, token }) => {
   return axios
-    .post(`${endpoint}/brends.json`, { brend })
+    .post(
+      `${endpoint}/brends.json`,
+      { brend },
+      {
+        params: {
+          auth: token,
+        },
+      },
+    )
     .then(({ data }) => ({ id: data.name, brend }));
 };
 
-const editBrendApi = ({ endpoint, item, id }) => {
+const editBrendApi = ({ endpoint, item, id, token }) => {
   return axios
-    .patch(`${endpoint}/brends/${id}.json`, item)
+    .patch(`${endpoint}/brends/${id}.json`, item, {
+      params: {
+        auth: token,
+      },
+    })
     .then(response => ({ ...response.data, id }));
-  // .then(response => console.log(response));
 };
 
-const deleteBrendApi = ({ endpoint, id }) => {
-  // console.log('endpoint', endpoint);
+const deleteBrendApi = ({ endpoint, id, token }) => {
   return axios
-    .delete(`${endpoint}/brends/${id}.json`)
+    .delete(`${endpoint}/brends/${id}.json`, {
+      params: {
+        auth: token,
+      },
+    })
     .then(response => ({ ...response.data, id }));
-  // .then(response => console.log(response));
 };
 
 export {

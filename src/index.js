@@ -6,11 +6,15 @@ import './i18n';
 import './styles/index.css';
 import './styles/global.module.css';
 
+import { AuthProvider } from './services/AuthProvider';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </BrowserRouter>,
   // </React.StrictMode>,
 );
