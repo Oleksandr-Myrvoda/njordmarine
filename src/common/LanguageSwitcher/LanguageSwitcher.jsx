@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useLangContext } from 'context/LangProvider';
 import s from './LanguageSwitcher.module.css';
 
 const languages = {
@@ -8,6 +9,7 @@ const languages = {
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
+  const { language, setLanguage } = useLangContext();
 
   return (
     <div className={s.switcher}>

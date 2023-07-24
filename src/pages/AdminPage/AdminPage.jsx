@@ -1,8 +1,7 @@
-import s from './AdminPage.module.css';
-import PropTypes from 'prop-types';
 import AuthBlock from 'components/AuthBlock';
+import s from './AdminPage.module.css';
 
-const AdminPage = props => {
+const AdminPage = () => {
   return (
     <div className={s.pageWrapper}>
       <div className={s.taglineWrapper}>
@@ -12,7 +11,5 @@ const AdminPage = props => {
     </div>
   );
 };
-
-AdminPage.propTypes = {};
 
 export default AdminPage;

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
+import { useAuthContext } from 'context/AuthProvider';
+import { useSetError } from 'context/ErrorProvider';
 
 import SendInfo from 'common/SendInfo';
 import FileUploader from './ItemsList/FileUploader';
@@ -8,14 +10,17 @@ import PropTypes from 'prop-types';
 import * as api from 'services/api';
 import s from './SparesBlock.module.css';
 
-import { useAuthContext } from 'services/AuthProvider';
-import { useSetError } from 'context/ErrorProvider';
-
 const SparesBlock = ({ path, name, linkName, linkPath }) => {
   const match = useRouteMatch();
   const inputRef = useRef(null);
   const [spares, setSpares] = useState([]);
-  const [itemTitle, setItemTitle] = useState('');
+  // const [itemTitle, setItemTitle] = useState('');
+  // const [itemTitle, setItemTitle] = useState({
+  //   ru: '',
+  //   en: '',
+  // });
+  const [itemTitleRu, setItemTitleRu] = useState('');
+  const [itemTitleEn, setItemTitleEn] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   const { isLogin, token } = useAuthContext();
 
@@ -39,7 +44,9 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
       const newSpare = await api.addItemApi(
         path,
         {
-          itemTitle,
+          // itemTitle,
+          itemTitleRu,
+          itemTitleEn,
           imgUrl,
           brends: [],
         },
@@ -58,6 +65,7 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
   // EDIT =======
 
   const editData = (id, editedData) => {
+    console.log('editedData', editedData);
     return api
       .editItemApi({ endpoint: match.url, item: editedData, id, token })
       .then(data => {
@@ -86,7 +94,9 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
   // ===============================================
 
   const reset = () => {
-    setItemTitle('');
+    // setItemTitle('');
+    setItemTitleRu('');
+    setItemTitleEn('');
     setImgUrl('');
   };
 
@@ -103,14 +113,36 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
 
       {isLogin && (
         <form className={s.addForm}>
-          <input
+          {/* <input
             className={s.addFormInput}
             ref={inputRef}
             value={itemTitle}
             type="text"
             required
             onChange={e => setItemTitle(e.target.value)}
-            placeholder="itemTitle"
+            placeholder="Title in english"
+          /> */}
+          <input
+            className={s.addFormInput}
+            ref={inputRef}
+            // value={itemTitle}
+            value={itemTitleRu}
+            type="text"
+            required
+            onChange={e => setItemTitleRu(e.target.value)}
+            // onChange={e => setItemTitle(e.target.value)}
+            placeholder="Название на русском"
+          />
+          <input
+            className={s.addFormInput}
+            ref={inputRef}
+            // value={itemTitle}
+            value={itemTitleEn}
+            type="text"
+            required
+            onChange={e => setItemTitleEn(e.target.value)}
+            // onChange={e => setItemTitle(e.target.value)}
+            placeholder="Title in english"
           />
 
           <FileUploader uploadData={addData} />

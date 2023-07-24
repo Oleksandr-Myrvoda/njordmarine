@@ -1,15 +1,16 @@
 import { Suspense, lazy } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
+import { ErrorProvider } from 'context/ErrorProvider';
+import { LangProvider } from 'context/LangProvider';
 // import AboutCompanyPage from 'pages/AboutCompanyPage';
 // import HomePage from 'pages/HomePage';
 // import ServicesListPage from 'pages/ServicesListPage';
 // import SparesPage from 'pages/SparesPage';
 // import ContactsPage from 'pages/ContactsPage';
 // import NotFound from 'pages/NotFound';
-import AdminPage from 'pages/AdminPage';
+// import AdminPage from 'pages/AdminPage';
 import s from './Main.module.css';
-import { ErrorProvider } from 'context/ErrorProvider';
 
 const HomePage = lazy(() =>
   import('pages/HomePage' /* webpackChunkName: "Home___page" */),
@@ -28,9 +29,10 @@ const SparesPage = lazy(() =>
   import('pages/SparesPage' /* webpackChunkName: "Spares___page" */),
 );
 const ContactsPage = lazy(() =>
-  import(
-    '../../pages/ContactsPage/ContactsPage' /* webpackChunkName: "Contacts___page" */
-  ),
+  import('pages/ContactsPage' /* webpackChunkName: "Contacts___page" */),
+);
+const AdminPage = lazy(() =>
+  import('pages/AdminPage' /* webpackChunkName: "Admin___page" */),
 );
 
 const Main = () => {
@@ -63,7 +65,9 @@ const Main = () => {
           {/*--- SPARES ------------------------*/}
           <Route path="/spares">
             <ErrorProvider>
-              <SparesPage />
+              <LangProvider>
+                <SparesPage />
+              </LangProvider>
             </ErrorProvider>
           </Route>
 
@@ -72,8 +76,8 @@ const Main = () => {
             <ContactsPage />
           </Route>
 
+          {/*--- ADMIN ------------------------*/}
           <Route path="/admin">
-            {/* <AuthPage setToken={setToken} /> */}
             <AdminPage />
           </Route>
         </Switch>

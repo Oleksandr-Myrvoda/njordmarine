@@ -3,6 +3,8 @@ import { useMediaQuery } from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
+import { useAuthContext } from 'context/AuthProvider';
+import { LangProvider } from 'context/LangProvider';
 
 import BrochureButton from 'common/BrochureButton';
 import Contacts from 'common/Contacts';
@@ -13,8 +15,6 @@ import burgerClose from '../../images/List-Close.png';
 import logoHeaderMob from '../../images/Logo-header-mob.svg';
 import s from './Header.module.css';
 import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
-
-import { useAuthContext } from 'services/AuthProvider';
 
 const Header = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -33,18 +33,30 @@ const Header = () => {
 
   return (
     <header ref={cardRef} className={s.mainHeader}>
-      {isLogin && (
+      {/* {isLogin && (
         <button type="button" onClick={() => unsetToken()}>
           Logout
         </button>
-      )}
+      )} */}
 
       {isDesktop ? (
         <>
           <Contacts contactsConfig={contactsConfig} />
 
+          {isLogin && (
+            <button
+              className={s.logoutBtn}
+              type="button"
+              onClick={() => unsetToken()}
+            >
+              Logout
+            </button>
+          )}
+
           <Suspense fallback={<h2>"Loading..."</h2>}>
-            <LanguageSwitcher />
+            <LangProvider>
+              <LanguageSwitcher />
+            </LangProvider>
           </Suspense>
           <BrochureButton />
         </>
@@ -54,6 +66,16 @@ const Header = () => {
             <NavLink to="/">
               <img src={logoHeaderMob} alt="logo" />
             </NavLink>
+
+            {isLogin && (
+              <button
+                className={s.menuBtn}
+                type="button"
+                onClick={() => unsetToken()}
+              >
+                Logout
+              </button>
+            )}
 
             <button type="button" className={s.menuBtn} onClick={toggleSidebar}>
               {t('navigation.mobileMenu')}

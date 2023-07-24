@@ -25,7 +25,6 @@ export const refreshTokenApi = refreshToken => {
 export const loginUser = ({ email, password }) => {
   return authAxios
     .post(
-      // '/accounts:signUp',
       '/accounts:signInWithPassword',
       {
         email: email,

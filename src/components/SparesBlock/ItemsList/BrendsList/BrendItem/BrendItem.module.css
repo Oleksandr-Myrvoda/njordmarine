@@ -1,4 +1,7 @@
 .item {
+  display: flex;
+  flex-direction: column;
+
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;

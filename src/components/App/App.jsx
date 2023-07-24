@@ -6,7 +6,6 @@ import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
 import { Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
-// import AuthProvider from 'services/AuthProvider';
 
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -24,7 +23,6 @@ function App() {
           <div className="content">
             <Suspense fallback={<h2>"Loading..."</h2>}>
               <Header />
-              {/* <AuthProvider /> */}
             </Suspense>
             <Main />
           </div>

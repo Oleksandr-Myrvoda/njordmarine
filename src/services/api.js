@@ -30,6 +30,7 @@ const getData = endpoint => {
 };
 
 const addItemApi = (endpoint, item, token) => {
+  // console.log('item', item);
   return axios
     .post(`${endpoint}.json`, item, {
       params: {
@@ -40,6 +41,7 @@ const addItemApi = (endpoint, item, token) => {
 };
 
 const editItemApi = ({ endpoint, item, id, token }) => {
+  console.log('item', item);
   return axios
     .patch(`${endpoint}/${id}.json`, item, {
       params: {

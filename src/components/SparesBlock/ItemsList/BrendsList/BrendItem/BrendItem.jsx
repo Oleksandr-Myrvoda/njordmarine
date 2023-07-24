@@ -1,12 +1,12 @@
 import { useState, useRef } from 'react';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import PropTypes from 'prop-types';
+import { useAuthContext } from 'context/AuthProvider';
 import CardWithMenu from 'common/CardWithMenu';
 import s from './BrendItem.module.css';
-import { useAuthContext } from 'services/AuthProvider';
 
 const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
-  const [isAuth] = useState(true);
+  // const [isAuth] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [editedData, setEditedData] = useState({
     brend: null, // brend
@@ -24,7 +24,6 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
   };
 
   const handleDeleteData = () => {
-    // console.log('brend id', id);
     deleteBrend(id);
   };
 

@@ -6,7 +6,7 @@ import {
   useCallback,
 } from 'react';
 import { refreshTokenApi } from 'services/firebaseAuth';
-import { useAuthContext } from 'services/AuthProvider';
+import { useAuthContext } from 'context/AuthProvider';
 
 // Создаем контекст
 const ErrorContext = createContext();

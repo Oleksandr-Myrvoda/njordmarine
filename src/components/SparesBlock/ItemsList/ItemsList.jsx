@@ -12,6 +12,22 @@ const ItemsList = ({ items, editData, deleteData, setSpares, setImage }) => {
   return (
     <>
       <ul className={s.listWrapper}>
+        {items.map(({ itemTitle, itemTitleRu, itemTitleEn, imgUrl, id }) => {
+          return (
+            <Item
+              key={id}
+              id={id}
+              itemTitleRu={itemTitleRu}
+              itemTitleEn={itemTitleEn}
+              imgUrl={imgUrl}
+              editData={editData}
+              deleteData={deleteData}
+              setImage={setImage}
+            />
+          );
+        })}
+      </ul>
+      {/* <ul className={s.listWrapper}>
         {items.map(({ itemTitle, imgUrl, id }) => {
           return (
             <Item
@@ -25,7 +41,7 @@ const ItemsList = ({ items, editData, deleteData, setSpares, setImage }) => {
             />
           );
         })}
-      </ul>
+      </ul> */}
 
       <Route
         path={`${match.path}/:itemId`}

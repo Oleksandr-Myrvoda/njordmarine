@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useAuthContext } from 'context/AuthProvider';
 
 import BigButton from 'common/BigButton';
 import BrendItem from './BrendItem/BrendItem';
 import * as api from 'services/api';
 
 import s from './BrendsList.module.css';
-
-import { useAuthContext } from 'services/AuthProvider';
 
 const BrendsList = ({ brends = [], onClose, setSpares }) => {
   const match = useRouteMatch();
