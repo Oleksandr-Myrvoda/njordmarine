@@ -4,7 +4,8 @@
   gap: 10px;
 }
 .item {
-  background-color: var(--bg-light-color);
+  background-color: #fff;
+  /* background-color: var(--bg-light-color); */
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -49,12 +50,14 @@
   letter-spacing: 0.24px;
   color: var(--big-button-color);
   cursor: pointer;
+  transition: all 200ms;
 }
 .button::after {
   display: block;
   padding-left: 15px;
   align-items: center;
   content: url('../../../../images/arrowRight.svg');
+  transition: all 200ms;
 }
 
 @media screen and (min-width: 1440px) {

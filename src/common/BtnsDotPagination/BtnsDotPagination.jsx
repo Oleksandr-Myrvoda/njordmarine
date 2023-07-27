@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import s from './BtnsDotPagination.module.css';
 import PropTypes from 'prop-types';
 
@@ -9,8 +8,6 @@ const BtnsDotPagination = ({ buttonsList, currentPage, setCurrentPage }) => {
         <li key={id}>
           <button
             className={`${currentPage === id ? s.isActiveStyle : s.pagiBtnDot}`}
-            // className={s.pagiBtnDot}
-            // className={clsx(s.pagiBtnDot, isAvtive && s.isActiveStyle)}
             onClick={() => setCurrentPage(id)}
           ></button>
         </li>

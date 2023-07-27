@@ -17,7 +17,6 @@ const Navigation = () => {
 
   return (
     <nav className={s.nav}>
-      {/* <NavItem name="01. Главная" path="/" /> */}
       <div onClick={() => handleMenuClick('home')}>
         <NavItem name={`01. ${t('navigation.nav1')}`} path="/home" />
       </div>

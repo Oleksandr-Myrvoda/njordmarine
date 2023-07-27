@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuthContext } from 'context/AuthProvider';
 import { useLangContext } from 'context/LangProvider';
 import CardWithMenu from 'common/CardWithMenu';
@@ -21,6 +22,7 @@ const Item = ({
   const [editedData, setEditedData] = useState(null); //{ imgUrl, itemTitle }
   const { isLogin } = useAuthContext();
   const { lang } = useLangContext();
+  const { t } = useTranslation();
 
   const match = useRouteMatch();
   const history = useHistory();
@@ -82,17 +84,21 @@ const Item = ({
               value={editedData.itemTitle.ru}
               name="ru"
               onChange={handleEditTitle}
+              placeholder="На русском"
+              autocomplete="off"
             />
             <input
               type="text"
               value={editedData.itemTitle.en}
               name="en"
               onChange={handleEditTitle}
+              placeholder="In english"
+              autocomplete="off"
             />
           </>
         )}
         <button onClick={openModal} className={s.button}>
-          Смотреть бренды
+          {t('spares.brandsBtn')}
         </button>
       </div>
 

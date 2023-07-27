@@ -9,8 +9,13 @@
   background: linear-gradient(
     180deg,
     var(--bg-medium-color) 50%,
-    var(--bg-light-color) 50%
+    var(#ebf3ff) 50%
   );
+  /* background: linear-gradient(
+    180deg,
+    var(--bg-medium-color) 50%,
+    var(--bg-light-color) 50%
+  ); */
   background-position: 0 -900px;
   background-repeat: no-repeat;
 }

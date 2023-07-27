@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 import s from './OurTeamList.module.css';
 
 const Card = ({ imgUrl, name, position, alt }) => {
@@ -10,6 +11,13 @@ const Card = ({ imgUrl, name, position, alt }) => {
       <p className={s.position}>{t(position)}</p>
     </div>
   );
+};
+
+Card.propTypes = {
+  imgUrl: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default Card;

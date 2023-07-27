@@ -18,7 +18,6 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
   const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
   useOutsideClickDetector(cardRef, toggleMenu, isMenuOpen);
 
-  // const openEditSets = () => setEditedData({ brend });
   const handleEditData = () => {
     !editedData
       ? setEditedData(brend)
@@ -62,6 +61,8 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
             value={editedData.ru}
             name="ru"
             onChange={handleEditBrend}
+            autocomplete="off"
+            placeholder="На русском"
           />
           <input
             className={s.formInput}
@@ -69,6 +70,8 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
             value={editedData.en}
             name="en"
             onChange={handleEditBrend}
+            autocomplete="off"
+            placeholder="In english"
           />
         </>
       )}

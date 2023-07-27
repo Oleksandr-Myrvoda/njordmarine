@@ -151,20 +151,23 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
           <input
             className={s.input}
             type="text"
-            name="en"
-            value={newBrend.en}
+            name="ru"
+            value={newBrend.ru}
             onChange={handleBrendChenge}
-            placeholder="Brend in english"
+            placeholder="На русском"
+            autocomplete="off"
           />
 
           <input
             className={s.input}
             type="text"
-            name="ru"
-            value={newBrend.ru}
+            name="en"
+            value={newBrend.en}
             onChange={handleBrendChenge}
-            placeholder="Название на русском"
+            placeholder="In english"
+            autocomplete="off"
           />
+
           <button type="submit" className={s.button} text="Add">
             Add
           </button>

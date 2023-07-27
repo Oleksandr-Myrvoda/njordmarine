@@ -1,5 +1,5 @@
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import storage from '../../../services/firebaseConfig';
 import s from './FileUploader.module.css';
 
@@ -37,7 +37,7 @@ const FileUploader = ({ setImage, editData, uploadData }) => {
           .then(imageUrl => {
             uploadData(imageUrl);
             // editData();
-            console.log('imageUrl', imageUrl);
+            // console.log('imageUrl', imageUrl);
             // setImage(imageUrl);
           })
           .finally(() => {

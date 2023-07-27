@@ -42,7 +42,6 @@
     display: flex;
     flex-direction: column;
     background-color: var(--bg-dark-color);
-    /* width: 223px; */
     width: 16vw;
     position: static;
     z-index: 0;
