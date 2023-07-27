@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import { useAuthContext } from 'context/AuthProvider';
-import { LangProvider } from 'context/LangProvider';
+// import { LangProvider } from 'context/LangProvider';
 
 import BrochureButton from 'common/BrochureButton';
 import Contacts from 'common/Contacts';
@@ -54,9 +54,9 @@ const Header = () => {
           )}
 
           <Suspense fallback={<h2>"Loading..."</h2>}>
-            <LangProvider>
-              <LanguageSwitcher />
-            </LangProvider>
+            {/* <LangProvider> */}
+            <LanguageSwitcher />
+            {/* </LangProvider> */}
           </Suspense>
           <BrochureButton />
         </>

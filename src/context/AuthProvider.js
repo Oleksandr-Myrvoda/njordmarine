@@ -8,14 +8,13 @@ const useAuthContext = () => {
 
 // Создаем функцию-провайдер для контекста, где устанавливаем начальное значение токена (null или пустая строка)
 const AuthProvider = ({ children }) => {
-  const storedToken = JSON.parse(localStorage.getItem('token'));
-  const initialToken = typeof storedToken === 'string' ? storedToken : '';
+  // const storedToken = JSON.parse(localStorage.getItem('token'));
+  // const initialToken = typeof storedToken === 'string' ? storedToken : '';
 
   const [token, setToken] = useState(JSON.parse(localStorage.getItem('token')));
 
   const unsetToken = () => setToken('');
   const isLogin = Boolean(token);
-  // console.log('token', token.token);
 
   useEffect(() => {
     localStorage.setItem('token', JSON.stringify(token));
@@ -24,8 +23,8 @@ const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
-        token: token.token,
-        refreshToken: token.refreshToken,
+        token: token?.token,
+        refreshToken: token?.refreshToken,
         setToken,
         unsetToken,
         isLogin,

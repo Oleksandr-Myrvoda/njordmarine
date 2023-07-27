@@ -28,7 +28,7 @@ const Navigation = () => {
         <NavItem name={`02. ${t('navigation.nav2')}`} path="/about-company" />
       </div>
       {activeMenu === 'company' && (
-        <>
+        <div className={s.insideMenu}>
           <NavItem
             name={t('navigation.aboutCompany.name1')}
             path="/about-company/about-us"
@@ -37,7 +37,7 @@ const Navigation = () => {
             name={t('navigation.aboutCompany.name2')}
             path="/about-company/our-team"
           />
-        </>
+        </div>
       )}
 
       {/* ======= SERVICES ======= */}
@@ -47,7 +47,7 @@ const Navigation = () => {
       </div>
 
       {activeMenu === 'services' && !isDesktop && (
-        <ul>
+        <ul className={s.insideMenu}>
           {servicesListConfig.map(({ name, to }, index) => (
             <li key={index}>
               <NavItem name={t(name)} path={`/services/${to}`} />
@@ -62,7 +62,7 @@ const Navigation = () => {
       </div>
 
       {activeMenu === 'spares' && !isDesktop && (
-        <ul>
+        <ul className={s.insideMenu}>
           {sparesListConfig.map(({ name, to }, index) => (
             <li key={index}>
               <NavItem name={t(name)} path={`/spares/${to}`} />

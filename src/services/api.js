@@ -65,16 +65,12 @@ const deleteItemApi = ({ endpoint, id, token }) => {
 
 const addBrendApi = ({ endpoint, brend, token }) => {
   return axios
-    .post(
-      `${endpoint}/brends.json`,
-      { brend },
-      {
-        params: {
-          auth: token,
-        },
+    .post(`${endpoint}/brends.json`, brend, {
+      params: {
+        auth: token,
       },
-    )
-    .then(({ data }) => ({ id: data.name, brend }));
+    })
+    .then(({ data }) => ({ id: data.name, ...brend }));
 };
 
 const editBrendApi = ({ endpoint, item, id, token }) => {

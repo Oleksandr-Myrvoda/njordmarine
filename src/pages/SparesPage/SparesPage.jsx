@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { sparesListConfig } from 'data/spares-list';
 import Container from 'common/Container';
-// import SparesBlock from 'components/SparesBlock';
+
 import BlockNavigation from 'components/BlockNavigation/BlockNavigation';
 import s from './SparesPage.module.css';
 

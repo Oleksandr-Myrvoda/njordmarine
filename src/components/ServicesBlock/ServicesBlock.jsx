@@ -4,6 +4,7 @@ import SendInfo from 'common/SendInfo';
 import ServiceList from './ServiceList';
 // import { serviceConfig } from 'data/service';
 import s from './ServicesBlock.module.css';
+import Container from 'common/Container/Container';
 
 const ServicesBlock = () => {
   const { t } = useTranslation();
@@ -11,22 +12,24 @@ const ServicesBlock = () => {
 
   return (
     <div className={s.servicesBlock}>
-      <div className={s.orderWrapepr}>
-        <div className={s.taglineBlock}>
-          <p className="headingBlock">{t('servicesBlock.heading')}</p>
-          <h2 className="tagline">{t('servicesBlock.tagline')}</h2>
+      <Container>
+        <div className={s.orderWrapepr}>
+          <div className={s.taglineBlock}>
+            <p className="headingBlock">{t('servicesBlock.heading')}</p>
+            <div className={s.tagline}>
+              <h2 className="tagline">{t('servicesBlock.tagline')}</h2>
+            </div>
+          </div>
+
+          {isDesktop && (
+            <div className={s.sendInfo}>
+              <SendInfo hideLink={true} />
+            </div>
+          )}
         </div>
 
-        {isDesktop && (
-          <div className={s.sendInfo}>
-            <SendInfo hideLink={true} />
-          </div>
-        )}
-      </div>
-
-      <ServiceList />
-      {/* <ServiceList serviceConfig={serviceConfig} /> */}
-
+        <ServiceList />
+      </Container>
       {!isDesktop && <SendInfo hideLink={true} />}
     </div>
   );

@@ -1,5 +1,4 @@
 .pageWrapper {
-  /* padding: 48px 0; */
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -24,15 +23,26 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .pageWrapper {
-    /* padding: 176px 96px 96px 96px; */
-    padding-bottom: 96px;
-    gap: 60px;
-    background-image: url('../../images/contacts-bg.png');
-  }
   .taglineWrapper {
-    padding: 176px 96px 0 96px;
-    /* padding: 96px 96px 10px 96px; */
-    /* max-width: 1217px; */
+    align-self: self-start;
+  }
+
+  .pageWrapper {
+    align-items: center;
+
+    padding: 136px 96px 96px 96px;
+    gap: 60px;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(
+      150deg,
+      var(--bg-light-color) 50%,
+      var(--bg-medium-color) 50%
+    );
+    /* background-position: 0 -200px; */
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

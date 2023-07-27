@@ -4,6 +4,7 @@ import SendInfo from 'common/SendInfo';
 import AdvantagesList from './AdvantagesList';
 import { advantagesConfig } from 'data/advantages';
 import s from './AdvantagesBlock.module.css';
+import Container from 'common/Container/Container';
 
 const AdvantagesBlock = () => {
   const { t } = useTranslation();
@@ -11,11 +12,13 @@ const AdvantagesBlock = () => {
 
   return (
     <div className={s.advantagesBlock}>
-      <div className={s.textBlock}>
-        <p className="headingBlock">{t('advantagesBlock.heading')}</p>
-        <h2 className="tagline">{t('advantagesBlock.tagline')}</h2>
-      </div>
-      <AdvantagesList advantagesConfig={advantagesConfig} />
+      <Container>
+        <div className={s.textBlock}>
+          <p className="headingBlock">{t('advantagesBlock.heading')}</p>
+          <h2 className="tagline">{t('advantagesBlock.tagline')}</h2>
+        </div>
+        <AdvantagesList advantagesConfig={advantagesConfig} />
+      </Container>
 
       {!isDesktop && <SendInfo linkName="" linkPath="" hideLink={true} />}
     </div>

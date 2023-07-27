@@ -16,6 +16,7 @@ const MaintenanceService = () => {
         <p className={s.text}>{t('services.meintenance.text1')}</p>
         <p className={s.text}>{t('services.meintenance.text2')}</p>
       </div>
+
       <div className={s.paginationBlock}>
         <Measurements measurementsConfig={measurementsConfig} />
       </div>

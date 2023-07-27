@@ -5,8 +5,8 @@
   flex-direction: column;
 
   align-items: center;
-  /* background-color: var(--bg-medium-color);
-  border-top: 2px solid var(--footer-stroke); */
+  background-color: var(--bg-medium-color);
+  border-top: 2px solid var(--footer-stroke);
   gap: 16px;
 }
 

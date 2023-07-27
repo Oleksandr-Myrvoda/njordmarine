@@ -1,15 +1,15 @@
 {
   "heroBlock": {
-    "head": "European company with high quality solutions",
-    "taglineBig": "Your trusted ship service assistant",
-    "description": "NJORDMARINE cares about its customers and appreciates their time, so we provide the necessary equipment, original and OEM parts, as well as service in the shortest possible time and at a reasonable price.",
+    "head": "A European company with high-quality solutions",
+    "taglineBig": "Your reliable assistant in ship servicing",
+    "description": "NJORDMARINE cares about its customers and values their time, that's why we provide the necessary equipment, original and OEM spare parts, as well as servicing, in the shortest possible time and at a reasonable price.",
     "top1": "800+",
     "bot1": "Completed projects",
     "top2": "5 years",
     "bot2": "On the market",
     "top3": "20",
     "bot3": "Countries",
-    "sendInfo": "Get to know the services"
+    "sendInfo": "Explore the services"
   },
 
   "servicesBlock": {
@@ -19,11 +19,11 @@
       "link": "More",
       "text1": "Ship automation services",
       "alt1": "Automation",
-      "text2": "Maintenance",
+      "text2": "Technical maintenance",
       "alt2": "Maintenance",
       "text3": "Spare parts",
       "alt3": "Spare",
-      "text4": "Vessel Energy Efficiency System",
+      "text4": "Ship energy efficiency system",
       "alt4": "Energy"
     }
   },
@@ -40,8 +40,7 @@
     "taglineBig": "Contact us",
     "text2": "We are always ready to help you!",
     "bigButtonText": "Contacts",
-    "bigButtonLinkMob": "Get to know the services",
-    "bigButtonLink": "Download our brochure"
+    "bigButtonLink": "Download brochure"
   },
 
   "heroAboutBlock": {
@@ -65,7 +64,15 @@
 
   "ourTeamBlock": {
     "taglineBig": "Our team",
-    "text": "Our team of experienced professionals is always ready to provide qualified assistance."
+    "text": "Our team of experienced professionals is always ready to provide qualified assistance.",
+    "name1": "Евгений Урлих",
+    "position1": "Technical Director",
+    "name2": "Станислав Замахин",
+    "position2": "Financial Director",
+    "name3": "Анна Соболева",
+    "position3": "Head of Human Resources and Public Relations Department",
+    "name4": "Игорь Гиршин",
+    "position4": "Client Manager"
   },
 
   "services": {
@@ -304,7 +311,7 @@
   },
 
   "sendInfo": {
-    "bigBtn": "Submit application",
+    "bigBtn": "Send a request",
     "services": "Get to know the services",
     "maintenance": "Maintenance",
     "energy": "Vessel Energy Efficiency System",

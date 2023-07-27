@@ -23,14 +23,17 @@ const ErrorProvider = ({ children }) => {
       return;
     }
     const { error, cb } = errorOptions;
+    console.dir(error);
 
-    if (error.response.status === 401) {
+    if (error.response.status === 401 || error.response.status === 400) {
+      console.log('refreshToken', refreshToken);
       refreshTokenApi(refreshToken)
         .then(tokenData => {
           cb(tokenData.token);
           setToken(tokenData);
         })
-        .catch(() => unsetToken());
+        .catch(() => unsetToken())
+        .finally(() => setErrorOptions(null));
       // refreshToken -> setToken(newToken) -> cb()
       // reRequest with last funk
     }

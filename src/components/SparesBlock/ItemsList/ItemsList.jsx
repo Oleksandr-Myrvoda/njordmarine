@@ -1,4 +1,5 @@
 import { Route, useRouteMatch } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import BrendsModal from './BrendsModal';
@@ -7,28 +8,24 @@ import Item from './Item';
 import s from './ItemsList.module.css';
 
 const ItemsList = ({ items, editData, deleteData, setSpares, setImage }) => {
+  const [modalData, setModalData] = useState(null);
   const match = useRouteMatch();
+
+  useEffect(() => {
+    if (items && modalData) {
+      const item = items.find(item => item.id === modalData.id);
+      if (!item) {
+        return;
+      }
+      setModalData(prev => ({ ...prev, brends: item.brends }));
+    }
+    // eslint-disable-next-line
+  }, [items]);
 
   return (
     <>
       <ul className={s.listWrapper}>
-        {items.map(({ itemTitle, itemTitleRu, itemTitleEn, imgUrl, id }) => {
-          return (
-            <Item
-              key={id}
-              id={id}
-              itemTitleRu={itemTitleRu}
-              itemTitleEn={itemTitleEn}
-              imgUrl={imgUrl}
-              editData={editData}
-              deleteData={deleteData}
-              setImage={setImage}
-            />
-          );
-        })}
-      </ul>
-      {/* <ul className={s.listWrapper}>
-        {items.map(({ itemTitle, imgUrl, id }) => {
+        {items.map(({ itemTitle, imgUrl, id, brends = [] }) => {
           return (
             <Item
               key={id}
@@ -38,15 +35,21 @@ const ItemsList = ({ items, editData, deleteData, setSpares, setImage }) => {
               editData={editData}
               deleteData={deleteData}
               setImage={setImage}
+              setModalData={setModalData}
+              brends={brends}
             />
           );
         })}
-      </ul> */}
+      </ul>
 
-      <Route
-        path={`${match.path}/:itemId`}
-        render={() => <BrendsModal items={items} setSpares={setSpares} />}
-      />
+      {modalData && (
+        <Route
+          path={`${match.path}/:itemId`}
+          render={() => (
+            <BrendsModal setSpares={setSpares} modalData={modalData} />
+          )}
+        />
+      )}
     </>
   );
 };

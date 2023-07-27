@@ -76,11 +76,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 8px;
 }
 
 .listItem {
   text-align: center;
-  width: calc(33% - 10px);
+  width: calc(30%);
 }
 
 .top {
@@ -109,11 +110,18 @@
     background-repeat: no-repeat;
     background-image: url('../../images/hero-bg.png');
     background-position: right;
+    display: flex;
   }
+
+  .taglineBig {
+    width: calc(90%);
+  }
+
   .heroContent {
-    padding: 122px 96px 0 96px;
-    display: block;
-    gap: 0;
+    justify-self: start;
+    width: calc(50%);
+    padding-top: 122px;
+    padding-left: 96px;
   }
 
   .head {
@@ -125,9 +133,6 @@
 
   .description {
     padding-bottom: 20px;
-
-    width: 530px;
-    height: 135px;
     font-size: 18px;
     line-height: 27px;
   }
@@ -152,7 +157,7 @@
   }
 
   .listItem {
-    width: calc(15%);
+    width: calc(26%);
     text-align: start;
   }
 

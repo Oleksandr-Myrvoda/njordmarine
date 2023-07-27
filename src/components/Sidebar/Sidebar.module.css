@@ -11,7 +11,7 @@
   position: absolute;
   width: 260px;
   padding-bottom: 36px;
-  top: 68px;
+  top: 67px;
   left: 100%;
   z-index: 50;
   transform: translateX(0);
@@ -29,6 +29,7 @@
   display: flex;
   flex-direction: column;
   gap: 64px;
+  padding-top: 32px;
 }
 .mob {
   display: flex;
@@ -41,7 +42,8 @@
     display: flex;
     flex-direction: column;
     background-color: var(--bg-dark-color);
-    width: 223px;
+    /* width: 223px; */
+    width: 16vw;
     position: static;
     z-index: 0;
   }

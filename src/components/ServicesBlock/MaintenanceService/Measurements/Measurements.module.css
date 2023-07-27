@@ -84,6 +84,7 @@
     padding: 48px 0;
     gap: 32px;
   }
+
   .tagline {
     width: calc(37%);
     align-self: center;
@@ -93,11 +94,46 @@
     font-size: 24px;
     line-height: 36px;
   }
+
   .listWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 36px;
+  }
+
+  .list {
+    /* display: flex; */
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 420px;
+    width: 100%;
+  }
+
+  .prevCard,
+  .currentCard,
+  .nextCard {
+    position: absolute;
+    border-radius: 8px;
+  }
+
+  .prevCard {
+    left: 85px;
+    background-color: var(--card-bg);
+    scale: 0.95;
+  }
+  .currentCard {
+    left: 300px;
+    box-shadow: 0 8px 8px 8px rgba(123, 170, 241, 0.3);
+    background-color: var(--bg-medium-color);
+    z-index: 10;
+  }
+  .nextCard {
+    left: 510px;
+    background-color: var(--card-bg);
+    scale: 0.95;
   }
 
   .image {
@@ -115,9 +151,19 @@
     padding: 58px 36px;
     width: 348px;
     height: 303px;
+    background-color: transparent;
   }
-
-  /* .list {
-    gap: 0;
-  } */
+  .pagiBtnArrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    border: none;
+    transition: all 200ms;
+  }
+  .pagiBtnArrow:hover,
+  .pagiBtnDot:hover {
+    scale: 1.1;
+  }
 }

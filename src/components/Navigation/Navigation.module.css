@@ -6,6 +6,10 @@
   flex-wrap: wrap;
 }
 
+.insideMenu {
+  margin-left: 16px;
+}
+
 @media screen and (min-width: 1440px) {
   .nav {
     padding-left: 48px;

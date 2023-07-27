@@ -15,6 +15,9 @@
   align-items: center;
   gap: 16px;
 }
+.orderWrapepr {
+  margin-bottom: 24px;
+}
 
 @media screen and (min-width: 1440px) {
   .servicesBlock {
@@ -26,11 +29,18 @@
 
   .orderWrapepr {
     display: flex;
+    width: 1025px;
+    align-self: center;
+    margin-bottom: 48px;
   }
 
   .taglineBlock {
     align-items: flex-start;
     gap: 24px;
+  }
+
+  .tagline {
+    width: calc(80%);
   }
 
   .sendInfo {

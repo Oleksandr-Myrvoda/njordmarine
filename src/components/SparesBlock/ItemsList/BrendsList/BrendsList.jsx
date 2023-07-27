@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useAuthContext } from 'context/AuthProvider';
+import { useSetError } from 'context/ErrorProvider';
 
 import BigButton from 'common/BigButton';
 import BrendItem from './BrendItem/BrendItem';
@@ -11,12 +12,17 @@ import s from './BrendsList.module.css';
 
 const BrendsList = ({ brends = [], onClose, setSpares }) => {
   const match = useRouteMatch();
-  const [newBrend, setNewBrend] = useState('');
+  const [newBrend, setNewBrend] = useState({
+    ru: '',
+    en: '',
+  });
+
   const { isLogin, token } = useAuthContext();
+  const setError = useSetError();
 
   // ADD ===============================================
 
-  const addBrendState = ({ itemId, newBrend }) => {
+  const addBrendToState = ({ itemId, newBrend }) => {
     setSpares(prev =>
       prev.map(spare => {
         if (spare.id !== itemId) return spare;
@@ -27,23 +33,28 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
     );
   };
 
-  const addBrend = async e => {
-    e.preventDefault();
+  const addBrend = async (idToken = token) => {
     try {
       const newBrendAdd = await api.addBrendApi({
         endpoint: match.url,
         brend: newBrend,
-        token,
+        token: idToken,
       });
-      addBrendState({
+
+      addBrendToState({
         itemId: match.params.itemId,
         newBrend: newBrendAdd,
       });
     } catch (error) {
-      console.log(error.message);
+      setError({ error, cb: token => addBrend(token) });
     } finally {
       reset();
     }
+  };
+
+  const handleAddBrend = async e => {
+    e.preventDefault();
+    addBrend();
   };
 
   // EDIT ===============================================
@@ -62,18 +73,26 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
     );
   };
 
-  const editBrend = (id, editedData) => {
+  const editBrend = (id, editedData, idToken = token) => {
     return api
-      .editBrendApi({ endpoint: match.url, item: editedData, id, token })
+      .editBrendApi({
+        endpoint: match.url,
+        item: {
+          en: editedData.en,
+          ru: editedData.ru,
+        },
+        id,
+        token: idToken,
+      })
       .then(brend =>
         editBrendState({
           itemId: match.params.itemId,
           brendId: brend.id,
-          newBrend: brend.brend,
+          newBrend: brend,
         }),
       )
-      .catch(err => {
-        console.log(err.message);
+      .catch(error => {
+        setError({ error, cb: token => editBrend(id, editedData, token) });
       });
   };
 
@@ -104,17 +123,23 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
   // ===============================================
 
   const reset = () => {
-    setNewBrend('');
+    setNewBrend({
+      ru: '',
+      en: '',
+    });
   };
+
+  const handleBrendChenge = e =>
+    setNewBrend(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
   return (
     <div className={s.listWrapper}>
       <ul className={s.list}>
-        {brends.map(({ id, brend }) => (
+        {brends.map(el => (
           <BrendItem
-            key={id}
-            id={id}
-            brend={brend}
+            key={el.id}
+            id={el.id}
+            brend={el}
             editBrend={editBrend}
             deleteBrend={deleteBrend}
           />
@@ -122,12 +147,23 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
       </ul>
 
       {isLogin && (
-        <form onSubmit={addBrend} className={s.addForm}>
+        <form onSubmit={handleAddBrend} className={s.addForm}>
           <input
             className={s.input}
             type="text"
-            value={newBrend}
-            onChange={e => setNewBrend(e.target.value)}
+            name="en"
+            value={newBrend.en}
+            onChange={handleBrendChenge}
+            placeholder="Brend in english"
+          />
+
+          <input
+            className={s.input}
+            type="text"
+            name="ru"
+            value={newBrend.ru}
+            onChange={handleBrendChenge}
+            placeholder="Название на русском"
           />
           <button type="submit" className={s.button} text="Add">
             Add

@@ -4,9 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import Container from 'common/Container';
 import BlockNavigation from 'components/BlockNavigation';
-// import AutomationService from 'components/ServicesBlock/AutomationService';
-// import MaintenanceService from 'components/ServicesBlock/MaintenanceService';
-// import EnergyService from 'components/ServicesBlock/EnergyService';
+
 import { servicesListConfig } from 'data/services-list';
 import s from './ServicesListPage.module.css';
 
@@ -35,6 +33,7 @@ const ServicesListPage = () => {
     <div className={s.pageWrapper}>
       <div className={s.taglineWrapper}>
         <h1 className="taglineBig">{t('services.taglineBig')}</h1>
+
         {isDesktop && <BlockNavigation navConfig={servicesListConfig} />}
       </div>
 

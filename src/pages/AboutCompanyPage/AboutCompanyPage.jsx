@@ -1,9 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import Container from 'common/Container';
-// import HeroAboutBlock from 'components/HeroAboutBlock';
-// import AbotFactBlock from 'components/AboutFactBlock';
-// import OurTeamBlock from 'components/OurTeamBlock';
 
 const HeroAboutBlock = lazy(() =>
   import(
@@ -21,7 +18,8 @@ const AboutCompanyPage = () => {
   const match = useRouteMatch();
 
   return (
-    <Container>
+    // <Container>
+    <>
       <Suspense fallback={<h2>"Loading..."</h2>}>
         <Switch>
           <Route path={`${match.path}/about-us`}>
@@ -34,7 +32,8 @@ const AboutCompanyPage = () => {
           </Route>
         </Switch>
       </Suspense>
-    </Container>
+    </>
+    // </Container>
   );
 };
 

@@ -14,13 +14,11 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
   const match = useRouteMatch();
   const inputRef = useRef(null);
   const [spares, setSpares] = useState([]);
-  // const [itemTitle, setItemTitle] = useState('');
-  // const [itemTitle, setItemTitle] = useState({
-  //   ru: '',
-  //   en: '',
-  // });
-  const [itemTitleRu, setItemTitleRu] = useState('');
-  const [itemTitleEn, setItemTitleEn] = useState('');
+  const [itemTitle, setItemTitle] = useState({
+    ru: '',
+    en: '',
+  });
+
   const [imgUrl, setImgUrl] = useState('');
   const { isLogin, token } = useAuthContext();
 
@@ -44,9 +42,7 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
       const newSpare = await api.addItemApi(
         path,
         {
-          // itemTitle,
-          itemTitleRu,
-          itemTitleEn,
+          itemTitle,
           imgUrl,
           brends: [],
         },
@@ -65,7 +61,6 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
   // EDIT =======
 
   const editData = (id, editedData) => {
-    console.log('editedData', editedData);
     return api
       .editItemApi({ endpoint: match.url, item: editedData, id, token })
       .then(data => {
@@ -94,9 +89,11 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
   // ===============================================
 
   const reset = () => {
-    // setItemTitle('');
-    setItemTitleRu('');
-    setItemTitleEn('');
+    setItemTitle({
+      ru: '',
+      en: '',
+    });
+
     setImgUrl('');
   };
 
@@ -113,35 +110,26 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
 
       {isLogin && (
         <form className={s.addForm}>
-          {/* <input
-            className={s.addFormInput}
-            ref={inputRef}
-            value={itemTitle}
-            type="text"
-            required
-            onChange={e => setItemTitle(e.target.value)}
-            placeholder="Title in english"
-          /> */}
           <input
             className={s.addFormInput}
             ref={inputRef}
-            // value={itemTitle}
-            value={itemTitleRu}
+            value={itemTitle.ru}
             type="text"
             required
-            onChange={e => setItemTitleRu(e.target.value)}
-            // onChange={e => setItemTitle(e.target.value)}
+            onChange={e =>
+              setItemTitle(prev => ({ ...prev, ru: e.target.value }))
+            }
             placeholder="Название на русском"
           />
           <input
             className={s.addFormInput}
             ref={inputRef}
-            // value={itemTitle}
-            value={itemTitleEn}
+            value={itemTitle.en}
             type="text"
             required
-            onChange={e => setItemTitleEn(e.target.value)}
-            // onChange={e => setItemTitle(e.target.value)}
+            onChange={e =>
+              setItemTitle(prev => ({ ...prev, en: e.target.value }))
+            }
             placeholder="Title in english"
           />
 

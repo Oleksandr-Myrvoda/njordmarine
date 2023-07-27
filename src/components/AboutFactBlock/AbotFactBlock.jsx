@@ -5,6 +5,7 @@ import ScrollUp from 'common/ScrollUp';
 import SendInfo from 'common/SendInfo';
 import AboutFactList from './AboutFactList';
 import s from './AboutFactBlock.module.css';
+import Container from 'common/Container/Container';
 
 const AbotFactBlock = () => {
   const { t } = useTranslation();
@@ -12,16 +13,18 @@ const AbotFactBlock = () => {
 
   return (
     <div className={s.aboutFactBlock}>
-      <div className={s.taglineAbout}>
-        <p className="tagline">{t('abotFactBlock.tagline')}</p>
-      </div>
-      <AboutFactList aboutFactConfig={aboutFactConfig} />
+      <Container>
+        <div className={s.taglineAbout}>
+          <p className="tagline">{t('abotFactBlock.tagline')}</p>
+        </div>
+        <AboutFactList aboutFactConfig={aboutFactConfig} />
 
-      <SendInfo
-        linkName={t('sendInfo.services')}
-        linkPath="/services"
-        hideLink={false}
-      />
+        <SendInfo
+          linkName={t('sendInfo.services')}
+          linkPath="/services"
+          hideLink={false}
+        />
+      </Container>
 
       {!isDesktop && <ScrollUp />}
     </div>

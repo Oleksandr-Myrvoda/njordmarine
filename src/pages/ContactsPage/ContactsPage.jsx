@@ -7,11 +7,11 @@ const ContactsPage = () => {
   const { t } = useTranslation();
   return (
     <div className={s.pageWrapper}>
-      <div className={s.taglineWrapper}>
-        <h1 className="taglineBig">{t('contacts.taglineBig')}</h1>
-        <p>{t('contacts.text')}</p>
-      </div>
       <Container>
+        <div className={s.taglineWrapper}>
+          <h1 className="taglineBig">{t('contacts.taglineBig')}</h1>
+          <p>{t('contacts.text')}</p>
+        </div>
         <ContactsBlock />
       </Container>
     </div>

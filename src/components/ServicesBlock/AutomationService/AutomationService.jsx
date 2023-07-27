@@ -14,7 +14,9 @@ const AutomationService = () => {
         <p className={s.title}>{t('services.auto.title')}</p>
       </div>
 
-      <p className={s.text}>{t('services.auto.text')}</p>
+      <div>
+        <p className={s.text}>{t('services.auto.text')}</p>
+      </div>
 
       <div className={s.blockContent}>
         <Scheme schemeConfig={schemeConfig} />

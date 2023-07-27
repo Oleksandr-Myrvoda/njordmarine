@@ -1,7 +1,40 @@
-.list {
+.listMob {
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
+  gap: 64px;
+  margin-bottom: 32px;
+
+  /* transition: transform 0.3s ease;  */
+}
+
+.cards {
+  position: relative;
+  height: 390px;
+
+  /* transition: transform 0.3s ease;  */
+}
+
+.prevCard,
+.currentCard,
+.nextCard {
+  position: absolute;
+  border-radius: 8px;
+}
+
+.prevCard {
+  left: -210px;
+  opacity: 60%;
+}
+.currentCard {
+  left: 55px;
+}
+.nextCard {
+  left: 315px;
+  opacity: 60%;
+}
+
+.cardHide {
+  display: none;
 }
 
 .item {
@@ -29,12 +62,9 @@
 
 @media screen and (min-width: 1440px) {
   .list {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 10px;
   }
-
-  /* .item {
-    gap: 20px;
-  } */
 }

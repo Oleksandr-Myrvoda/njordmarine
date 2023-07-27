@@ -2,7 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { ErrorProvider } from 'context/ErrorProvider';
-import { LangProvider } from 'context/LangProvider';
+// import { LangProvider } from 'context/LangProvider';
 // import AboutCompanyPage from 'pages/AboutCompanyPage';
 // import HomePage from 'pages/HomePage';
 // import ServicesListPage from 'pages/ServicesListPage';
@@ -65,9 +65,9 @@ const Main = () => {
           {/*--- SPARES ------------------------*/}
           <Route path="/spares">
             <ErrorProvider>
-              <LangProvider>
-                <SparesPage />
-              </LangProvider>
+              {/* <LangProvider> */}
+              <SparesPage />
+              {/* </LangProvider> */}
             </ErrorProvider>
           </Route>
 

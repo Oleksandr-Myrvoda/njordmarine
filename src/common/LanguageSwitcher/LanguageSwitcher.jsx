@@ -9,7 +9,7 @@ const languages = {
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
-  const { language, setLanguage } = useLangContext();
+  const { handleLangChange } = useLangContext();
 
   return (
     <div className={s.switcher}>
@@ -18,7 +18,10 @@ const LanguageSwitcher = () => {
           <button
             className={i18n.resolvedLanguage === lng ? s.active : s.button}
             type="submit"
-            onClick={() => i18n.changeLanguage(lng)}
+            onClick={() => {
+              i18n.changeLanguage(lng);
+              handleLangChange(lng);
+            }}
           >
             {languages[lng].nativeName}
           </button>

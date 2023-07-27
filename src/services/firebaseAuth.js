@@ -10,10 +10,18 @@ const refreshAxios = axios.create({ baseURL: REFRESH_BASE_URL });
 
 export const refreshTokenApi = refreshToken => {
   return refreshAxios
-    .post('/token', {
-      grant_type: 'refresh_token',
-      refresh_token: refreshToken,
-    })
+    .post(
+      '/token',
+      {
+        grant_type: 'refresh_token',
+        refresh_token: refreshToken,
+      },
+      {
+        params: {
+          key: REACT_APP_API_KEY,
+        },
+      },
+    )
     .then(response => {
       return {
         token: response.data.id_token,

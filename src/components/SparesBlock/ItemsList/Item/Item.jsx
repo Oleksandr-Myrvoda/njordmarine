@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import { useAuthContext } from 'context/AuthProvider';
+import { useLangContext } from 'context/LangProvider';
 import CardWithMenu from 'common/CardWithMenu';
 import PropTypes from 'prop-types';
 
@@ -9,55 +10,53 @@ import s from './Item.module.css';
 
 const Item = ({
   itemTitle,
-  itemTitleRu,
-  itemTitleEn,
   imgUrl,
   id,
   editData,
   deleteData,
   setImage,
+  setModalData,
+  brends,
 }) => {
   const [editedData, setEditedData] = useState(null); //{ imgUrl, itemTitle }
   const { isLogin } = useAuthContext();
+  const { lang } = useLangContext();
 
   const match = useRouteMatch();
   const history = useHistory();
 
-  const openModal = () => history.push({ pathname: `${match.url}/${id}` });
-  const openEditSets = () =>
-    setEditedData({ imgUrl, itemTitleRu, itemTitleEn });
-  // const openEditSets = () => setEditedData({ imgUrl, itemTitle });
+  const openModal = () => {
+    setModalData({ brends, itemTitle, id });
+    history.push({ pathname: `${match.url}/${id}` });
+  };
+  const openEditSets = () => setEditedData({ imgUrl, itemTitle });
 
   const handleEditData = imgUrl => {
-    const { itemTitleRu, itemTitleEn } = editedData;
+    const { itemTitle } = editedData;
     let data = null;
-    if (imgUrl && itemTitleRu && itemTitleEn) {
-      data = { itemTitleRu, itemTitleEn, imgUrl };
+    if (imgUrl && itemTitle) {
+      data = { itemTitle, imgUrl };
     } else if (imgUrl) {
       data = { imgUrl };
-    } else if (itemTitleRu && itemTitleEn) {
-      data = { itemTitleRu, itemTitleEn };
+    } else if (itemTitle) {
+      data = { itemTitle };
     } else return;
 
     editData(id, data).finally(() => setEditedData(null));
   };
-  // const handleEditData = imgUrl => {
-  //   const { itemTitle } = editedData;
-  //   let data = null;
-  //   if (imgUrl && itemTitle) {
-  //     data = { itemTitle, imgUrl };
-  //   } else if (imgUrl) {
-  //     data = { imgUrl };
-  //   } else if (itemTitle) {
-  //     data = { itemTitle };
-  //   } else return;
-
-  //   editData(id, data).finally(() => setEditedData(null));
-  // };
 
   const handleDeleteData = () => {
     deleteData(id);
   };
+
+  const handleEditTitle = e =>
+    setEditedData(prev => ({
+      ...prev,
+      itemTitle: {
+        ...prev.itemTitle,
+        [e.target.name]: e.target.value,
+      },
+    }));
 
   return (
     <li key={id} className={s.item}>
@@ -75,47 +74,22 @@ const Item = ({
 
       <div className={s.itemMenu}>
         {!editedData ? (
-          // <p className={s.title}> {itemTitle}</p>
-          <>
-            <p className={s.title}> {itemTitleRu}</p>
-            <p className={s.title}> {itemTitleEn}</p>
-          </>
+          <p className={s.title}> {itemTitle[lang]}</p>
         ) : (
           <>
             <input
               type="text"
-              value={editedData.itemTitleRu}
-              name="itemTitleRu"
-              onChange={e =>
-                setEditedData(prev => ({
-                  ...prev,
-                  [e.target.name]: e.target.value,
-                }))
-              }
+              value={editedData.itemTitle.ru}
+              name="ru"
+              onChange={handleEditTitle}
             />
             <input
               type="text"
-              value={editedData.itemTitleEn}
-              name="itemTitleEn"
-              onChange={e =>
-                setEditedData(prev => ({
-                  ...prev,
-                  [e.target.name]: e.target.value,
-                }))
-              }
+              value={editedData.itemTitle.en}
+              name="en"
+              onChange={handleEditTitle}
             />
           </>
-          // <input
-          //   type="text"
-          //   value={editedData.itemTitle}
-          //   name="itemTitle"
-          //   onChange={e =>
-          //     setEditedData(prev => ({
-          //       ...prev,
-          //       [e.target.name]: e.target.value,
-          //     }))
-          //   }
-          // />
         )}
         <button onClick={openModal} className={s.button}>
           Смотреть бренды

@@ -6,26 +6,26 @@ import Girshin from 'images/photo04.png';
 export const ourTeamConfig = [
   {
     imgUrl: Urlikh,
-    name: 'Евгений Урлих',
-    position: 'Технический директор',
+    name: 'ourTeamBlock.name1',
+    position: 'ourTeamBlock.position1',
     alt: 'photo',
   },
   {
     imgUrl: Zamakhin,
-    name: 'Станислав Замахин',
-    position: 'Финансовый директор',
+    name: 'ourTeamBlock.name2',
+    position: 'ourTeamBlock.position2',
     alt: 'photo',
   },
   {
     imgUrl: Soboleva,
-    name: 'Анна Соболева',
-    position: 'Руководитель отдела кадров и общественных связей',
+    name: 'ourTeamBlock.name3',
+    position: 'ourTeamBlock.position3',
     alt: 'photo',
   },
   {
     imgUrl: Girshin,
-    name: 'Игорь Гиршин',
-    position: 'Менеджер по клиентам',
+    name: 'ourTeamBlock.name4',
+    position: 'ourTeamBlock.position4',
     alt: 'photo',
   },
 ];

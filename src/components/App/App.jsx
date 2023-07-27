@@ -1,30 +1,34 @@
-import './App.css';
-
+// import './App.css';
+import { LangProvider } from 'context/LangProvider';
 import Footer from 'components/Footer';
 import Header from 'components/Header/Header';
 import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
 import { Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import s from './App.module.css';
 
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   return (
-    <div className="main-container">
+    <div className={s.mainContainer}>
       {isDesktop && (
         <Suspense fallback={<h2>"Loading..."</h2>}>
           <Sidebar />
         </Suspense>
       )}
 
-      <div className="main-wrapper">
-        <div className="container">
-          <div className="content">
-            <Suspense fallback={<h2>"Loading..."</h2>}>
-              <Header />
-            </Suspense>
-            <Main />
+      <div className={s.mainWrapper}>
+        <div className={s.container}>
+          <div className={s.content}>
+            <LangProvider>
+              <Suspense fallback={<h2>"Loading..."</h2>}>
+                <Header />
+              </Suspense>
+
+              <Main />
+            </LangProvider>
           </div>
 
           <div className="footer">

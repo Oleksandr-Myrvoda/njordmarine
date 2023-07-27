@@ -1,13 +1,12 @@
 .blockWrapper {
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-light-color);
-  color: rgb(217, 217, 217);
   gap: 36px;
 }
 
 .hero {
   display: flex;
+  justify-content: center;
   /* margin-bottom: 24px; */
 
   width: 343px;
@@ -19,8 +18,8 @@
 }
 
 .title {
-  text-align: center;
   align-self: center;
+  text-align: center;
 
   font-family: 'Ruberoid';
   font-style: normal;
