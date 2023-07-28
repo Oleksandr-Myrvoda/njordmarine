@@ -1,10 +1,10 @@
 import SendInfo from 'common/SendInfo/SendInfo';
 import { focusConfig, focusOptionsConfig } from 'data/focus';
 import { useTranslation } from 'react-i18next';
-import dot from 'images/serv-auto-dotlist.svg';
+
+import FocusList from './FocusList';
+import ListWithDot from '../ListWithDot';
 import s from './Focus.module.css';
-import FocusList from './FocusList/FocusList';
-import ListWithDot from '../ListWithDot/ListWithDot';
 
 const Focus = () => {
   const { t } = useTranslation();
@@ -29,11 +29,13 @@ const Focus = () => {
 
       <ListWithDot config={focusOptionsConfig} />
 
-      <SendInfo
-        linkName={t('sendInfo.office')}
-        linkPath="/services/energy/office"
-        hideLink={false}
-      />
+      <div className={s.sendInfo}>
+        <SendInfo
+          linkName={t('sendInfo.office')}
+          linkPath="/services/energy/office"
+          hideLink={false}
+        />
+      </div>
     </div>
   );
 };

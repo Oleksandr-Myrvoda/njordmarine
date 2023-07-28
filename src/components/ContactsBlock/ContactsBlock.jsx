@@ -4,8 +4,9 @@ import { useJsApiLoader } from '@react-google-maps/api';
 import Contacts from 'common/Contacts';
 import Form from 'common/Form/Form';
 import GoogleMaps from 'components/GoogleMaps';
-import { contactsPageConfig, contactsPageSocial } from 'data/contacts';
+import { contactsPageConfig } from 'data/contacts';
 import s from './ContactsBlock.module.css';
+import SocialBlock from './SocialBlock';
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;
 
@@ -43,7 +44,7 @@ const ContactsBlock = () => {
           {isLoaded ? <GoogleMaps center={defaultCenter} /> : <h2>Loading</h2>}
         </div>
 
-        <Contacts contactsConfig={contactsPageSocial} isContactsPage={false} />
+        <SocialBlock />
       </div>
 
       {isDesktop && (

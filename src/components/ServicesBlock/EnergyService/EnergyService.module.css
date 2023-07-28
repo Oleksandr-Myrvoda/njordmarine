@@ -1,7 +1,7 @@
 .blockWrapper {
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-light-color);
+  /* background-color: var(--bg-light-color); */
   color: rgb(217, 217, 217);
   align-items: center;
   gap: 24px;
@@ -74,6 +74,7 @@
 @media screen and (min-width: 1440px) {
   .blockWrapper {
     gap: 96px;
+    background-color: var(--bg-light-color);
   }
 
   .hero {

@@ -21,7 +21,15 @@ const Footer = () => {
       <div>
         <NavigationFooter scrollToTop={scrollToTop} />
       </div>
-      <Contacts contactsConfig={contactsConfig} isContactsPage={false} />
+
+      <ul className={s.list}>
+        {contactsConfig.map(({ imgUrl, text, alt }, index) => (
+          <li key={index} className={s.item}>
+            <img className={s.img} src={imgUrl} alt={alt} />
+            <p className={s.text}>{text}</p>
+          </li>
+        ))}
+      </ul>
       <div className={s.copyright}>NJORDMARINE &copy; 2019-{date}</div>
 
       <ScrollUp />

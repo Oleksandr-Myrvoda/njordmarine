@@ -45,7 +45,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
 
   // const isActive = () => {};
 
-  return (
+  return ( 
     <div className={s.blockWrapper}>
       <h2 className={s.tagline}>{t('services.meintenance.measurTagline')}:</h2>
 

@@ -58,7 +58,7 @@ ItemsList.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       imgUrl: PropTypes.string,
-      itemTitle: PropTypes.string,
+      itemTitle: PropTypes.object,
     }),
   ).isRequired,
   editData: PropTypes.func.isRequired,

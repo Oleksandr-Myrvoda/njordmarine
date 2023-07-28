@@ -11,7 +11,8 @@
 }
 
 .description {
-  padding-bottom: 20px;
+  margin-top: 8px;
+  margin-bottom: 24px;
 
   display: flex;
   align-items: center;
@@ -43,11 +44,13 @@
   }
 
   .description {
-    padding-bottom: 20px;
-
     width: 530px;
     height: 135px;
     font-size: 18px;
     line-height: 27px;
+  }
+  .sendInfo {
+    margin-top: 32px;
+    align-self: center;
   }
 }

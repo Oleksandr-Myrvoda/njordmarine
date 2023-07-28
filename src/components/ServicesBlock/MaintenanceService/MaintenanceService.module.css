@@ -18,7 +18,8 @@
 
 .title {
   align-self: center;
-  /* text-align: center; */
+  text-align: center;
+  /* margin: 0 auto; */
 
   font-family: 'Ruberoid';
   font-style: normal;
@@ -67,6 +68,10 @@
 
   .text {
     margin: 0 auto;
-    width: calc(65%);
+    width: calc(60%);
+  }
+
+  .sendInfo {
+    align-self: center;
   }
 }

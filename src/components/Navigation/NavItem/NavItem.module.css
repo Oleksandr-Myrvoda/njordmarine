@@ -3,15 +3,12 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 12px 0;
-  display: flex;
+  width: 200px;
+
   align-items: center;
   color: var(--sidebar-text-color);
   overflow: hidden;
-  white-space: nowrap;
   cursor: pointer;
-}
-.NavItem:hover {
-  min-width: 100%;
 }
 
 .NavItem .itemName {
@@ -35,4 +32,13 @@
   color: var(--accent-color);
   width: 6px;
   height: 6px;
+}
+.itemName {
+  word-wrap: break-word;
+}
+
+@media screen and (min-width: 1440px) {
+  .NavItem {
+    width: 100%;
+  }
 }

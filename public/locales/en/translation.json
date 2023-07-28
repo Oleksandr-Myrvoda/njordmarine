@@ -78,23 +78,24 @@
   "services": {
     "taglineBig": "Services",
     "auto": {
-      "title": "Process automation on board",
-      "text": "Our goal is to help customers automate processes that are critical in terms of operational safety, as well as the most time-consuming and regularly recurring operations.",
-      "schemeTagline": "Scheme for the implementation of automation services",
-      "workTitle": "We carry out the following types of automation work"
+      "title": "Automation of processes on a ship",
+      "textBold": "Our goal ",
+      "text": "is to help customers automate safety-critical processes, as well as the most labor-intensive and regularly repeated operations.",
+      "schemeTagline": "Service execution scheme for automation",
+      "workTitle": "We perform the following types of automation works"
     },
     "meintenance": {
-      "title": "Meintenance",
-      "text1": "We provide services of ultrasonic thickness measurements on all types of ships, we have certificates of classification societies - BV, DNV, ABS, RINA and RMRS.",
-      "text2": "Height measurements are taken by our technical climbers who are certified by the DNV and ABS classification societies to carry out the relevant work.",
-      "measurTagline": "Thickness measurement consists of the following steps"
+      "title": "Technical meintenance",
+      "text1": "We provide ultrasonic thickness measurement services for all types of vessels and have certificates from classification societies such as BV, DNV, ABS, RINA, and PMPS.",
+      "text2": "Our measurements at height are carried out by our certified technical climbers with DNV and ABS classification society certificates for the relevant work.",
+      "measurTagline": "Measurement of thickness consists of the following stages"
     },
     "energy": {
       "onBoard": {
-        "title": "Solution on board",
-        "head": "Your first step towards reducing fuel consumption and improving boat performance",
-        "text": "Our system integrates perfectly with other systems installed on board the ship, allowing you to display all the necessary parameters.",
-        "optionsTitle": "Parameters controlled by the system installed on the ship"
+        "title": "On-board solution",
+        "head": "Your first step towards reducing fuel consumption and improving operational effiency of the vessel",
+        "text": "Our system integrates seamlessly with other onboard systems installed on the vessel, allowing for the display of all necessary parameters.",
+        "optionsTitle": "Parameters monitored by the system installed on board the ship"
       }
     }
   },
@@ -142,9 +143,9 @@
       "name2": "Our team"
     },
     "servicesListConfig": {
-      "name1": "Process automation on board",
-      "name2": "Maintenance",
-      "name3": "Vessel Energy Efficiency System"
+      "name1": "Automation of processes on a ship",
+      "name2": "Technical meintenance",
+      "name3": "Ship Energy Efficiency System"
     },
     "sparesListConfig": {
       "name1": "Engine room",
@@ -175,9 +176,9 @@
   },
 
   "scheme": {
-    "text1": "Parameter management",
+    "text1": "The management of parameters",
     "alt1": "panel",
-    "text2": "Parameter control",
+    "text2": "Control of parameters",
     "alt2": "document",
     "text3": "Alarm list",
     "alt3": "bell",
@@ -186,64 +187,64 @@
   },
 
   "works": {
-    "text1": "Automation of the processes of starting, stopping and monitoring the operation of the main engines, diesel generators, boilers, pumps and other equipment",
-    "text2": "Automatic control over the operation of mechanisms and maintenance of operational documentation",
-    "text3": "Propulsion automation",
-    "text4": "Measurements of levels in tanks with the display of information on the ship's panels",
-    "text5": "Winch control",
-    "text6": "Fuel consumption accounting system and control of the state of ship machinery",
-    "text7": "Cargo equipment automation system",
-    "text8": "Installation/Modernization of alarm systems",
-    "text9": "Management of the trawl complex",
-    "text10": "Vessel Scheduled Maintenance System"
+    "text1": "Automation of starting, stopping, and monitoring processes of main engines, diesel generators, boilers, pumps, and other equipment",
+    "text2": "Fuel consumption monitoring system and control of ship machinery condition",
+    "text3": "Automation of propulsion plant",
+    "text4": "Cargo equipment automation system",
+    "text5": "Automatic control of the machinery operation and maintenance of operational documentation",
+    "text6": "Installation/Modernization of Emergency Alarm Systems",
+    "text7": "Measuring tank levels with output of information to ship panels",
+    "text8": "Management of the trawl complex",
+    "text9": "Winch control",
+    "text10": "Planned maintenance system for the vessel"
   },
 
   "measurements": {
     "title1": "Preliminary inspection",
-    "text1": "Preliminary inspection of the place of measurements of residual thicknesses and coordination of the scope of work",
+    "text1": "Preliminary inspection of the location for residual thicknesses measurements and agreement on the scope of work",
     "alt1": "magnifer",
-    "title2": "Coordination",
-    "text2": "Coordination of survey programs with the inspector of the classification society",
+    "title2": "Agreement",
+    "text2": "Coordination of inspection programs with the classification society inspector",
     "alt2": "engeneer",
     "title3": "Measurement",
-    "text3": "Thickness measurement of steel structures of ships and land terminals",
+    "text3": " Measurement of the thickness of steel structures of ships and onshore terminals",
     "alt3": "angular",
     "title4": "Documentation",
-    "text4": "Drawing up reports on the work performed in accordance with the rules of classification societies",
+    "text4": "Compiling reports on performed works in accordance with the rules of classification societies",
     "alt4": "document",
-    "title5": "Blueprints",
+    "title5": "Drawings",
     "text5": "Preparation of repair drawings using detailed weight tables",
     "alt5": "pen"
   },
 
   "configs": {
     "consumers": {
-      "title": "Main consumers",
-      "text1": "Fuel consumption by Main, Auxiliary engines, Boilers (costs - hourly, total, for a certain, selected period of time)",
+      "title": "The main consumers",
+      "text1": "Fuel consumption of main engines, auxiliary engines, boilers (hourly, cumulative consumption, for a specific, selected period of time) is monitored by the system",
       "text2": "Operating time of mechanisms",
-      "text3": "Turnovers and load of Main and Diesel generators",
-      "text4": "Temperature of fuel, gases, coolant",
-      "text5": "Working condition of engines",
-      "text6": "Generating reports (daily, weekly, monthly, navigation)"
+      "text3": "Engine speed and load of the main engines and diesel generators",
+      "text4": "Fuel, gas, and coolant temperatures",
+      "text5": "Engine operating condition",
+      "text6": "Generating reports (daily, weekly, monthly, voyage)"
     },
     "control": {
-      "title": "Bunker control",
-      "text1": "The volume of received / issued cargo",
-      "text2": "Mass, density and temperature of fuel during bunkering",
-      "text3": "The time of the process of receiving / issuing cargo",
+      "title": "Control of bunker fuel",
+      "text1": "The volume of received/delivered cargo",
+      "text2": "The mass, density, and temperature of the fuel during bunkering",
+      "text3": "The time of cargo reception/delivery process",
       "text4": "Automatic report generation"
     },
     "option": {
       "title": "Vessel parameters",
-      "text1": "Position and course of the vessel",
-      "text2": "Vessel speed",
-      "text3": "Monitoring the state of ship consumers",
-      "text4": "Vessel roll / trim",
-      "text5": "Ship Energy (HVAC)",
-      "text6": "Cost Efficiency / Vessel Efficiency"
+      "text1": "The vessel's location and course ",
+      "text2": "Ship speed",
+      "text3": "Control of the ship's consumers' condition",
+      "text4": "Roll /pitch of the vessel",
+      "text5": "Vessel's power system (HVAC)",
+      "text6": "Cost efficiency / Vessel efficiency"
     },
     "additional": {
-      "title": "Extra options",
+      "title": "Additional parameters",
       "text1": "Alarm control",
       "text2": "Level measurements in tanks",
       "text3": "Valve remote control system"
@@ -251,58 +252,59 @@
   },
 
   "energyMenu": {
-    "name1": "Solution on board",
-    "name2": "FOCUS system for the fleet",
+    "name1": "On-board solution",
+    "name2": "FOCUS system for fleet",
     "name3": "Office solution"
   },
 
   "focus": {
-    "title": "Fleet Focus System",
-    "textBold": "Fleet FOCUS System ",
-    "text": "this is a system for monitoring, accounting for fuel and energy efficiency of the fleet",
-    "head": "How FOCUS works",
-    "text2": "A clear interaction between the fleet and the office will help to build all processes at a high level and reduce further costs.",
-    "titleBottom": "The FOCUS system has been designed to carry out all these processes as a single product.",
+    "title": "FOCUS System for Fleet",
+    "textBold": "FOCUS System for Fleet ",
+    "text": "is a fuel and energy efficiency monitoring and management system for fleet",
+    "head": "How does the FOCUS system work?",
+    "text2": "Clear interaction between the fleet and the office will help to streamline all processes at a high level and reduce further expenses.",
+    "titleBottom": "The FOCUS system has been developed to perform all these processes as a single product",
 
     "config": {
       "title1": "Step 1",
-      "text1": "Collection of data of the entire fleet",
+      "text1": "Collecting data from the entire fleet",
       "alt1": "server",
       "title2": "Step 2",
-      "text2": "Data transfer to the office",
+      "text2": "Transferring data to the office",
       "alt2": "satellite",
       "title3": "Step 3",
-      "text3": "Processing of received data",
+      "text3": "Processing the collected data",
       "alt3": "headphones",
       "title4": "Step 4",
-      "text4": "Issuance of recommendations to increase the energy efficiency of the vessel",
+      "text4": "Issuing recommendations to increase vessel energy efficiency",
       "alt4": "document"
     },
 
     "options": {
-      "text1": "We reduce the time to complete all statistical processes",
-      "text2": "High accuracy of parameter display",
+      "text1": "Reducing the time required to perform all statistical processes",
+      "text2": "High accuracy in displaying parameters",
       "text3": "Secure access",
-      "text4": "Storing data on a site convenient for the client",
-      "text5": "Recommendations issued by the system to reduce costs"
+      "text4": "Storing data on a customer-friendly platform",
+      "text5": "Recommendations provided by the system to reduce costs"
     }
   },
 
   "office": {
     "title": "Office solution",
+
     "text1": "Thanks to our office solution",
-    "text2": "you can easily control all indicators of the operating parameters of the vessel with subsequent online adjustment",
-    "head": "The system displays and allows you to control the following parameters",
+    "text2": "you can easily monitor all the vessel's operational parameters with subsequent online adjustments",
+    "head": "The system displays and allows you to monitor the following parameters",
     "list": {
-      "text1": "Instant flow, temperature, fuel density of Main Engines, Diesel Generators and Boiler",
-      "text2": "Main parameters for the shaft (power, revolutions, loads)",
+      "text1": "Instantaneous fuel consumption, temperature, fuel density of main engines, diesel generators, and boiler",
+      "text2": "Main shaft parameters (power, RPM, loads)",
       "text3": "Vessel efficiency",
-      "text4": "The speed and position of the vessel on the chart at the time",
-      "text5": "Angle of roll/draft of the ship",
-      "text6": "The strength and direction of the wind relative to the ship",
-      "text7": "Control of the bunkering process with the subsequent creation of a report",
-      "text8": "History of vessel passages/berths in port",
-      "text9": "Fuel consumption by consumers over a certain period of time (history)"
+      "text4": "Vessel speed and position on the map at a given moment in time",
+      "text5": "Vessel heel/draft",
+      "text6": "Wind force and direction relative to the vessel",
+      "text7": "Control of the bunkering process with subsequent report generation",
+      "text8": "History of vessel voyages/berths in port",
+      "text9": "Fuel consumption by consumers for a certain period of time (history)"
     }
   },
 
@@ -315,8 +317,8 @@
     "bigBtn": "Send a request",
     "services": "Get to know the services",
     "maintenance": "Maintenance",
-    "energy": "Vessel Energy Efficiency System",
-    "focus": "FOCUS system for the fleet",
+    "energy": "Ship Energy Efficiency System",
+    "focus": "FOCUS system for fleet",
     "contacts": "Contacts",
     "deck": "Deck",
     "bridge": "Bridge",

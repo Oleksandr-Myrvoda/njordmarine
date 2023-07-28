@@ -44,7 +44,7 @@ const Form = ({ isTitle }) => {
   const form = useRef();
 
   const onSubmit = data => {
-    // console.log('form-data', data);
+
     emailjs
       .sendForm(
         REACT_APP_FORM_SERVICE_ID,

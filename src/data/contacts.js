@@ -12,7 +12,7 @@ import linked from 'images/contact-in.svg';
 const contactsConfig = [
   {
     imgUrl: phone,
-    text: '+37258667396',
+    text: '+372 5866 7396',
     alt: 'phone',
   },
   {
@@ -25,7 +25,7 @@ const contactsConfig = [
 const contactsPageConfig = [
   {
     imgUrl: phoneC,
-    text: '+37258667396',
+    text: '+372 5866 7396',
     alt: 'phone',
   },
   {
@@ -39,22 +39,23 @@ const contactsPageConfig = [
     alt: 'marker',
   },
 ];
-const contactsPageSocial = [
+
+const socConfig = [
   {
+    linkUrl: 'https://www.facebook.com/',
     imgUrl: fb,
-    text: '',
     alt: 'facebook',
   },
   {
+    linkUrl: 'https://www.instagram.com/',
     imgUrl: insta,
-    text: '',
     alt: 'instagram',
   },
   {
+    linkUrl: 'https://www.linkedin.com/',
     imgUrl: linked,
-    text: '',
     alt: 'linkedin',
   },
 ];
 
-export { contactsConfig, contactsPageConfig, contactsPageSocial };
+export { contactsConfig, contactsPageConfig, socConfig };

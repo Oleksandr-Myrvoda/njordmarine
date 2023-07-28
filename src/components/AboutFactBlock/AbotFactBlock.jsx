@@ -19,11 +19,13 @@ const AbotFactBlock = () => {
         </div>
         <AboutFactList aboutFactConfig={aboutFactConfig} />
 
-        <SendInfo
-          linkName={t('sendInfo.services')}
-          linkPath="/services"
-          hideLink={false}
-        />
+        <div className={s.sendInfo}>
+          <SendInfo
+            linkName={t('sendInfo.services')}
+            linkPath="/services"
+            hideLink={false}
+          />
+        </div>
       </Container>
 
       {!isDesktop && <ScrollUp />}

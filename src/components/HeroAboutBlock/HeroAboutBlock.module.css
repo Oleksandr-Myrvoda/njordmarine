@@ -63,10 +63,14 @@
 
   .heroContent {
     justify-self: start;
-    width: calc(50%);
+    width: calc(45%);
     padding: 150px 96px 0 96px;
     display: block;
     gap: 30px;
+  }
+
+  .heroWrapper {
+    gap: 32px;
   }
 
   .description {

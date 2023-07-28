@@ -5,6 +5,8 @@
 }
 
 .title {
+  margin-bottom: 16px;
+
   font-family: 'Gilroy';
   font-weight: 600;
   font-size: 20px;
@@ -33,14 +35,17 @@
   letter-spacing: 0.24px;
   color: var(--text-color);
 }
+.sendInfo {
+  width: 100%;
+  margin-top: 32px;
+}
 
 @media screen and (min-width: 1440px) {
   .blockWrapper {
-    /* padding: 48px 0; */
     gap: 36px;
   }
   .title {
-    width: calc(45%);
+    margin-bottom: 0;
     font-size: 26px;
     line-height: 40px;
   }
@@ -50,5 +55,10 @@
   }
   .item {
     width: calc(45%);
+  }
+  .sendInfo {
+    margin-top: 32px;
+    align-self: center;
+    width: 500px;
   }
 }

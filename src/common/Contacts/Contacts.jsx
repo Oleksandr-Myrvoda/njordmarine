@@ -11,7 +11,9 @@ const Contacts = ({ contactsConfig, isContactsPage }) => {
       {contactsConfig.map(({ imgUrl, text, alt }, index) => (
         <li key={index} className={s.item}>
           <img className={s.img} src={imgUrl} alt={alt} />
-          <a href={`tel:${text}`}>{text}</a>
+          <p className={`${s.text} ${isContactsPage && s.contactsPage}`}>
+            {text}
+          </p>
         </li>
       ))}
     </ul>

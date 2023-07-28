@@ -22,11 +22,13 @@ const Office = () => {
 
       <ListWithDot config={officeConfig} />
 
-      <SendInfo
-        linkName={t('sendInfo.spares')}
-        linkPath="/spares"
-        hideLink={false}
-      />
+      <div className={s.sendInfo}>
+        <SendInfo
+          linkName={t('sendInfo.spares')}
+          linkPath="/spares"
+          hideLink={false}
+        />
+      </div>
     </div>
   );
 };

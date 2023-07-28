@@ -9,7 +9,12 @@
 }
 
 .taglineWrapper {
+  display: flex;
+  flex-direction: column;
   padding: 48px 16px 0 16px;
+
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
 .text {
@@ -24,7 +29,8 @@
 
 @media screen and (min-width: 1440px) {
   .taglineWrapper {
-    align-self: self-start;
+    gap: 16px;
+    margin-bottom: 48px;
   }
 
   .pageWrapper {

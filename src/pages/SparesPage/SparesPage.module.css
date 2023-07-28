@@ -41,8 +41,8 @@
 
   .taglineWrapper {
     align-self: center;
-    padding: 96px 96px 10px 96px;
-    gap: 16px;
+    padding: 96px 96px 0 96px;
+    gap: 40px;
   }
 
   .pagesBlock {

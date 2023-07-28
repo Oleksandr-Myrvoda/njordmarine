@@ -18,11 +18,13 @@ const OurTeamBlock = () => {
 
         <OurTeamList ourTeamConfig={ourTeamConfig} />
 
-        <SendInfo
-          linkName={t('sendInfo.services')}
-          linkPath="/services"
-          hideLink={false}
-        />
+        <div className={s.sendInfo}>
+          <SendInfo
+            linkName={t('sendInfo.services')}
+            linkPath="/services"
+            hideLink={false}
+          />
+        </div>
       </Container>
     </div>
   );

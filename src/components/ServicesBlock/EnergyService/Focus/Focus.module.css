@@ -80,6 +80,10 @@
   color: var(--text-light-color);
 }
 
+.sendInfo {
+  width: 100%;
+}
+
 @media screen and (min-width: 1440px) {
   .blockWrapper {
     gap: 60px;
@@ -108,5 +112,10 @@
     line-height: 40px;
 
     color: var(--text-color);
+  }
+
+  .sendInfo {
+    width: 500px;
+    align-self: center;
   }
 }

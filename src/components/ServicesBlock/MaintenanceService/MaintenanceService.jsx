@@ -21,11 +21,13 @@ const MaintenanceService = () => {
         <Measurements measurementsConfig={measurementsConfig} />
       </div>
 
-      <SendInfo
-        linkName={t('sendInfo.energy')}
-        linkPath="/services/energy"
-        hideLink={false}
-      />
+      <div className={s.sendInfo}>
+        <SendInfo
+          linkName={t('sendInfo.energy')}
+          linkPath="/services/energy"
+          hideLink={false}
+        />
+      </div>
     </div>
   );
 };

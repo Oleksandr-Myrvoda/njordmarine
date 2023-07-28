@@ -15,7 +15,10 @@ const AutomationService = () => {
       </div>
 
       <div>
-        <p className={s.text}>{t('services.auto.text')}</p>
+        <p className={s.text}>
+          <span className={s.textBold}>{t('services.auto.textBold')}</span>
+          {t('services.auto.text')}
+        </p>
       </div>
 
       <div className={s.blockContent}>

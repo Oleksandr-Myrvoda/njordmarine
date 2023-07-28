@@ -15,7 +15,8 @@ const NavItem = ({ name, path }) => {
       className={navItemStyles.join(' ')}
       activeClassName={s.NavItemActive}
     >
-      <span className={s.itemName}>{name}</span>
+      <div className={s.itemName}>{name}</div>
+      {/* <span className={s.itemName}>{name}</span> */}
     </NavLink>
   );
 };

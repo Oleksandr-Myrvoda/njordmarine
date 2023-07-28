@@ -32,6 +32,24 @@
   height: 231px;
 }
 
+.socList {
+  display: flex;
+  gap: 16px;
+}
+
+.socItem,
+.socBtn {
+  transition: all 200ms;
+  border: none;
+  background: none;
+  border-radius: 50%;
+}
+.socBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 8px 8px rgba(123, 170, 241, 0.3);
+  transition: all 200ms;
+}
+
 @media screen and (min-width: 1440px) {
   .blockWrapper {
     flex-direction: row;

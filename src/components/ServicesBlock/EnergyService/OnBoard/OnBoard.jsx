@@ -23,11 +23,13 @@ const OnBoard = () => {
 
       <OptionsBlock />
 
-      <SendInfo
-        linkName={t('sendInfo.focus')}
-        linkPath="/services/energy/focus"
-        hideLink={false}
-      />
+      <div className={s.sendInfo}>
+        <SendInfo
+          linkName={t('sendInfo.focus')}
+          linkPath="/services/energy/focus"
+          hideLink={false}
+        />
+      </div>
     </div>
   );
 };

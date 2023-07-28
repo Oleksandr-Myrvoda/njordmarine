@@ -18,11 +18,13 @@ const WorksList = ({ worksConfig }) => {
         ))}
       </ul>
 
-      <SendInfo
-        linkName={t('sendInfo.maintenance')}
-        linkPath="/services/maintenance"
-        hideLink={false}
-      />
+      <div className={s.sendInfo}>
+        <SendInfo
+          linkName={t('sendInfo.maintenance')}
+          linkPath="/services/maintenance"
+          hideLink={false}
+        />
+      </div>
     </div>
   );
 };

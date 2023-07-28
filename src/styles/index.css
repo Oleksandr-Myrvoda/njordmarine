@@ -14,6 +14,9 @@ const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' }); */
 /* const { t } = useTranslation(); */
 /* {t('heroBlock.head')} */
 
+/* <div className={s.sendInfo}></div> */
+/* .sendInfo {  align-self: center;} */
+
 :root {
   --accent-color: #ff321b;
   --big-button-color: #223e7f;
