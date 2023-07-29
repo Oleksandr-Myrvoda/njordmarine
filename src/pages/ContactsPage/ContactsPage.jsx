@@ -13,6 +13,9 @@ const ContactsPage = () => {
           <p>{t('contacts.text')}</p>
         </div>
         <ContactsBlock />
+        <a href="/" className={s.link}>
+          {t('geoBlock.bigButtonLink')}
+        </a>
       </Container>
     </div>
   );

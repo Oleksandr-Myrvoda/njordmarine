@@ -7,7 +7,7 @@ import s from './Modal.module.css';
 
 const modalRootRef = document.querySelector('#modal-root');
 
-const Modal = ({ onClose, title, children }) => {
+const Modal = ({ onClose, title, children, isEmailSended }) => {
   useLockBodyScroll(true);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Modal = ({ onClose, title, children }) => {
       <div className={s.modal}>
         <header className={s.header}>
           <div className={s.lead}>
-            <h3 className="tagline">{title}</h3>
+            {!isEmailSended && <h3 className="tagline">{title}</h3>}
           </div>
 
           <button className={s.closeBtn} onClick={onClose} aria-label="Close">

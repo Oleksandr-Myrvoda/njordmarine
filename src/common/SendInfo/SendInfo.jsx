@@ -8,19 +8,19 @@ import Form from 'common/Form';
 import Modal from 'common/Modal';
 
 import s from './SendInfo.module.css';
+import AfterSendEmail from './AfterSendEmail';
 
 const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
   const { t } = useTranslation();
 
-  const [formsList, setFormsList] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isEmailSended, setEmailSended] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
 
-  const sendForm = newForm => {
-    setFormsList([...formsList, newForm]);
-    closeModal();
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setEmailSended(false);
   };
 
   const scrollToTop = () => {
@@ -41,8 +41,19 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
         </NavLink>
 
         {isModalOpen && (
-          <Modal title={t('sendInfo.bigBtn')} onClose={closeModal}>
-            <Form onSubmit={sendForm} isTitle={false} />
+          <Modal
+            title={t('sendInfo.bigBtn')}
+            onClose={closeModal}
+            isEmailSended={isEmailSended}
+          >
+            {!isEmailSended ? (
+              <Form isTitle={false} setEmailSended={setEmailSended} />
+            ) : (
+              <AfterSendEmail
+                closeModal={closeModal}
+                setEmailSended={setEmailSended}
+              />
+            )}
           </Modal>
         )}
       </Suspense>

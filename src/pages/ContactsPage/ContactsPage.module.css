@@ -27,6 +27,26 @@
   color: var(--text-light-color);
 }
 
+.link {
+  margin: 48px 0;
+  justify-content: center;
+
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.24px;
+  color: var(--big-button-color);
+}
+
+.link::after {
+  padding-left: 15px;
+  content: url('../../images/arrowRight.svg');
+}
+
 @media screen and (min-width: 1440px) {
   .taglineWrapper {
     gap: 16px;
@@ -50,5 +70,10 @@
     /* background-position: 0 -200px; */
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .link {
+    justify-content: left;
+    margin: 96px 0 0 0;
   }
 }

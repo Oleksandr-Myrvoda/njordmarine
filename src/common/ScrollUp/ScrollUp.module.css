@@ -1,6 +1,6 @@
 .scroll {
   position: absolute;
-  z-index: 30;
+  z-index: 10;
 
   bottom: 234px;
   right: 36px;

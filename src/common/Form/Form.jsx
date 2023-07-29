@@ -37,14 +37,13 @@ const emailValidation = {
 //   },
 // };
 
-const Form = ({ isTitle }) => {
+const Form = ({ isTitle, setEmailSended }) => {
   const { t } = useTranslation();
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
   const form = useRef();
 
   const onSubmit = data => {
-
     emailjs
       .sendForm(
         REACT_APP_FORM_SERVICE_ID,
@@ -54,6 +53,7 @@ const Form = ({ isTitle }) => {
       )
       .then(
         result => {
+          setEmailSended(true);
           console.log(result.text);
         },
         error => {

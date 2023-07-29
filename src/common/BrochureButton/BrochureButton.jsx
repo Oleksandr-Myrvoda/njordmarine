@@ -3,7 +3,7 @@ import s from './BrochureButton.module.css';
 
 const BrochureButton = () => {
   const { t } = useTranslation();
-  return (
+  return ( 
     <button className={s.brochureBtn} type="button">
       {t('common.brochureBtn')}
     </button>

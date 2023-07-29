@@ -128,7 +128,7 @@
     "messageInput": "Message",
 
     "bigBtn": "Send",
-    "privacyTerms": "Read the privacy policy"
+    "privacyTerms": "Terms and conditions"
   },
 
   "navigation": {
@@ -324,5 +324,11 @@
     "bridge": "Bridge",
     "office": "Office solution",
     "spares": "Spare parts"
+  },
+
+  "afterSendEmail": {
+    "title": "Request submitted",
+    "text": "Thank you for contacting us! Our specialists will get in touch with you shortly.",
+    "bigBtn": "Ok"
   }
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { useMediaQuery } from 'react-responsive';
 import { useJsApiLoader } from '@react-google-maps/api';
 import Contacts from 'common/Contacts';
@@ -17,6 +18,7 @@ const defaultCenter = {
 
 const ContactsBlock = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+
   const [formsList, setFormsList] = useState([]);
 
   const { isLoaded } = useJsApiLoader({
