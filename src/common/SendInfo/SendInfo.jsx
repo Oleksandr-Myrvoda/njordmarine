@@ -9,6 +9,7 @@ import Modal from 'common/Modal';
 import AfterSendEmail from './AfterSendEmail';
 
 import s from './SendInfo.module.css';
+import Loader from 'common/Loader';
 
 const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
   const { t } = useTranslation();
@@ -29,7 +30,10 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
 
   return (
     <div className={s.contacts}>
-      <Suspense fallback={<h2>"Loading..."</h2>}>
+      <Suspense
+        // fallback={<h2>"Loading..."</h2>}
+        fallback={<Loader />}
+      >
         <BigButton onClick={openModal} text={t('sendInfo.bigBtn')} />
         <NavLink
           to={linkPath}

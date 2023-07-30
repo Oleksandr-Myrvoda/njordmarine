@@ -7,6 +7,8 @@ import Container from 'common/Container';
 
 import BlockNavigation from 'components/BlockNavigation/BlockNavigation';
 import s from './SparesPage.module.css';
+import Loader from 'common/Loader/Loader';
+import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
 
 const SparesBlock = lazy(() =>
   import('components/SparesBlock' /* webpackChunkName: "SparesBlock___page" */),
@@ -31,7 +33,12 @@ const SparesPage = ({ token }) => {
 
       <Container>
         <div className={s.pagesBlock}>
-          <Suspense fallback={<h2>"Loading..."</h2>}>
+          {/* <Loader /> */}
+          <Suspense
+            //  fallback={<h2>"Loading..."</h2>}
+            fallback={<Loader />}
+            // fallback={<LoaderSpinner />}
+          >
             <Switch>
               <Route
                 exact

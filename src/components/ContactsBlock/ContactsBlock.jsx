@@ -1,14 +1,14 @@
 import { useState } from 'react';
-
 import { useMediaQuery } from 'react-responsive';
 import { useJsApiLoader } from '@react-google-maps/api';
+import AfterSendEmail from 'common/SendInfo/AfterSendEmail';
 import Contacts from 'common/Contacts';
 import Form from 'common/Form/Form';
+import LoaderSpinner from 'common/LoaderSpinner';
 import GoogleMaps from 'components/GoogleMaps';
+import SocialBlock from './SocialBlock';
 import { contactsPageConfig } from 'data/contacts';
 import s from './ContactsBlock.module.css';
-import SocialBlock from './SocialBlock';
-import AfterSendEmail from 'common/SendInfo/AfterSendEmail';
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;
 
@@ -48,7 +48,7 @@ const ContactsBlock = () => {
         <Contacts contactsConfig={contactsPageConfig} isContactsPage={true} />
 
         <div className={s.map}>
-          {isLoaded ? <GoogleMaps center={defaultCenter} /> : <h2>Loading</h2>}
+          {isLoaded ? <GoogleMaps center={defaultCenter} /> : <LoaderSpinner />}
         </div>
 
         <SocialBlock />

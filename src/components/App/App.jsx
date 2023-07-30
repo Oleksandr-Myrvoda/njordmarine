@@ -7,6 +7,8 @@ import Sidebar from 'components/Sidebar';
 import { Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import s from './App.module.css';
+import Loader from 'common/Loader/Loader';
+import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
 
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -14,7 +16,11 @@ function App() {
   return (
     <div className={s.mainContainer}>
       {isDesktop && (
-        <Suspense fallback={<h2>"Loading..."</h2>}>
+        <Suspense
+          // fallback={<h2>"Loading..."</h2>}
+          fallback={<Loader />}
+          // fallback={<LoaderSpinner />}
+        >
           <Sidebar />
         </Suspense>
       )}
@@ -23,7 +29,11 @@ function App() {
         <div className={s.container}>
           <div className={s.content}>
             <LangProvider>
-              <Suspense fallback={<h2>"Loading..."</h2>}>
+              <Suspense
+                // fallback={<h2>"Loading..."</h2>}
+                fallback={<Loader />}
+                // fallback={<LoaderSpinner />}
+              >
                 <Header />
               </Suspense>
 

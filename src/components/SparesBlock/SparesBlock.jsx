@@ -133,7 +133,7 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
             placeholder="Title in english"
           />
 
-          <FileUploader uploadData={addData} />
+          <FileUploader uploadData={addData} imgUrl={imgUrl} />
         </form>
       )}
 

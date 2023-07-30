@@ -97,18 +97,36 @@ const Item = ({
             />
           </>
         )}
-        <button onClick={openModal} className={s.button}>
-          {t('spares.brandsBtn')}
-        </button>
+        {!editedData && (
+          <button onClick={openModal} className={s.button}>
+            {t('spares.brandsBtn')}
+          </button>
+        )}
       </div>
 
-      {isLogin && !editedData && (
+      {isLogin && editedData ? (
+        <button
+          className={s.buttonBack}
+          type="button"
+          onClick={() => setEditedData(null)}
+          aria-label="Menu"
+        >
+          Back
+        </button>
+      ) : (
         <CardWithMenu
           isEditing={editedData?.itemTitle}
           onEdit={openEditSets}
           onDelete={handleDeleteData}
         />
       )}
+      {/* {isLogin && !editedData && (
+        <CardWithMenu
+          isEditing={editedData?.itemTitle}
+          onEdit={openEditSets}
+          onDelete={handleDeleteData}
+        />
+      )} */}
     </li>
   );
 };

@@ -7,6 +7,8 @@ import BlockNavigation from 'components/BlockNavigation';
 
 import { servicesListConfig } from 'data/services-list';
 import s from './ServicesListPage.module.css';
+import Loader from 'common/Loader/Loader';
+import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
 
 const AutomationService = lazy(() =>
   import(
@@ -39,7 +41,11 @@ const ServicesListPage = () => {
 
       <Container>
         <div className={s.pagesBlock}>
-          <Suspense fallback={<h2>"Loading..."</h2>}>
+          <Suspense
+            // fallback={<h2>"Loading..."</h2>}
+            fallback={<Loader />}
+            // fallback={<LoaderSpinner />}
+          >
             <Switch>
               <Route
                 exact

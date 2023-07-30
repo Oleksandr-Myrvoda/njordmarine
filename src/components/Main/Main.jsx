@@ -4,6 +4,8 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { ErrorProvider } from 'context/ErrorProvider';
 
 import s from './Main.module.css';
+import Loader from 'common/Loader/Loader';
+import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
 
 const HomePage = lazy(() =>
   import('pages/HomePage' /* webpackChunkName: "Home___page" */),
@@ -31,7 +33,11 @@ const AdminPage = lazy(() =>
 const Main = () => {
   return (
     <main className={s.main}>
-      <Suspense fallback={<h2>"Loading..."</h2>}>
+      <Suspense
+        // fallback={<h2>"Loading..."</h2>}
+        fallback={<Loader />}
+        // fallback={<LoaderSpinner />}
+      >
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/home" />} />
 

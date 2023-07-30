@@ -15,6 +15,8 @@ import burgerClose from '../../images/List-Close.png';
 import logoHeaderMob from '../../images/Logo-header-mob.svg';
 import s from './Header.module.css';
 import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
+import Loader from 'common/Loader/Loader';
+import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
 
 const Header = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -53,10 +55,12 @@ const Header = () => {
             </button>
           )}
 
-          <Suspense fallback={<h2>"Loading..."</h2>}>
-            {/* <LangProvider> */}
+          <Suspense
+            //  fallback={<h2>"Loading..."</h2>}
+            fallback={<Loader />}
+            // fallback={<LoaderSpinner />}
+          >
             <LanguageSwitcher />
-            {/* </LangProvider> */}
           </Suspense>
           <BrochureButton />
         </>

@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
-import Container from 'common/Container';
+import Loader from 'common/Loader/Loader';
+import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
 
 const HeroAboutBlock = lazy(() =>
   import(
@@ -18,9 +19,12 @@ const AboutCompanyPage = () => {
   const match = useRouteMatch();
 
   return (
-    // <Container>
     <>
-      <Suspense fallback={<h2>"Loading..."</h2>}>
+      <Suspense
+        // fallback={<h2>"Loading..."</h2>}
+        fallback={<Loader />}
+        // fallback={<LoaderSpinner />}
+      >
         <Switch>
           <Route path={`${match.path}/about-us`}>
             <HeroAboutBlock />
@@ -33,7 +37,6 @@ const AboutCompanyPage = () => {
         </Switch>
       </Suspense>
     </>
-    // </Container>
   );
 };
 
