@@ -22,10 +22,14 @@ const Footer = () => {
       </div>
 
       <ul className={s.list}>
-        {contactsConfig.map(({ imgUrl, text, alt }, index) => (
+        {contactsConfig.map(({ imgUrl, text, alt, href }, index) => (
           <li key={index} className={s.item}>
             <img className={s.img} src={imgUrl} alt={alt} />
-            <p className={s.text}>{text}</p>
+            <p className={s.text}>
+              <a className={s.href} href={href}>
+                {text}
+              </a>
+            </p>
           </li>
         ))}
       </ul>

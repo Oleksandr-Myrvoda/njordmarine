@@ -48,6 +48,10 @@
   color: var(--text-color);
 }
 
+.schemeBG {
+  width: 100%;
+}
+
 @media screen and (min-width: 1440px) {
   .blockWrapper {
     /* padding: 48px 0; */

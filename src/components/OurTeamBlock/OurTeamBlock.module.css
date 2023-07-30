@@ -1,5 +1,5 @@
 .ourTeamBlock {
-  padding: 48px 16px 0 16px;
+  padding: 48px 16px 48px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   background-image: url('../../images/out-team-bg-mob.png');
   background-position: right;
+  background-size: cover;
 }
 
 .description {

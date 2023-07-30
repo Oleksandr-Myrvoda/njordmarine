@@ -104,29 +104,23 @@ const Item = ({
         )}
       </div>
 
-      {isLogin && editedData ? (
-        <button
-          className={s.buttonBack}
-          type="button"
-          onClick={() => setEditedData(null)}
-          aria-label="Menu"
-        >
-          Back
-        </button>
-      ) : (
-        <CardWithMenu
-          isEditing={editedData?.itemTitle}
-          onEdit={openEditSets}
-          onDelete={handleDeleteData}
-        />
-      )}
-      {/* {isLogin && !editedData && (
-        <CardWithMenu
-          isEditing={editedData?.itemTitle}
-          onEdit={openEditSets}
-          onDelete={handleDeleteData}
-        />
-      )} */}
+      {isLogin &&
+        (editedData ? (
+          <button
+            className={s.buttonBack}
+            type="button"
+            onClick={() => setEditedData(null)}
+            aria-label="Menu"
+          >
+            Back
+          </button>
+        ) : (
+          <CardWithMenu
+            isEditing={editedData?.itemTitle}
+            onEdit={openEditSets}
+            onDelete={handleDeleteData}
+          />
+        ))}
     </li>
   );
 };

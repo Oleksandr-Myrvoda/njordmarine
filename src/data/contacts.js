@@ -14,11 +14,13 @@ const contactsConfig = [
     imgUrl: phone,
     text: '+372 5866 7396',
     alt: 'phone',
+    href: 'tel:37258667396',
   },
   {
     imgUrl: mail,
     text: 'sales@njordmarine.eu',
     alt: 'mail',
+    href: 'mailto:sales@njordmarine.eu',
   },
 ];
 
@@ -27,11 +29,13 @@ const contactsPageConfig = [
     imgUrl: phoneC,
     text: '+372 5866 7396',
     alt: 'phone',
+    href: 'tel:37258667396',
   },
   {
     imgUrl: mailC,
     text: 'sales@njordmarine.eu',
     alt: 'mail',
+    href: 'mailto:sales@njordmarine.eu',
   },
   {
     imgUrl: markerC,

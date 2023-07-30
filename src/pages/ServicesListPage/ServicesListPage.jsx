@@ -1,5 +1,11 @@
 import { Suspense, lazy } from 'react';
-import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
+import {
+  Redirect,
+  Route,
+  Switch,
+  useRouteMatch,
+  useLocation,
+} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import Container from 'common/Container';
@@ -7,8 +13,8 @@ import BlockNavigation from 'components/BlockNavigation';
 
 import { servicesListConfig } from 'data/services-list';
 import s from './ServicesListPage.module.css';
-import Loader from 'common/Loader/Loader';
-import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
+import Loader from 'common/Loader';
+import LoaderSpinner from 'common/LoaderSpinner';
 
 const AutomationService = lazy(() =>
   import(
@@ -30,9 +36,25 @@ const ServicesListPage = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const match = useRouteMatch();
+  const location = useLocation();
+
+  const autoBG = `${match.path}/automation`;
+  const focusBG = `${match.path}/maintenance`;
+  const energyBG = `${match.path}/energy`;
+
+  const isAuto = location.pathname === autoBG;
+  const isFocus = location.pathname === focusBG;
+  const isEnergy = location.pathname.startsWith(energyBG);
 
   return (
-    <div className={s.pageWrapper}>
+    <div
+      // className={`${s.pageWrapper} ${s.focusBG}`}
+      className={`${s.pageWrapper}
+      ${isAuto && s.onBoardBG}
+      ${isFocus && s.focusBG} 
+      ${isEnergy && s.energyBG}`}
+    >
+      {/* <div className={s.pageWrapper}> */}
       <div className={s.taglineWrapper}>
         <h1 className="taglineBig">{t('services.taglineBig')}</h1>
 

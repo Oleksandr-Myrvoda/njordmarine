@@ -6,6 +6,7 @@ import { ErrorProvider } from 'context/ErrorProvider';
 import s from './Main.module.css';
 import Loader from 'common/Loader/Loader';
 import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
+// import NotFound from 'pages/NotFound/NotFound';
 
 const HomePage = lazy(() =>
   import('pages/HomePage' /* webpackChunkName: "Home___page" */),
@@ -29,6 +30,12 @@ const ContactsPage = lazy(() =>
 const AdminPage = lazy(() =>
   import('pages/AdminPage' /* webpackChunkName: "Admin___page" */),
 );
+
+const NotFound = () => {
+  return (
+    <h1>Страница не найдена. Вы будете перенаправлены на главную страницу.</h1>
+  );
+};
 
 const Main = () => {
   return (
@@ -77,6 +84,17 @@ const Main = () => {
           <Route path="/admin">
             <AdminPage />
           </Route>
+
+          <Route exact path="*" render={() => <Redirect to="/home" />} />
+
+          {/* <Route path="*">
+            <NotFound />
+          </Route> */}
+
+          {/* 
+          <Route>     
+            <NotFound />
+          </Route> */}
         </Switch>
       </Suspense>
     </main>

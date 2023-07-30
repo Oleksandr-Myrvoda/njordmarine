@@ -8,11 +8,13 @@ const Contacts = ({ contactsConfig, isContactsPage }) => {
 
   return (
     <ul className={listStyles.join(' ')}>
-      {contactsConfig.map(({ imgUrl, text, alt }, index) => (
+      {contactsConfig.map(({ imgUrl, text, alt, href }, index) => (
         <li key={index} className={s.item}>
           <img className={s.img} src={imgUrl} alt={alt} />
           <p className={`${s.text} ${isContactsPage && s.contactsPage}`}>
-            {text}
+            <a className={s.href} href={href}>
+              {text}
+            </a>
           </p>
         </li>
       ))}

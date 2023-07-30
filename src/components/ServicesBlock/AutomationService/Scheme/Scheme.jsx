@@ -13,7 +13,7 @@ const Scheme = ({ schemeConfig }) => {
       <h2 className={s.tagline}>{t('services.auto.schemeTagline')}:</h2>
       <div className={s.listWrapper}>
         <div>
-          <img src={isDesktop ? bg : bgMob} alt="ship" />
+          <img className={s.schemeBG} src={isDesktop ? bg : bgMob} alt="ship" />
         </div>
         <ul className={s.list}>
           {schemeConfig.map(({ imgUrl, count, text, alt }, index) => (
