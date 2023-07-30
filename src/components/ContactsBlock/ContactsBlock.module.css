@@ -14,6 +14,8 @@
 
 .formWrapper {
   padding: 16px;
+  /* height: 752px; */
+  height: auto;
 }
 
 .mapTitle {
@@ -63,6 +65,7 @@
 
   .mapWrapper {
     padding: 16px;
+    height: auto;
   }
 
   .map {

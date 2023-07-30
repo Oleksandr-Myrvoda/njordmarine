@@ -155,7 +155,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
             value={newBrend.ru}
             onChange={handleBrendChenge}
             placeholder="На русском"
-            autocomplete="off"
+            autoComplete="off"
           />
 
           <input
@@ -165,7 +165,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
             value={newBrend.en}
             onChange={handleBrendChenge}
             placeholder="In english"
-            autocomplete="off"
+            autoComplete="off"
           />
 
           <button type="submit" className={s.button} text="Add">

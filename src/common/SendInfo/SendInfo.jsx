@@ -6,9 +6,9 @@ import clsx from 'clsx';
 import BigButton from 'common/BigButton';
 import Form from 'common/Form';
 import Modal from 'common/Modal';
+import AfterSendEmail from './AfterSendEmail';
 
 import s from './SendInfo.module.css';
-import AfterSendEmail from './AfterSendEmail';
 
 const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
   const { t } = useTranslation();

@@ -26,18 +26,21 @@ const Navigation = () => {
       <div onClick={() => handleMenuClick('company')}>
         <NavItem name={`02. ${t('navigation.nav2')}`} path="/about-company" />
       </div>
-      {activeMenu === 'company' && (
-        <div className={s.insideMenu}>
-          <NavItem
-            name={t('navigation.aboutCompany.name1')}
-            path="/about-company/about-us"
-          />
-          <NavItem
-            name={t('navigation.aboutCompany.name2')}
-            path="/about-company/our-team"
-          />
-        </div>
-      )}
+
+      <div
+        className={`${s.insideMenu} ${
+          activeMenu === 'company' ? s.active : ''
+        }`}
+      >
+        <NavItem
+          name={t('navigation.aboutCompany.name1')}
+          path="/about-company/about-us"
+        />
+        <NavItem
+          name={t('navigation.aboutCompany.name2')}
+          path="/about-company/our-team"
+        />
+      </div>
 
       {/* ======= SERVICES ======= */}
 
@@ -45,8 +48,12 @@ const Navigation = () => {
         <NavItem name={`03. ${t('navigation.nav3')}`} path="/services" />
       </div>
 
-      {activeMenu === 'services' && !isDesktop && (
-        <ul className={s.insideMenu}>
+      {!isDesktop && (
+        <ul
+          className={`${s.insideMenu} ${
+            activeMenu === 'services' ? s.active : ''
+          }`}
+        >
           {servicesListConfig.map(({ name, to }, index) => (
             <li key={index}>
               <NavItem name={t(name)} path={`/services/${to}`} />
@@ -56,12 +63,17 @@ const Navigation = () => {
       )}
 
       {/* ======= SPARES ======= */}
+
       <div onClick={() => handleMenuClick('spares')}>
         <NavItem name={`04. ${t('navigation.nav4')}`} path="/spares" />
       </div>
 
-      {activeMenu === 'spares' && !isDesktop && (
-        <ul className={s.insideMenu}>
+      {!isDesktop && (
+        <ul
+          className={`${s.insideMenu} ${
+            activeMenu === 'spares' ? s.active : ''
+          }`}
+        >
           {sparesListConfig.map(({ name, to }, index) => (
             <li key={index}>
               <NavItem name={t(name)} path={`/spares/${to}`} />
@@ -71,6 +83,7 @@ const Navigation = () => {
       )}
 
       {/* ======= CONTACTS ======= */}
+
       <div onClick={() => handleMenuClick('contacts')}>
         <NavItem name={`05. ${t('navigation.nav5')}`} path="/contacts" />
       </div>

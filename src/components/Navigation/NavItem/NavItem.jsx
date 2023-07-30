@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
-
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import s from './NavItem.module.css';
 
 const NavItem = ({ name, path }) => {
@@ -16,7 +15,6 @@ const NavItem = ({ name, path }) => {
       activeClassName={s.NavItemActive}
     >
       <div className={s.itemName}>{name}</div>
-      {/* <span className={s.itemName}>{name}</span> */}
     </NavLink>
   );
 };

@@ -33,11 +33,12 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
     deleteBrend(id);
   };
 
-  const handleEditBrend = e =>
+  const handleEditBrend = e => {
     setEditedData(prev => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
+  };
 
   return (
     <li
@@ -54,14 +55,14 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
       {!editedData ? (
         <> {brend[lang]}</>
       ) : (
-        <>
+        <div className={s.formInputWrapper}>
           <input
             className={s.formInput}
             type="text"
             value={editedData.ru}
             name="ru"
             onChange={handleEditBrend}
-            autocomplete="off"
+            autoComplete="off"
             placeholder="На русском"
           />
           <input
@@ -70,15 +71,19 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
             value={editedData.en}
             name="en"
             onChange={handleEditBrend}
-            autocomplete="off"
+            autoComplete="off"
             placeholder="In english"
           />
-        </>
+        </div>
       )}
 
       {/* ================= */}
       {isLogin && isMenuOpen && (
-        <CardWithMenu onEdit={handleEditData} onDelete={handleDeleteData} />
+        <CardWithMenu
+          onEdit={handleEditData}
+          onDelete={handleDeleteData}
+          isEditing={editedData}
+        />
       )}
     </li>
   );

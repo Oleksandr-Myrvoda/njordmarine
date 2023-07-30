@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
-import { useState, useRef } from 'react';
-
 import s from './CardWithMenu.module.css';
 
-const CardWithMenu = ({ text, onEdit, onDelete, isEditing }) => {
+const CardWithMenu = ({ onEdit, onDelete, isEditing }) => {
   const handleEdit = () => {
     onEdit();
   };
@@ -15,15 +13,12 @@ const CardWithMenu = ({ text, onEdit, onDelete, isEditing }) => {
   return (
     <div className={s.cardStyles}>
       <button
-        // className={isEditing ? { backgroundColor: 'green' } : {button}}
-        className={s.button}
+        className={`${s.button} ${isEditing && s.edited}`}
         type="button"
         onClick={handleEdit}
         aria-label="Menu"
       >
-        {/* <p style={isEditing ? { backgroundColor: 'green' } : {}}>Edit</p> */}
-        {/* <img className={s.icon} src={editIcon} alt="Edit" /> */}
-        Edit
+        {isEditing ? 'Ok' : 'Edit'}
       </button>
 
       <button

@@ -8,6 +8,7 @@ import GoogleMaps from 'components/GoogleMaps';
 import { contactsPageConfig } from 'data/contacts';
 import s from './ContactsBlock.module.css';
 import SocialBlock from './SocialBlock';
+import AfterSendEmail from 'common/SendInfo/AfterSendEmail';
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;
 
@@ -17,24 +18,28 @@ const defaultCenter = {
 };
 
 const ContactsBlock = () => {
+  const [isEmailSended, setEmailSended] = useState(false);
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  const [formsList, setFormsList] = useState([]);
+  const confirmSending = () => setEmailSended(false);
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: API_KEY,
   });
 
-  const sendForm = newForm => {
-    setFormsList([...formsList, newForm]);
-  };
-
   return (
     <div className={s.blockWrapper}>
       {!isDesktop && (
         <div className={s.formWrapper}>
-          <Form onSubmit={sendForm} isTitle={true} />
+          {!isEmailSended ? (
+            <Form isTitle={true} setEmailSended={setEmailSended} />
+          ) : (
+            <AfterSendEmail
+              closeModal={confirmSending}
+              setEmailSended={setEmailSended}
+            />
+          )}
         </div>
       )}
 
@@ -51,7 +56,14 @@ const ContactsBlock = () => {
 
       {isDesktop && (
         <div className={s.formWrapper}>
-          <Form isTitle={true} />
+          {!isEmailSended ? (
+            <Form isTitle={true} setEmailSended={setEmailSended} />
+          ) : (
+            <AfterSendEmail
+              closeModal={confirmSending}
+              setEmailSended={setEmailSended}
+            />
+          )}
         </div>
       )}
     </div>

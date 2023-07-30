@@ -8,11 +8,18 @@
 
 .insideMenu {
   margin-left: 16px;
+  width: 184px;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.active {
+  max-height: 250px;
 }
 
 @media screen and (min-width: 1440px) {
   .nav {
-    padding-left: 0;
     width: 16vw;
     align-content: center;
   }

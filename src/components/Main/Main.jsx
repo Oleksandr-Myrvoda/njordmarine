@@ -2,14 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { ErrorProvider } from 'context/ErrorProvider';
-// import { LangProvider } from 'context/LangProvider';
-// import AboutCompanyPage from 'pages/AboutCompanyPage';
-// import HomePage from 'pages/HomePage';
-// import ServicesListPage from 'pages/ServicesListPage';
-// import SparesPage from 'pages/SparesPage';
-// import ContactsPage from 'pages/ContactsPage';
-// import NotFound from 'pages/NotFound';
-// import AdminPage from 'pages/AdminPage';
+
 import s from './Main.module.css';
 
 const HomePage = lazy(() =>
@@ -65,9 +58,7 @@ const Main = () => {
           {/*--- SPARES ------------------------*/}
           <Route path="/spares">
             <ErrorProvider>
-              {/* <LangProvider> */}
               <SparesPage />
-              {/* </LangProvider> */}
             </ErrorProvider>
           </Route>
 

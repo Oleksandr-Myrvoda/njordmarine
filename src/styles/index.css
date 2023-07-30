@@ -17,9 +17,12 @@ const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' }); */
 /* <div className={s.sendInfo}></div> */
 /* .sendInfo {  align-self: center;} */
 
+/* className={`${s.text} ${isContactsPage && s.contactsPage}`} */
+
 :root {
   --accent-color: #ff321b;
   --big-button-color: #223e7f;
+  --big-button-hover-color: #012756;
   --bg-light-color: #fcfcfc;
   --bg-medium-color: #ebf3ff;
   --bg-dark-color: #012756;
@@ -89,4 +92,19 @@ p {
   letter-spacing: 0.24px;
 
   color: var(--text-color);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset; /* Отключение желтого фона в Chrome/Safari */
+  transition: background-color 5000s ease-in-out 0s; /* Отключение анимации фона в Chrome/Safari */
+}
+
+/* Отключение автозаполнения в Firefox */
+input:-moz-autofill {
+  /* Можно оставить пустым или задать желаемые стили для автозаполнения в Firefox */
 }

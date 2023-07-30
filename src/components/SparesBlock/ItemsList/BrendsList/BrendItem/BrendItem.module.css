@@ -6,23 +6,44 @@
   font-size: 16px;
   line-height: 24px;
   text-transform: uppercase;
-  /* max-width: calc(48%); */
-  width: calc(48%);
+
   letter-spacing: 0.24px;
   color: var(--text-color);
 }
 
-.item::before {
+/* .item::before {
   padding-right: 5px;
   content: ' \2022 ';
   color: var(--text-color);
+} */
+.item {
+  /* display: flex;
+  flex-direction: row;
+  align-items: center; */
+  width: calc(48%);
+}
+
+.formInputWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .formInput {
   border: none;
   border-radius: 8px;
-  width: 100%;
+  width: calc(80%);
   background-color: var(--bg-light-color);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background: none;
+  /* cursor: pointer; */
+  border: none;
+  background-color: var(--big-button-color);
 }
 
 @media screen and (min-width: 1440px) {

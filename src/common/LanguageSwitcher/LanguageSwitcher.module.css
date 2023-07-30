@@ -24,13 +24,8 @@
   transition: all 200ms;
 }
 
-button:hover {
-  scale: 1.1;
-}
-
 .active {
   width: 30px;
-  scale: 1.1;
   border: none;
   background: none;
   font: 'Gilroy';

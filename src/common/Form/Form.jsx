@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
@@ -70,6 +70,7 @@ const Form = ({ isTitle, setEmailSended }) => {
         <label>
           <p className={s.label}>{t('form.name')}</p>
           <input
+            className={s.formInput}
             name="customerName"
             type="text"
             placeholder={t('form.nameInput')}
@@ -83,6 +84,7 @@ const Form = ({ isTitle, setEmailSended }) => {
         <label>
           <p className={s.label}>{t('form.email')}</p>
           <input
+            className={s.formInput}
             name="email"
             type="text"
             placeholder={t('form.emailInput')}
@@ -94,16 +96,20 @@ const Form = ({ isTitle, setEmailSended }) => {
         <label>
           <p className={s.label}>{t('form.phone')}</p>
           <input
+            className={s.formInput}
             name="phone"
-            // type="tel"
+            type="tel"
             placeholder={t('form.phoneInput')}
+            // {...register('phone', phoneValidation)}
             {...register('phone')}
           />
+          {/* {errors.phone && <ErrorMsg message={errors.phone.message} />} */}
         </label>
 
         <label>
           <p className={s.label}>{t('form.subjMessage')}</p>
           <input
+            className={s.formInput}
             name="subjMessage"
             type="text"
             placeholder={t('form.subjMessageInput')}
@@ -134,105 +140,9 @@ const Form = ({ isTitle, setEmailSended }) => {
   );
 };
 
-// Form.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
+Form.propTypes = {
+  setEmailSended: PropTypes.func.isRequired,
+  isTitle: PropTypes.bool.isRequired,
+};
 
 export default Form;
-
-// const Form = ({ onSubmit, isTitle }) => {
-//   const { t } = useTranslation();
-//   const [customerName, setCustomerName] = useState('');
-//   const [phone, setPhone] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [themeMessage, setThemeMessage] = useState('');
-//   const [message, setMessage] = useState('');
-
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     onSubmit({ customerName, phone, email, themeMessage, message });
-//     reset();
-//   };
-
-//   const reset = () => {
-//     setCustomerName('');
-//     setEmail('');
-//     setPhone('');
-//     setThemeMessage('');
-//     setMessage('');
-//   };
-
-//   return (
-//     <div className={s.container}>
-//       {isTitle && <h2 className="tagline">{t('form.tagline')}</h2>}
-//       <form onSubmit={handleSubmit} className={s.inner}>
-//         <label>
-//           <p className={s.label}>{t('form.name')}</p>
-//           <input
-//             name="customerName"
-//             value={customerName}
-//             type="text"
-//             placeholder={t('form.nameInput')}
-//             required
-//             onChange={e => setCustomerName(e.target.value)}
-//           />
-//         </label>
-//         <label>
-//           <p className={s.label}>{t('form.email')}</p>
-//           <input
-//             name="email"
-//             value={email}
-//             type="email"
-//             placeholder={t('form.emailInput')}
-//             required
-//             onChange={e => setEmail(e.target.value)}
-//           />
-//         </label>
-//         <label>
-//           <p className={s.label}>{t('form.phone')}</p>
-//           <input
-//             name="phone"
-//             value={phone}
-//             type="tel"
-//             placeholder={t('form.phoneInput')}
-//             onChange={e => setPhone(e.target.value)}
-//           />
-//         </label>
-//         <label>
-//           <p className={s.label}>{t('form.subjMessage')}</p>
-//           <input
-//             name="themeMessage"
-//             value={themeMessage}
-//             type="text"
-//             placeholder={t('form.subjMessageInput')}
-//             onChange={e => setThemeMessage(e.target.value)}
-//           />
-//         </label>
-//         <label className={s.labelTextarea}>
-//           <p className={s.label}>{t('form.message')}</p>
-//           <textarea
-//             className={s.textarea}
-//             name="message"
-//             value={message}
-//             type="text"
-//             placeholder={t('form.messageInput')}
-//             onChange={e => setMessage(e.target.value)}
-//           ></textarea>
-//         </label>
-//         <div className={s.btns}>
-//           <BigButton type="submit" text={t('form.bigBtn')} />
-
-//           <a className={s.link} href="http://">
-//             {t('form.privacyTerms')}
-//           </a>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// };
-
-// Form.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
-
-// export default Form;

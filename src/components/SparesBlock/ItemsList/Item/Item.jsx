@@ -85,7 +85,7 @@ const Item = ({
               name="ru"
               onChange={handleEditTitle}
               placeholder="На русском"
-              autocomplete="off"
+              autoComplete="off"
             />
             <input
               type="text"
@@ -93,7 +93,7 @@ const Item = ({
               name="en"
               onChange={handleEditTitle}
               placeholder="In english"
-              autocomplete="off"
+              autoComplete="off"
             />
           </>
         )}
@@ -102,7 +102,7 @@ const Item = ({
         </button>
       </div>
 
-      {isLogin && (
+      {isLogin && !editedData && (
         <CardWithMenu
           isEditing={editedData?.itemTitle}
           onEdit={openEditSets}

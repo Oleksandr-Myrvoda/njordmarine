@@ -21,8 +21,7 @@
 
   color: var(--form-text-color);
 }
-
-.inner input {
+.formInput {
   border: none;
   border-radius: 8px;
   width: 100%;
@@ -40,6 +39,7 @@
   color: var(--text-color);
 }
 
+.formInput::placeholder,
 .inner input::placeholder,
 .textarea::placeholder {
   padding-left: 10px;
@@ -92,7 +92,7 @@
     gap: 16px;
   }
 
-  .inner input {
+  .formInput {
     width: 275px;
   }
 
