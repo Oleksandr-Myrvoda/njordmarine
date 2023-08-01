@@ -31,9 +31,7 @@ const EnergyService = () => {
           <Office />
         </Route>
 
-        <Route>
-          <NotFound />
-        </Route>
+        <Route render={() => <Redirect to={match.url} />} />
       </Switch>
     </div>
   );

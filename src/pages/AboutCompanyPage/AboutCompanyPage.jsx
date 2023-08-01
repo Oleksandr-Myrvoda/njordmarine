@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch, Redirect } from 'react-router-dom';
 import Loader from 'common/Loader/Loader';
 import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
 
@@ -34,6 +34,8 @@ const AboutCompanyPage = () => {
           <Route path={`${match.path}/our-team`}>
             <OurTeamBlock />
           </Route>
+
+          <Route render={() => <Redirect to={match.url} />} />
         </Switch>
       </Suspense>
     </>

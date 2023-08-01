@@ -1,5 +1,11 @@
 import { Suspense, lazy } from 'react';
-import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
+import {
+  Redirect,
+  Route,
+  Switch,
+  useRouteMatch,
+  useLocation,
+} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { sparesListConfig } from 'data/spares-list';
@@ -18,6 +24,7 @@ const SparesPage = ({ token }) => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const match = useRouteMatch();
+  const location = useLocation();
 
   const contactsLang = t('sendInfo.contacts');
   const deckLang = t('sendInfo.deck');
@@ -71,6 +78,8 @@ const SparesPage = ({ token }) => {
                   linkName={contactsLang} // props for <SendInfo />
                 />
               </Route>
+
+              <Route render={() => <Redirect to={match.url} />} />
             </Switch>
           </Suspense>
         </div>

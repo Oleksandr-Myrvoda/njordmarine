@@ -86,6 +86,8 @@ const ServicesListPage = () => {
               <Route path={`${match.path}/energy`}>
                 <EnergyService />
               </Route>
+
+              <Route render={() => <Redirect to={match.url} />} />
             </Switch>
           </Suspense>
         </div>

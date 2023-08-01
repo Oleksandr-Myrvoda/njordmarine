@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { ErrorProvider } from 'context/ErrorProvider';
 
@@ -38,13 +38,11 @@ const NotFound = () => {
 };
 
 const Main = () => {
+  const location = useLocation();
+
   return (
     <main className={s.main}>
-      <Suspense
-        // fallback={<h2>"Loading..."</h2>}
-        fallback={<Loader />}
-        // fallback={<LoaderSpinner />}
-      >
+      <Suspense fallback={<Loader />}>
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/home" />} />
 
@@ -85,16 +83,7 @@ const Main = () => {
             <AdminPage />
           </Route>
 
-          <Route exact path="*" render={() => <Redirect to="/home" />} />
-
-          {/* <Route path="*">
-            <NotFound />
-          </Route> */}
-
-          {/* 
-          <Route>     
-            <NotFound />
-          </Route> */}
+          <Route render={() => <Redirect to="/home" />} />
         </Switch>
       </Suspense>
     </main>

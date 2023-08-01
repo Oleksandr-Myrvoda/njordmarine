@@ -89,7 +89,7 @@ const AuthBlock = () => {
       </form>
       {/* <Link to="/spares"></Link> */}
 
-      {/* <AdminBlock /> */}
+      <AdminBlock />
     </div>
   );
 };
