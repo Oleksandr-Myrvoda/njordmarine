@@ -49,6 +49,7 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
             title={t('sendInfo.bigBtn')}
             onClose={closeModal}
             isEmailSended={isEmailSended}
+            isModalOpen={isModalOpen}
           >
             {!isEmailSended ? (
               <Form isTitle={false} setEmailSended={setEmailSended} />

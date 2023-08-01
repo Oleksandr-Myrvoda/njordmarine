@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useLockBodyScroll } from 'react-use';
 import PropTypes from 'prop-types';
@@ -7,8 +7,10 @@ import s from './Modal.module.css';
 
 const modalRootRef = document.querySelector('#modal-root');
 
-const Modal = ({ onClose, title, children, isEmailSended }) => {
+const Modal = ({ onClose, title, children, isEmailSended, isModalOpen }) => {
   useLockBodyScroll(true);
+
+  const [isOpen, setIsOpen] = useState(isModalOpen);
 
   useEffect(() => {
     const onEscPress = e => {
@@ -29,9 +31,13 @@ const Modal = ({ onClose, title, children, isEmailSended }) => {
       onClose();
     }
   };
-
+  console.log('isOpen', isOpen);
   return createPortal(
-    <div className={s.backdrop} onClick={handleBackdropClick}>
+    <div
+      // className={s.backdrop}
+      className={`${s.backdrop} ${isOpen && s.open}`}
+      onClick={handleBackdropClick}
+    >
       <div className={s.modal}>
         <header className={s.header}>
           <div className={s.lead}>

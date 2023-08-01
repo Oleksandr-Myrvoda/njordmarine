@@ -11,18 +11,23 @@
   color: var(--text-color);
 }
 
-/* .item::before {
+.item {
+  width: calc(48%);
+}
+.isLogin {
+  cursor: pointer;
+}
+
+.brendItem::before,
+.formInputBlock::before {
   padding-right: 5px;
   content: ' \2022 ';
   color: var(--text-color);
-} */
-.item {
-  /* display: flex;
-  flex-direction: row;
-  align-items: center; */
-  width: calc(48%);
 }
-
+.formInputBlock {
+  display: flex;
+  flex-direction: row;
+}
 .formInputWrapper {
   display: flex;
   flex-direction: column;
@@ -31,7 +36,7 @@
 .formInput {
   border: none;
   border-radius: 8px;
-  width: calc(80%);
+  width: calc(95%);
   background-color: var(--bg-light-color);
 }
 

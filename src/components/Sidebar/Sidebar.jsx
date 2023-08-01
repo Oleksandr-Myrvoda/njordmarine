@@ -1,4 +1,4 @@
-import { useMediaQuery } from 'react-responsive';
+import { toQuery, useMediaQuery } from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import BrochureButton from 'common/BrochureButton';
@@ -25,7 +25,7 @@ const Sidebar = ({ isOpen }) => {
           <div className={s.mob}>
             <BrochureButton />
 
-            <Contacts contactsConfig={contactsConfig} />
+            <Contacts contactsConfig={contactsConfig} isContactsPage={false} />
           </div>
         )}
       </div>

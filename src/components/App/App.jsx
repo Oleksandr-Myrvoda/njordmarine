@@ -1,14 +1,14 @@
-// import './App.css';
 import { LangProvider } from 'context/LangProvider';
+import { AdminProvider } from 'context/AdminProvider';
 import Footer from 'components/Footer';
 import Header from 'components/Header/Header';
 import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
 import { Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import s from './App.module.css';
 import Loader from 'common/Loader/Loader';
 import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
+import s from './App.module.css';
 
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -28,17 +28,19 @@ function App() {
       <div className={s.mainWrapper}>
         <div className={s.container}>
           <div className={s.content}>
-            <LangProvider>
-              <Suspense
-                // fallback={<h2>"Loading..."</h2>}
-                fallback={<Loader />}
-                // fallback={<LoaderSpinner />}
-              >
-                <Header />
-              </Suspense>
+            <AdminProvider>
+              <LangProvider>
+                <Suspense
+                  // fallback={<h2>"Loading..."</h2>}
+                  fallback={<Loader />}
+                  // fallback={<LoaderSpinner />}
+                >
+                  <Header />
+                </Suspense>
 
-              <Main />
-            </LangProvider>
+                <Main />
+              </LangProvider>
+            </AdminProvider>
           </div>
 
           <div className="footer">

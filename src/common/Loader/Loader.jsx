@@ -14,7 +14,7 @@ const Loader = () => {
           src={`${isDesktop ? load : loadMob}`}
           alt="logo"
         />
-        <div className={s.loaderLine}></div>
+        <div className={s.loaderLine}></div> 
       </div>
     </div>
   );

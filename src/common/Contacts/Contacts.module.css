@@ -16,13 +16,13 @@
   color: var(--sidebar-text-color);
 }
 
+.href {
+  font-weight: 500;
+  color: var(--sidebar-text-color);
+  cursor: pointer;
+}
 .contactsPage {
   color: var(--text-color);
-}
-
-.href {
-  color: var(--text-color);
-  cursor: pointer;
 }
 
 @media screen and (min-width: 1440px) {
@@ -33,6 +33,11 @@
 
   .contactsPage {
     flex-direction: column;
+  }
+
+  .isHeader {
+    flex-direction: row;
+    color: var(--text-color);
   }
 
   .item {

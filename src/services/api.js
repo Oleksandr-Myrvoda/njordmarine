@@ -30,7 +30,6 @@ const getData = endpoint => {
 };
 
 const addItemApi = (endpoint, item, token) => {
-  // console.log('item', item);
   return axios
     .post(`${endpoint}.json`, item, {
       params: {
@@ -93,13 +92,25 @@ const deleteBrendApi = ({ endpoint, id, token }) => {
     .then(response => ({ ...response.data, id }));
 };
 
+// BROCHURE LINK =======
+
+const editBrochureApi = ({ endpoint, item, token }) => {
+  return axios
+    .patch(`${endpoint}/admin.json`, item, {
+      params: {
+        auth: token,
+      },
+    })
+    .then(response => ({ ...response.data }));
+};
+
 export {
   getData,
   addItemApi,
   editItemApi,
   deleteItemApi,
-  // , editItem, deleteItem
   addBrendApi,
   editBrendApi,
   deleteBrendApi,
+  editBrochureApi,
 };

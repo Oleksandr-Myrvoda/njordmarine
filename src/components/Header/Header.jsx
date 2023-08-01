@@ -43,7 +43,7 @@ const Header = () => {
 
       {isDesktop ? (
         <>
-          <Contacts contactsConfig={contactsConfig} />
+          <Contacts contactsConfig={contactsConfig} isHeader={true} />
 
           {isLogin && (
             <button

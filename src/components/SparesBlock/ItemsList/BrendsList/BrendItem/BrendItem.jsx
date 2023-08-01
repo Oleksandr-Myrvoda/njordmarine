@@ -15,8 +15,11 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
   const setError = useSetError();
 
   const cardRef = useRef(null);
-  const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
-  useOutsideClickDetector(cardRef, toggleMenu, isMenuOpen);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setEditedData(false);
+  };
+  useOutsideClickDetector(cardRef, closeMenu, isMenuOpen);
 
   const handleEditData = () => {
     !editedData
@@ -41,39 +44,41 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
   };
 
   return (
-    <li
-      ref={cardRef}
-      key={id}
-      className={s.item}
-      onClick={e => {
-        if (e.target !== e.currentTarget) return;
-        setIsMenuOpen(prevState => !prevState);
-      }}
-    >
+    <li ref={cardRef} key={id} className={`${s.item} ${isLogin && s.isLogin}`}>
       {/* ================= */}
 
       {!editedData ? (
-        <> {brend[lang]}</>
+        <div
+          className={s.brendItem}
+          onClick={e => {
+            if (e.target !== e.currentTarget) return;
+            setIsMenuOpen(prevState => !prevState);
+          }}
+        >
+          {brend[lang]}
+        </div>
       ) : (
-        <div className={s.formInputWrapper}>
-          <input
-            className={s.formInput}
-            type="text"
-            value={editedData.ru}
-            name="ru"
-            onChange={handleEditBrend}
-            autoComplete="off"
-            placeholder="На русском"
-          />
-          <input
-            className={s.formInput}
-            type="text"
-            value={editedData.en}
-            name="en"
-            onChange={handleEditBrend}
-            autoComplete="off"
-            placeholder="In english"
-          />
+        <div className={s.formInputBlock}>
+          <div className={s.formInputWrapper}>
+            <input
+              className={s.formInput}
+              type="text"
+              value={editedData.ru}
+              name="ru"
+              onChange={handleEditBrend}
+              autoComplete="off"
+              placeholder="На русском"
+            />
+            <input
+              className={s.formInput}
+              type="text"
+              value={editedData.en}
+              name="en"
+              onChange={handleEditBrend}
+              autoComplete="off"
+              placeholder="In english"
+            />
+          </div>
         </div>
       )}
 

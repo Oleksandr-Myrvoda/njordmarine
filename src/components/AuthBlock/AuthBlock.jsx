@@ -8,6 +8,7 @@ import { loginUser } from '../../services/firebaseAuth';
 
 import s from './AuthBlock.module.css';
 import ErrorMsg from 'common/ErrorMsg/ErrorMsg';
+import AdminBlock from './AdminBlock';
 
 const AuthBlock = () => {
   const { register, handleSubmit, reset, setError, clearErrors, formState } =
@@ -36,7 +37,7 @@ const AuthBlock = () => {
       // .catch(error => console.log(error))
       .catch(error => setError({ error }))
       .finally(() => {
-        history.push('/spares');
+        // history.push('/spares');
         reset();
       });
   };
@@ -86,7 +87,9 @@ const AuthBlock = () => {
           Login
         </button>
       </form>
-      <Link to="/spares"></Link>
+      {/* <Link to="/spares"></Link> */}
+
+      {/* <AdminBlock /> */}
     </div>
   );
 };
