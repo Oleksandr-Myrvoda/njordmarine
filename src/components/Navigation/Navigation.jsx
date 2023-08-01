@@ -87,6 +87,9 @@ const Navigation = () => {
       <div onClick={() => handleMenuClick('contacts')}>
         <NavItem name={`05. ${t('navigation.nav5')}`} path="/contacts" />
       </div>
+      <div onClick={() => handleMenuClick('admin')}>
+        <NavItem name={'admin'} path="/admin" />
+      </div>
     </nav>
   );
 };
