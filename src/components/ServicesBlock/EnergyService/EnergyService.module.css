@@ -1,0 +1,110 @@
+.blockWrapper {
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--bg-light-color); */
+  color: rgb(217, 217, 217);
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+}
+
+.hero {
+  display: flex;
+  /* margin-bottom: 24px; */
+
+  width: 343px;
+  height: 220px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
+    url('../../../images/serv-energy-bg-mob.png');
+}
+
+.descrWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+  align-items: center;
+}
+
+/* .descrWrapper:before {
+  padding-right: 5px;
+  content: url(../../../images/quotes.svg);
+} */
+
+.title {
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Ruberoid';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: var(--sidebar-text-color);
+}
+
+.head {
+  font-family: 'Ruberoid';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+  color: var(--text-light-color);
+}
+
+.text {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.24px;
+  color: var(--text-light-color);
+}
+
+.quotes {
+  width: 93px;
+  height: 81px;
+}
+
+@media screen and (min-width: 1440px) {
+  .blockWrapper {
+    gap: 96px;
+    /* background-color: var(--bg-light-color); */
+  }
+
+  .hero {
+    margin-bottom: 48px;
+
+    width: 1027px;
+    height: 376px;
+    border-radius: 0;
+    background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
+      url('../../../images/serv-energy-bg.png');
+  }
+
+  .title {
+    margin: 0 auto;
+  }
+
+  .descrWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    text-align: center;
+    align-items: center;
+    width: calc(60%);
+
+    position: relative;
+  }
+
+  .quotes {
+    position: absolute;
+    left: -100px;
+    top: -60px;
+  }
+}

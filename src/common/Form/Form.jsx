@@ -1,103 +1,148 @@
+import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
 import BigButton from 'common/BigButton';
+import ErrorMsg from 'common/ErrorMsg';
 import PropTypes from 'prop-types';
 import s from './Form.module.css';
-import { useState } from 'react';
 
-const Form = ({ onSubmit }) => {
-  const [customerName, setCustomerName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [themeMessage, setThemeMessage] = useState('');
-  const [message, setMessage] = useState('');
+const {
+  REACT_APP_FORM_SERVICE_ID,
+  REACT_APP_FORM_TEMPLATE_ID,
+  REACT_APP_FORM_USER_ID,
+} = process.env;
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    onSubmit({ customerName, phone, email, themeMessage, message });
-    reset();
-  };
+const textValidation = {
+  required: 'This field is required',
+  minLength: {
+    value: 2,
+    message: 'Field should have more than 1 letter',
+  },
+};
 
-  const reset = () => {
-    setCustomerName('');
-    setEmail('');
-    setPhone('');
-    setThemeMessage('');
-    setMessage('');
+const emailValidation = {
+  required: 'Email is required',
+  pattern: {
+    value:
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    message: 'Invalid email address',
+  },
+};
+// const phoneValidation = {
+//   pattern: {
+//     value:
+//       /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+//     message: 'Invalid phone number format',
+//   },
+// };
+
+const Form = ({ isTitle, setEmailSended }) => {
+  const { t } = useTranslation();
+  const { register, handleSubmit, formState } = useForm();
+  const { errors } = formState;
+  const form = useRef();
+
+  const onSubmit = data => {
+    emailjs
+      .sendForm(
+        REACT_APP_FORM_SERVICE_ID,
+        REACT_APP_FORM_TEMPLATE_ID,
+        form.current,
+        REACT_APP_FORM_USER_ID,
+      )
+      .then(
+        result => {
+          setEmailSended(true);
+          console.log(result.text);
+        },
+        error => {
+          console.log(error.text);
+        },
+      );
   };
 
   return (
     <div className={s.container}>
-      <form onSubmit={handleSubmit} className={s.inner}>
+      {isTitle && <h2 className="tagline">{t('form.tagline')}</h2>}
+
+      <form ref={form} onSubmit={handleSubmit(onSubmit)} className={s.inner}>
         <label>
-          <p className={s.label}>Ваше Имя*</p>
+          <p className={s.label}>{t('form.name')}</p>
           <input
+            className={s.formInput}
             name="customerName"
-            value={customerName}
             type="text"
-            placeholder="Ваше имя*"
-            required
-            onChange={e => setCustomerName(e.target.value)}
+            placeholder={t('form.nameInput')}
+            {...register('customerName', textValidation)}
           />
+          {errors.customerName && (
+            <ErrorMsg message={errors.customerName.message} />
+          )}
         </label>
+
         <label>
-          <p className={s.label}>Ваше Имя*</p>
+          <p className={s.label}>{t('form.email')}</p>
           <input
+            className={s.formInput}
             name="email"
-            value={email}
-            type="email"
-            placeholder="Ваш e-mail*"
-            required
-            onChange={e => setEmail(e.target.value)}
+            type="text"
+            placeholder={t('form.emailInput')}
+            {...register('email', emailValidation)}
           />
+          {errors.email && <ErrorMsg message={errors.email.message} />}
         </label>
+
         <label>
-          <p className={s.label}>Ваше Имя*</p>
+          <p className={s.label}>{t('form.phone')}</p>
           <input
+            className={s.formInput}
             name="phone"
-            value={phone}
             type="tel"
-            placeholder="Номер телефона"
-            onChange={e => setPhone(e.target.value)}
+            placeholder={t('form.phoneInput')}
+            // {...register('phone', phoneValidation)}
+            {...register('phone')}
           />
+          {/* {errors.phone && <ErrorMsg message={errors.phone.message} />} */}
         </label>
+
         <label>
-          <p className={s.label}>Ваше Имя*</p>
+          <p className={s.label}>{t('form.subjMessage')}</p>
           <input
-            name="themeMessage"
-            value={themeMessage}
+            className={s.formInput}
+            name="subjMessage"
             type="text"
-            placeholder="Тема сообщения"
-            onChange={e => setThemeMessage(e.target.value)}
+            placeholder={t('form.subjMessageInput')}
+            {...register('subjMessage')}
           />
         </label>
+
         <label className={s.labelTextarea}>
-          <p className={s.label}>Ваше Имя*</p>
+          <p className={s.label}>{t('form.message')}</p>
           <textarea
-          className={s.textarea}
+            className={s.textarea}
             name="message"
-            value={message}
             type="text"
-            placeholder="Сообщение"
-            onChange={e => setMessage(e.target.value)}
+            placeholder={t('form.messageInput')}
+            {...register('message')}
           ></textarea>
         </label>
-        {/* <input
-            name="message"
-            value={message}
-            type="text"
-            placeholder="Сообщение"
-            onChange={e => setMessage(e.target.value)}
-          /> */}
 
-        <BigButton type="submit" text="Отправить" />
+        <div className={s.btns}>
+          <BigButton type="submit" text={t('form.bigBtn')} />
 
-        <a href="http://">Ознакомиться с условиями конфиденциальности</a>
+          <a className={s.link} href="http://">
+            {t('form.privacyTerms')}
+          </a>
+        </div>
       </form>
     </div>
   );
 };
 
 Form.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  setEmailSended: PropTypes.func.isRequired,
+  isTitle: PropTypes.bool.isRequired,
 };
 
 export default Form;

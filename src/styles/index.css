@@ -1,16 +1,28 @@
 @import url('/src/styles/fonts/gilroy/stylesheet.css');
 @import url('/src/styles/fonts/ruberoid/stylesheet.css');
 
-/* @media screen and (min-width: 1280px) {
+/* @media screen and (min-width: 1440px) {
 
 } */
 
 /* import { useMediaQuery } from 'react-responsive';
-const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' }); */
+const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' }); */
+
+/* <SendInfo linkName="Ознакомиться с услугами" linkPath="/" hideLink={true}/> */
+
+/* import { useTranslation } from 'react-i18next'; */
+/* const { t } = useTranslation(); */
+/* {t('heroBlock.head')} */
+
+/* <div className={s.sendInfo}></div> */
+/* .sendInfo {  align-self: center;} */
+
+/* className={`${s.text} ${isContactsPage && s.contactsPage}`} */
 
 :root {
   --accent-color: #ff321b;
   --big-button-color: #223e7f;
+  --big-button-hover-color: #012756;
   --bg-light-color: #fcfcfc;
   --bg-medium-color: #ebf3ff;
   --bg-dark-color: #012756;
@@ -19,7 +31,11 @@ const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' }); */
   --sidebar-text-color: #fcfcfc;
   --form-text-color: #94a3c7;
   --round-btn-color: #d6e7ff;
+  --card-bg: #d6e7ff;
   --footer-stroke: #d6e7ff;
+
+  --mask-bg: rgba(20, 106, 204, 0.3);
+  /* --mask-bg: rgba(217, 217, 217, 0.3); */
 }
 
 * {
@@ -50,7 +66,7 @@ p {
 
 img {
   display: block;
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
 }
 
@@ -64,4 +80,31 @@ ul {
 a {
   outline: none;
   text-decoration: none;
+}
+
+p {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  align-items: center;
+  letter-spacing: 0.24px;
+
+  color: var(--text-color);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset; /* Отключение желтого фона в Chrome/Safari */
+  transition: background-color 5000s ease-in-out 0s; /* Отключение анимации фона в Chrome/Safari */
+}
+
+/* Отключение автозаполнения в Firefox */
+input:-moz-autofill {
+  /* Можно оставить пустым или задать желаемые стили для автозаполнения в Firefox */
 }

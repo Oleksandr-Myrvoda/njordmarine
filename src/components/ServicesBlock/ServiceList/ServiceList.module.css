@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   gap: 16px;
-  padding-bottom: 25px;
 }
 
 .item {
@@ -55,7 +54,27 @@
   height: 60px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
+  .list {
+    flex-direction: row;
+  }
+
+  .item {
+    width: 440px;
+    height: 245px;
+  }
+
+  .descr {
+    font-size: 26px;
+    line-height: 40px;
+  }
+
+  .image {
+    width: 80px;
+    height: 80px;
+  }
+}
+/* @media screen and (min-width: 1280px) {
   .list {
     padding-bottom: 0;
     flex-direction: row;
@@ -75,4 +94,4 @@
     width: 80px;
     height: 80px;
   }
-}
+} */

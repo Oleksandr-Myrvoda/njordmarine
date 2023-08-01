@@ -1,26 +1,29 @@
+import { NavLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import s from './NavItem.module.css';
 
 const NavItem = ({ name, path }) => {
+  const location = useLocation();
   const isActive = false;
 
-  const navItenStyles = [s.NavItem];
-  isActive && navItenStyles.push(s.NavItemActive);
-
+  const navItemStyles = [s.NavItem];
+  isActive && navItemStyles.push(s.NavItemActive);
+  console.log('location', location);
+  console.log('path', path);
   return (
     <NavLink
       to={path}
-      className={navItenStyles.join(' ')}
+      // to={{
+      //   pathname: { path },
+      //   state: {
+      //     from: location,
+      //   },
+      // }}
+      className={navItemStyles.join(' ')}
       activeClassName={s.NavItemActive}
-      exact
     >
-      <span className={s.itemName}>{name}</span>
+      <div className={s.itemName}>{name}</div>
     </NavLink>
-
-    // <a href="/" className={navItenStyles.join(' ')}>
-    //   <span className={s.itemName}>{name}</span>
-    // </a>
   );
 };
 

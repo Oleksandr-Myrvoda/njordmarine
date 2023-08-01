@@ -8,20 +8,24 @@ export const serviceConfig = [
     imgUrl: refreshSquare,
     text: 'Услуги по автоматизации судна',
     alt: 'refreshSquare',
+    to: 'services/automation',
   },
   {
     imgUrl: settings,
     text: 'Техническое обслуживание',
     alt: 'settings',
+    to: 'services/maintenance',
   },
   {
     imgUrl: tools,
     text: 'Запчасти',
     alt: 'tools',
+    to: 'spares',
   },
   {
     imgUrl: diagramUp,
     text: 'Система  энергоэффективности судна',
     alt: 'diagramUp',
+    to: 'services/energy',
   },
 ];

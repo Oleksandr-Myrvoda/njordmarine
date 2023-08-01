@@ -6,12 +6,14 @@ import GeoBlock from 'components/GeoBlock';
 
 const HomePage = () => {
   return (
-    <Container>
+    // <Container>
+    <>
       <HeroBlock />
       <ServicesBlock />
       <AdvantagesBlock />
       <GeoBlock />
-    </Container>
+    </>
+    // </Container>
   );
 };
 

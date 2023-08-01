@@ -1,0 +1,189 @@
+.options {
+  width: 343px;
+  min-height: 367px;
+  background-repeat: no-repeat;
+  background-image: url('../../../../../images/energy-onboard-bg-mob.png');
+}
+
+.optionsWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.btn1,
+.btn2,
+.btn3,
+.btn4 {
+  position: absolute;
+  z-index: 10;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background-image: url('../../../../../images/energy-dots/round-button.png');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.btn1:hover,
+.btn2:hover,
+.btn3:hover,
+.btn4:hover {
+  scale: 1.5;
+  transition: scale 100ms linear;
+}
+
+.btn1 {
+  top: 365px;
+  left: 215px;
+}
+
+.btn2 {
+  top: 300px;
+  left: 160px;
+}
+.btn3 {
+  top: 225px;
+  left: 190px;
+}
+.btn4 {
+  top: 325px;
+  left: 265px;
+}
+
+.arrow1,
+.arrow2,
+.arrow3,
+.arrow4 {
+  position: absolute;
+  z-index: 1;
+}
+
+.arrow1 {
+  top: 390px;
+  left: 171px;
+}
+.arrow2 {
+  top: 316px;
+  left: 171px;
+}
+.arrow3 {
+  top: 240px;
+  left: 187px;
+}
+.arrow4 {
+  top: 344px;
+  left: 162px;
+}
+.arrowHide {
+  display: none;
+}
+
+.active {
+  z-index: 10;
+  width: 34px;
+  height: 34px;
+  scale: 1.5;
+  background: transparent;
+  background-image: url('../../../../../images/energy-dots/round-button.png');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.optionsTitle {
+  margin-bottom: 24px;
+
+  width: calc(87%);
+  text-align: center;
+  font-family: 'Ruberoid';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+@media screen and (min-width: 1440px) {
+  .btn1 {
+    top: 806px;
+    left: 605px;
+  }
+  .btn2 {
+    top: 682px;
+    left: 500px;
+  }
+  .btn3 {
+    top: 490px;
+    left: 525px;
+  }
+  .btn4 {
+    top: 725px;
+    left: 727px;
+  }
+  .arrow1 {
+    top: 518px;
+    left: 215px;
+  }
+  .arrow2 {
+    top: 417px;
+    left: 210px;
+  }
+  .arrow3 {
+    top: 310px;
+    left: 485px;
+  }
+  .arrow4 {
+    top: 235px;
+    left: 485px;
+  }
+  /* .btn1 {
+    top: 735px;
+    left: 605px;
+  }
+  .btn2 {
+    top: 610px;
+    left: 500px;
+  }
+  .btn3 {
+    top: 415px;
+    left: 525px;
+  }
+  .btn4 {
+    top: 650px;
+    left: 727px;
+  }
+  .arrow1 {
+    top: 445px;
+    left: 215px;
+  }
+  .arrow2 {
+    top: 345px;
+    left: 210px;
+  }
+  .arrow3 {
+    top: 230px;
+    left: 485px;
+  }
+  .arrow4 {
+    top: 165px;
+    left: 485px;
+  } */
+
+  .options {
+    width: 1027px;
+    height: 789px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../../../../images/energy-onboard-bg.png');
+  }
+
+  .optionsTitle {
+    width: calc(60%);
+    font-size: 26px;
+    line-height: 39px;
+    margin-bottom: 96px;
+  }
+}

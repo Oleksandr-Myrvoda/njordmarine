@@ -1,0 +1,91 @@
+.imgWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.item {
+  background-color: #fff;
+  /* background-color: var(--bg-light-color); */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 32px;
+}
+.imgWrapper {
+  align-self: center;
+  background-color: #94a3c7;
+}
+.img {
+  width: 227px;
+  height: 137px;
+}
+.itemMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.title {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+
+  letter-spacing: 0.24px;
+  color: var(--big-button-color);
+}
+.button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+
+  letter-spacing: 0.24px;
+  color: var(--big-button-color);
+  cursor: pointer;
+  transition: all 200ms;
+}
+.button::after {
+  display: block;
+  padding-left: 15px;
+  align-items: center;
+  content: url('../../../../images/arrowRight.svg');
+  transition: all 200ms;
+}
+
+.buttonBack {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--big-button-color);
+  color: var(--bg-light-color);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  transition: all 200ms;
+}
+
+.buttonBack:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 200ms;
+  background-color: var(--big-button-hover-color);
+}
+
+@media screen and (min-width: 1440px) {
+  .item {
+    width: 285px;
+    /* height: 281px; */
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,70 @@
+.listMob {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-bottom: 32px;
+
+  /* transition: transform 0.3s ease;  */
+}
+
+.cards {
+  position: relative;
+  height: 390px;
+
+  /* transition: transform 0.3s ease;  */
+}
+
+.prevCard,
+.currentCard,
+.nextCard {
+  position: absolute;
+  border-radius: 8px;
+}
+
+.prevCard {
+  left: -210px;
+  opacity: 60%;
+}
+.currentCard {
+  left: 55px;
+}
+.nextCard {
+  left: 315px;
+  opacity: 60%;
+}
+
+.cardHide {
+  display: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.name {
+  font-family: 'Ruberoid';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.position {
+  width: 230px;
+}
+
+@media screen and (min-width: 1440px) {
+  .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}

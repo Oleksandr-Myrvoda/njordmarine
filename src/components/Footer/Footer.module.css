@@ -1,11 +1,13 @@
 .footer {
   position: relative;
-  padding: 96px;
   display: flex;
+  padding: 32px 16px;
   flex-direction: column;
+
   align-items: center;
   background-color: var(--bg-medium-color);
   border-top: 2px solid var(--footer-stroke);
+  gap: 16px;
 }
 
 .copyright {
@@ -14,8 +16,6 @@
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-  /* identical to box height, or 150% */
-
   display: flex;
   align-items: center;
   text-align: center;
@@ -23,4 +23,54 @@
   text-transform: uppercase;
 
   color: var(--text-light-color);
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+.img {
+  margin-right: 5px;
+}
+.text {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.href {
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1440px) {
+  .footer {
+    padding: 80px 0;
+    width: 84.5%;
+  }
+  .list {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+  }
+
+  .contactsPage {
+    flex-direction: column;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }

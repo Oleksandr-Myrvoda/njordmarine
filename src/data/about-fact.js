@@ -5,17 +5,20 @@ import fact03 from 'images/about-company-fact03.png';
 export const aboutFactConfig = [
   {
     imgUrl: fact01,
-    alt: 'lamp',
-    text: 'Предлагаем современные инновационные решения',
+    count: '01.',
+    text: 'abotFactBlock.list.text1',
+    alt: 'abotFactBlock.list.text1',
   },
   {
     imgUrl: fact02,
-    alt: 'gear',
-    text: 'Оказываем помощь в совершенствовании технических процессов на судне',
+    count: '02.',
+    text: 'abotFactBlock.list.text2',
+    alt: 'abotFactBlock.list.text2',
   },
   {
     imgUrl: fact03,
-    alt: 'puzzle',
-    text: 'Беремся за задачи любой сложности',
+    count: '03.',
+    text: 'abotFactBlock.list.text3',
+    alt: 'abotFactBlock.list.text3',
   },
 ];

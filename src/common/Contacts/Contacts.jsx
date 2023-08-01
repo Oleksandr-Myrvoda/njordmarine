@@ -2,13 +2,25 @@ import PropTypes from 'prop-types';
 
 import s from './Contacts.module.css';
 
-const Contacts = ({ contactsConfig }) => {
+const Contacts = ({ contactsConfig, isContactsPage, isHeader }) => {
+  const listStyles = [s.list];
+  isContactsPage && listStyles.push(s.contactsPage);
+
   return (
-    <ul className={s.list}>
-      {contactsConfig.map(({ imgUrl, text, alt }, index) => (
+    <ul className={listStyles.join(' ')}>
+      {contactsConfig.map(({ imgUrl, text, alt, href }, index) => (
         <li key={index} className={s.item}>
-          <img src={imgUrl} alt={alt} />
-          <a href={`tel:${text}`}>{text}</a>
+          <img className={s.img} src={imgUrl} alt={alt} />
+          <p className={s.text}>
+            <a
+              className={`${s.href} ${isHeader && s.isHeader} ${
+                isContactsPage && s.contactsPage
+              }`}
+              href={href}
+            >
+              {text}
+            </a>
+          </p>
         </li>
       ))}
     </ul>

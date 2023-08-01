@@ -1,43 +1,38 @@
+import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
+import { useHistory } from 'react-router-dom';
+import BigButton from 'common/BigButton';
 import globe from 'images/globe.png';
 import globeMob from 'images/globe-mob.png';
 import s from './GeoBlock.module.css';
-import BigButton from 'common/BigButton';
 
 const GeoBlock = () => {
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+  const { t } = useTranslation();
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const globeImage = isDesktop ? globe : globeMob;
+
+  const history = useHistory();
+  const toContacts = () => {
+    history.push('/contacts');
+  };
 
   return (
     <div className={s.geoBlock}>
       <div className={s.description}>
         <div className={s.descriptionInside}>
-          <p className="headingBlock">Карта покрытия</p>
-          <h2 className="tagline">Работы ведутся по всему миру</h2>
-          <p className={s.text}>
-            Мы обеспечиваем обслуживание судов повсеместно, гарантируя, что наша
-            команда опытных профессионалов всегда готова оказать
-            квалифицированную помощь вашему судну, независимо от того в какой
-            точке мира оно находится.
-          </p>
+          <p className="headingBlock">{t('geoBlock.heading')}</p>
+          <h2 className="tagline">{t('geoBlock.tagline')}</h2>
+          <p className={s.text}>{t('geoBlock.text')}</p>
         </div>
         <img src={globeImage} alt="globe" />
       </div>
       <div className={s.contactUs}>
-        <p className="taglineBig">Свяжитесь с нами</p>
-        <p className={s.text}>Мы всегда готовы прийти к Вам на помощь!</p>
-        {!isDesktop && (
-          <>
-            <BigButton text="Контакты" />
-            <a href="/" className={s.link}>
-              Ознакомиться с услугами
-            </a>
-          </>
-        )}
+        <p className="taglineBig">{t('geoBlock.taglineBig')}</p>
+        <p className={s.text}>{t('geoBlock.text2')}</p>
 
-        <BigButton text="Контакты" />
+        <BigButton onClick={toContacts} text={t('geoBlock.bigButtonText')} />
         <a href="/" className={s.link}>
-          Скачать нашу брошюру
+          {t('geoBlock.bigButtonLink')}
         </a>
       </div>
     </div>

@@ -1,28 +1,32 @@
+import { useTranslation } from 'react-i18next';
 import { aboutFactConfig } from 'data/about-fact';
 import { useMediaQuery } from 'react-responsive';
+import ScrollUp from 'common/ScrollUp';
+import SendInfo from 'common/SendInfo';
 import AboutFactList from './AboutFactList';
-import BigButton from 'common/BigButton';
 import s from './AboutFactBlock.module.css';
-import ScrollUp from 'common/ScrollUp/ScrollUp';
+import Container from 'common/Container/Container';
 
 const AbotFactBlock = () => {
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+  const { t } = useTranslation();
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   return (
     <div className={s.aboutFactBlock}>
-      <div className={s.taglineAbout}>
-        <p className="tagline">
-          3 факта о нашей компании, <br /> которые вас заинтересуют
-        </p>
-      </div>
-      <AboutFactList aboutFactConfig={aboutFactConfig} />
+      <Container>
+        <div className={s.taglineAbout}>
+          <p className="tagline">{t('abotFactBlock.tagline')}</p>
+        </div>
+        <AboutFactList aboutFactConfig={aboutFactConfig} />
 
-      <div className={s.contacts}>
-        <BigButton text="Контакты" />
-        <a href="/" className={s.link}>
-          Ознакомиться с услугами
-        </a>
-      </div>
+        <div className={s.sendInfo}>
+          <SendInfo
+            linkName={t('sendInfo.services')}
+            linkPath="/services"
+            hideLink={false}
+          />
+        </div>
+      </Container>
 
       {!isDesktop && <ScrollUp />}
     </div>

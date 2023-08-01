@@ -1,15 +1,28 @@
-.container {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  /* padding-left: 16px;
-  padding-right: 16px; */
+/* .container {
+  margin: 0 auto; 
   max-width: 375px;
-  background-color: tomato;
+  padding: 0 16px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .container {
+    max-width: 1217px;
+    padding: 0 96px;
+  }
+} */
+
+/* .............................................. */
+.container {
+  max-width: 375px;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+
     max-width: 1217px;
     padding-left: 0;
     padding-right: 0;

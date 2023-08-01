@@ -1,54 +1,36 @@
-import BigButton from 'common/BigButton';
-import Form from 'common/Form';
-import Modal from 'common/Modal';
-import ServiceList from './ServiceList';
-import s from './ServicesBlock.module.css';
-import { serviceConfig } from 'data/service';
+import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
+import SendInfo from 'common/SendInfo';
+import ServiceList from './ServiceList';
+// import { serviceConfig } from 'data/service';
+import s from './ServicesBlock.module.css';
+import Container from 'common/Container/Container';
 
 const ServicesBlock = () => {
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+  const { t } = useTranslation();
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  const [formsList, setFormsList] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
-  const sendForm = newForm => {
-    setFormsList([...formsList, newForm]);
-    closeModal();
-  };
-
-  // console.log(formsList);
   return (
     <div className={s.servicesBlock}>
-      <div className={s.orderWrapepr}>
-        <div className={s.taglineBlock}>
-          <p className="headingBlock">Наши услуги</p>
-          <h2 className="tagline">
-            Мы заботимся о наших клиентах и предоставляем лучший сервис
-          </h2>
+      <Container>
+        <div className={s.orderWrapepr}>
+          <div className={s.taglineBlock}>
+            <p className="headingBlock">{t('servicesBlock.heading')}</p>
+            <div className={s.tagline}>
+              <h2 className="tagline">{t('servicesBlock.tagline')}</h2>
+            </div>
+          </div>
+
+          {isDesktop && (
+            <div className={s.sendInfo}>
+              <SendInfo hideLink={true} />
+            </div>
+          )}
         </div>
-        {isDesktop && (
-          <BigButton
-            onClick={openModal}
-            text="Оставить заявку"
-            className={s.buttonOrder}
-          />
-        )}
-      </div>
 
-      <ServiceList serviceConfig={serviceConfig} />
-
-      {!isDesktop && <BigButton onClick={openModal} text="Оставить заявку" />}
-
-      {isModalOpen && (
-        <Modal title="Оставить заявку" onClose={closeModal}>
-          <Form onSubmit={sendForm} />
-        </Modal>
-      )}
+        <ServiceList />
+      </Container>
+      {!isDesktop && <SendInfo hideLink={true} />}
     </div>
   );
 };

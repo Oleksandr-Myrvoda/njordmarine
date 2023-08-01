@@ -1,0 +1,26 @@
+.btsDotsBlock {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+}
+.pagiBtnDot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  border: none;
+  background-color: var(--big-button-color);
+}
+
+.isActiveStyle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  border: none;
+
+  background-image: url(../../images/pagi-active-dot.svg);
+}

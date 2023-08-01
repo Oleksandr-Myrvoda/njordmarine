@@ -45,7 +45,26 @@
   color: var(--text-color);
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
+  .list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .item {
+    width: calc(30% - 16px);
+  }
+
+  .image {
+    width: 305px;
+    height: 260px;
+  }
+
+  .descr {
+    width: 295px;
+  }
+}
+/* @media screen and (min-width: 1280px) {
   .list {
     flex-direction: row;
   }
@@ -58,4 +77,4 @@
   .descr {
     width: 305px;
   }
-}
+} */

@@ -1,0 +1,334 @@
+{
+  "heroBlock": {
+    "head": "A European company with high-quality solutions",
+    "taglineBig": "Your reliable assistant in ship servicing",
+    "description": "NJORDMARINE cares about its customers and values their time, that's why we provide the necessary equipment, original and OEM spare parts, as well as servicing, in the shortest possible time and at a reasonable price.",
+    "top1": "800+",
+    "bot1": "Completed projects",
+    "top2": "5 years",
+    "bot2": "On the market",
+    "top3": "20",
+    "bot3": "Countries",
+    "sendInfo": "Explore the services"
+  },
+
+  "servicesBlock": {
+    "heading": "Our services",
+    "tagline": "We care about our customers and provide the best service",
+    "list": {
+      "link": "More",
+      "text1": "Ship automation services",
+      "alt1": "Automation",
+      "text2": "Technical maintenance",
+      "alt2": "Maintenance",
+      "text3": "Spare parts",
+      "alt3": "Spare",
+      "text4": "Ship energy efficiency system",
+      "alt4": "Energy"
+    }
+  },
+
+  "advantagesBlock": {
+    "heading": "Our competitive advantages",
+    "tagline": "What can you expect from us"
+  },
+
+  "geoBlock": {
+    "heading": "Coverage map",
+    "tagline": "Work in progress around the world",
+    "text": "We provide ship service worldwide, ensuring that our team of experienced professionals is always ready to provide qualified assistance to your vessel, no matter where in the world it is located.",
+    "taglineBig": "Contact us",
+    "text2": "We are always ready to help you!",
+    "bigButtonText": "Contacts",
+    "bigButtonLink": "Download brochure"
+  },
+
+  "heroAboutBlock": {
+    "taglineBig": "About company",
+    "tagline": "About Us",
+    "text": "NJORDMARINE is a family business based on trust and willingness to help in difficult times. Our team of specialists is ready for requests of any complexity.",
+    "link": "Скачать нашу брошюру"
+  },
+
+  "abotFactBlock": {
+    "tagline": "3 facts about our company that will interest you",
+    "list": {
+      "text1": "We offer modern innovative solutions",
+      "alt1": "lamp",
+      "text2": "We provide assistance in improving the technical processes on board",
+      "alt2": "gear",
+      "text3": "We take on tasks of any complexity",
+      "alt3": "puzzle"
+    }
+  },
+
+  "ourTeamBlock": {
+    "taglineBig": "Our team",
+    "text": "Our team of experienced professionals is always ready to provide qualified assistance.",
+    "name1": "Евгений Урлих",
+    "position1": "Technical Director",
+    "name2": "Станислав Замахин",
+    "position2": "Financial Director",
+    "name3": "Анна Соболева",
+    "position3": "Head of Human Resources and Public Relations Department",
+    "name4": "Игорь Гиршин",
+    "position4": "Client Manager"
+  },
+
+  "services": {
+    "taglineBig": "Services",
+    "auto": {
+      "title": "Automation of processes on a ship",
+      "textBold": "Our goal ",
+      "text": "is to help customers automate safety-critical processes, as well as the most labor-intensive and regularly repeated operations.",
+      "schemeTagline": "Service execution scheme for automation",
+      "workTitle": "We perform the following types of automation works"
+    },
+    "meintenance": {
+      "title": "Technical meintenance",
+      "text1": "We provide ultrasonic thickness measurement services for all types of vessels and have certificates from classification societies such as BV, DNV, ABS, RINA, and PMPS.",
+      "text2": "Our measurements at height are carried out by our certified technical climbers with DNV and ABS classification society certificates for the relevant work.",
+      "measurTagline": "Measurement of thickness consists of the following stages"
+    },
+    "energy": {
+      "onBoard": {
+        "title": "On-board solution",
+        "head": "Your first step towards reducing fuel consumption and improving operational effiency of the vessel",
+        "text": "Our system integrates seamlessly with other onboard systems installed on the vessel, allowing for the display of all necessary parameters.",
+        "optionsTitle": "Parameters monitored by the system installed on board the ship"
+      }
+    }
+  },
+
+  "spares": {
+    "taglineBig": "Spare parts",
+    "engine": "Engine room",
+    "deck": "Deck",
+    "bridge": "Bridge",
+    "brandsBtn": "Watch brands"
+  },
+
+  "contacts": {
+    "taglineBig": "Contacts",
+    "text": "Fill out the form and our team will contact you shortly."
+  },
+
+  "form": {
+    "tagline": "Submit your application",
+
+    "name": "Your Name*",
+    "nameInput": "Your Name*",
+    "email": "E-mail*",
+    "emailInput": "Your e-mail*",
+    "phone": "Phone (optional)",
+    "phoneInput": "Phone number",
+    "subjMessage": "Subject of the message (optional)",
+    "subjMessageInput": "Subject of the message",
+    "message": "Message",
+    "messageInput": "Message",
+
+    "bigBtn": "Send",
+    "privacyTerms": "Terms and conditions"
+  },
+
+  "navigation": {
+    "mobileMenu": "Menu",
+    "nav1": "Main",
+    "nav2": "Company",
+    "nav3": "Services",
+    "nav4": "Spare parts",
+    "nav5": "Contacts",
+    "aboutCompany": {
+      "name1": "Abot us",
+      "name2": "Our team"
+    },
+    "servicesListConfig": {
+      "name1": "Automation of processes on a ship",
+      "name2": "Technical meintenance",
+      "name3": "Ship Energy Efficiency System"
+    },
+    "sparesListConfig": {
+      "name1": "Engine room",
+      "name2": "Deck",
+      "name3": "Bridge"
+    }
+  },
+
+  "advantages": {
+    "head1": "We work 24/7",
+    "text1": "We offer our service 24/7, seven days a week",
+    "alt1": "clock",
+    "head2": "We comply expectations",
+    "text2": "The best prices and high quality of spare parts, equipment and work",
+    "alt2": "cup",
+    "head3": "Prompt delivery",
+    "text3": "High delivery speed with minimal logistics costs",
+    "alt3": "delivery",
+    "head4": "Time control",
+    "text4": "We constantly monitor the time of spare parts readiness and delivery of pending orders.",
+    "alt4": "hourglass",
+    "head5": "Quality assurance",
+    "text5": "Minimum six months warranty on all parts and labor",
+    "alt5": "shild",
+    "head6": "Modern approach",
+    "text6": "Advanced technology solutions for efficient fleet management",
+    "alt6": "star"
+  },
+
+  "scheme": {
+    "text1": "The management of parameters",
+    "alt1": "panel",
+    "text2": "Control of parameters",
+    "alt2": "document",
+    "text3": "Alarm list",
+    "alt3": "bell",
+    "text4": "Report",
+    "alt4": "reports"
+  },
+
+  "works": {
+    "text1": "Automation of starting, stopping, and monitoring processes of main engines, diesel generators, boilers, pumps, and other equipment",
+    "text2": "Fuel consumption monitoring system and control of ship machinery condition",
+    "text3": "Automation of propulsion plant",
+    "text4": "Cargo equipment automation system",
+    "text5": "Automatic control of the machinery operation and maintenance of operational documentation",
+    "text6": "Installation/Modernization of Emergency Alarm Systems",
+    "text7": "Measuring tank levels with output of information to ship panels",
+    "text8": "Management of the trawl complex",
+    "text9": "Winch control",
+    "text10": "Planned maintenance system for the vessel"
+  },
+
+  "measurements": {
+    "title1": "Preliminary inspection",
+    "text1": "Preliminary inspection of the location for residual thicknesses measurements and agreement on the scope of work",
+    "alt1": "magnifer",
+    "title2": "Agreement",
+    "text2": "Coordination of inspection programs with the classification society inspector",
+    "alt2": "engeneer",
+    "title3": "Measurement",
+    "text3": " Measurement of the thickness of steel structures of ships and onshore terminals",
+    "alt3": "angular",
+    "title4": "Documentation",
+    "text4": "Compiling reports on performed works in accordance with the rules of classification societies",
+    "alt4": "document",
+    "title5": "Drawings",
+    "text5": "Preparation of repair drawings using detailed weight tables",
+    "alt5": "pen"
+  },
+
+  "configs": {
+    "consumers": {
+      "title": "The main consumers",
+      "text1": "Fuel consumption of main engines, auxiliary engines, boilers (hourly, cumulative consumption, for a specific, selected period of time) is monitored by the system",
+      "text2": "Operating time of mechanisms",
+      "text3": "Engine speed and load of the main engines and diesel generators",
+      "text4": "Fuel, gas, and coolant temperatures",
+      "text5": "Engine operating condition",
+      "text6": "Generating reports (daily, weekly, monthly, voyage)"
+    },
+    "control": {
+      "title": "Control of bunker fuel",
+      "text1": "The volume of received/delivered cargo",
+      "text2": "The mass, density, and temperature of the fuel during bunkering",
+      "text3": "The time of cargo reception/delivery process",
+      "text4": "Automatic report generation"
+    },
+    "option": {
+      "title": "Vessel parameters",
+      "text1": "The vessel's location and course ",
+      "text2": "Ship speed",
+      "text3": "Control of the ship's consumers' condition",
+      "text4": "Roll /pitch of the vessel",
+      "text5": "Vessel's power system (HVAC)",
+      "text6": "Cost efficiency / Vessel efficiency"
+    },
+    "additional": {
+      "title": "Additional parameters",
+      "text1": "Alarm control",
+      "text2": "Level measurements in tanks",
+      "text3": "Valve remote control system"
+    }
+  },
+
+  "energyMenu": {
+    "name1": "On-board solution",
+    "name2": "FOCUS system for fleet",
+    "name3": "Office solution"
+  },
+
+  "focus": {
+    "title": "FOCUS System for Fleet",
+    "textBold": "FOCUS System for Fleet ",
+    "text": "is a fuel and energy efficiency monitoring and management system for fleet",
+    "head": "How does the FOCUS system work?",
+    "text2": "Clear interaction between the fleet and the office will help to streamline all processes at a high level and reduce further expenses.",
+    "titleBottom": "The FOCUS system has been developed to perform all these processes as a single product",
+
+    "config": {
+      "title1": "Step 1",
+      "text1": "Collecting data from the entire fleet",
+      "alt1": "server",
+      "title2": "Step 2",
+      "text2": "Transferring data to the office",
+      "alt2": "satellite",
+      "title3": "Step 3",
+      "text3": "Processing the collected data",
+      "alt3": "headphones",
+      "title4": "Step 4",
+      "text4": "Issuing recommendations to increase vessel energy efficiency",
+      "alt4": "document"
+    },
+
+    "options": {
+      "text1": "Reducing the time required to perform all statistical processes",
+      "text2": "High accuracy in displaying parameters",
+      "text3": "Secure access",
+      "text4": "Storing data on a customer-friendly platform",
+      "text5": "Recommendations provided by the system to reduce costs"
+    }
+  },
+
+  "office": {
+    "title": "Office solution",
+
+    "text1": "Thanks to our office solution",
+    "text2": "you can easily monitor all the vessel's operational parameters with subsequent online adjustments",
+    "head": "The system displays and allows you to monitor the following parameters",
+    "list": {
+      "text1": "Instantaneous fuel consumption, temperature, fuel density of main engines, diesel generators, and boiler",
+      "text2": "Main shaft parameters (power, RPM, loads)",
+      "text3": "Vessel efficiency",
+      "text4": "Vessel speed and position on the map at a given moment in time",
+      "text5": "Vessel heel/draft",
+      "text6": "Wind force and direction relative to the vessel",
+      "text7": "Control of the bunkering process with subsequent report generation",
+      "text8": "History of vessel voyages/berths in port",
+      "text9": "Fuel consumption by consumers for a certain period of time (history)"
+    }
+  },
+
+  "common": {
+    "brochure": "Download our brochure",
+    "brochureBtn": "Download brochure"
+  },
+
+  "sendInfo": {
+    "bigBtn": "Send a request",
+    "services": "Get to know the services",
+    "maintenance": "Maintenance",
+    "energy": "Ship Energy Efficiency System",
+    "focus": "FOCUS system for fleet",
+    "contacts": "Contacts",
+    "deck": "Deck",
+    "bridge": "Bridge",
+    "office": "Office solution",
+    "spares": "Spare parts"
+  },
+
+  "afterSendEmail": {
+    "title": "Request submitted",
+    "text": "Thank you for contacting us! Our specialists will get in touch with you shortly.",
+    "bigBtn": "Ok"
+  }
+}

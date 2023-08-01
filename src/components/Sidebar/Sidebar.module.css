@@ -1,27 +1,17 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* padding-right: 24px;
-  padding-left: 24px; */
   background-color: var(--bg-dark-color);
-
-  /* position: absolute; */
-  /* position: sticky; */
   position: relative;
-  /* height: 100%; */
-  /* width: 12%; */
   top: 80px;
   left: 41.8%;
-  /* right: 141px; */
-  /* margin-right: -45%; */
 }
 
 .sidebar {
   position: absolute;
   width: 260px;
-  height: 60vh;
-  top: 68px;
+  padding-bottom: 36px;
+  top: 67px;
   left: 100%;
   z-index: 50;
   transform: translateX(0);
@@ -35,42 +25,26 @@
 .logo {
   padding-bottom: 179px;
 }
-
-/* .sidebar {
-  width: 20%;
-  background: green;
-  height: 100px;
-  float: right;
-} */
-/* .sidebar.fixed {
-  position: fixed;
-  left: 50%;
-  margin-right: -50%;
-} */
-
-@media screen and (min-width: 1280px) {
+.mobMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding-top: 32px;
+}
+.mob {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+}
+@media screen and (min-width: 1440px) {
   .sidebar {
-    position: inherit;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* padding-right: 24px;
-    padding-left: 24px; */
     background-color: var(--bg-dark-color);
-    /* reset after mobile */
-    /* position: fixed;
-  width: 260px;
-  height: 60vh;
-  top: 68px;
-  left: 100%;
-  z-index: 50;
-  transform: translateX(0);
-  transition: transform 300ms linear; */
-    /* reset after mobile -END*/
-
-    width: 15.5%;
-    /* width: 20%; */
-    /* width: 223px; */
+    width: 16vw;
+    position: static;
+    z-index: 0;
   }
 
   .logo {

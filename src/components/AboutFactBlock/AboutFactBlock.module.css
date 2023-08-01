@@ -8,13 +8,13 @@
   gap: 16px;
 }
 
-.contacts {
+/* .contacts {
   padding-top: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-}
+} */
 
 .link {
   font-family: 'Gilroy';
@@ -33,20 +33,34 @@
   content: url('../../images/arrowRight.svg');
 }
 
-@media screen and (min-width: 1280px) {
+.taglineAbout {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.sendInfo {
+  margin-top: 24px;
+}
+@media screen and (min-width: 1440px) {
   .aboutFactBlock {
     padding: 96px;
-    gap: 64px;
+    gap: 36px;
   }
 
   .taglineAbout {
-    width: 100%;
+    width: calc(50%);
+    text-align: left;
+    margin-bottom: 80px;
   }
 
-  .contacts {
+  /* .contacts {
     padding-top: 16px;
     display: flex;
     flex-direction: row;
     gap: 64px;
+  } */
+
+  .sendInfo {
+    margin-top: 80px;
+    align-self: center;
   }
 }

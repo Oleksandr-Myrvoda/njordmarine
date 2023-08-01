@@ -1,0 +1,8 @@
+.nav {
+  display: flex;
+  border-bottom: 2px solid var(--footer-stroke);
+  justify-content: center;
+  width: 100%;
+}
+/* @media screen and (min-width: 1440px) {
+} */

@@ -1,22 +1,24 @@
 import refreshSquare from 'images/service-RefreshSquare.svg';
 import settings from 'images/service-Settings.svg';
-// import tools from 'images/service-Tools.svg';
 import diagramUp from 'images/service-DiagramUp.svg';
 
 export const servicesListConfig = [
   {
     imgUrl: refreshSquare,
-    text: 'Фвтоматизация процессов на судне',
+    name: 'navigation.servicesListConfig.name1',
     alt: 'refreshSquare',
+    to: 'automation',
   },
   {
     imgUrl: settings,
-    text: 'Техническое обслуживание',
+    name: 'navigation.servicesListConfig.name2',
     alt: 'settings',
+    to: 'maintenance',
   },
   {
     imgUrl: diagramUp,
-    text: 'Система  энергоэффективности судна',
+    name: 'navigation.servicesListConfig.name3',
     alt: 'diagramUp',
+    to: 'energy',
   },
 ];

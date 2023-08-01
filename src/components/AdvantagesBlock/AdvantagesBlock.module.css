@@ -8,24 +8,27 @@
   background-image: url('../../images/advantagesBgWaves-mob.svg');
   background-repeat: no-repeat;
   background-size: contain;
+  gap: 16px;
 }
 
-.text {
+.textBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 0;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .advantagesBlock {
     padding: 96px;
     background-image: url('../../images/advantagesBgWaves.svg');
     background-repeat: no-repeat;
-    /* height: 713px; */
+    gap: 72px;
   }
 
-  .text {
-    padding-bottom: 88px;
+  .textBlock {
+    gap: 24px;
+    /* padding-bottom: 88px; */
   }
 }

@@ -1,37 +1,34 @@
-import BigButton from 'common/BigButton';
-import Contacts from 'common/Contacts';
-import Logo from 'images/Logo.svg';
-// import { Link } from "react-router-dom";
-import Navigation from '../Navigation/Navigation';
+import { toQuery, useMediaQuery } from 'react-responsive';
+import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
+import BrochureButton from 'common/BrochureButton';
+import Contacts from 'common/Contacts';
+import Navigation from '../Navigation/Navigation';
+import logo from 'images/Logo.svg';
 import { contactsConfig } from 'data/contacts';
-import { navConfig } from 'data/navigation';
 import s from './Sidebar.module.css';
-import { useMediaQuery } from 'react-responsive';
 
 const Sidebar = ({ isOpen }) => {
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  const logo1 = Logo;
   return (
     <div className={clsx(s.sidebar, isOpen && s.isOpen)}>
       {isDesktop && (
-        <div className={s.logo}>
-          {/* <Link className={s.logo} to="/"> */}
-          <img src={logo1} alt="logo" />
-          {/* </Link> */}
-        </div>
+        <NavLink to="/" className={s.logo}>
+          <img src={logo} alt="logo" />
+        </NavLink>
       )}
-      <>
-        <Navigation navConfig={navConfig} />
+      <div className={s.mobMenu}>
+        <Navigation />
 
         {!isDesktop && (
-          <>
-            <BigButton text="Скачать брошюру" isGray={true} />
-            <Contacts contactsConfig={contactsConfig} />
-          </>
+          <div className={s.mob}>
+            <BrochureButton />
+
+            <Contacts contactsConfig={contactsConfig} isContactsPage={false} />
+          </div>
         )}
-      </>
+      </div>
     </div>
   );
 };

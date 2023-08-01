@@ -1,0 +1,71 @@
+.loaderBlock {
+  background-color: var(--bg-dark-color);
+
+  height: 100vh;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+.loaderWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* height: 100%; */
+  /* height: 100vh; */
+  margin-top: 60px;
+  align-items: center;
+}
+
+.loaderLine {
+  width: 220px; /* Ширина полосы загрузки */
+  height: 5px; /* Высота полосы загрузки */
+  background-color: var(--big-button-color); /* Цвет фона полосы загрузки */
+  border-radius: 8px;
+  position: relative;
+  margin: 10px auto; /* Центрирование по горизонтали */
+}
+
+.loaderLine::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 100%;
+  background-color: var(--accent-color); /* Цвет полосы загрузки */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loading 2s linear infinite; /* Длительность и тип анимации */
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .loaderBlock {
+    left: -225px;
+    min-height: 1016px;
+    /* height: 100%; */
+  }
+
+  .loaderWrapper {
+    margin-top: 0;
+    justify-content: center;
+    min-height: 1016px;
+  }
+
+  .loaderLine {
+    width: 320px;
+  }
+}

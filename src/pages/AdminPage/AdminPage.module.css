@@ -1,0 +1,20 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-medium-color);
+  height: 65vh;
+}
+.taglineWrapper {
+  padding: 48px 16px 0 16px;
+}
+
+@media screen and (min-width: 1440px) {
+  .pageWrapper {
+    padding-bottom: 96px;
+    margin-top: 102px;
+  }
+  .taglineWrapper {
+    padding: 96px 96px 0 96px;
+  }
+}

@@ -5,24 +5,45 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 24px;
 }
 
 .taglineBlock {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
-  padding-bottom: 50px;
+  align-items: center;
+  gap: 16px;
+}
+.orderWrapepr {
+  margin-bottom: 24px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .servicesBlock {
     padding: 96px;
     align-items: flex-start;
     text-align: left;
+    gap: 48px;
+  }
+
+  .orderWrapepr {
+    display: flex;
+    width: 1025px;
+    align-self: center;
+    margin-bottom: 48px;
   }
 
   .taglineBlock {
-    padding: 0 0 50px 0;
-    flex-direction: unset;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .tagline {
+    width: calc(80%);
+  }
+
+  .sendInfo {
+    align-self: self-end;
   }
 }

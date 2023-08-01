@@ -1,7 +1,91 @@
-import React from 'react';
+import { Suspense, lazy } from 'react';
+import {
+  Redirect,
+  Route,
+  Switch,
+  useRouteMatch,
+  useLocation,
+} from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
+import { sparesListConfig } from 'data/spares-list';
+import Container from 'common/Container';
 
-const SparesPage = () => {
-  return <div>SparesPage</div>;
+import BlockNavigation from 'components/BlockNavigation/BlockNavigation';
+import s from './SparesPage.module.css';
+import Loader from 'common/Loader/Loader';
+import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
+
+const SparesBlock = lazy(() =>
+  import('components/SparesBlock' /* webpackChunkName: "SparesBlock___page" */),
+);
+
+const SparesPage = ({ token }) => {
+  const { t } = useTranslation();
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const match = useRouteMatch();
+  const location = useLocation();
+
+  const contactsLang = t('sendInfo.contacts');
+  const deckLang = t('sendInfo.deck');
+  const bridgeLang = t('sendInfo.bridge');
+
+  return (
+    <div className={s.pageWrapper}>
+      <div className={s.taglineWrapper}>
+        <h1 className="taglineBig">{t('spares.taglineBig')}</h1>
+
+        {isDesktop && <BlockNavigation navConfig={sparesListConfig} />}
+      </div>
+
+      <Container>
+        <div className={s.pagesBlock}>
+          {/* <Loader /> */}
+          <Suspense
+            //  fallback={<h2>"Loading..."</h2>}
+            fallback={<Loader />}
+            // fallback={<LoaderSpinner />}
+          >
+            <Switch>
+              <Route
+                exact
+                path={`${match.path}`}
+                render={() => <Redirect to={`${match.path}/engine-room`} />}
+              />
+
+              <Route path={`${match.path}/engine-room`}>
+                <SparesBlock
+                  token={token}
+                  path={`${match.path}/engine-room`}
+                  name={t('spares.engine')}
+                  linkPath={!isDesktop ? `${match.path}/deck` : '/contacts'} // props for <SendInfo />
+                  linkName={!isDesktop ? deckLang : contactsLang} // props for <SendInfo />
+                />
+              </Route>
+              <Route path={`${match.path}/deck`}>
+                <SparesBlock
+                  path={`${match.path}/deck`}
+                  name={t('spares.deck')}
+                  linkPath={!isDesktop ? `${match.path}/bridge` : '/contacts'} // props for <SendInfo />
+                  linkName={!isDesktop ? bridgeLang : contactsLang} // props for <SendInfo />
+                />
+              </Route>
+              <Route path={`${match.path}/bridge`}>
+                <SparesBlock
+                  path={`${match.path}/bridge`}
+                  name={t('spares.bridge')}
+                  linkPath="/contacts" // props for <SendInfo />
+                  linkName={contactsLang} // props for <SendInfo />
+                />
+              </Route>
+
+              <Route render={() => <Redirect to={match.url} />} />
+            </Switch>
+          </Suspense>
+        </div>
+      </Container>
+    </div>
+  );
 };
 
 export default SparesPage;

@@ -1,0 +1,38 @@
+.NavItem {
+  padding: 16px 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.itemName {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.24px;
+  color: var(--text-light-color);
+}
+
+.NavItem.NavItemActive > .itemName {
+  font-weight: 600;
+}
+.NavItem.NavItemActive {
+  border-bottom: 4px solid var(--accent-color);
+}
+
+@media screen and (min-width: 1440px) {
+  .NavItem {
+    padding: 24px 16px 24px 16px;
+  }
+
+  .itemName {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .NavItem.NavItemActive > .itemName {
+    font-weight: 700;
+  }
+}
