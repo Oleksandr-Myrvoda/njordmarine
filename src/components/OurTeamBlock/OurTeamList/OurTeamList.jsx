@@ -1,11 +1,19 @@
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useMediaQuery } from 'react-responsive';
-import { useSwipeable } from 'react-swipeable';
+
 import BtnsDotPagination from 'common/BtnsDotPagination';
 import Card from './Card';
-import s from './OurTeamList.module.css';
 import PropTypes from 'prop-types';
+import s from './OurTeamList.module.css';
+import { useMediaQuery } from 'react-responsive';
+import { useSwipeable } from 'react-swipeable';
+import { useTranslation } from 'react-i18next';
 
 const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }];
 
@@ -13,47 +21,67 @@ const OurTeamList = ({ ourTeamConfig: cards }) => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [prevCurrentPage, setPrevCurrentPage] = useState(3);
-  const [nextCurrentPage, setNextCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(0);
+  // const [prevCurrentPage, setPrevCurrentPage] = useState(3);
+  // const [nextCurrentPage, setNextCurrentPage] = useState(1);
 
-  useEffect(() => {
-    currentPage === 0
-      ? setPrevCurrentPage(3)
-      : setPrevCurrentPage(currentPage - 1);
+  // useEffect(() => {
+  //   currentPage === 0
+  //     ? setPrevCurrentPage(3)
+  //     : setPrevCurrentPage(currentPage - 1);
 
-    currentPage === 3
-      ? setNextCurrentPage(0)
-      : setNextCurrentPage(currentPage + 1);
-  }, [currentPage]);
+  //   currentPage === 3
+  //     ? setNextCurrentPage(0)
+  //     : setNextCurrentPage(currentPage + 1);
+  // }, [currentPage]);
 
-  // SWIPE
+  // // SWIPE
 
-  const totalPages = cards.length;
+  // const totalPages = cards.length;
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => nextPage(),
-    onSwipedRight: () => prevPage(),
-  });
+  // const handlers = useSwipeable({
+  //   onSwipedLeft: () => nextPage(),
+  //   onSwipedRight: () => prevPage(),
+  // });
 
-  const nextPage = () => {
-    if (currentPage < totalPages - 1) {
-      setCurrentPage(prevPage => prevPage + 1);
-    }
-  };
+  // const nextPage = () => {
+  //   if (currentPage < totalPages - 1) {
+  //     setCurrentPage(prevPage => prevPage + 1);
+  //   }
+  // };
 
-  const prevPage = () => {
-    if (currentPage > 0) {
-      setCurrentPage(prevPage => prevPage - 1);
-    }
-  };
+  // const prevPage = () => {
+  //   if (currentPage > 0) {
+  //     setCurrentPage(prevPage => prevPage - 1);
+  //   }
+  // };
 
   return (
     <>
       {!isDesktop && (
-        <div className={s.listMob} {...handlers}>
+        <div
+          className={s.listMob}
+          // {...handlers}
+        >
           <div className={s.cards}>
-            <div className={`${currentPage === 0 ? s.cardHide : s.prevCard}`}>
+            <Swiper
+              // install Swiper modules
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={50}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              // scrollbar={{ draggable: true }}
+              onSwiper={swiper => console.log(swiper)}
+              onSlideChange={() => console.log('slide change')}
+            >
+              <SwiperSlide>Slide 1</SwiperSlide>
+              <SwiperSlide>Slide 2</SwiperSlide>
+              <SwiperSlide>Slide 3</SwiperSlide>
+              <SwiperSlide>Slide 4</SwiperSlide>
+              ...
+            </Swiper>
+            {/* <div className={`${currentPage === 0 ? s.cardHide : s.prevCard}`}>
               <Card
                 imgUrl={cards[prevCurrentPage].imgUrl}
                 name={cards[prevCurrentPage].name}
@@ -76,14 +104,14 @@ const OurTeamList = ({ ourTeamConfig: cards }) => {
                 position={cards[nextCurrentPage].position}
                 alt={cards[nextCurrentPage].alt}
               />
-            </div>
+            </div> */}
           </div>
 
-          <BtnsDotPagination
+          {/* <BtnsDotPagination
             buttonsList={buttonsList}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
-          />
+          /> */}
         </div>
       )}
 
