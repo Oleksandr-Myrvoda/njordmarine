@@ -1,11 +1,11 @@
-import { Suspense, lazy } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
 
 import { ErrorProvider } from 'context/ErrorProvider';
-
-import s from './Main.module.css';
 import Loader from 'common/Loader/Loader';
 import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
+import s from './Main.module.css';
+
 // import NotFound from 'pages/NotFound/NotFound';
 
 const HomePage = lazy(() =>
@@ -68,9 +68,7 @@ const Main = () => {
 
           {/*--- SPARES ------------------------*/}
           <Route path="/spares">
-            <ErrorProvider>
-              <SparesPage />
-            </ErrorProvider>
+            <SparesPage />
           </Route>
 
           {/*--- CONTACTS ------------------------*/}

@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 import s from './NavItem.module.css';
 
@@ -8,8 +9,8 @@ const NavItem = ({ name, path }) => {
 
   const navItemStyles = [s.NavItem];
   isActive && navItemStyles.push(s.NavItemActive);
-  console.log('location', location);
-  console.log('path', path);
+  // console.log('location', location);
+  // console.log('path', path);
   return (
     <NavLink
       to={path}

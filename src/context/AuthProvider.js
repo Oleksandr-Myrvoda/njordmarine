@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 // Создаем контекст
 const AuthContext = createContext();
@@ -8,7 +8,13 @@ const useAuthContext = () => {
 
 // Создаем функцию-провайдер для контекста, где устанавливаем начальное значение токена (null или пустая строка)
 const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(JSON.parse(localStorage.getItem('token')));
+  const [token, setToken] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('token'));
+    } catch (error) {
+      return null;
+    }
+  });
 
   const unsetToken = () => setToken('');
   const isLogin = Boolean(token);

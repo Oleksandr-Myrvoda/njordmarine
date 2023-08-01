@@ -94,15 +94,67 @@ const deleteBrendApi = ({ endpoint, id, token }) => {
 
 // BROCHURE LINK =======
 
-const editBrochureApi = ({ endpoint, item, token }) => {
+const getBrochureApi = () => {
+  return axios.get('/brochure.json').then(({ data }) => {
+    try {
+      return data
+        ? Object.entries(data).map(([id, refs]) => ({ id, ...refs }))[0]
+        : { ru: '', en: '', id: null };
+    } catch (error) {
+      return { ru: '', en: '', id: null };
+    }
+  }); // {"kjhkjhkjhkjh": {ru: "https://ru", en: "https://en"}}
+};
+
+const addBrochureApi = (refs = { en: '', ru: '' }, token) => {
   return axios
-    .patch(`${endpoint}/admin.json`, item, {
+    .post('/brochure.json', refs, {
       params: {
         auth: token,
       },
     })
-    .then(response => ({ ...response.data }));
+    .then(({ data }) => ({ ...refs, id: data.name }));
 };
+
+const editBrochureApi = ({ refs, id, token }) => {
+  return axios
+    .patch(`/brochure/${id}.json`, refs, {
+      params: {
+        auth: token,
+      },
+    })
+    .then(response => response.data);
+};
+
+// const getAgrimentsApi = () => {
+//   return axios.get('/brochure.json').then(({ data }) => {
+//     try {
+//       return data ? Object.values(data) : { ru: '', en: '' };
+//     } catch (error) {
+//       return { ru: '', en: '' };
+//     }
+//   }); // {"kjhkjhkjhkjh": {ru: "https://ru", en: "https://en"}}
+// };
+
+const addTermsApi = (refs = { en: '', ru: '' }, token) => {
+  return axios
+    .post('/terms.json', refs, {
+      params: {
+        auth: token,
+      },
+    })
+    .then(({ data }) => ({ ...refs, id: data.name }));
+};
+
+// const editAgrimentsApi = ({ refs, id, token }) => {
+//   return axios
+//     .patch(`/brochure/${id}.json`, refs, {
+//       params: {
+//         auth: token,
+//       },
+//     })
+//     .then(response => response.data);
+// };
 
 export {
   getData,
@@ -112,5 +164,8 @@ export {
   addBrendApi,
   editBrendApi,
   deleteBrendApi,
+  getBrochureApi,
+  addBrochureApi,
   editBrochureApi,
+  addTermsApi,
 };

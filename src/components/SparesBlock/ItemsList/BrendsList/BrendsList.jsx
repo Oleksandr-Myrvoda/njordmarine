@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import { useRouteMatch } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { useAuthContext } from 'context/AuthProvider';
-import { useSetError } from 'context/ErrorProvider';
+import * as api from 'services/api';
 
 import BigButton from 'common/BigButton';
 import BrendItem from './BrendItem/BrendItem';
-import * as api from 'services/api';
-
+import PropTypes from 'prop-types';
 import s from './BrendsList.module.css';
+import { useAuthContext } from 'context/AuthProvider';
+import { useRouteMatch } from 'react-router-dom';
+import { useSetError } from 'context/ErrorProvider';
+import { useState } from 'react';
 
 const BrendsList = ({ brends = [], onClose, setSpares }) => {
   const match = useRouteMatch();
@@ -59,14 +58,14 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
 
   // EDIT ===============================================
 
-  const editBrendState = ({ itemId, brendId, newBrend }) => {
+  const editBrendToState = ({ itemId, brendId, newBrend }) => {
     setSpares(prev =>
       prev.map(spare => {
         if (spare.id !== itemId) return spare;
 
         const newBrends = spare.brends.map(brend => {
           if (brend.id !== brendId) return brend;
-          return { ...brend, brend: newBrend };
+          return { ...brend, ...newBrend };
         });
         return { ...spare, brends: newBrends };
       }),
@@ -85,7 +84,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
         token: idToken,
       })
       .then(brend =>
-        editBrendState({
+        editBrendToState({
           itemId: match.params.itemId,
           brendId: brend.id,
           newBrend: brend,
@@ -98,7 +97,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
 
   // DELETE ===============================================
 
-  const deleteBrendState = ({ itemId, brendId }) => {
+  const deleteBrendFromState = ({ itemId, brendId }) => {
     setSpares(prev =>
       prev.map(spare => {
         if (spare.id !== itemId) return spare;
@@ -109,14 +108,14 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
     );
   };
 
-  const deleteBrend = id => {
+  const deleteBrend = (id, idToken = token) => {
     return api
-      .deleteBrendApi({ endpoint: match.url, id, token })
+      .deleteBrendApi({ endpoint: match.url, id, token: idToken })
       .then(() =>
-        deleteBrendState({ itemId: match.params.itemId, brendId: id }),
+        deleteBrendFromState({ itemId: match.params.itemId, brendId: id }),
       )
-      .catch(err => {
-        console.log(err.message);
+      .catch(error => {
+        setError({ error, cb: token => deleteBrend(id, token) });
       });
   };
 

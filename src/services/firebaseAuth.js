@@ -48,6 +48,5 @@ export const loginUser = ({ email, password }) => {
     .then(response => ({
       token: response.data.idToken,
       refreshToken: response.data.refreshToken,
-    }))
-    .catch(err => console.log(err));
+    }));
 };

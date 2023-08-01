@@ -1,14 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
-import { useRouteMatch } from 'react-router-dom';
-import { useAuthContext } from 'context/AuthProvider';
-import { useSetError } from 'context/ErrorProvider';
+import * as api from 'services/api';
 
-import SendInfo from 'common/SendInfo';
+import { useEffect, useRef, useState } from 'react';
+
 import FileUploader from './ItemsList/FileUploader';
 import ItemsList from './ItemsList';
 import PropTypes from 'prop-types';
-import * as api from 'services/api';
+import SendInfo from 'common/SendInfo';
 import s from './SparesBlock.module.css';
+import { useAuthContext } from 'context/AuthProvider';
+import { useRouteMatch } from 'react-router-dom';
+import { useSetError } from 'context/ErrorProvider';
 
 const SparesBlock = ({ path, name, linkName, linkPath }) => {
   const match = useRouteMatch();
@@ -60,29 +61,42 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
   // const handleAddData = () => {};
   // EDIT =======
 
-  const editData = (id, editedData) => {
+  const editData = (id, editedData, idToken = token) => {
     return api
-      .editItemApi({ endpoint: match.url, item: editedData, id, token })
+      .editItemApi({
+        endpoint: match.url,
+        item: editedData,
+        id,
+        token: idToken,
+      })
       .then(data => {
         setSpares(prevData =>
           prevData.map(el => (el.id !== data.id ? el : { ...el, ...data })),
         );
       })
-      .catch(err => {
-        console.log(err.message);
+      .catch(error => {
+        console.log(error.message);
+        setError({ error, cb: token => editData(id, editedData, token) });
       });
   };
+  // editData(id, {})
 
   // DELETE =======
 
-  const deleteData = (id, deletedData) => {
+  const deleteData = (id, deletedData, idToken = token) => {
     return api
-      .deleteItemApi({ endpoint: match.url, item: deletedData, id, token })
+      .deleteItemApi({
+        endpoint: match.url,
+        item: deletedData,
+        id,
+        token: idToken,
+      })
       .then(data => {
         setSpares(prevSpares => prevSpares.filter(el => el.id !== data.id));
       })
-      .catch(err => {
-        console.log(err.message);
+      .catch(error => {
+        console.log(error.message);
+        setError({ error, cb: token => deleteData(id, deletedData, token) });
       });
   };
 

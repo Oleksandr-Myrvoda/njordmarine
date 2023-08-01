@@ -1,22 +1,28 @@
-import {
-  createContext,
-  useState,
-  useContext,
-  useEffect,
-  useCallback,
-} from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+
 import { refreshTokenApi } from 'services/firebaseAuth';
 import { useAuthContext } from 'context/AuthProvider';
 
 // Создаем контекст
 const ErrorContext = createContext();
 const useSetError = () => {
-  return useContext(ErrorContext);
+  const { setErrorOptions } = useContext(ErrorContext);
+  return setErrorOptions;
+};
+
+export const useSetOtherError = () => {
+  const { setError } = useContext(ErrorContext);
+  return setError;
 };
 
 const ErrorProvider = ({ children }) => {
   const [errorOptions, setErrorOptions] = useState(null);
   const { refreshToken, setToken, unsetToken } = useAuthContext();
+  const [error, setError] = useState(null);
+
+  const providerValue = useMemo(() => {
+    return { setErrorOptions, setError };
+  }, []);
 
   useEffect(() => {
     if (!errorOptions) {
@@ -25,8 +31,7 @@ const ErrorProvider = ({ children }) => {
     const { error, cb } = errorOptions;
     console.dir(error);
 
-    if (error.response.status === 401 || error.response.status === 400) {
-      console.log('refreshToken', refreshToken);
+    if (error.response.status === 401) {
       refreshTokenApi(refreshToken)
         .then(tokenData => {
           cb(tokenData.token);
@@ -39,8 +44,20 @@ const ErrorProvider = ({ children }) => {
     }
   }, [errorOptions, refreshToken, setToken, unsetToken]);
 
+  useEffect(() => {
+    if (error) {
+      // toast.error(error.message); -> доробити
+      const id = setTimeout(() => {
+        setError(null);
+        clearTimeout(id);
+      }, 1000);
+    }
+  }, [error]);
+
   return (
-    <ErrorContext.Provider value={setErrorOptions}>
+    <ErrorContext.Provider value={providerValue}>
+      {error && <h1>{error.message}</h1>}
+      {/* <Toastify {...props} /> */}
       {children}
     </ErrorContext.Provider>
   );
