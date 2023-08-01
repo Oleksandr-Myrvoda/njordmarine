@@ -7,15 +7,15 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 15;
 
-  opacity: 0;
+  /* opacity: 0;
   pointer-events: none;
-  transition: all 300 ease;
+  transition: all 300 ease; */
 }
 
-.open {
+/* .open {
   opacity: 1;
   pointer-events: auto;
-}
+} */
 
 .modal {
   padding: 0 16px 36px 16px;

@@ -34,8 +34,8 @@ const Modal = ({ onClose, title, children, isEmailSended, isModalOpen }) => {
   console.log('isOpen', isOpen);
   return createPortal(
     <div
-      // className={s.backdrop}
-      className={`${s.backdrop} ${isOpen && s.open}`}
+      className={s.backdrop}
+      // className={`${s.backdrop} ${isOpen && s.open}`}
       onClick={handleBackdropClick}
     >
       <div className={s.modal}>
