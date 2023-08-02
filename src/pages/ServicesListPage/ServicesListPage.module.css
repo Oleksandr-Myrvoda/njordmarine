@@ -17,6 +17,7 @@
   );
 }
 .energyBG {
+  align-items: center;
   background-image: linear-gradient(
     to bottom,
     var(--bg-medium-color) calc(350px),
@@ -31,7 +32,7 @@
 }
 
 .pagesBlock {
-  padding: 0 16px 48px 16px;
+  /* padding: 0 16px 48px 16px; */
 
   display: flex;
   flex-direction: column;

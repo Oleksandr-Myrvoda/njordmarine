@@ -9,7 +9,10 @@
 
 .cards {
   position: relative;
-  height: 390px;
+  /* height: 390px; */
+  height: 575px;
+
+  /* flex-direction: column; */
 
   /* transition: transform 0.3s ease;  */
 }
@@ -26,7 +29,7 @@
   opacity: 60%;
 }
 .currentCard {
-  left: 55px;
+  left: 155px;
 }
 .nextCard {
   left: 315px;
@@ -41,6 +44,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /*  */
+  height: 590px;
+  /* width: 300px; */
+  width: 343px;
 }
 
 .name {
@@ -66,5 +73,8 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 10px;
+  }
+  .item {
+    width: auto;
   }
 }

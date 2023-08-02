@@ -308,9 +308,27 @@
     }
   },
 
+  "admin": {
+    "brochureTitle": "Brochure",
+    "termsTitle": "Terms and conditions",
+    "button": "Go to Spares",
+    "edit": "Edit",
+    "instroction": "Instruction",
+    "li1.1": "Open",
+    "li1.2": "and sign in with your Google account",
+    "li2": "Download Brochure File",
+    "li3": "Right click on the file and select Share",
+    "li4": "Select the option Share",
+    "li5": "Select File Access All with Link Access",
+    "li6": "Copy the link and replace in the required field"
+  },
+
   "common": {
     "brochure": "Download our brochure",
-    "brochureBtn": "Download brochure"
+    "brochureBtn": "Download brochure",
+    "placeholderRu": "In russian",
+    "placeholderEn": "In english",
+    "toast": "Wrong login or password"
   },
 
   "sendInfo": {

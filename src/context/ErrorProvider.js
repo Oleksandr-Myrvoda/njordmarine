@@ -2,8 +2,11 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import { refreshTokenApi } from 'services/firebaseAuth';
 import { useAuthContext } from 'context/AuthProvider';
+import { useTranslation } from 'react-i18next';
+import { toast } from 'react-toastify';
 
 // Создаем контекст
+
 const ErrorContext = createContext();
 const useSetError = () => {
   const { setErrorOptions } = useContext(ErrorContext);
@@ -16,6 +19,7 @@ export const useSetOtherError = () => {
 };
 
 const ErrorProvider = ({ children }) => {
+  const { t } = useTranslation();
   const [errorOptions, setErrorOptions] = useState(null);
   const { refreshToken, setToken, unsetToken } = useAuthContext();
   const [error, setError] = useState(null);
@@ -39,14 +43,11 @@ const ErrorProvider = ({ children }) => {
         })
         .catch(() => unsetToken())
         .finally(() => setErrorOptions(null));
-      // refreshToken -> setToken(newToken) -> cb()
-      // reRequest with last funk
     }
   }, [errorOptions, refreshToken, setToken, unsetToken]);
 
   useEffect(() => {
     if (error) {
-      // toast.error(error.message); -> доробити
       const id = setTimeout(() => {
         setError(null);
         clearTimeout(id);
@@ -56,9 +57,8 @@ const ErrorProvider = ({ children }) => {
 
   return (
     <ErrorContext.Provider value={providerValue}>
-      {error && <h1>{error.message}</h1>}
-      {/* <Toastify {...props} /> */}
       {children}
+      {error && toast.error(`${t('common.toast')}`)}
     </ErrorContext.Provider>
   );
 };

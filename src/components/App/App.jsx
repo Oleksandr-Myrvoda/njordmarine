@@ -1,13 +1,15 @@
 import { LangProvider } from 'context/LangProvider';
 import { AdminProvider } from 'context/AdminProvider';
+import { useMediaQuery } from 'react-responsive';
+import { ToastContainer } from 'react-toastify';
 import Footer from 'components/Footer';
 import Header from 'components/Header/Header';
 import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
 import { Suspense } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import Loader from 'common/Loader/Loader';
 import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
+import 'react-toastify/dist/ReactToastify.css';
 import s from './App.module.css';
 
 function App() {
@@ -48,6 +50,7 @@ function App() {
           </div>
         </div>
       </div>
+      <ToastContainer theme="colored" />
     </div>
   );
 }

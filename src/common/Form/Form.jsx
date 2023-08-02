@@ -1,6 +1,9 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLangContext } from 'context/LangProvider';
+import { useSetOtherError } from 'context/ErrorProvider';
 import { useForm } from 'react-hook-form';
+import { getTermsApi } from 'services/api';
 import emailjs from '@emailjs/browser';
 import BigButton from 'common/BigButton';
 import ErrorMsg from 'common/ErrorMsg';
@@ -42,6 +45,25 @@ const Form = ({ isTitle, setEmailSended }) => {
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
   const form = useRef();
+
+  const { lang } = useLangContext();
+  const setOtherError = useSetOtherError();
+  const [fileUrl, setFileUrl] = useState({ ru: '', en: '' });
+  // const { brochureLink } = useAdminContext();
+  // const [fileUrl, setFileUrl] = useState(brochureLink);
+
+  useEffect(() => {
+    getTermsApi()
+      .then(termRefs => {
+        const { id, ...rest } = termRefs;
+        setFileUrl(rest);
+      })
+      .catch(error => {
+        setOtherError(error.response.data);
+        console.log('setOtherErorr(error.response.data)');
+        console.dir(error);
+      });
+  }, []);
 
   const onSubmit = data => {
     emailjs
@@ -131,7 +153,7 @@ const Form = ({ isTitle, setEmailSended }) => {
         <div className={s.btns}>
           <BigButton type="submit" text={t('form.bigBtn')} />
 
-          <a className={s.link} href="http://">
+          <a href={fileUrl[lang]} download className={s.link}>
             {t('form.privacyTerms')}
           </a>
         </div>

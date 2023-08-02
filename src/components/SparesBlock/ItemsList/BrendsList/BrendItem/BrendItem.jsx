@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import PropTypes from 'prop-types';
 import { useAuthContext } from 'context/AuthProvider';
@@ -8,6 +9,7 @@ import CardWithMenu from 'common/CardWithMenu';
 import s from './BrendItem.module.css';
 
 const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [editedData, setEditedData] = useState(null);
   const { isLogin } = useAuthContext();
@@ -67,7 +69,7 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
               name="ru"
               onChange={handleEditBrend}
               autoComplete="off"
-              placeholder="На русском"
+              placeholder={t('common.placeholderRu')}
             />
             <input
               className={s.formInput}
@@ -76,7 +78,7 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
               name="en"
               onChange={handleEditBrend}
               autoComplete="off"
-              placeholder="In english"
+              placeholder={t('common.placeholderEn')}
             />
           </div>
         </div>

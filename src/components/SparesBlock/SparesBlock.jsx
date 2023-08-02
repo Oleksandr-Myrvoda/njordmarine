@@ -1,7 +1,7 @@
 import * as api from 'services/api';
 
 import { useEffect, useRef, useState } from 'react';
-
+import { useTranslation } from 'react-i18next';
 import FileUploader from './ItemsList/FileUploader';
 import ItemsList from './ItemsList';
 import PropTypes from 'prop-types';
@@ -12,6 +12,7 @@ import { useRouteMatch } from 'react-router-dom';
 import { useSetError } from 'context/ErrorProvider';
 
 const SparesBlock = ({ path, name, linkName, linkPath }) => {
+  const { t } = useTranslation();
   const match = useRouteMatch();
   const inputRef = useRef(null);
   const [spares, setSpares] = useState([]);
@@ -133,7 +134,7 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
             onChange={e =>
               setItemTitle(prev => ({ ...prev, ru: e.target.value }))
             }
-            placeholder="Название на русском"
+            placeholder={t('common.placeholderRu')}
           />
           <input
             className={s.addFormInput}
@@ -144,7 +145,7 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
             onChange={e =>
               setItemTitle(prev => ({ ...prev, en: e.target.value }))
             }
-            placeholder="Title in english"
+            placeholder={t('common.placeholderEn')}
           />
 
           <FileUploader uploadData={addData} imgUrl={imgUrl} />

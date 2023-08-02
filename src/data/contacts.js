@@ -46,17 +46,17 @@ const contactsPageConfig = [
 
 const socConfig = [
   {
-    linkUrl: 'https://www.facebook.com/',
+    linkUrl: 'https://www.facebook.com/profile.php?id=100063942675755',
     imgUrl: fb,
     alt: 'facebook',
   },
   {
-    linkUrl: 'https://www.instagram.com/',
+    linkUrl: 'https://www.instagram.com/njordmarine/',
     imgUrl: insta,
     alt: 'instagram',
   },
   {
-    linkUrl: 'https://www.linkedin.com/',
+    linkUrl: 'https://www.linkedin.com/company/njordmarine-oü',
     imgUrl: linked,
     alt: 'linkedin',
   },

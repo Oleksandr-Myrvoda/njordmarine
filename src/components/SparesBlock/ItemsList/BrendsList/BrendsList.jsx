@@ -1,5 +1,5 @@
 import * as api from 'services/api';
-
+import { useTranslation } from 'react-i18next';
 import BigButton from 'common/BigButton';
 import BrendItem from './BrendItem/BrendItem';
 import PropTypes from 'prop-types';
@@ -10,6 +10,7 @@ import { useSetError } from 'context/ErrorProvider';
 import { useState } from 'react';
 
 const BrendsList = ({ brends = [], onClose, setSpares }) => {
+  const { t } = useTranslation();
   const match = useRouteMatch();
   const [newBrend, setNewBrend] = useState({
     ru: '',
@@ -153,7 +154,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
             name="ru"
             value={newBrend.ru}
             onChange={handleBrendChenge}
-            placeholder="На русском"
+            placeholder={t('common.placeholderRu')}
             autoComplete="off"
           />
 
@@ -163,7 +164,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
             name="en"
             value={newBrend.en}
             onChange={handleBrendChenge}
-            placeholder="In english"
+            placeholder={t('common.placeholderEn')}
             autoComplete="off"
           />
 

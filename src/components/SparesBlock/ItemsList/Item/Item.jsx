@@ -84,7 +84,7 @@ const Item = ({
               value={editedData.itemTitle.ru}
               name="ru"
               onChange={handleEditTitle}
-              placeholder="На русском"
+              placeholder={t('common.placeholderRu')}
               autoComplete="off"
             />
             <input
@@ -92,7 +92,7 @@ const Item = ({
               value={editedData.itemTitle.en}
               name="en"
               onChange={handleEditTitle}
-              placeholder="In english"
+              placeholder={t('common.placeholderEn')}
               autoComplete="off"
             />
           </>

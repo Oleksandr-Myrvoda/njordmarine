@@ -10,7 +10,7 @@ const modalRootRef = document.querySelector('#modal-root');
 const Modal = ({ onClose, title, children, isEmailSended, isModalOpen }) => {
   useLockBodyScroll(true);
 
-  const [isOpen, setIsOpen] = useState(isModalOpen);
+  // const [isOpen, setIsOpen] = useState(isModalOpen);
 
   useEffect(() => {
     const onEscPress = e => {
@@ -31,7 +31,7 @@ const Modal = ({ onClose, title, children, isEmailSended, isModalOpen }) => {
       onClose();
     }
   };
-  console.log('isOpen', isOpen);
+  // console.log('isOpen', isOpen);
   return createPortal(
     <div
       className={s.backdrop}

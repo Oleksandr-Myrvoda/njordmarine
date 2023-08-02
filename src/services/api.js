@@ -126,8 +126,21 @@ const editBrochureApi = ({ refs, id, token }) => {
     .then(response => response.data);
 };
 
-// const getAgrimentsApi = () => {
-//   return axios.get('/brochure.json').then(({ data }) => {
+// TTERMS LINK =======
+
+const getTermsApi = () => {
+  return axios.get('/terms.json').then(({ data }) => {
+    try {
+      return data
+        ? Object.entries(data).map(([id, termRefs]) => ({ id, ...termRefs }))[0]
+        : { ru: '', en: '', id: null };
+    } catch (error) {
+      return { ru: '', en: '', id: null };
+    }
+  }); // {"kjhkjhkjhkjh": {ru: "https://ru", en: "https://en"}}
+};
+// const getTermsApi = () => {
+//   return axios.get('/terms.json').then(({ data }) => {
 //     try {
 //       return data ? Object.values(data) : { ru: '', en: '' };
 //     } catch (error) {
@@ -146,15 +159,15 @@ const addTermsApi = (refs = { en: '', ru: '' }, token) => {
     .then(({ data }) => ({ ...refs, id: data.name }));
 };
 
-// const editAgrimentsApi = ({ refs, id, token }) => {
-//   return axios
-//     .patch(`/brochure/${id}.json`, refs, {
-//       params: {
-//         auth: token,
-//       },
-//     })
-//     .then(response => response.data);
-// };
+const editTermsApi = ({ termRefs, id, token }) => {
+  return axios
+    .patch(`/terms/${id}.json`, termRefs, {
+      params: {
+        auth: token,
+      },
+    })
+    .then(response => response.data);
+};
 
 export {
   getData,
@@ -168,4 +181,6 @@ export {
   addBrochureApi,
   editBrochureApi,
   addTermsApi,
+  getTermsApi,
+  editTermsApi,
 };

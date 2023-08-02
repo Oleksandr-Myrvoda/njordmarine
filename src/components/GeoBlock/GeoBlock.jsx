@@ -1,6 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { useHistory } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLangContext } from 'context/LangProvider';
+import { useSetOtherError } from 'context/ErrorProvider';
+import { getBrochureApi } from 'services/api';
 import BigButton from 'common/BigButton';
 import globe from 'images/globe.png';
 import globeMob from 'images/globe-mob.png';
@@ -9,6 +13,23 @@ import s from './GeoBlock.module.css';
 const GeoBlock = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const setOtherError = useSetOtherError();
+  const { lang } = useLangContext();
+  const [fileUrl, setFileUrl] = useState({ ru: '', en: '' });
+
+  useEffect(() => {
+    getBrochureApi()
+      .then(refs => {
+        const { id, ...rest } = refs;
+        setFileUrl(rest);
+      })
+      .catch(error => {
+        setOtherError(error.response.data);
+        console.log('setOtherErorr(error.response.data)');
+        console.dir(error);
+      });
+  }, [setOtherError]);
+
   const globeImage = isDesktop ? globe : globeMob;
 
   const history = useHistory();
@@ -31,7 +52,7 @@ const GeoBlock = () => {
         <p className={s.text}>{t('geoBlock.text2')}</p>
 
         <BigButton onClick={toContacts} text={t('geoBlock.bigButtonText')} />
-        <a href="/" className={s.link}>
+        <a href={fileUrl[lang]} download className={s.link}>
           {t('geoBlock.bigButtonLink')}
         </a>
       </div>

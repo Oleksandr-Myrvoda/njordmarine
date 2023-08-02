@@ -66,20 +66,51 @@ const OurTeamList = ({ ourTeamConfig: cards }) => {
           <div className={s.cards}>
             <Swiper
               // install Swiper modules
+              // modules={[Navigation]}
               modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={50}
+              spaceBetween={10}
               slidesPerView={1}
-              navigation
+              // navigation
               pagination={{ clickable: true }}
               // scrollbar={{ draggable: true }}
-              onSwiper={swiper => console.log(swiper)}
-              onSlideChange={() => console.log('slide change')}
+              // onSwiper={swiper => console.log(swiper)}
+              // onSlideChange={() => console.log('slide change')}
             >
-              <SwiperSlide>Slide 1</SwiperSlide>
-              <SwiperSlide>Slide 2</SwiperSlide>
-              <SwiperSlide>Slide 3</SwiperSlide>
-              <SwiperSlide>Slide 4</SwiperSlide>
-              ...
+              <SwiperSlide>
+                <Card
+                  imgUrl={cards[0].imgUrl}
+                  name={cards[0].name}
+                  position={cards[0].position}
+                  alt={cards[0].alt}
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Card
+                  imgUrl={cards[1].imgUrl}
+                  name={cards[1].name}
+                  position={cards[1].position}
+                  alt={cards[1].alt}
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Card
+                  imgUrl={cards[2].imgUrl}
+                  name={cards[2].name}
+                  position={cards[2].position}
+                  alt={cards[2].alt}
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Card
+                  imgUrl={cards[3].imgUrl}
+                  name={cards[3].name}
+                  position={cards[3].position}
+                  alt={cards[3].alt}
+                />
+              </SwiperSlide>
             </Swiper>
             {/* <div className={`${currentPage === 0 ? s.cardHide : s.prevCard}`}>
               <Card

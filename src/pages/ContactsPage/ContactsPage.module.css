@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   background-image: url('../../images/contacts-bg-mob.png');
   background-position: top;
+  align-items: center;
 }
 
 .taglineWrapper {
@@ -46,6 +47,10 @@
   padding-left: 15px;
   content: url('../../images/arrowRight.svg');
 }
+.container {
+  max-width: 375px;
+  /* max-width: 343px; */
+}
 
 @media screen and (min-width: 1440px) {
   .taglineWrapper {
@@ -68,5 +73,16 @@
   .link {
     justify-content: left;
     margin: 96px 0 0 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 1217px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
