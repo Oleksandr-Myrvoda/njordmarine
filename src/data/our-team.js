@@ -28,4 +28,10 @@ export const ourTeamConfig = [
     position: 'ourTeamBlock.position4',
     alt: 'photo',
   },
+  {
+    imgUrl: Girshin,
+    name: 'ourTeamBlock.name5',
+    position: 'ourTeamBlock.position5',
+    alt: 'photo',
+  },
 ];

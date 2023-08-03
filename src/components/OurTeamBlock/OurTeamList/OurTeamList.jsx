@@ -111,6 +111,14 @@ const OurTeamList = ({ ourTeamConfig: cards }) => {
                   alt={cards[3].alt}
                 />
               </SwiperSlide>
+              <SwiperSlide>
+                <Card
+                  imgUrl={cards[4].imgUrl}
+                  name={cards[4].name}
+                  position={cards[4].position}
+                  alt={cards[4].alt}
+                />
+              </SwiperSlide>
             </Swiper>
             {/* <div className={`${currentPage === 0 ? s.cardHide : s.prevCard}`}>
               <Card

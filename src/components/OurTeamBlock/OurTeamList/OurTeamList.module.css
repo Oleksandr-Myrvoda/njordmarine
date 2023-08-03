@@ -71,10 +71,15 @@
   .list {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    width: calc(85%);
+    row-gap: 64px;
+    column-gap: 96px;
   }
   .item {
     width: auto;
+    height: 400px;
   }
 }
