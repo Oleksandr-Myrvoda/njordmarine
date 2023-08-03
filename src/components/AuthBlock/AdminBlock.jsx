@@ -220,6 +220,25 @@ const AdminBlock = ({ token }) => {
                 type="submit"
                 text="Update"
               />
+              <p>{t('admin.instroction')}:</p>
+              <ul>
+                <li>
+                  {t('admin.li1.1')}{' '}
+                  <a
+                    href="https://drive.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Google Drive
+                  </a>{' '}
+                  {t('admin.li1.2')}
+                </li>
+                <li>{t('admin.li2')}</li>
+                <li>{t('admin.li3')}</li>
+                <li>{t('admin.li4')}</li>
+                <li>{t('admin.li5')}</li>
+                <li>{t('admin.li6')}</li>
+              </ul>
               {/* <button type="submit">Update</button> */}
               {/* <button onClick={() => handleAddTermRefs()} type="button">
               Post
