@@ -15,7 +15,7 @@ const Office = () => {
 
       <p className={s.text}>
         {t('office.text1')}
-        <span className={s.focus}> “FOCUS Onshore”</span>, {t('office.text2')}.
+        <span className={s.focus}> “FOCUS Onshore”</span> {t('office.text2')}
       </p>
 
       <h2 className={s.head}>{t('office.head')}:</h2>
