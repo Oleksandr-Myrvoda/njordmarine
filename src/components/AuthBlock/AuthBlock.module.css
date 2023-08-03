@@ -54,6 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  padding: 16px;
 }
 
 .buttonsBlock {
@@ -95,6 +96,7 @@
 
   .buttonsBlock {
     flex-direction: row;
+    padding: 0;
   }
 
   .formWrapper {

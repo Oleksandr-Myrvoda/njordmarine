@@ -328,7 +328,8 @@
     "brochureBtn": "Download brochure",
     "placeholderRu": "In russian",
     "placeholderEn": "In english",
-    "toast": "Wrong login or password"
+    "toast": "Wrong login or password",
+    "closeBtn": "Close"
   },
 
   "sendInfo": {

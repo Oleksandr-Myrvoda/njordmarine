@@ -20,7 +20,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: var(--text-light-color);
+  color: var(--round-btn-color);
   transition: all 200ms;
 }
 
@@ -32,7 +32,16 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  color: var(--text-color);
+  color: var(--sidebar-text-color);
 
   transition: all 200ms;
+}
+
+@media screen and (min-width: 1440px) {
+  .button {
+    color: var(--text-light-color);
+  }
+  .active {
+    color: var(--text-color);
+  }
 }

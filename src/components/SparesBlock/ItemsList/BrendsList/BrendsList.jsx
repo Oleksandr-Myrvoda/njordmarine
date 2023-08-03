@@ -173,7 +173,7 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
           </button>
         </form>
       )}
-      <BigButton onClick={onClose} text="Закрыть" />
+      <BigButton onClick={onClose} text={t('common.closeBtn')} />
     </div>
   );
 };

@@ -35,12 +35,6 @@ const Header = () => {
 
   return (
     <header ref={cardRef} className={s.mainHeader}>
-      {/* {isLogin && (
-        <button type="button" onClick={() => unsetToken()}>
-          Logout
-        </button>
-      )} */}
-
       {isDesktop ? (
         <>
           <Contacts contactsConfig={contactsConfig} isHeader={true} />
@@ -80,6 +74,14 @@ const Header = () => {
                 Logout
               </button>
             )}
+
+            <Suspense
+              //  fallback={<h2>"Loading..."</h2>}
+              fallback={<Loader />}
+              // fallback={<LoaderSpinner />}
+            >
+              <LanguageSwitcher />
+            </Suspense>
 
             <button type="button" className={s.menuBtn} onClick={toggleSidebar}>
               {t('navigation.mobileMenu')}
