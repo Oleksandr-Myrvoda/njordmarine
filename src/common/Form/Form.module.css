@@ -60,6 +60,9 @@
   margin: 0;
   width: 100%;
   height: 212px;
+  /* max-height: 212px;
+  min-height: 100px;
+  height: 100%; */
   border-radius: 8px;
   background: none;
   background-color: var(--bg-light-color);

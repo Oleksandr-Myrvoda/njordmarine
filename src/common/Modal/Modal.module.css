@@ -6,20 +6,10 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 15;
-
-  /* opacity: 0;
-  pointer-events: none;
-  transition: all 300 ease; */
 }
-
-/* .open {
-  opacity: 1;
-  pointer-events: auto;
-} */
 
 .modal {
   padding: 0 16px 36px 16px;
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -30,6 +20,14 @@
   border-radius: 8px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  /* скролл вверх-вниз */
+  height: 90vh;
+  overflow-y: auto;
+  max-height: 800px;
+}
+
+.content {
+  min-height: 0;
 }
 
 .header {
@@ -58,7 +56,6 @@
   .modal {
     padding: 0 32px 36px 32px;
     max-width: 576px;
-    /* max-width: 640px; */
-    /* height: 729px; */
+    height: auto;
   }
 }
