@@ -12,7 +12,7 @@ const WorksList = ({ worksConfig }) => {
       <ul className={s.list}>
         {worksConfig.map(({ text }, index) => (
           <li key={index} className={s.item}>
-            <img src={dot} alt="dot"></img>
+            <img className={s.dotMarker} src={dot} alt="dot"></img>
             <div className={s.text}>{t(text)}</div>
           </li>
         ))}

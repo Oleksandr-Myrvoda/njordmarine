@@ -49,9 +49,22 @@
   content: url('../../../images/arrowRight.svg');
 }
 
+@keyframes rotateClockwise {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(720deg); /* Два оборота по часовой стрелке (360 * 2) */
+  }
+}
 .image {
   width: 60px;
   height: 60px;
+  transition: transform 1s ease-out; /* Плавное завершение анимации */
+}
+
+.item:hover .image {
+  animation: rotateClockwise 2s; /* Вращение длится 4 секунды */
 }
 
 @media screen and (min-width: 1440px) {

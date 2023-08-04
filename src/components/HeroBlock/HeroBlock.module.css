@@ -18,6 +18,7 @@
 }
 
 .head {
+  display: flex;
   align-items: flex-start;
 
   color: var(--text-light-color);
@@ -28,11 +29,34 @@
   letter-spacing: 0.24px;
 }
 
+/* ПУЛЬС ==================*/
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .head::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  /* width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: tomato; */
   padding-right: 5px;
   content: url('../../images/Ellipse.svg');
+  animation: pulse 1s infinite; /* Применение анимации с интервалом 1 секунда, бесконечное повторение */
 }
-
+/* .head::before {
+} */
+/* ======================= */
 .description {
   display: flex;
   align-items: center;
