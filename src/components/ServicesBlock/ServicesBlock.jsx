@@ -41,21 +41,22 @@ const ServicesBlock = () => {
         const visibleThreshold = 0.9 * screenHeight;
 
         if (elementPosition <= visibleThreshold) {
-          !isDesktop && setOpen(true);
+          setOpen(true);
+          // !isDesktop && setOpen(true);
         }
       }
     };
 
-    const animationTimer = setTimeout(() => {
-      isDesktop && setOpen(true);
-    }, 500);
+    // const animationTimer = setTimeout(() => {
+    //   isDesktop && setOpen(true);
+    // }, 500);
 
     window.addEventListener('scroll', handleScroll);
     return () => {
-      clearTimeout(animationTimer);
+      // clearTimeout(animationTimer);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isDesktop]);
+  }, []);
 
   // useEffect(() => {
   //   const animationTimer = setTimeout(() => {

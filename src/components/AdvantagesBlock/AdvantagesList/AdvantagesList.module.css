@@ -15,6 +15,10 @@
   flex-direction: column;
   align-items: center;
   background-color: var(--bg-medium-color);
+
+  opacity: 0;
+  transform: translateY(80%);
+  transition: opacity 0.5s ease, transform 1s ease;
 }
 
 .head {
@@ -42,6 +46,15 @@
 .image {
   height: 56px;
   width: 56px;
+
+  /* opacity: 0;
+  transform: translateY(80%);
+  transition: opacity 0.5s ease, transform 1s ease; */
+}
+
+.animatedItem {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media screen and (min-width: 1440px) {
