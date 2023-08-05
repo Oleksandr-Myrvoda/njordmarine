@@ -5,10 +5,8 @@ import PropTypes from 'prop-types';
 const CounterAnimation = ({ endValue }) => {
   const [count, setCount] = useState(0);
 
-  // Обновление счетчика от 0 до 800 в течение 2 секунд
   useEffect(() => {
     let startValue = 0;
-    // const endValue = 800;
     const duration = 2000; // Длительность анимации в миллисекундах
     const interval = 10; // Интервал обновления счетчика
 
@@ -30,6 +28,8 @@ const CounterAnimation = ({ endValue }) => {
   return <p className={s.counterAnimation}>{count}</p>;
 };
 
-CounterAnimation.propTypes = {};
+CounterAnimation.propTypes = {
+  endValue: PropTypes.string.isRequired,
+};
 
 export default CounterAnimation;

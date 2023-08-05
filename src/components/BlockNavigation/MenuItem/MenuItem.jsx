@@ -15,7 +15,7 @@ const MenuItem = ({ imgUrl, name, alt, to }) => {
       className={navItemStyles.join(' ')}
       activeClassName={s.NavItemActive}
     >
-      <img className={s.img} src={imgUrl} alt={alt} />
+      <img className={s.image} src={imgUrl} alt={alt} />
       <span className={s.itemName}>{name}</span>
     </NavLink>
   );

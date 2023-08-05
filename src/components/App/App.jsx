@@ -8,7 +8,7 @@ import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
 import { Suspense } from 'react';
 import Loader from 'common/Loader/Loader';
-import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
+
 import 'react-toastify/dist/ReactToastify.css';
 import s from './App.module.css';
 
@@ -18,11 +18,7 @@ function App() {
   return (
     <div className={s.mainContainer}>
       {isDesktop && (
-        <Suspense
-          // fallback={<h2>"Loading..."</h2>}
-          fallback={<Loader />}
-          // fallback={<LoaderSpinner />}
-        >
+        <Suspense fallback={<Loader />}>
           <Sidebar />
         </Suspense>
       )}
@@ -32,11 +28,8 @@ function App() {
           <div className={s.content}>
             <AdminProvider>
               <LangProvider>
-                <Suspense
-                  // fallback={<h2>"Loading..."</h2>}
-                  fallback={<Loader />}
-                  // fallback={<LoaderSpinner />}
-                >
+                <Suspense fallback={<Loader />}>
+                  <div className={s.emptyHeader}></div>
                   <Header />
                 </Suspense>
 

@@ -19,6 +19,8 @@ const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' }); */
 
 /* className={`${s.text} ${isContactsPage && s.contactsPage}`} */
 
+/* <Trail open={open} textStyle="tagline" heightD={40} heightMob={55}> */
+
 :root {
   --accent-color: #ff321b;
   --big-button-color: #223e7f;

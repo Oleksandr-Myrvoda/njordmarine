@@ -1,17 +1,23 @@
+.hideSibebar {
+  position: absolute;
+  left: 100%;
+  z-index: 500;
+  background-color: #fff;
+  width: 300px;
+  height: 100vw;
+  min-height: 900px;
+  top: 0;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-dark-color);
-  position: relative;
-  top: 80px;
-  left: 41.8%;
-}
 
-.sidebar {
   position: absolute;
   width: 260px;
   padding-bottom: 36px;
-  top: 67px;
+  top: 58px;
   left: 100%;
   z-index: 50;
   transform: translateX(0);
@@ -25,26 +31,36 @@
 .logo {
   padding-bottom: 179px;
 }
+
 .mobMenu {
   display: flex;
   flex-direction: column;
   gap: 64px;
   padding-top: 32px;
 }
+
 .mob {
   display: flex;
   flex-direction: column;
   gap: 64px;
   align-items: center;
 }
+
 @media screen and (min-width: 1440px) {
   .sidebar {
-    display: flex;
+    width: 16vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--bg-dark-color);
+    z-index: 1000;
+    /* display: flex;
     flex-direction: column;
     background-color: var(--bg-dark-color);
     width: 16vw;
     position: static;
-    z-index: 0;
+    z-index: 0; */
   }
 
   .logo {

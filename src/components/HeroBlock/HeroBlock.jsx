@@ -1,23 +1,68 @@
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
+import React, { useState, useEffect } from 'react';
+import { useTrail, a } from '@react-spring/web';
 import ship from 'images/hero-bg-mob.png';
 import SendInfo from 'common/SendInfo';
-import s from './HeroBlock.module.css';
 import Container from 'common/Container/Container';
 import CounterAnimation from 'common/CounterAnimation/CounterAnimation';
+import s from './HeroBlock.module.css';
+import Trail from 'common/Trail/Trail';
+
+// const Trail = ({ open, children }) => {
+//   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+//   const items = React.Children.toArray(children);
+//   const trail = useTrail(items.length, {
+//     config: { mass: 5, tension: 2000, friction: 350 },
+//     opacity: open ? 1 : 0,
+//     // x: open ? 0 : 20,
+//     y: open ? 0 : -20,
+//     height: (open && isDesktop ? 54 : 0) || (open && !isDesktop ? 32 : 0),
+//     from: { opacity: 0, y: -20, height: 0 },
+//   });
+//   return (
+//     <div>
+//       {trail.map(({ height, ...style }, index) => (
+//         <a.div key={index} className={s.trailsText} style={style}>
+//           <a.div style={{ height }}>{items[index]}</a.div>
+//         </a.div>
+//       ))}
+//     </div>
+//   );
+// };
 
 const HeroBlock = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    // Задержка для запуска анимации через 1 секунду после загрузки страницы
+    const animationTimer = setTimeout(() => {
+      setOpen(true);
+    }, 500);
+
+    return () => clearTimeout(animationTimer);
+  }, []);
   return (
     <div className={s.heroBlock}>
       <Container>
         <div className={s.heroContent}>
           <div className={s.heroWrapper}>
-            {/* <p className={s.head}>{t('heroBlock.head')}</p> */}
             <div className={s.head}>{t('heroBlock.head')}</div>
             <div className={s.taglineBig}>
-              <h1 className="taglineBig">{t('heroBlock.taglineBig')}</h1>
+              <div className={s.container}>
+                <Trail
+                  open={open}
+                  textStyle="taglineBig"
+                  heightD={54}
+                  heightMob={32}
+                >
+                  <span>{t('heroBlock.taglineBig1')}</span>
+                  <span>{t('heroBlock.taglineBig2')}</span>
+                  <span>{t('heroBlock.taglineBig3')}</span>
+                </Trail>
+              </div>
             </div>
 
             <p className={s.description}>{t('heroBlock.description')}</p>

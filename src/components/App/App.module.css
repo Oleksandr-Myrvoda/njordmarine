@@ -7,6 +7,10 @@
   background-color: var(--bg-light-color);
 }
 
+.emptyHeader {
+  height: 68px;
+}
+
 @media screen and (min-width: 1440px) {
   .mainContainer {
     max-width: none;
@@ -17,6 +21,7 @@
   .mainWrapper {
     margin: 0 auto;
     position: relative;
+    margin-left: 16vw;
   }
 
   .container {
@@ -36,5 +41,9 @@
     background-color: var(--bg-medium-color);
     border-top: 2px solid var(--footer-stroke);
     width: 100vw;
+  }
+  .emptyHeader {
+    /* height: 102px; */
+    display: none;
   }
 }

@@ -82,6 +82,18 @@
   display: none;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .active {
   z-index: 10;
   width: 34px;
@@ -91,6 +103,7 @@
   background-image: url('../../../../../images/energy-dots/round-button.png');
   background-size: cover;
   cursor: pointer;
+  animation: pulse 1s infinite;
 }
 
 .optionsTitle {

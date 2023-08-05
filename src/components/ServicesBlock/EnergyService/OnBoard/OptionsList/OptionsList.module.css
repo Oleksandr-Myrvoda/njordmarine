@@ -39,6 +39,22 @@
   letter-spacing: 0.24px;
   color: var(--text-color);
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dotMarker {
+  animation: pulse 1s infinite;
+}
 @media screen and (min-width: 1440px) {
   .blockWrapper {
     padding: 32px;

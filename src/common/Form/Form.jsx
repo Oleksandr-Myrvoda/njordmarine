@@ -129,13 +129,13 @@ const Form = ({ isTitle, setEmailSended }) => {
         </label>
 
         <label>
-          <p className={s.label}>{t('form.subjMessage')}</p>
+          <p className={s.label}>{t('form.companyName')}</p>
           <input
             className={s.formInput}
-            name="subjMessage"
+            name="companyName"
             type="text"
             placeholder={t('form.subjMessageInput')}
-            {...register('subjMessage')}
+            {...register('companyName')}
           />
         </label>
 

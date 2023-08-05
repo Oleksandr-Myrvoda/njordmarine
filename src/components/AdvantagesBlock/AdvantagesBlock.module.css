@@ -17,6 +17,8 @@
   align-items: center;
   gap: 16px;
   margin-bottom: 24px;
+
+  height: 80px;
 }
 
 @media screen and (min-width: 1440px) {
@@ -30,5 +32,6 @@
   .textBlock {
     gap: 24px;
     /* padding-bottom: 88px; */
+    height: 100px;
   }
 }

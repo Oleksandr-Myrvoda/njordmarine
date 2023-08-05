@@ -60,6 +60,14 @@
   content: url('../../images/arrowRight.svg');
 }
 
+.descriptionInside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  height: 215px;
+}
+
 @media screen and (min-width: 1440px) {
   .geoBlock {
     display: flex;

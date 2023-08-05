@@ -19,6 +19,9 @@
   margin-bottom: 24px;
 }
 
+.container {
+  height: 105px;
+}
 @media screen and (min-width: 1440px) {
   .servicesBlock {
     padding: 96px;
@@ -32,6 +35,7 @@
     width: 1025px;
     align-self: center;
     margin-bottom: 48px;
+    justify-content: space-between;
   }
 
   .taglineBlock {
@@ -39,8 +43,8 @@
     gap: 24px;
   }
 
-  .tagline {
-    width: calc(80%);
+  .container {
+    height: 60px;
   }
 
   .sendInfo {

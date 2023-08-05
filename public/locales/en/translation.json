@@ -1,7 +1,9 @@
 {
   "heroBlock": {
     "head": "A European company with high-quality solutions",
-    "taglineBig": "Your reliable assistant in ship servicing",
+    "taglineBig1": "Your reliable",
+    "taglineBig2": "assistant in",
+    "taglineBig3": "ship servicing",
     "description": "NJORDMARINE cares about its customers and values their time, that is why we provide the necessary equipment, original and OEM spare parts, as well as service in the shortest possible time and at a reasonable price.",
     "top1": "800+",
     "bot1": "Completed projects",
@@ -14,7 +16,8 @@
 
   "servicesBlock": {
     "heading": "Our services",
-    "tagline": "We care about our customers and provide the best service",
+    "tagline1": "We care about our customers and",
+    "tagline2": "provide the best service",
     "list": {
       "link": "More",
       "text1": "Vessel automation services",
@@ -40,7 +43,7 @@
     "taglineBig": "Contact us",
     "text2": "We are always ready to help you!",
     "bigButtonText": "Contacts",
-    "bigButtonLink": "Download brochure"
+    "bigButtonLink": "Terms & condition"
   },
 
   "heroAboutBlock": {
@@ -124,8 +127,8 @@
     "emailInput": "Your e-mail*",
     "phone": "Phone (optional)",
     "phoneInput": "Phone number",
-    "subjMessage": "Subject of the message (optional)",
-    "subjMessageInput": "Subject of the message",
+    "companyName": "Company name (optional)",
+    "subjMessageInput": "Company name",
     "message": "Message",
     "messageInput": "Message",
 
@@ -336,7 +339,7 @@
 
   "sendInfo": {
     "bigBtn": "Send a request",
-    "services": "Get to know the services",
+    "services": "Explore the services",
     "maintenance": "Maintenance",
     "energy": "Vessel energy efficiency system",
     "focus": "FOCUS Fleet Management System",

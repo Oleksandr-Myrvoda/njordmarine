@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import { useAuthContext } from 'context/AuthProvider';
-// import { LangProvider } from 'context/LangProvider';
 
 import BrochureButton from 'common/BrochureButton';
 import Contacts from 'common/Contacts';
@@ -16,13 +15,15 @@ import logoHeaderMob from '../../images/Logo-header-mob.svg';
 import s from './Header.module.css';
 import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
 import Loader from 'common/Loader/Loader';
-import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
 
 const Header = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const { isLogin, unsetToken } = useAuthContext();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const scrollRef = useRef();
+
   const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
   const cardRef = useRef(null);
@@ -33,41 +34,44 @@ const Header = () => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isDesktop, isOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolledHeight = window.scrollY;
+      const screenHeight = window.innerHeight;
+      const scrollThreshold = 0.1 * screenHeight;
+
+      setIsScrolled(scrolledHeight > scrollThreshold);
+    };
+
+    const handleResize = () => {
+      const contentHeight = scrollRef.current.clientHeight;
+      const screenHeight = window.innerHeight;
+      const scrollThreshold = 0.1 * screenHeight;
+
+      setIsScrolled(contentHeight > screenHeight * 0.9);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <header ref={cardRef} className={s.mainHeader}>
-      {isDesktop ? (
-        <>
-          <Contacts contactsConfig={contactsConfig} isHeader={true} />
-
-          {isLogin && (
-            <button
-              className={s.logoutBtn}
-              type="button"
-              onClick={() => unsetToken()}
-            >
-              Logout
-            </button>
-          )}
-
-          <Suspense
-            //  fallback={<h2>"Loading..."</h2>}
-            fallback={<Loader />}
-            // fallback={<LoaderSpinner />}
-          >
-            <LanguageSwitcher />
-          </Suspense>
-          <BrochureButton />
-        </>
-      ) : (
-        <>
-          <div className={s.headerMob}>
-            <NavLink to="/">
-              <img src={logoHeaderMob} alt="logo" />
-            </NavLink>
+    <div
+      className={`${s.fixedHeader} ${isScrolled && s.fixedHeaderScroll}`}
+      ref={scrollRef}
+    >
+      <header ref={cardRef} className={s.mainHeader}>
+        {isDesktop ? (
+          <>
+            <Contacts contactsConfig={contactsConfig} isHeader={true} />
 
             {isLogin && (
               <button
-                className={s.menuBtn}
+                className={s.logoutBtn}
                 type="button"
                 onClick={() => unsetToken()}
               >
@@ -75,24 +79,47 @@ const Header = () => {
               </button>
             )}
 
-            <Suspense
-              //  fallback={<h2>"Loading..."</h2>}
-              fallback={<Loader />}
-              // fallback={<LoaderSpinner />}
-            >
+            <Suspense fallback={<Loader />}>
               <LanguageSwitcher />
             </Suspense>
+            <BrochureButton />
+          </>
+        ) : (
+          <>
+            <div className={s.headerMob}>
+              <NavLink to="/">
+                <img src={logoHeaderMob} alt="logo" />
+              </NavLink>
 
-            <button type="button" className={s.menuBtn} onClick={toggleSidebar}>
-              {t('navigation.mobileMenu')}
-              <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
-            </button>
+              {isLogin && (
+                <button
+                  className={s.menuBtn}
+                  type="button"
+                  onClick={() => unsetToken()}
+                >
+                  Logout
+                </button>
+              )}
 
-            <Sidebar isOpen={isOpen} />
-          </div>
-        </>
-      )}
-    </header>
+              <Suspense fallback={<Loader />}>
+                <LanguageSwitcher />
+              </Suspense>
+
+              <button
+                type="button"
+                className={s.menuBtn}
+                onClick={toggleSidebar}
+              >
+                {t('navigation.mobileMenu')}
+                <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
+              </button>
+
+              <Sidebar isOpen={isOpen} />
+            </div>
+          </>
+        )}
+      </header>
+    </div>
   );
 };
 
