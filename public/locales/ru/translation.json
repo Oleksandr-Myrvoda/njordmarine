@@ -135,8 +135,8 @@
     "bigBtn": "Отправить",
     "privacyTerms": "Ознакомиться с условиями конфиденциальности",
     "required": "Это обязательное поле",
-    "moreLetters": "Field should have more than 1 letter",
-    "invalidEmail": "Invalid email address"
+    "moreLetters": "Поле должно содержать больше 1 символа",
+    "invalidEmail": "Неверный адрес электронной почты"
   },
 
   "navigation": {

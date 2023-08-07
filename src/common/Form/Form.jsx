@@ -16,22 +16,22 @@ const {
   REACT_APP_FORM_USER_ID,
 } = process.env;
 
-const textValidation = {
-  required: 'This field is required',
-  minLength: {
-    value: 2,
-    message: 'Field should have more than 1 letter',
-  },
-};
+// const textValidation = {
+//   required: 'This field is required',
+//   minLength: {
+//     value: 2,
+//     message: 'Field should have more than 1 letter',
+//   },
+// };
 
-const emailValidation = {
-  required: 'Email is required',
-  pattern: {
-    value:
-      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-    message: 'Invalid email address',
-  },
-};
+// const emailValidation = {
+//   required: 'Email is required',
+//   pattern: {
+//     value:
+//       /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+//     message: 'Invalid email address',
+//   },
+// };
 // const phoneValidation = {
 //   pattern: {
 //     value:
@@ -55,6 +55,23 @@ const Form = ({ isTitle, setEmailSended }) => {
   const requiredErrMsg = `${t('form.required')}`;
   const moreLettersErrMsg = `${t('form.moreLetters')}`;
   const invalidEmailErrMsg = `${t('form.invalidEmail')}`;
+
+  const textValidation = {
+    required: `${t('form.required')}`,
+    minLength: {
+      value: 2,
+      message: `${t('form.moreLetters')}`,
+    },
+  };
+
+  const emailValidation = {
+    required: `${t('form.required')}`,
+    pattern: {
+      value:
+        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+      message: `${t('form.invalidEmail')}`,
+    },
+  };
 
   useEffect(() => {
     getTermsApi()
@@ -102,7 +119,10 @@ const Form = ({ isTitle, setEmailSended }) => {
             placeholder={t('form.nameInput')}
             {...register('customerName', textValidation)}
           />
-          {errors.customerName && <ErrorMsg message={requiredErrMsg} />}
+          {/* {errors.customerName && <ErrorMsg message={requiredErrMsg} />} */}
+          {errors.customerName && (
+            <ErrorMsg message={errors.customerName.message} />
+          )}
         </label>
 
         <label>
@@ -114,8 +134,8 @@ const Form = ({ isTitle, setEmailSended }) => {
             placeholder={t('form.emailInput')}
             {...register('email', emailValidation)}
           />
-          {errors.email && <ErrorMsg message={invalidEmailErrMsg} />}
-          {/* {errors.email && <ErrorMsg message={errors.email.message} />} */}
+          {/* {errors.email && <ErrorMsg message={invalidEmailErrMsg} />} */}
+          {errors.email && <ErrorMsg message={errors.email.message} />}
         </label>
 
         <label>

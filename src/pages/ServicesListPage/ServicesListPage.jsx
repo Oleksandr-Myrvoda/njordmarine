@@ -69,7 +69,7 @@ const ServicesListPage = () => {
           open={isAnimated}
           // textStyle="taglineBig"
           heightD={60}
-          heightMob={48}
+          heightMob={16}
         >
           <h1 className="taglineBig">{t('services.taglineBig')}</h1>
         </Trail>
