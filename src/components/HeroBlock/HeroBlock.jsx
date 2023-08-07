@@ -57,19 +57,28 @@ const HeroBlock = () => {
           <div className={s.nav}></div>
           <ul className={s.list}>
             <li className={s.listItem}>
-              <CounterAnimation endValue="800" />
-
-              {/* <p className={s.top}>{t('heroBlock.top1')}</p> */}
+              <div className={s.topLine}>
+                <div className={s.countLine1}>
+                  <CounterAnimation endValue="800" />
+                </div>
+                <p className={s.top}>{t('heroBlock.top1')}</p>
+              </div>
               <p className={s.bot}>{t('heroBlock.bot1')}</p>
             </li>
             <li className={s.listItem}>
-              <CounterAnimation endValue="5" />
-              {/* <p className={s.top}>{t('heroBlock.top2')}</p> */}
+              <div className={s.topLine}>
+                <div className={s.countLine2}>
+                  <CounterAnimation endValue="5" />
+                </div>
+                <p className={s.top}>{t('heroBlock.top2')}</p>
+              </div>
               <p className={s.bot}>{t('heroBlock.bot2')}</p>
             </li>
             <li className={s.listItem}>
-              <CounterAnimation endValue="20" />
-              {/* <p className={s.top}>{t('heroBlock.top3')}</p> */}
+              <div className={s.topLine}>
+                <CounterAnimation endValue="20" />{' '}
+                {/* <p className={s.top}>{t('heroBlock.top3')}</p> */}
+              </div>
               <p className={s.bot}>{t('heroBlock.bot3')}</p>
             </li>
           </ul>

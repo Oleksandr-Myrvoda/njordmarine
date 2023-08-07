@@ -8,6 +8,15 @@
   background-color: var(--bg-medium-color);
   border-top: 2px solid var(--footer-stroke);
   gap: 16px;
+
+  /* background-color: var(--bg-medium-color);
+  border-top: 2px solid var(--footer-stroke);
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw; */
 }
 
 .copyright {
@@ -28,7 +37,6 @@
 .list {
   display: flex;
   justify-content: space-between;
-  /* flex-direction: column; */
   gap: 16px;
 }
 

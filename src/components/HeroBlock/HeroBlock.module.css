@@ -88,8 +88,19 @@
 }
 
 .listItem {
-  text-align: center;
-  /* width: calc(30%); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.topLine {
+  display: flex;
+  justify-content: space-between;
+}
+.countLine1 {
+  width: 75px;
+}
+.countLine2 {
+  width: 30px;
 }
 
 .top {
@@ -175,7 +186,7 @@
   .list {
     display: flex;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 24px;
   }
 
   .listItem {
@@ -193,6 +204,12 @@
     line-height: 24px;
   }
 
+  .countLine1 {
+    width: 90px;
+  }
+  .countLine2 {
+    width: 35px;
+  }
   .container {
     height: 180px;
   }

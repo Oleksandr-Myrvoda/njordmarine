@@ -6,7 +6,8 @@ import Footer from 'components/Footer';
 import Header from 'components/Header/Header';
 import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
-import { Suspense } from 'react';
+import { Suspense, useState, useEffect, useRef } from 'react';
+import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import Loader from 'common/Loader/Loader';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,37 +15,68 @@ import s from './App.module.css';
 
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const [isOpen, setIsOpen] = useState(false);
+  const closeSidebar = () => setIsOpen(false);
+  const openSidebar = () => setIsOpen(true);
+  const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
+
+  // const cardRef = useRef(null);
+  // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
+
+  useEffect(() => {
+    if (isDesktop) setIsOpen(false);
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+  }, [isDesktop, isOpen]);
 
   return (
-    <div className={s.mainContainer}>
-      {isDesktop && (
-        <Suspense fallback={<Loader />}>
-          <Sidebar />
-        </Suspense>
-      )}
+    <>
+      <div className={s.mainContainer}>
+        {isDesktop && (
+          <Suspense fallback={<Loader />}>
+            <Sidebar />
+          </Suspense>
+        )}
+        {!isDesktop && (
+          <Suspense fallback={<Loader />}>
+            <LangProvider>
+              <Sidebar
+                isOpen={isOpen}
+                toggleSidebar={toggleSidebar}
+                closeSidebar={closeSidebar}
+              />
+            </LangProvider>
+          </Suspense>
+        )}
 
-      <div className={s.mainWrapper}>
-        <div className={s.container}>
-          <div className={s.content}>
-            <AdminProvider>
-              <LangProvider>
-                <Suspense fallback={<Loader />}>
-                  <div className={s.emptyHeader}></div>
-                  <Header />
-                </Suspense>
+        <div className={s.mainWrapper}>
+          <div className={s.container}>
+            <div className={s.content}>
+              <AdminProvider>
+                <LangProvider>
+                  <Suspense fallback={<Loader />}>
+                    <div className={s.emptyHeader}></div>
+                    <Header
+                      toggleSidebar={toggleSidebar}
+                      isOpen={isOpen}
+                      setIsOpen={setIsOpen}
+                      closeSidebar={closeSidebar}
+                      openSidebar={openSidebar}
+                    />
+                  </Suspense>
 
-                <Main />
-              </LangProvider>
-            </AdminProvider>
-          </div>
+                  <Main />
+                </LangProvider>
+              </AdminProvider>
+            </div>
 
-          <div className="footer">
-            <Footer />
+            {isDesktop && <Footer />}
           </div>
         </div>
+        <ToastContainer theme="colored" />
       </div>
-      <ToastContainer theme="colored" />
-    </div>
+      {!isDesktop && <Footer />}
+      {/* <div className={s.emptyFooter}></div> */}
+    </>
   );
 }
 

@@ -16,23 +16,29 @@ import s from './Header.module.css';
 import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
 import Loader from 'common/Loader/Loader';
 
-const Header = () => {
+const Header = ({
+  toggleSidebar,
+  isOpen,
+  setIsOpen,
+  closeSidebar,
+  openSidebar,
+}) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const { isLogin, unsetToken } = useAuthContext();
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollRef = useRef();
+  // console.log('toggleSidebar', toggleSidebar);
+  // const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
-  const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
+  // const cardRef = useRef(null);
+  // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
 
-  const cardRef = useRef(null);
-  useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
-
-  useEffect(() => {
-    if (isDesktop) setIsOpen(false);
-    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-  }, [isDesktop, isOpen]);
+  // useEffect(() => {
+  //   if (isDesktop) setIsOpen(false);
+  //   document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+  // }, [isDesktop, isOpen, setIsOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +70,10 @@ const Header = () => {
       className={`${s.fixedHeader} ${isScrolled && s.fixedHeaderScroll}`}
       ref={scrollRef}
     >
-      <header ref={cardRef} className={s.mainHeader}>
+      <header
+        //  ref={cardRef}
+        className={s.mainHeader}
+      >
         {isDesktop ? (
           <>
             <Contacts contactsConfig={contactsConfig} isHeader={true} />
@@ -108,13 +117,14 @@ const Header = () => {
               <button
                 type="button"
                 className={s.menuBtn}
-                onClick={toggleSidebar}
+                onClick={!isOpen ? openSidebar : closeSidebar}
+                // onClick={toggleSidebar}
               >
                 {t('navigation.mobileMenu')}
                 <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
               </button>
 
-              <Sidebar isOpen={isOpen} />
+              {/* <Sidebar isOpen={isOpen} /> */}
             </div>
           </>
         )}
