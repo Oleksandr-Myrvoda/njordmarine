@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import {
   Redirect,
   Route,
@@ -11,10 +11,10 @@ import { useMediaQuery } from 'react-responsive';
 import { sparesListConfig } from 'data/spares-list';
 import Container from 'common/Container';
 
-import BlockNavigation from 'components/BlockNavigation/BlockNavigation';
+import BlockNavigation from 'components/BlockNavigation';
+import Loader from 'common/Loader';
 import s from './SparesPage.module.css';
-import Loader from 'common/Loader/Loader';
-import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
+import Trail from 'common/Trail/Trail';
 
 const SparesBlock = lazy(() =>
   import('components/SparesBlock' /* webpackChunkName: "SparesBlock___page" */),
@@ -24,28 +24,41 @@ const SparesPage = ({ token }) => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const match = useRouteMatch();
-  const location = useLocation();
+
+  const [isAnimated, setIsAnimated] = useState(false);
 
   const contactsLang = t('sendInfo.contacts');
   const deckLang = t('sendInfo.deck');
   const bridgeLang = t('sendInfo.bridge');
 
+  useEffect(() => {
+    const animationTimer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 500);
+
+    return () => clearTimeout(animationTimer);
+  }, []);
+
   return (
     <div className={s.pageWrapper}>
       <div className={s.taglineWrapper}>
-        <h1 className="taglineBig">{t('spares.taglineBig')}</h1>
+        <div className={s.trailWrapper}>
+          <Trail
+            open={isAnimated}
+            // textStyle="taglineBig"
+            heightD={60}
+            heightMob={48}
+          >
+            <h1 className="taglineBig">{t('spares.taglineBig')}</h1>
+          </Trail>
+        </div>
 
         {isDesktop && <BlockNavigation navConfig={sparesListConfig} />}
       </div>
 
       <Container>
         <div className={s.pagesBlock}>
-          {/* <Loader /> */}
-          <Suspense
-            //  fallback={<h2>"Loading..."</h2>}
-            fallback={<Loader />}
-            // fallback={<LoaderSpinner />}
-          >
+          <Suspense fallback={<Loader />}>
             <Switch>
               <Route
                 exact

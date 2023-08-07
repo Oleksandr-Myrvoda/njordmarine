@@ -10,6 +10,7 @@ import s from './SparesBlock.module.css';
 import { useAuthContext } from 'context/AuthProvider';
 import { useRouteMatch } from 'react-router-dom';
 import { useSetError } from 'context/ErrorProvider';
+import Trail from 'common/Trail/Trail';
 
 const SparesBlock = ({ path, name, linkName, linkPath }) => {
   const { t } = useTranslation();
@@ -20,6 +21,8 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
     ru: '',
     en: '',
   });
+
+  const [isAnimated, setIsAnimated] = useState(false);
 
   const [imgUrl, setImgUrl] = useState('');
   const { isLogin, token } = useAuthContext();
@@ -111,10 +114,27 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
 
     setImgUrl('');
   };
+  // ANIMATION ===============================================
+  useEffect(() => {
+    const animationTimer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 500);
+
+    return () => clearTimeout(animationTimer);
+  }, []);
 
   return (
     <div className={s.blockWrapper}>
-      <h2 className={s.headTitle}>{name}</h2>
+      {/* <div className={s.trailWrapper}> */}
+      <Trail
+        open={isAnimated}
+        // textStyle="taglineBig"
+        heightD={60}
+        heightMob={48}
+      >
+        <h2 className={s.headTitle}>{name}</h2>
+      </Trail>
+      {/* </div> */}
       <ItemsList
         items={spares}
         editData={editData}

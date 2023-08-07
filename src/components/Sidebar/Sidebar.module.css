@@ -55,16 +55,14 @@
     height: 100%;
     background-color: var(--bg-dark-color);
     z-index: 1000;
-    /* display: flex;
-    flex-direction: column;
-    background-color: var(--bg-dark-color);
-    width: 16vw;
-    position: static;
-    z-index: 0; */
   }
 
   .logo {
     padding-bottom: 179px;
     align-self: center;
+  }
+
+  .hideSibebar {
+    display: none;
   }
 }

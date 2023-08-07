@@ -8,13 +8,15 @@
 .heroContent {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  /* gap: 16px; */
+  gap: 32px;
 }
 
 .heroWrapper {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  height: 225px;
 }
 
 .description {
@@ -55,6 +57,7 @@
 
 @media screen and (min-width: 1440px) {
   .heroAboutBlock {
+    padding: 0;
     min-height: 625px;
     background-repeat: no-repeat;
     background-image: url('../../images/hero-bg-about.png');
@@ -70,7 +73,8 @@
   }
 
   .heroWrapper {
-    gap: 32px;
+    gap: 16px;
+    height: 380px;
   }
 
   .description {

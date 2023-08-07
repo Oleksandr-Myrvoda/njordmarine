@@ -52,6 +52,10 @@ const Form = ({ isTitle, setEmailSended }) => {
   // const { brochureLink } = useAdminContext();
   // const [fileUrl, setFileUrl] = useState(brochureLink);
 
+  const requiredErrMsg = `${t('form.required')}`;
+  const moreLettersErrMsg = `${t('form.moreLetters')}`;
+  const invalidEmailErrMsg = `${t('form.invalidEmail')}`;
+
   useEffect(() => {
     getTermsApi()
       .then(termRefs => {
@@ -98,9 +102,7 @@ const Form = ({ isTitle, setEmailSended }) => {
             placeholder={t('form.nameInput')}
             {...register('customerName', textValidation)}
           />
-          {errors.customerName && (
-            <ErrorMsg message={errors.customerName.message} />
-          )}
+          {errors.customerName && <ErrorMsg message={requiredErrMsg} />}
         </label>
 
         <label>
@@ -112,7 +114,8 @@ const Form = ({ isTitle, setEmailSended }) => {
             placeholder={t('form.emailInput')}
             {...register('email', emailValidation)}
           />
-          {errors.email && <ErrorMsg message={errors.email.message} />}
+          {errors.email && <ErrorMsg message={invalidEmailErrMsg} />}
+          {/* {errors.email && <ErrorMsg message={errors.email.message} />} */}
         </label>
 
         <label>
@@ -135,8 +138,12 @@ const Form = ({ isTitle, setEmailSended }) => {
             name="companyName"
             type="text"
             placeholder={t('form.subjMessageInput')}
-            {...register('companyName')}
+            {...register('companyName', textValidation)}
           />
+          {errors.companyName && (
+            // <ErrorMsg message={requiredErrMsg} />
+            <ErrorMsg message={errors.companyName.message} />
+          )}
         </label>
 
         <label className={s.labelTextarea}>

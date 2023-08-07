@@ -133,7 +133,10 @@
     "messageInput": "Сообщение",
 
     "bigBtn": "Отправить",
-    "privacyTerms": "Ознакомиться с условиями конфиденциальности"
+    "privacyTerms": "Ознакомиться с условиями конфиденциальности",
+    "required": "Это обязательное поле",
+    "moreLetters": "Field should have more than 1 letter",
+    "invalidEmail": "Invalid email address"
   },
 
   "navigation": {
@@ -150,7 +153,7 @@
     "servicesListConfig": {
       "name1": "Автоматизация процессов на судне",
       "name2": "Техническое обслуживание",
-      "name3": "Система энергоэффективности судна"
+      "name3": "Система энергоэффективности"
     },
     "sparesListConfig": {
       "name1": "Машинное отделение",

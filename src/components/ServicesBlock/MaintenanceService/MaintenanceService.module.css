@@ -14,6 +14,9 @@
   background-repeat: no-repeat;
   background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
     url('../../../images/serv-mainten-bg-mob.png');
+
+  justify-content: center;
+  align-items: center;
 }
 
 .title {

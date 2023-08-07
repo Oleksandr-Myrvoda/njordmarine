@@ -1,16 +1,34 @@
 import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 import SendInfo from 'common/SendInfo';
 import ListWithDot from '../ListWithDot';
 import { officeConfig } from 'data/office';
 
 import s from './Office.module.css';
+import Trail from 'common/Trail/Trail';
 
 const Office = () => {
   const { t } = useTranslation();
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    const animationTimer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 500);
+
+    return () => clearTimeout(animationTimer);
+  }, []);
   return (
     <div className={s.blockWrapper}>
       <div className={s.hero}>
-        <p className={s.title}>{t('office.title')}</p>
+        <Trail
+          open={isAnimated}
+          // textStyle="taglineBig"
+          heightD={60}
+          heightMob={48}
+        >
+          <p className={s.title}>{t('office.title')}</p>
+        </Trail>
       </div>
 
       <p className={s.text}>

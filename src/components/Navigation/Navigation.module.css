@@ -8,7 +8,8 @@
 
 .insideMenu {
   margin-left: 16px;
-  width: 184px;
+  /* width: 184px; */
+  width: 200px;
 
   max-height: 0;
   overflow: hidden;

@@ -42,18 +42,12 @@ const ServicesBlock = () => {
 
         if (elementPosition <= visibleThreshold) {
           setOpen(true);
-          // !isDesktop && setOpen(true);
         }
       }
     };
 
-    // const animationTimer = setTimeout(() => {
-    //   isDesktop && setOpen(true);
-    // }, 500);
-
     window.addEventListener('scroll', handleScroll);
     return () => {
-      // clearTimeout(animationTimer);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);

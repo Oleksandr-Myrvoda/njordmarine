@@ -6,12 +6,15 @@ import { useLangContext } from 'context/LangProvider';
 import { useSetOtherError } from 'context/ErrorProvider';
 import ContactsBlock from 'components/ContactsBlock';
 import s from './ContactsPage.module.css';
+import Trail from 'common/Trail/Trail';
 
 const ContactsPage = () => {
   const { t } = useTranslation();
   const { lang } = useLangContext();
   const setOtherError = useSetOtherError();
   const [fileUrl, setFileUrl] = useState({ ru: '', en: '' });
+  const [isAnimated, setIsAnimated] = useState(false);
+
   useEffect(() => {
     getBrochureApi()
       .then(refs => {
@@ -24,11 +27,29 @@ const ContactsPage = () => {
         console.dir(error);
       });
   }, [setOtherError]);
+
+  useEffect(() => {
+    const animationTimer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 500);
+
+    return () => clearTimeout(animationTimer);
+  }, []);
+
   return (
     <div className={s.pageWrapper}>
       <div className={s.container}>
         <div className={s.taglineWrapper}>
-          <h1 className="taglineBig">{t('contacts.taglineBig')}</h1>
+          {/* <div className={s.trailWrapper}> */}
+          <Trail
+            open={isAnimated}
+            // textStyle="taglineBig"
+            heightD={60}
+            heightMob={48}
+          >
+            <h1 className="taglineBig">{t('contacts.taglineBig')}</h1>
+          </Trail>
+          {/* </div> */}
           <p>{t('contacts.text')}</p>
         </div>
         <ContactsBlock />

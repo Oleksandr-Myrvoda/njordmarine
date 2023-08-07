@@ -9,8 +9,13 @@ const NavItem = ({ name, path }) => {
   const navItemStyles = [s.NavItem];
   isActive && navItemStyles.push(s.NavItemActive);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <NavLink
+      onClick={scrollToTop}
       to={path}
       className={navItemStyles.join(' ')}
       activeClassName={s.NavItemActive}

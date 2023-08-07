@@ -1,7 +1,7 @@
 import fact01 from 'images/about-company-fact01.png';
 import fact02 from 'images/about-company-fact02.png';
 import fact03 from 'images/about-company-fact03.png';
-
+// DELETE?
 export const aboutFactConfig = [
   {
     imgUrl: fact01,

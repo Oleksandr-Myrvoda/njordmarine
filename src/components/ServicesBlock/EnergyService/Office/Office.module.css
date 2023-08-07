@@ -22,6 +22,9 @@
   background-repeat: no-repeat;
   background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
     url('../../../../images/serv-energy-bg31-mob2.png');
+
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
@@ -76,6 +79,7 @@
     height: 376px;
     border-radius: 0;
     background-image: url('../../../../images/serv-energy-bg32.png');
+    justify-content: flex-start;
   }
 
   .head {

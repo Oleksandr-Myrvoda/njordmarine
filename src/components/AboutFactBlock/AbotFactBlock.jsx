@@ -1,21 +1,39 @@
 import { useTranslation } from 'react-i18next';
 import { aboutFactConfig } from 'data/about-fact';
 import { useMediaQuery } from 'react-responsive';
+import { useState, useEffect, useRef } from 'react';
 import ScrollUp from 'common/ScrollUp';
 import SendInfo from 'common/SendInfo';
 import AboutFactList from './AboutFactList';
 import s from './AboutFactBlock.module.css';
 import Container from 'common/Container/Container';
+import Trail from 'common/Trail/Trail';
 
 const AbotFactBlock = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    const animationTimer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 500);
+
+    return () => clearTimeout(animationTimer);
+  }, []);
 
   return (
     <div className={s.aboutFactBlock}>
       <Container>
         <div className={s.taglineAbout}>
-          <p className="tagline">{t('abotFactBlock.tagline')}</p>
+          <Trail
+            open={isAnimated}
+            textStyle="taglineBig"
+            heightD={32}
+            heightMob={48}
+          >
+            <p className="tagline">{t('abotFactBlock.tagline')}</p>
+          </Trail>
         </div>
         <AboutFactList aboutFactConfig={aboutFactConfig} />
 

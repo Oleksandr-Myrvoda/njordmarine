@@ -2,7 +2,7 @@ import panel from 'images/serv-auto-panel.svg';
 import doc from 'images/serv-auto-doc.svg';
 import bell from 'images/serv-auto-bell.svg';
 import raports from 'images/serv-auto-raports.svg';
-
+// DELETE?
 export const schemeConfig = [
   {
     imgUrl: panel,

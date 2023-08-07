@@ -4,6 +4,10 @@
   gap: 36px;
 }
 
+/* .trailWrapper {
+  height: 32px;
+} */
+
 .headTitle {
   font-family: 'Ruberoid';
   font-style: normal;
@@ -22,7 +26,6 @@
 }
 
 .item {
-  background-color: aqua;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -31,7 +34,6 @@
 }
 .imgWrapper {
   align-self: center;
-  background-color: tomato;
 }
 .img {
   width: 227px;
@@ -122,6 +124,10 @@
   .blockWrapper {
     display: flex;
   }
+
+  /* .trailWrapper {
+    height: 48px;
+  } */
 
   .headTitle {
     font-size: 26px;

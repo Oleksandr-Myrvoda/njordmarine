@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 
@@ -11,6 +11,7 @@ import arrowRight from 'images/pagi-arrow-right.svg';
 import arrowLeft from 'images/pagi-arrow-left.svg';
 
 import s from './Measurements.module.css';
+import Trail from 'common/Trail/Trail';
 
 const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
@@ -20,6 +21,9 @@ const Measurements = ({ measurementsConfig: cards }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [prevCurrentPage, setPrevCurrentPage] = useState(4);
   const [nextCurrentPage, setNextCurrentPage] = useState(1);
+
+  const [isAnimated, setIsAnimated] = useState(false);
+  const headerRef = useRef(null);
 
   useEffect(() => {
     currentPage === 0
@@ -43,11 +47,53 @@ const Measurements = ({ measurementsConfig: cards }) => {
     setNextCurrentPage(prevPage => Math.max(prevPage - 1, 0));
   };
 
-  // const isActive = () => {};
+  // ============= Header =============
 
-  return ( 
-    <div className={s.blockWrapper}>
-      <h2 className={s.tagline}>{t('services.meintenance.measurTagline')}:</h2>
+  useEffect(() => {
+    const handleResize = () => {
+      const windowHeight = window.innerHeight;
+
+      if (windowHeight > 800 && !isDesktop) {
+        setIsAnimated(true);
+      }
+    };
+
+    const handleScroll = () => {
+      const element = headerRef.current;
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+        const visibleThreshold = 0.7 * screenHeight;
+
+        if (elementPosition <= visibleThreshold) {
+          setIsAnimated(true);
+        }
+      }
+    };
+
+    handleResize();
+
+    // Добавляем обработчик события изменения размера окна
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isDesktop]);
+
+  return (
+    <div className={s.blockWrapper} ref={headerRef}>
+      <Trail
+        open={isAnimated}
+        // textStyle="taglineBig"
+        heightD={60}
+        heightMob={64}
+      >
+        <h2 className={s.tagline}>
+          {t('services.meintenance.measurTagline')}:
+        </h2>
+      </Trail>
 
       {!isDesktop && (
         <ul className={s.list}>

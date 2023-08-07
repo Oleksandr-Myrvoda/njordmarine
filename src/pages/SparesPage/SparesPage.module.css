@@ -11,6 +11,9 @@
   padding: 48px 16px 48px 16px;
   align-self: flex-start;
 }
+.trailWrapper {
+  height: 32px;
+}
 
 .pagesBlock {
   /* padding: 0 16px 48px 16px; */
@@ -35,7 +38,9 @@
     padding: 96px 96px 0 96px;
     gap: 40px;
   }
-
+  .trailWrapper {
+    height: 48px;
+  }
   .pagesBlock {
     padding: 96px;
 

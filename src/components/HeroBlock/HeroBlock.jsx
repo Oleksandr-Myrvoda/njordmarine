@@ -9,41 +9,19 @@ import CounterAnimation from 'common/CounterAnimation/CounterAnimation';
 import s from './HeroBlock.module.css';
 import Trail from 'common/Trail/Trail';
 
-// const Trail = ({ open, children }) => {
-//   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
-//   const items = React.Children.toArray(children);
-//   const trail = useTrail(items.length, {
-//     config: { mass: 5, tension: 2000, friction: 350 },
-//     opacity: open ? 1 : 0,
-//     // x: open ? 0 : 20,
-//     y: open ? 0 : -20,
-//     height: (open && isDesktop ? 54 : 0) || (open && !isDesktop ? 32 : 0),
-//     from: { opacity: 0, y: -20, height: 0 },
-//   });
-//   return (
-//     <div>
-//       {trail.map(({ height, ...style }, index) => (
-//         <a.div key={index} className={s.trailsText} style={style}>
-//           <a.div style={{ height }}>{items[index]}</a.div>
-//         </a.div>
-//       ))}
-//     </div>
-//   );
-// };
-
 const HeroBlock = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // Задержка для запуска анимации через 1 секунду после загрузки страницы
     const animationTimer = setTimeout(() => {
       setOpen(true);
     }, 500);
 
     return () => clearTimeout(animationTimer);
   }, []);
+
   return (
     <div className={s.heroBlock}>
       <Container>

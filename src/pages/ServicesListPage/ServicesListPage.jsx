@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import {
   Redirect,
   Route,
@@ -12,9 +12,9 @@ import Container from 'common/Container';
 import BlockNavigation from 'components/BlockNavigation';
 
 import { servicesListConfig } from 'data/services-list';
-import s from './ServicesListPage.module.css';
 import Loader from 'common/Loader';
-import LoaderSpinner from 'common/LoaderSpinner';
+import s from './ServicesListPage.module.css';
+import Trail from 'common/Trail/Trail';
 
 const AutomationService = lazy(() =>
   import(
@@ -38,6 +38,8 @@ const ServicesListPage = () => {
   const match = useRouteMatch();
   const location = useLocation();
 
+  const [isAnimated, setIsAnimated] = useState(false);
+
   const autoBG = `${match.path}/automation`;
   const focusBG = `${match.path}/maintenance`;
   const energyBG = `${match.path}/energy`;
@@ -46,28 +48,39 @@ const ServicesListPage = () => {
   const isFocus = location.pathname === focusBG;
   const isEnergy = location.pathname.startsWith(energyBG);
 
+  useEffect(() => {
+    const animationTimer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 500);
+
+    return () => clearTimeout(animationTimer);
+  }, []);
+
   return (
     <div
-      // className={`${s.pageWrapper} ${s.focusBG}`}
       className={`${s.pageWrapper}
       ${isAuto && s.onBoardBG}
       ${isFocus && s.focusBG} 
       ${isEnergy && s.energyBG}`}
     >
-      {/* <div className={s.pageWrapper}> */}
       <div className={s.taglineWrapper}>
-        <h1 className="taglineBig">{t('services.taglineBig')}</h1>
+        {/* <div className={s.trailWrapper}> */}
+        <Trail
+          open={isAnimated}
+          // textStyle="taglineBig"
+          heightD={60}
+          heightMob={48}
+        >
+          <h1 className="taglineBig">{t('services.taglineBig')}</h1>
+        </Trail>
+        {/* </div> */}
 
         {isDesktop && <BlockNavigation navConfig={servicesListConfig} />}
       </div>
 
       <Container>
         <div className={s.pagesBlock}>
-          <Suspense
-            // fallback={<h2>"Loading..."</h2>}
-            fallback={<Loader />}
-            // fallback={<LoaderSpinner />}
-          >
+          <Suspense fallback={<Loader />}>
             <Switch>
               <Route
                 exact
