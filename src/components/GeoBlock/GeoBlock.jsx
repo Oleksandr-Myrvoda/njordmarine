@@ -91,7 +91,13 @@ const GeoBlock = () => {
 
         <BigButton onClick={toContacts} text={t('geoBlock.bigButtonText')} />
 
-        <a href={fileUrl[lang]} download className={s.link}>
+        <a
+          href={fileUrl[lang]}
+          download
+          className={s.link}
+          target="_blank"
+          rel="noreferrer"
+        >
           {t('geoBlock.bigButtonLink')}
         </a>
       </div>

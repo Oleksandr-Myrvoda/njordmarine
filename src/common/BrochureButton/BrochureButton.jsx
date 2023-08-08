@@ -26,7 +26,7 @@ const BrochureButton = () => {
   }, [setOtherError]);
 
   return (
-    <a href={fileUrl[lang]} download>
+    <a href={fileUrl[lang]} download target="_blank" rel="noreferrer">
       <button className={s.brochureBtn} type="button">
         {t('common.brochureBtn')}
       </button>

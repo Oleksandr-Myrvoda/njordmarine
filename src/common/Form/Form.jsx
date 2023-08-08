@@ -180,7 +180,13 @@ const Form = ({ isTitle, setEmailSended }) => {
         <div className={s.btns}>
           <BigButton type="submit" text={t('form.bigBtn')} />
 
-          <a href={fileUrl[lang]} download className={s.link}>
+          <a
+            href={fileUrl[lang]}
+            download
+            className={s.link}
+            target="_blank"
+            rel="noreferrer"
+          >
             {t('form.privacyTerms')}
           </a>
         </div>

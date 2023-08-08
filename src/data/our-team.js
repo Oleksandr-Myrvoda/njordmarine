@@ -1,35 +1,46 @@
-import Urlikh from 'images/photo01.png';
-import Zamakhin from 'images/photo02.png';
-import Soboleva from 'images/photo03.png';
-import Girshin from 'images/photo04.png';
+import Urlikh from 'images/team/UrlihD.jpg';
+import Zamakhin from 'images/team/ZamahhinD.jpg';
+import Soboleva from 'images/team/SobolevaD.jpg';
+import Girsin from 'images/team/GiršinD.jpg';
+import Poluskin from 'images/team/PoluskinD.jpg';
+import UrlikhM from 'images/team/Urlih.jpg';
+import ZamakhinM from 'images/team/Zamahhin.jpg';
+import SobolevaM from 'images/team/Soboleva.jpg';
+import GirsinM from 'images/team/Giršin.jpg';
+import PoluskinM from 'images/team/Poluskin.jpg';
 
 export const ourTeamConfig = [
   {
     imgUrl: Urlikh,
+    imgUrlMob: UrlikhM,
     name: 'ourTeamBlock.name1',
     position: 'ourTeamBlock.position1',
     alt: 'photo',
   },
   {
     imgUrl: Zamakhin,
+    imgUrlMob: ZamakhinM,
     name: 'ourTeamBlock.name2',
     position: 'ourTeamBlock.position2',
     alt: 'photo',
   },
   {
     imgUrl: Soboleva,
+    imgUrlMob: SobolevaM,
     name: 'ourTeamBlock.name3',
     position: 'ourTeamBlock.position3',
     alt: 'photo',
   },
   {
-    imgUrl: Girshin,
+    imgUrl: Girsin,
+    imgUrlMob: GirsinM,
     name: 'ourTeamBlock.name4',
     position: 'ourTeamBlock.position4',
     alt: 'photo',
   },
   {
-    imgUrl: Girshin,
+    imgUrl: Poluskin,
+    imgUrlMob: PoluskinM,
     name: 'ourTeamBlock.name5',
     position: 'ourTeamBlock.position5',
     alt: 'photo',
