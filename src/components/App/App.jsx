@@ -19,7 +19,6 @@ function App() {
   const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
   const closeSidebar = () => setIsOpen(false);
-  console.log('isOpen', isOpen);
 
   const cardRef = useRef(null);
   // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);

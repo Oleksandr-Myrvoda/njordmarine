@@ -4,6 +4,11 @@
   gap: 8px;
 }
 
+/* .itemList {
+  background-color: var(--bg-light-color);
+  border-radius: 8px;
+} */
+
 .item {
   display: flex;
   flex-direction: column;
@@ -13,8 +18,15 @@
   border-radius: 8px;
   background-color: var(--bg-medium-color);
   text-align: start;
-}
 
+  opacity: 0;
+  transform: translateY(30%);
+  transition: opacity 0.5s ease, transform 1s ease;
+}
+.animatedItem {
+  opacity: 1;
+  transform: translateY(0);
+}
 .img {
   width: 134px;
   height: 134px;
@@ -42,7 +54,11 @@
     flex-direction: row;
   }
 
-  .item {
+  .itemList {
     width: calc(25%);
+  }
+
+  .item {
+    height: 308px;
   }
 }

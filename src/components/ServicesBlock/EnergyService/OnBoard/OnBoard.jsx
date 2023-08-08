@@ -25,7 +25,7 @@ const OnBoard = () => {
         <Trail
           open={isAnimated}
           // textStyle="taglineBig"
-          heightD={60}
+          heightD={40}
           heightMob={48}
         >
           <p className={s.title}>{t('services.energy.onBoard.title')}</p>

@@ -23,7 +23,7 @@ const MaintenanceService = () => {
         <Trail
           open={isAnimated}
           // textStyle="taglineBig"
-          heightD={60}
+          heightD={40}
           heightMob={80}
         >
           <p className={s.title}>{t('services.meintenance.title')}</p>

@@ -67,7 +67,7 @@ const Office = () => {
   return (
     <div className={s.blockWrapper}>
       <div className={s.hero}>
-        <Trail open={isAnimated} heightD={60} heightMob={48}>
+        <Trail open={isAnimated} heightD={40} heightMob={48}>
           <p className={s.title}>{t('office.title')}</p>
         </Trail>
       </div>

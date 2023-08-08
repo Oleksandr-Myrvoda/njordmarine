@@ -2,7 +2,7 @@ import server from 'images/serv-focus-server.svg';
 import satellite from 'images/serv-focus-satellite.svg';
 import headphones from 'images/serv-focus-headphones.svg';
 import doc from 'images/serv-focus-doc.svg';
-
+// DELETE? =======================
 const focusConfig = [
   {
     imgUrl: server,
@@ -29,7 +29,7 @@ const focusConfig = [
     alt: 'focus.config.alt4',
   },
 ];
-
+// =======================
 const focusOptionsConfig = [
   { text: 'focus.options.text1' },
   { text: 'focus.options.text2' },
