@@ -16,9 +16,9 @@ import s from './App.module.css';
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
+  const closeSidebar = () => setIsOpen(false);
   console.log('isOpen', isOpen);
 
   const cardRef = useRef(null);
@@ -42,7 +42,12 @@ function App() {
           <Suspense fallback={<Loader />}>
             <LangProvider>
               <div ref={isOpen ? cardRef : null}>
-                <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+                <Sidebar
+                  isOpen={isOpen}
+                  setIsOpen={setIsOpen}
+                  toggleSidebar={toggleSidebar}
+                  closeSidebar={closeSidebar}
+                />
               </div>
             </LangProvider>
           </Suspense>

@@ -10,35 +10,50 @@ import { Suspense, useState, useEffect, useRef } from 'react';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import s from './Sidebar.module.css';
 
-const Sidebar = ({ isOpen, toggleSidebar, closeSidebar }) => {
+const Sidebar = ({ isOpen, toggleSidebar, closeSidebar, setIsOpen }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   const cardRef = useRef(null);
-  useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
+  // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
+
+  // const handleInsideClick = event => {
+  //   if (event.target.tagName !== 'BUTTON') {
+  //     setIsOpen(false);
+  //   }
+  // };
+
+  // useOutsideClickDetector(cardRef, handleInsideClick, isOpen);
   // useOutsideClickDetector(cardRef, closeSidebar, isOpen);
+
+  const handleBackdropClick = e => {
+    if (e.target === e.currentTarget) {
+      closeSidebar();
+    }
+  };
 
   return (
     <>
-      {/* <div className={s.hideSibebar}></div> */}
-      <div ref={cardRef} className={clsx(s.sidebar, isOpen && s.isOpen)}>
-        {isDesktop && (
-          <NavLink to="/" className={s.logo}>
-            <img src={logo} alt="logo" />
-          </NavLink>
-        )}
-        <div className={s.mobMenu}>
-          <Navigation />
-
-          {!isDesktop && (
-            <div className={s.mob}>
-              <BrochureButton />
-
-              <Contacts
-                contactsConfig={contactsConfig}
-                isContactsPage={false}
-              />
-            </div>
+      <div className={`${isOpen && s.backdrop}`} onClick={handleBackdropClick}>
+        <div ref={cardRef} className={clsx(s.sidebar, isOpen && s.isOpen)}>
+          {isDesktop && (
+            <NavLink to="/" className={s.logo}>
+              <img src={logo} alt="logo" />
+            </NavLink>
           )}
+          <div className={s.mobMenu}>
+            <Navigation />
+
+            {!isDesktop && (
+              <div className={s.mob}>
+                <BrochureButton />
+
+                <Contacts
+                  contactsConfig={contactsConfig}
+                  isContactsPage={false}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>

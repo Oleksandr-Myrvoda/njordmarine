@@ -16,7 +16,7 @@ import s from './Header.module.css';
 import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
 import Loader from 'common/Loader/Loader';
 
-const Header = ({ toggleSidebar, isOpen }) => {
+const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const { t } = useTranslation();
   // const [isOpen, setIsOpen] = useState(false);
@@ -35,12 +35,17 @@ const Header = ({ toggleSidebar, isOpen }) => {
   // }, [isDesktop, isOpen, setIsOpen]);
 
   const handleClick = () => {
-    // При открытом сайдбаре не вызываем toggleSidebar
     if (!isOpen) {
       toggleSidebar();
     }
-    return;
   };
+
+  // const handleInsideClick = event => {
+  //   if (event.target.tagName === 'BUTTON') {
+  //     setIsOpen(false);
+  //   }
+  //   toggleSidebar();
+  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,8 +121,10 @@ const Header = ({ toggleSidebar, isOpen }) => {
               <button
                 type="button"
                 className={s.menuBtn}
-                // onClick={openSidebar}
-                onClick={handleClick}
+                // onClick={!isOpen ? toggleSidebar : null}
+                onClick={toggleSidebar}
+                // onClick={handleClick}
+                // onClick={handleInsideClick}
               >
                 {t('navigation.mobileMenu')}
                 <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
