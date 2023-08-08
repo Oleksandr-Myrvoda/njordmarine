@@ -1,5 +1,6 @@
 .main {
   width: 375px;
+  border: none;
 }
 
 @media screen and (min-width: 1440px) {

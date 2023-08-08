@@ -5,19 +5,39 @@
   margin: 0 auto;
   overflow-x: hidden;
   background-color: var(--bg-light-color);
+  border: none;
+}
+
+/* .mainContainer, */
+/* .mainWrapper, */
+/* .container, */
+/* .emptyHeaderFull, */
+/* .emptyHeader {
+  border: none;
+  background-color: var(--bg-dark-color);
+} */
+
+.emptyHeaderFull {
+  height: 68px;
+  background-color: var(--bg-dark-color);
+  position: fixed;
+  width: 100%;
 }
 
 .emptyHeader {
   height: 68px;
+  border: none;
+  background-color: transparent;
 }
 
+/* 
 .emptyFooter {
   width: 100%;
   position: absolute;
   border-top: 2px solid var(--accent-color);
   background-color: var(--big-button-color);
   height: 306px;
-}
+} */
 
 @media screen and (min-width: 1440px) {
   .mainContainer {

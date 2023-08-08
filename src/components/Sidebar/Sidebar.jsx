@@ -14,15 +14,13 @@ const Sidebar = ({ isOpen, toggleSidebar, closeSidebar }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   const cardRef = useRef(null);
+  useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
   // useOutsideClickDetector(cardRef, closeSidebar, isOpen);
 
   return (
     <>
       {/* <div className={s.hideSibebar}></div> */}
-      <div
-        // ref={cardRef}
-        className={clsx(s.sidebar, isOpen && s.isOpen)}
-      >
+      <div ref={cardRef} className={clsx(s.sidebar, isOpen && s.isOpen)}>
         {isDesktop && (
           <NavLink to="/" className={s.logo}>
             <img src={logo} alt="logo" />

@@ -16,11 +16,12 @@ import s from './App.module.css';
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [isOpen, setIsOpen] = useState(false);
-  const closeSidebar = () => setIsOpen(false);
-  const openSidebar = () => setIsOpen(true);
+
   const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
-  // const cardRef = useRef(null);
+  console.log('isOpen', isOpen);
+
+  const cardRef = useRef(null);
   // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <>
+      <div className={s.emptyHeaderFull}></div>
       <div className={s.mainContainer}>
         {isDesktop && (
           <Suspense fallback={<Loader />}>
@@ -39,11 +41,9 @@ function App() {
         {!isDesktop && (
           <Suspense fallback={<Loader />}>
             <LangProvider>
-              <Sidebar
-                isOpen={isOpen}
-                toggleSidebar={toggleSidebar}
-                closeSidebar={closeSidebar}
-              />
+              <div ref={isOpen ? cardRef : null}>
+                <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+              </div>
             </LangProvider>
           </Suspense>
         )}
@@ -59,8 +59,6 @@ function App() {
                       toggleSidebar={toggleSidebar}
                       isOpen={isOpen}
                       setIsOpen={setIsOpen}
-                      closeSidebar={closeSidebar}
-                      openSidebar={openSidebar}
                     />
                   </Suspense>
 
@@ -75,7 +73,7 @@ function App() {
         <ToastContainer theme="colored" />
       </div>
       {!isDesktop && <Footer />}
-      {/* <div className={s.emptyFooter}></div> */}
+      <div className={s.emptyFooter}></div>
     </>
   );
 }

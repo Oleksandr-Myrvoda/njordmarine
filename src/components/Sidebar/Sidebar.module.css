@@ -14,14 +14,33 @@
   flex-direction: column;
   background-color: var(--bg-dark-color);
 
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   width: 260px;
+  /* width: 60vw;
+  min-width: 260px; */
   padding-bottom: 36px;
   top: 58px;
   left: 100%;
   z-index: 50;
   transform: translateX(0);
   transition: transform 300ms linear;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  /* position: fixed;
+  top: 60px; 
+  bottom: 0;
+  right: -250px; 
+  transform: translateX(0);
+  transition: transform 300ms linear; */
+}
+.mobMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding-top: 32px;
 }
 
 .isOpen {
@@ -32,18 +51,13 @@
   padding-bottom: 179px;
 }
 
-.mobMenu {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  padding-top: 32px;
-}
-
 .mob {
   display: flex;
   flex-direction: column;
   gap: 64px;
-  align-items: center;
+  /* align-items: center; */
+  align-items: flex-start;
+  margin-left: 36px;
 }
 
 @media screen and (min-width: 1440px) {

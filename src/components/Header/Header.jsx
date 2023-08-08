@@ -16,13 +16,7 @@ import s from './Header.module.css';
 import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
 import Loader from 'common/Loader/Loader';
 
-const Header = ({
-  toggleSidebar,
-  isOpen,
-  setIsOpen,
-  closeSidebar,
-  openSidebar,
-}) => {
+const Header = ({ toggleSidebar, isOpen }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const { t } = useTranslation();
   // const [isOpen, setIsOpen] = useState(false);
@@ -32,13 +26,21 @@ const Header = ({
   // console.log('toggleSidebar', toggleSidebar);
   // const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
-  // const cardRef = useRef(null);
+  const cardRef = useRef(null);
   // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
 
   // useEffect(() => {
   //   if (isDesktop) setIsOpen(false);
   //   document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   // }, [isDesktop, isOpen, setIsOpen]);
+
+  const handleClick = () => {
+    // При открытом сайдбаре не вызываем toggleSidebar
+    if (!isOpen) {
+      toggleSidebar();
+    }
+    return;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,10 +72,7 @@ const Header = ({
       className={`${s.fixedHeader} ${isScrolled && s.fixedHeaderScroll}`}
       ref={scrollRef}
     >
-      <header
-        //  ref={cardRef}
-        className={s.mainHeader}
-      >
+      <header ref={cardRef} className={s.mainHeader}>
         {isDesktop ? (
           <>
             <Contacts contactsConfig={contactsConfig} isHeader={true} />
@@ -117,8 +116,8 @@ const Header = ({
               <button
                 type="button"
                 className={s.menuBtn}
-                onClick={!isOpen ? openSidebar : closeSidebar}
-                // onClick={toggleSidebar}
+                // onClick={openSidebar}
+                onClick={handleClick}
               >
                 {t('navigation.mobileMenu')}
                 <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
