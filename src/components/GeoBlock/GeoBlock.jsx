@@ -76,8 +76,8 @@ const GeoBlock = () => {
   // +++++++++++++++++++++++++++++++++++++++++++++
   const [satellitePosition, setSatellitePosition] = useState({ x: 0, y: 0 });
   useEffect(() => {
-    const orbitRadius = 169; // Радиус орбиты спутника
-    const orbitSpeed = 0.05; // Скорость движения спутника по орбите
+    const orbitRadius = !isDesktop ? 169 : 264; // Радиус орбиты спутника
+    const orbitSpeed = 0.03; // Скорость движения спутника по орбите
     let angle = 0;
 
     const updateSatellitePosition = () => {
@@ -90,7 +90,7 @@ const GeoBlock = () => {
     const intervalId = setInterval(updateSatellitePosition, 30);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [isDesktop]);
 
   return (
     <div className={s.geoBlock}>
@@ -111,12 +111,13 @@ const GeoBlock = () => {
             className={s.satellite}
             style={{ top: satellitePosition.y, left: satellitePosition.x }}
           />
-          {/* <motion.div
-            className={s.satellite}
-            initial={{ x: 100, y: 100 }}
-            animate={{ x: -300, y: -300 }}
+
+          <motion.div
+            className={s.satellite2}
+            initial={{ x: !isDesktop ? 75 : 100, y: !isDesktop ? -75 : -100 }}
+            animate={{ x: !isDesktop ? 275 : 425, y: !isDesktop ? -275 : -425 }}
             transition={{ duration: 5, repeat: Infinity, repeatType: 'loop' }}
-          /> */}
+          />
         </div>
       </div>
       <div className={s.contactUs}>

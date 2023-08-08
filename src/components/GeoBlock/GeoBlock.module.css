@@ -80,9 +80,17 @@
 
 .satellite {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: red;
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  /* Дополнительные стили для точки (спутника) */
+}
+.satellite2 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent-color);
   border-radius: 50%;
   /* Дополнительные стили для точки (спутника) */
 }
@@ -153,5 +161,11 @@
     text-align: left;
     letter-spacing: 0.24px;
     color: var(--text-light-color);
+  }
+
+  .earthImage {
+    /* Стили для статичной картинки земного шара */
+    width: 528px; /* Замените на нужный размер */
+    height: auto; /* Замените на нужный размер */
   }
 }
