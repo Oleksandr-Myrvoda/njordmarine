@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ourTeamConfig } from 'data/our-team';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import OurTeamList from './OurTeamList';
 import SendInfo from 'common/SendInfo/SendInfo';
 import Container from 'common/Container/Container';
@@ -23,12 +23,7 @@ const OurTeamBlock = () => {
     <div className={s.ourTeamBlock}>
       <Container>
         <div className={s.descr}>
-          <Trail
-            open={isAnimated}
-            // textStyle="taglineBig"
-            heightD={60}
-            heightMob={32}
-          >
+          <Trail open={isAnimated} heightD={60} heightMob={32}>
             <h1 className="taglineBig">{t('ourTeamBlock.taglineBig')}</h1>
             <p className={s.description}>{t('ourTeamBlock.text')}</p>
           </Trail>

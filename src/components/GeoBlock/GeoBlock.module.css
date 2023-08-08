@@ -65,9 +65,49 @@
   flex-direction: column;
   justify-content: center;
   gap: 8px;
-  height: 215px;
+  height: 260px;
 }
 
+/* ================= */
+.earthContainer {
+  position: relative;
+}
+.earthImage {
+  /* Стили для статичной картинки земного шара */
+  width: 338px; /* Замените на нужный размер */
+  height: auto; /* Замените на нужный размер */
+}
+
+.satellite {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  /* Дополнительные стили для точки (спутника) */
+}
+.satelliteTrail {
+  position: absolute;
+  width: 2px; /* Ширина линии */
+  height: 2px; /* Высота линии */
+  background-color: red; /* Цвет линии */
+  border-radius: 1px; /* Округление концов линии */
+  opacity: 0.5; /* Прозрачность линии (от 0 до 1) */
+  z-index: -1; /* Размещение линии под спутником */
+}
+
+/* @keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.earthImage {
+  animation: rotateAnimation 10s linear infinite; 
+} */
 @media screen and (min-width: 1440px) {
   .geoBlock {
     display: flex;

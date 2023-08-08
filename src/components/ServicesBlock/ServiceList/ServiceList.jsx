@@ -83,7 +83,7 @@ const ServiceList = () => {
               className={`${s.item} ${isAnimated1 ? s.animatedItem : ''} 
        `}
             >
-              <img
+              <img 
                 className={s.image}
                 src={refreshSquare}
                 alt={t('servicesBlock.list.alt1')}

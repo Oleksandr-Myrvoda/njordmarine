@@ -12,6 +12,8 @@ import globeMob from 'images/globe-mob.png';
 import s from './GeoBlock.module.css';
 import Trail from 'common/Trail/Trail';
 
+import { motion } from 'framer-motion';
+
 const GeoBlock = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -71,6 +73,24 @@ const GeoBlock = () => {
   const toContacts = () => {
     history.push('/contacts');
   };
+  // +++++++++++++++++++++++++++++++++++++++++++++
+  const [satellitePosition, setSatellitePosition] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    const orbitRadius = 169; // Радиус орбиты спутника
+    const orbitSpeed = 0.05; // Скорость движения спутника по орбите
+    let angle = 0;
+
+    const updateSatellitePosition = () => {
+      angle += orbitSpeed;
+      const x = orbitRadius * Math.cos(angle) + orbitRadius;
+      const y = orbitRadius * Math.sin(angle) + orbitRadius;
+      setSatellitePosition({ x, y });
+    };
+
+    const intervalId = setInterval(updateSatellitePosition, 30);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div className={s.geoBlock}>
@@ -83,7 +103,21 @@ const GeoBlock = () => {
           {/* <h2 className="tagline">{t('geoBlock.tagline')}</h2> */}
           <p className={s.text}>{t('geoBlock.text')}</p>
         </div>
-        <img src={globeImage} alt="globe" />
+        <div className={s.earthContainer}>
+          <img className={s.earthImage} src={globeImage} alt="globe" />
+          {/* Анимация летающей точки (спутника) */}
+
+          <div
+            className={s.satellite}
+            style={{ top: satellitePosition.y, left: satellitePosition.x }}
+          />
+          {/* <motion.div
+            className={s.satellite}
+            initial={{ x: 100, y: 100 }}
+            animate={{ x: -300, y: -300 }}
+            transition={{ duration: 5, repeat: Infinity, repeatType: 'loop' }}
+          /> */}
+        </div>
       </div>
       <div className={s.contactUs}>
         <p className="taglineBig">{t('geoBlock.taglineBig')}</p>

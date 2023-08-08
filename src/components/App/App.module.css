@@ -6,6 +6,8 @@
   overflow-x: hidden;
   background-color: var(--bg-light-color);
   border: none;
+
+  /* cursor: url('../../images/spares-steering-wheel.svg'), auto; */
 }
 
 /* .mainContainer, */
@@ -15,6 +17,9 @@
 /* .emptyHeader {
   border: none;
   background-color: var(--bg-dark-color);
+} */
+/* .castomCursor {
+  cursor: url('../../../images/spares-steering-wheel.svg'), auto;
 } */
 
 .emptyHeaderFull {

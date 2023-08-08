@@ -38,6 +38,7 @@
 
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
 
   /* position: fixed;
   top: 60px; 

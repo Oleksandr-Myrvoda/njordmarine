@@ -48,6 +48,28 @@
   word-wrap: break-word;
 }
 
+.itemName:hover {
+  font-weight: 800;
+  transition: all 300ms;
+}
+
+.castomCursor {
+  cursor: url('../../../images/spares-steering-wheel.svg'), auto;
+}
+
+.castomCursor:hover {
+  animation: rotateClockwise 2s; /* Вращение длится 2 секунды */
+}
+
+@keyframes rotateClockwise {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(720deg); /* Два оборота по часовой стрелке (360 * 2) */
+  }
+}
+
 @media screen and (min-width: 1440px) {
   /* .NavItem {
     width: 100%;

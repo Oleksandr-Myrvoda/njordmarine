@@ -36,9 +36,11 @@ const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' }); */
   --card-bg: #d6e7ff;
   --footer-stroke: #d6e7ff;
 
-  --mask-bg: rgba(20, 106, 204, 0.3);
+  /* --mask-bg: rgba(20, 106, 204, 0.3); */
+  --mask-bg: rgba(1, 39, 86, 0.4);
   /* --mask-bg: rgba(217, 217, 217, 0.3); */
 }
+/* --mask-bg: rgba(1, 39, 86, 0.4); */
 
 * {
   margin: 0;
