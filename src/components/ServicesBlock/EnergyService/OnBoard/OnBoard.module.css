@@ -82,7 +82,10 @@
     height: 376px;
     border-radius: 0;
     background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
-      url('../../../../images/serv-energy-bg.png');
+      url('../../../../images/serv-energy-bg.jpg');
+    /* background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
+      url('../../../../images/serv-energy-bg.png'); */
+    background-size: cover;
   }
 
   .title {

@@ -1,9 +1,15 @@
-import clock from 'images/adv-d-clock.png';
-import cup from 'images/adv-d-cup.png';
-import delivery from 'images/adv-d-delivery.png';
-import hourglass from 'images/adv-d-hourglass.png';
-import shild from 'images/adv-d-shild.png';
-import star from 'images/adv-d-star.png';
+import clock from 'images/adv-d-clock.svg';
+import cup from 'images/adv-d-cup.svg';
+import delivery from 'images/adv-d-delivery.svg';
+import hourglass from 'images/adv-d-hourglass.svg';
+import shild from 'images/adv-d-shild.svg';
+import star from 'images/adv-d-star.svg';
+// import clock from 'images/adv-d-clock.png';
+// import cup from 'images/adv-d-cup.png';
+// import delivery from 'images/adv-d-delivery.png';
+// import hourglass from 'images/adv-d-hourglass.png';
+// import shild from 'images/adv-d-shild.png';
+// import star from 'images/adv-d-star.png';
 
 export const advantagesConfig = [
   {

@@ -7,6 +7,10 @@
   /* padding-bottom: 25px; */
 }
 
+.delivery {
+  background-color: var(--bg-dark-color);
+}
+
 .item {
   padding: 30px;
   border-radius: 8px;

@@ -62,7 +62,10 @@
     height: 376px;
     border-radius: 0;
     background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
-      url('../../../images/serv-mainten-bg.png');
+      url('../../../images/serv-mainten-bg.jpg');
+    /* background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
+      url('../../../images/serv-mainten-bg.png'); */
+    background-size: cover;
   }
 
   .title {

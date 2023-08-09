@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useLockBodyScroll } from 'react-use';
 import PropTypes from 'prop-types';
-import closeBtn from '../../images/form-close-btn.png';
+import closeBtn from 'images/form-close-btn.svg';
+// import closeBtn from 'images/del-form-close-btn.png';
 import s from './Modal.module.css';
 
 const modalRootRef = document.querySelector('#modal-root');

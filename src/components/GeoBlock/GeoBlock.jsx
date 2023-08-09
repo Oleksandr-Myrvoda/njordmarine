@@ -7,8 +7,10 @@ import { useSetOtherError } from 'context/ErrorProvider';
 import { getBrochureApi } from 'services/api';
 import { getTermsApi } from 'services/api';
 import BigButton from 'common/BigButton';
-import globe from 'images/globe.png';
-import globeMob from 'images/globe-mob.png';
+import globe from 'images/globe.svg';
+import globeMob from 'images/globe-mob.svg';
+// import globe from 'images/globe.png';
+// import globeMob from 'images/globe-mob.png';
 import s from './GeoBlock.module.css';
 import Trail from 'common/Trail/Trail';
 

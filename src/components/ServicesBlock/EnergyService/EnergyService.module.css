@@ -15,9 +15,9 @@
   width: 343px;
   height: 220px;
   border-radius: 5px;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
-    url('../../../images/serv-energy-bg-mob.png');
+    url('../../../images/serv-energy-bg-mob.png'); */
 }
 
 .descrWrapper {
@@ -83,8 +83,11 @@
     width: 1027px;
     height: 376px;
     border-radius: 0;
-    background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
-      url('../../../images/serv-energy-bg.png');
+    /* background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
+      url('../../../images/serv-energy-bg.jpg'); */
+    /* background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
+      url('../../../images/serv-energy-bg.png'); */
+    /* background-size: cover; */
   }
 
   .title {
