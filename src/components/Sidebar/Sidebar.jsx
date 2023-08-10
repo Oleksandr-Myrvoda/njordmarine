@@ -10,7 +10,7 @@ import { Suspense, useState, useEffect, useRef } from 'react';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import s from './Sidebar.module.css';
 
-const Sidebar = ({ isOpen, toggleSidebar, closeSidebar, setIsOpen }) => {
+const Sidebar = ({ isOpen, closeSidebar }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   const cardRef = useRef(null);
@@ -41,7 +41,7 @@ const Sidebar = ({ isOpen, toggleSidebar, closeSidebar, setIsOpen }) => {
             </NavLink>
           )}
           <div className={s.mobMenu}>
-            <Navigation />
+            <Navigation closeSidebar={closeSidebar} />
 
             {!isDesktop && (
               <div className={s.mob}>

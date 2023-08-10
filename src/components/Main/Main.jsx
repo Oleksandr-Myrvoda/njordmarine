@@ -37,7 +37,7 @@ const NotFound = () => {
   );
 };
 
-const Main = () => {
+const Main = ({ toggleSidebar }) => {
   const location = useLocation();
 
   return (

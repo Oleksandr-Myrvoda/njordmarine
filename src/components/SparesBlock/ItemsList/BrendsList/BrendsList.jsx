@@ -1,4 +1,5 @@
 import * as api from 'services/api';
+import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
 import BigButton from 'common/BigButton';
 import BrendItem from './BrendItem/BrendItem';
@@ -10,6 +11,7 @@ import { useSetError } from 'context/ErrorProvider';
 import { useState } from 'react';
 
 const BrendsList = ({ brends = [], onClose, setSpares }) => {
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const { t } = useTranslation();
   const match = useRouteMatch();
   const [newBrend, setNewBrend] = useState({
@@ -173,7 +175,9 @@ const BrendsList = ({ brends = [], onClose, setSpares }) => {
           </button>
         </form>
       )}
-      <BigButton onClick={onClose} text={t('common.closeBtn')} />
+      {!isDesktop && (
+        <BigButton onClick={onClose} text={t('common.closeBtn')} />
+      )}
     </div>
   );
 };

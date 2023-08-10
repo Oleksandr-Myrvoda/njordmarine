@@ -2,21 +2,36 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* padding: 16px 28px; */
   padding: 16px 36px 16px 36px;
   border-radius: 5px;
   border: 0px 0px 1.5px 0px;
   border: none;
   cursor: pointer;
   transition: all 200ms;
-  background-color: var(--big-button-color);
   color: var(--bg-light-color);
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   width: 100%;
 
+  background-color: var(--big-button-color);
   border-bottom: 1.5px solid var(--big-button-hover-color);
+}
+
+.disabledBtn {
+  opacity: 0.5;
+  background: linear-gradient(
+      0deg,
+      var(--big-button-color),
+      var(--big-button-color)
+    ),
+    linear-gradient(
+      0deg,
+      var(--big-button-hover-color),
+      var(--big-button-hover-color)
+    );
+  border-bottom: 1.5px solid var(--bg-dark-color);
+  cursor: not-allowed;
 }
 
 .bigButton:hover {

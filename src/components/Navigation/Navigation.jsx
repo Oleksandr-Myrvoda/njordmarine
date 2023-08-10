@@ -6,7 +6,7 @@ import { servicesListConfig } from 'data/services-list';
 import { sparesListConfig } from 'data/spares-list';
 import s from './Navigation.module.css';
 
-const Navigation = () => {
+const Navigation = ({ closeSidebar }) => {
   const { t } = useTranslation();
   const [activeMenu, setActiveMenu] = useState(null);
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -17,7 +17,12 @@ const Navigation = () => {
 
   return (
     <nav className={s.nav}>
-      <div onClick={() => handleMenuClick('home')}>
+      <div
+        onClick={() => {
+          handleMenuClick('home');
+          !isDesktop && closeSidebar();
+        }}
+      >
         <NavItem name={`01. ${t('navigation.nav1')}`} path="/home" />
       </div>
 
@@ -32,14 +37,19 @@ const Navigation = () => {
           activeMenu === 'company' ? s.active : ''
         }`}
       >
-        <NavItem
-          name={t('navigation.aboutCompany.name1')}
-          path="/about-company/about-us"
-        />
-        <NavItem
-          name={t('navigation.aboutCompany.name2')}
-          path="/about-company/our-team"
-        />
+        <div onClick={() => !isDesktop && closeSidebar()}>
+          <NavItem
+            name={t('navigation.aboutCompany.name1')}
+            path="/about-company/about-us"
+          />
+        </div>
+        <div onClick={() => !isDesktop && closeSidebar()}>
+          <NavItem
+            name={t('navigation.aboutCompany.name2')}
+            path="/about-company/our-team"
+            onClick={() => !isDesktop && closeSidebar()}
+          />
+        </div>
       </div>
 
       {/* ======= SERVICES ======= */}
@@ -55,7 +65,7 @@ const Navigation = () => {
           }`}
         >
           {servicesListConfig.map(({ name, to }, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => !isDesktop && closeSidebar()}>
               <NavItem name={t(name)} path={`/services/${to}`} />
             </li>
           ))}
@@ -75,7 +85,7 @@ const Navigation = () => {
           }`}
         >
           {sparesListConfig.map(({ name, to }, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => !isDesktop && closeSidebar()}>
               <NavItem name={t(name)} path={`/spares/${to}`} />
             </li>
           ))}
@@ -84,10 +94,23 @@ const Navigation = () => {
 
       {/* ======= CONTACTS ======= */}
 
-      <div onClick={() => handleMenuClick('contacts')}>
+      <div
+        onClick={() => {
+          handleMenuClick('contacts');
+          !isDesktop && closeSidebar();
+        }}
+      >
         <NavItem name={`05. ${t('navigation.nav5')}`} path="/contacts" />
       </div>
-      <div onClick={() => handleMenuClick('admin')}>
+
+      {/* ======= ADMIN ======= */}
+
+      <div
+        onClick={() => {
+          handleMenuClick('admin');
+          !isDesktop && closeSidebar();
+        }}
+      >
         <NavItem name={'admin'} path="/admin" />
       </div>
     </nav>

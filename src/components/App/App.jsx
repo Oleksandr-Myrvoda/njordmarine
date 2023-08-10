@@ -41,12 +41,7 @@ function App() {
           <Suspense fallback={<Loader />}>
             <LangProvider>
               <div ref={isOpen ? cardRef : null}>
-                <Sidebar
-                  isOpen={isOpen}
-                  setIsOpen={setIsOpen}
-                  toggleSidebar={toggleSidebar}
-                  closeSidebar={closeSidebar}
-                />
+                <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
               </div>
             </LangProvider>
           </Suspense>

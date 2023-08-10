@@ -147,7 +147,7 @@
     "nav4": "Spare parts",
     "nav5": "Contacts",
     "aboutCompany": {
-      "name1": "Abot us",
+      "name1": "About us",
       "name2": "Our team"
     },
     "servicesListConfig": {
@@ -331,7 +331,7 @@
     "li6": "Copy the link and replace in the required field"
   },
 
-  "common": {  
+  "common": {
     "brochureBtn": "Download brochure",
     "placeholderRu": "In russian",
     "placeholderEn": "In english",

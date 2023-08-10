@@ -52,9 +52,9 @@ const Form = ({ isTitle, setEmailSended }) => {
   // const { brochureLink } = useAdminContext();
   // const [fileUrl, setFileUrl] = useState(brochureLink);
 
-  const requiredErrMsg = `${t('form.required')}`;
-  const moreLettersErrMsg = `${t('form.moreLetters')}`;
-  const invalidEmailErrMsg = `${t('form.invalidEmail')}`;
+  // const requiredErrMsg = `${t('form.required')}`;
+  // const moreLettersErrMsg = `${t('form.moreLetters')}`;
+  // const invalidEmailErrMsg = `${t('form.invalidEmail')}`;
 
   const textValidation = {
     required: `${t('form.required')}`,
@@ -104,6 +104,30 @@ const Form = ({ isTitle, setEmailSended }) => {
         },
       );
   };
+
+  // disabled btn
+  // const [formData, setFormData] = useState({
+  //   customerName: '',
+  //   email: '',
+  //   companyName: '',
+  // });
+
+  // const [isFormValid, setIsFormValid] = useState(false);
+
+  // const handleInputChange = e => {
+  //   const { name, value } = e.target;
+
+  //   setFormData(prevData => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+
+  //   const allRequiredFieldsFilled = Object.values(formData).every(
+  //     value => value !== '',
+  //   );
+
+  //   setIsFormValid(allRequiredFieldsFilled);
+  // };
 
   return (
     <div className={s.container}>
@@ -183,7 +207,7 @@ const Form = ({ isTitle, setEmailSended }) => {
           <a
             href={fileUrl[lang]}
             download
-            className={s.link}
+            className={s.ternsLink}
             target="_blank"
             rel="noreferrer"
           >

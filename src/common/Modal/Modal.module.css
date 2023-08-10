@@ -9,14 +9,13 @@
 }
 
 .modal {
-  padding: 0 16px 36px 16px;
+  padding: 24px 16px 24px 16px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 343px;
   width: 100%;
-  /* background-color: white; */
   background-color: var(--bg-medium-color);
   border-radius: 8px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
@@ -24,7 +23,7 @@
   /* скролл вверх-вниз */
   max-height: 90vh;
   overflow-y: auto;
-  /* max-height: 800px; */
+  overflow-x: hidden;
 }
 
 .modalBrends {
@@ -38,13 +37,17 @@
 .header {
   align-items: center;
   display: flex;
-  padding: 36px 24px 16px 24px;
+  margin-bottom: 16px;
+  align-items: center;
+  /* justify-content: center; */
+  /* padding: 36px 24px 16px 24px; */
 }
 
 .closeBtn {
   border: none;
   background: none;
   cursor: pointer;
+  align-self: flex-start;
 }
 
 .lead {
@@ -55,11 +58,11 @@
 @media screen and (min-width: 1440px) {
   .header {
     display: flex;
-    padding: 48px 32px 48px 32px;
+    margin-bottom: 32px;
   }
 
   .modal {
-    padding: 0 32px 36px 32px;
+    padding: 48px 32px 48px 32px;
     max-width: 576px;
     height: auto;
   }
