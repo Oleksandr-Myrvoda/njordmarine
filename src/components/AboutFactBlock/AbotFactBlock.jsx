@@ -46,7 +46,7 @@ const AbotFactBlock = () => {
         </div>
       </Container>
 
-      {!isDesktop && <ScrollUp />}
+      {/* {!isDesktop && <ScrollUp />} */}
     </div>
   );
 };

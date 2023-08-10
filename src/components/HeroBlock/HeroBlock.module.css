@@ -84,23 +84,33 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 8px;
+
+  /* gap: 14px; */
 }
 
 .listItem {
   display: flex;
   flex-direction: column;
+  /* text-align: left;   */
+  /* text-align: center; */
   align-items: center;
+  /* align-self: center; */
+  /* width: calc(30%); */
+  /* max-width: 120px; */
 }
 .topLine {
   display: flex;
   justify-content: space-between;
+  align-self: flex-start;
 }
 .countLine1 {
   width: 75px;
 }
 .countLine2 {
   width: 30px;
+}
+.countLine3 {
+  width: 50px;
 }
 
 .top {
@@ -121,6 +131,8 @@
   line-height: 20px;
   letter-spacing: 0.24px;
   color: var(--text-light-color);
+
+  align-self: flex-start;
 }
 .container {
   height: 105px;
@@ -190,8 +202,10 @@
   }
 
   .listItem {
+    /* max-width: 140px; */
     width: calc(26%);
     text-align: start;
+    align-items: flex-start;
   }
 
   .top {

@@ -1,6 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { useState, useEffect, useRef } from 'react';
+import { useLangContext } from 'context/LangProvider';
+import { useSetOtherError } from 'context/ErrorProvider';
+import { getBrochureApi } from 'services/api';
 import cabinet from 'images/hero-bg-about-mob.png';
 
 import s from './HeroAboutBlock.module.css';
@@ -11,6 +14,9 @@ const HeroAboutBlock = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [isAnimated, setIsAnimated] = useState(false);
+  const { lang } = useLangContext();
+  const setOtherError = useSetOtherError();
+  const [fileUrl, setFileUrl] = useState({ ru: '', en: '' });
 
   useEffect(() => {
     const animationTimer = setTimeout(() => {
@@ -19,6 +25,28 @@ const HeroAboutBlock = () => {
 
     return () => clearTimeout(animationTimer);
   }, []);
+
+  useEffect(() => {
+    getBrochureApi()
+      .then(refs => {
+        const { id, ...rest } = refs;
+        setFileUrl(rest);
+      })
+      .catch(error => {
+        setOtherError(error.response.data);
+        console.log('setOtherErorr(error.response.data)');
+        console.dir(error);
+      });
+  }, [setOtherError]);
+
+  const handleDownload = () => {
+    const anchor = document.createElement('a');
+    anchor.href = fileUrl[lang];
+    anchor.download = true;
+    anchor.target = '_blank';
+    anchor.rel = 'noreferrer';
+    anchor.click();
+  };
 
   return (
     <div className={s.heroAboutBlock}>
@@ -38,9 +66,9 @@ const HeroAboutBlock = () => {
           </div>
           {!isDesktop && <img className={s.img} src={cabinet} alt="cabinet" />}
 
-          <a href="/" className={s.serviceLink}>
-            {t('common.brochure')}
-          </a>
+          <button className={s.downloadButton} onClick={handleDownload}>
+            <div className={s.link}>{t('common.brochureBtn')}</div>
+          </button>
         </div>
       </Container>
     </div>

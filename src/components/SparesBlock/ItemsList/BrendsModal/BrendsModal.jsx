@@ -20,7 +20,7 @@ const BrendsModal = ({ setSpares, modalData }) => {
   };
 
   return (
-    <Modal title={itemTitle[lang]} onClose={closeModal}>
+    <Modal title={itemTitle[lang]} onClose={closeModal} isBrends={true}>
       <BrendsList brends={brends} onClose={closeModal} setSpares={setSpares} />
     </Modal>
   );

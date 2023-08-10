@@ -40,16 +40,10 @@ const ContactsPage = () => {
     <div className={s.pageWrapper}>
       <div className={s.container}>
         <div className={s.taglineWrapper}>
-          {/* <div className={s.trailWrapper}> */}
-          <Trail
-            open={isAnimated}
-            // textStyle="taglineBig"
-            heightD={60}
-            heightMob={48}
-          >
+          <Trail open={isAnimated} heightD={60} heightMob={48}>
             <h1 className="taglineBig">{t('contacts.taglineBig')}</h1>
           </Trail>
-          {/* </div> */}
+
           <p>{t('contacts.text')}</p>
         </div>
         <ContactsBlock />

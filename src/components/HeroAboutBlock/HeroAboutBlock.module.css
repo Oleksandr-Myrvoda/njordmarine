@@ -35,7 +35,7 @@
   border-radius: 8px;
 }
 
-.serviceLink {
+/* .serviceLink {
   align-self: center;
 
   font-family: 'Gilroy';
@@ -53,6 +53,40 @@
   padding-left: 10px;
   content: url('../../images/arrow-right.svg');
   text-align: center;
+} */
+
+.downloadButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.link {
+  display: block;
+  padding: 16px 0;
+  height: 32px;
+
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+
+  letter-spacing: 0.24px;
+  color: var(--big-button-color);
+}
+
+.link::after {
+  padding-left: 16px;
+
+  display: flex;
+  align-items: flex-end;
+  content: url('../../images/arrowRight.svg');
+}
+
+.link:hover {
+  color: #012756;
 }
 
 @media screen and (min-width: 1440px) {

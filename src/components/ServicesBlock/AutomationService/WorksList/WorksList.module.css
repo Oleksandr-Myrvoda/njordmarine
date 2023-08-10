@@ -58,12 +58,14 @@
 
 @media screen and (min-width: 1440px) {
   .blockWrapper {
-    gap: 36px;
+    /* gap: 36px; */
   }
   .title {
     margin-bottom: 0;
     font-size: 26px;
     line-height: 40px;
+    width: calc(45%);
+    margin-bottom: 36px;
   }
   .list {
     flex-direction: row;

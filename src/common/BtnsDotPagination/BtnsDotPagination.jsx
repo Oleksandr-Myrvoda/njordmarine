@@ -5,7 +5,7 @@ const BtnsDotPagination = ({ buttonsList, currentPage, setCurrentPage }) => {
   return (
     <ul className={s.btsDotsBlock}>
       {buttonsList.map(({ id }) => (
-        <li key={id}>
+        <li key={id} className={s.itemLi}>
           <button
             className={`${currentPage === id ? s.isActiveStyle : s.pagiBtnDot}`}
             onClick={() => setCurrentPage(id)}

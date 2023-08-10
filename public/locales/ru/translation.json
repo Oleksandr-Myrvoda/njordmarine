@@ -43,7 +43,7 @@
     "taglineBig": "Свяжитесь с нами",
     "text2": "Мы всегда готовы прийти к Вам на помощь!",
     "bigButtonText": "Контакты",
-    "bigButtonLink": "Ознакомиться с условиями конфиденциальности"
+    "bigButtonLink": "Условия конфиденциальности"
   },
 
   "heroAboutBlock": {
@@ -127,7 +127,7 @@
     "emailInput": "Ваш e-mail*",
     "phone": "Телефон (не обязательно)",
     "phoneInput": "Номер телефона",
-    "companyName": "Название компании (не обязательно)",
+    "companyName": "Название компании*",
     "subjMessageInput": "Название компании",
     "message": "Сообщение",
     "messageInput": "Сообщение",
@@ -331,7 +331,6 @@
   },
 
   "common": {
-    "brochure": "Скачать брошюру",
     "brochureBtn": "Скачать брошюру",
     "placeholderRu": "На русском",
     "placeholderEn": "На английском",

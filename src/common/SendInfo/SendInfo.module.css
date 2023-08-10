@@ -14,9 +14,16 @@
   display: none;
 }
 
+.buttonLink {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .link {
   display: block;
   padding: 16px 0;
+  height: 32px;
 
   font-family: 'Gilroy';
   font-style: normal;
@@ -30,10 +37,18 @@
 }
 
 .link::after {
-  display: block;
-  padding-left: 15px;
-  align-items: center;
+  /* display: block; */
+  padding-left: 16px;
+  /* width: 30px; */
+  /* height: 30px; */
+  /* align-items: center; */
+  display: flex;
+  align-items: flex-end;
   content: url('../../images/arrowRight.svg');
+}
+
+.link:hover {
+  color: #012756;
 }
 
 .afterBlock,

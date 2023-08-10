@@ -8,7 +8,7 @@
   align-items: center;
   color: var(--sidebar-text-color);
   overflow: hidden;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .itemName::before {
@@ -46,6 +46,7 @@
 }
 .itemName {
   word-wrap: break-word;
+  /* cursor: pointer; */
 }
 
 .itemName:hover {

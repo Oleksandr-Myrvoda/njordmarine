@@ -1,5 +1,6 @@
 import clock from 'images/adv-d-clock.svg';
 import cup from 'images/adv-d-cup.svg';
+// import delivery from 'images/del-Icon.svg';
 import delivery from 'images/adv-d-delivery.svg';
 import hourglass from 'images/adv-d-hourglass.svg';
 import shild from 'images/adv-d-shild.svg';

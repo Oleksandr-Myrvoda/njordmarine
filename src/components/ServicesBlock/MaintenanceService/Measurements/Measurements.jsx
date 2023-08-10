@@ -84,12 +84,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
 
   return (
     <div className={s.blockWrapper} ref={headerRef}>
-      <Trail
-        open={isAnimated}
-        // textStyle="taglineBig"
-        heightD={60}
-        heightMob={64}
-      >
+      <Trail open={isAnimated} heightD={60} heightMob={64}>
         <h2 className={s.tagline}>
           {t('services.meintenance.measurTagline')}:
         </h2>

@@ -127,7 +127,7 @@
     "emailInput": "Your e-mail*",
     "phone": "Phone (optional)",
     "phoneInput": "Phone number",
-    "companyName": "Company name (optional)",
+    "companyName": "Company name*",
     "subjMessageInput": "Company name",
     "message": "Message",
     "messageInput": "Message",
@@ -331,8 +331,7 @@
     "li6": "Copy the link and replace in the required field"
   },
 
-  "common": {
-    "brochure": "Download our brochure",
+  "common": {  
     "brochureBtn": "Download brochure",
     "placeholderRu": "In russian",
     "placeholderEn": "In english",

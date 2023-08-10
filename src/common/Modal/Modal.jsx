@@ -8,7 +8,7 @@ import s from './Modal.module.css';
 
 const modalRootRef = document.querySelector('#modal-root');
 
-const Modal = ({ onClose, title, children, isEmailSended }) => {
+const Modal = ({ onClose, title, children, isEmailSended, isBrends }) => {
   useLockBodyScroll(true);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Modal = ({ onClose, title, children, isEmailSended }) => {
 
   return createPortal(
     <div className={s.backdrop} onClick={handleBackdropClick}>
-      <div className={s.modal}>
+      <div className={`${s.modal} ${isBrends && s.modalBrends}`}>
         <header className={s.header}>
           <div className={s.lead}>
             {!isEmailSended && <h3 className="tagline">{title}</h3>}

@@ -23,5 +23,6 @@
   .nav {
     width: 16vw;
     align-content: center;
+    padding-left: 60px;
   }
 }

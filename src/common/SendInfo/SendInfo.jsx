@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Suspense, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import BigButton from 'common/BigButton';
@@ -13,6 +13,7 @@ import Loader from 'common/Loader';
 
 const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
   const { t } = useTranslation();
+  const history = useHistory();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEmailSended, setEmailSended] = useState(false);
@@ -28,21 +29,21 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleClick = () => {
+    scrollToTop();
+    history.push(linkPath);
+  };
+
   return (
     <div className={s.contacts}>
-      <Suspense
-        // fallback={<h2>"Loading..."</h2>}
-        fallback={<Loader />}
-      >
+      <Suspense fallback={<Loader />}>
         <BigButton onClick={openModal} text={t('sendInfo.bigBtn')} />
-        <NavLink
-          to={linkPath}
-          className={clsx(hideLink && s.isHideLink)}
-          activeClassName={s.NavItemActive}
-          onClick={scrollToTop}
+        <button
+          className={clsx(s.buttonLink, hideLink && s.isHideLink)}
+          onClick={handleClick}
         >
-          <span className={s.link}>{linkName}</span>
-        </NavLink>
+          <div className={s.link}>{linkName}</div>
+        </button>
 
         {isModalOpen && (
           <Modal

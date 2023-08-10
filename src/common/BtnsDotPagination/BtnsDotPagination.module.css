@@ -1,12 +1,24 @@
 .btsDotsBlock {
   display: flex;
-  gap: 32px;
+  gap: 4px;
   justify-content: center;
   align-items: center;
 }
+
+.itemLi {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 .pagiBtnDot {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
+
   border-radius: 50%;
   background: none;
   cursor: pointer;
@@ -21,6 +33,5 @@
   background: none;
   cursor: pointer;
   border: none;
-
   background-image: url(../../images/pagi-active-dot.svg);
 }

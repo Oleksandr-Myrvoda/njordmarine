@@ -58,8 +58,9 @@
 
 @media screen and (min-width: 1440px) {
   .taglineWrapper {
-    gap: 16px;
-    margin-bottom: 48px;
+    gap: 8px;
+    margin-bottom: 56px;
+    padding: 48px 0 0 0;
   }
 
   /* .trailWrapper {

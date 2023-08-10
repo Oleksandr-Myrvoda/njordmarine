@@ -29,6 +29,7 @@
   .list {
     display: flex;
     flex-direction: row;
+    gap: 96px;
   }
 
   .contactsPage {

@@ -23,7 +23,8 @@
   height: 34px;
   border: none;
   border-radius: 50%;
-  background-image: url('../../../../../images/energy-dots/round-button.png');
+  /* background-image: url('../../../../../images/energy-dots/round-button.png'); */
+  background-image: url('../../../../../images/energy-dots/round-button.svg');
   background-size: cover;
   cursor: pointer;
 }
@@ -100,7 +101,8 @@
   height: 34px;
   scale: 1.5;
   background: transparent;
-  background-image: url('../../../../../images/energy-dots/round-button.png');
+  /* background-image: url('../../../../../images/energy-dots/round-button.png'); */
+  background-image: url('../../../../../images/energy-dots/round-button.svg');
   background-size: cover;
   cursor: pointer;
   animation: pulse 1s infinite;
@@ -152,38 +154,6 @@
     top: 235px;
     left: 485px;
   }
-  /* .btn1 {
-    top: 735px;
-    left: 605px;
-  }
-  .btn2 {
-    top: 610px;
-    left: 500px;
-  }
-  .btn3 {
-    top: 415px;
-    left: 525px;
-  }
-  .btn4 {
-    top: 650px;
-    left: 727px;
-  }
-  .arrow1 {
-    top: 445px;
-    left: 215px;
-  }
-  .arrow2 {
-    top: 345px;
-    left: 210px;
-  }
-  .arrow3 {
-    top: 230px;
-    left: 485px;
-  }
-  .arrow4 {
-    top: 165px;
-    left: 485px;
-  } */
 
   .options {
     width: 1027px;
