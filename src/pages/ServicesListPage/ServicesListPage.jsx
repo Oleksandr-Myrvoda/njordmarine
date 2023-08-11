@@ -63,22 +63,32 @@ const ServicesListPage = () => {
       ${isFocus && s.focusBG} 
       ${isEnergy && s.energyBG}`}
     >
-      <div className={s.taglineWrapper}>
-        {/* <div className={s.trailWrapper}> */}
-        <Trail
-          open={isAnimated}
-          // textStyle="taglineBig"
-          heightD={60}
-          heightMob={16}
-        >
+      {/* <div className={s.taglineWrapper}>
+        <Trail open={isAnimated} heightD={60} heightMob={16}>
           <h1 className="taglineBig">{t('services.taglineBig')}</h1>
         </Trail>
-        {/* </div> */}
 
         {isDesktop && <BlockNavigation navConfig={servicesListConfig} />}
-      </div>
+      </div> */}
 
       <Container>
+        <div className={s.taglineWrapper}>
+          <Trail open={isAnimated} heightD={60} heightMob={16}>
+            <h1 className="taglineBig">{t('services.taglineBig')}</h1>
+          </Trail>
+
+          {!isDesktop && (
+            <Trail open={isAnimated} heightD={60} heightMob={48}>
+              <h2 className={s.headTitle}>
+                {isAuto && t('navigation.servicesListConfig.name1')}
+                {isFocus && t('navigation.servicesListConfig.name2')}
+                {isEnergy && t('navigation.servicesListConfig.name3')}
+              </h2>
+            </Trail>
+          )}
+
+          {isDesktop && <BlockNavigation navConfig={servicesListConfig} />}
+        </div>
         <div className={s.pagesBlock}>
           <Suspense fallback={<Loader />}>
             <Switch>

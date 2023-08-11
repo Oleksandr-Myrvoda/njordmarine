@@ -19,6 +19,10 @@
   margin-bottom: 24px;
 }
 
+.serviceListWrapper {
+  margin-bottom: 24px;
+}
+
 .container {
   height: 105px;
 }
@@ -45,6 +49,10 @@
 
   .container {
     height: 60px;
+  }
+
+  .serviceListWrapper {
+    margin-bottom: 0;
   }
 
   .sendInfo {

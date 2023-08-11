@@ -78,6 +78,7 @@ const GeoBlock = () => {
     history.push('/contacts');
   };
 
+  //DOWNLOAD TERMS
   const handleDownload = () => {
     const anchor = document.createElement('a');
     anchor.href = fileUrl[lang];
@@ -168,7 +169,7 @@ const GeoBlock = () => {
         <BigButton onClick={toContacts} text={t('geoBlock.bigButtonText')} />
 
         <button className={s.downloadButton} onClick={handleDownload}>
-          <div className={s.link}>{t('geoBlock.bigButtonLink')}</div>
+          <div className={s.termsLink}>{t('geoBlock.bigButtonLink')}</div>
         </button>
       </div>
     </div>

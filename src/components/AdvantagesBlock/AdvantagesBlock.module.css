@@ -21,6 +21,10 @@
   height: 80px;
 }
 
+.advListWtapper {
+  margin-top: 24px;
+}
+
 @media screen and (min-width: 1440px) {
   .advantagesBlock {
     padding: 96px;
@@ -33,5 +37,9 @@
     gap: 24px;
     /* padding-bottom: 88px; */
     height: 100px;
+  }
+
+  .advListWtapper {
+    margin-top: 0;
   }
 }

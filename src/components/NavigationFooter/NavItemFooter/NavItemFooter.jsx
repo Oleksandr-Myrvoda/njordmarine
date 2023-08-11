@@ -3,17 +3,8 @@ import { NavLink } from 'react-router-dom';
 import s from './NavItemFooter.module.css';
 
 const NavItemFooter = ({ name, path, scrollToTop }) => {
-  const isActive = false;
-
-  const navItemStyles = [s.NavItem];
-  isActive && navItemStyles.push(s.NavItemActive);
   return (
-    <NavLink
-      to={path}
-      className={navItemStyles.join(' ')}
-      activeClassName={s.NavItemActive}
-      onClick={scrollToTop}
-    >
+    <NavLink to={path} className={s.navItem} onClick={scrollToTop}>
       <span className={s.itemName}>{name}</span>
     </NavLink>
   );

@@ -36,6 +36,16 @@ const ContactsPage = () => {
     return () => clearTimeout(animationTimer);
   }, []);
 
+  //DOWNLOAD TERMS
+  const handleDownload = () => {
+    const anchor = document.createElement('a');
+    anchor.href = fileUrl[lang];
+    anchor.download = true;
+    anchor.target = '_blank';
+    anchor.rel = 'noreferrer';
+    anchor.click();
+  };
+
   return (
     <div className={s.pageWrapper}>
       <div className={s.container}>
@@ -48,9 +58,11 @@ const ContactsPage = () => {
         </div>
         <ContactsBlock />
 
-        <a href={fileUrl[lang]} download className={s.link}>
-          {t('geoBlock.bigButtonLink')}
-        </a>
+        <div className={s.downloadButtonWrapper}>
+          <button className={s.downloadButton} onClick={handleDownload}>
+            <div className={s.termsLink}>{t('common.brochureBtn')}</div>
+          </button>
+        </div>
       </div>
     </div>
   );

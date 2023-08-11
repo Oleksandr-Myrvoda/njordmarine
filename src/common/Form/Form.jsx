@@ -131,7 +131,11 @@ const Form = ({ isTitle, setEmailSended }) => {
 
   return (
     <div className={s.container}>
-      {isTitle && <h2 className="tagline">{t('form.tagline')}</h2>}
+      {isTitle && (
+        <div className={s.taglineWrapper}>
+          <h2 className="tagline">{t('form.tagline')}</h2>
+        </div>
+      )}
 
       <form ref={form} onSubmit={handleSubmit(onSubmit)} className={s.inner}>
         <label>

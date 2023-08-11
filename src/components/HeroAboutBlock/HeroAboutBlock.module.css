@@ -3,6 +3,8 @@
   flex-direction: column;
   padding: 24px 16px 48px 16px;
   background-color: var(--bg-light-color);
+  align-items: center;
+  /* text-align: center; */
 }
 
 .heroContent {

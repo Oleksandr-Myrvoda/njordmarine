@@ -32,7 +32,8 @@
   justify-content: space-between;
   align-items: center;
   border: none;
-  width: 375px;
+  width: 100vw;
+  /* width: 375px; */
   height: 68px;
 
   font-style: normal;
@@ -49,8 +50,9 @@
   align-items: center;
   align-content: space-between;
   justify-content: space-between;
-  width: 100%;
+  width: 343px;
   padding: 0 16px;
+  margin: 0 auto;
 }
 
 .menuBtn {

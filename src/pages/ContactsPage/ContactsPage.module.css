@@ -2,25 +2,26 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color: var(--bg-light-color);
-  background-repeat: no-repeat;
-  background-image: url('../../images/contacts-bg-mob.png');
-  background-position: top;
+
   align-items: center;
+
+  padding-top: 48px;
+
+  background-image: linear-gradient(
+    150deg,
+    var(--bg-light-color) calc(190px),
+    var(--bg-medium-color) 190px
+  );
 }
 
 .taglineWrapper {
   display: flex;
   flex-direction: column;
-  padding: 48px 16px 0 16px;
+  padding: 0 16px 0 16px;
 
   gap: 8px;
   margin-bottom: 16px;
 }
-
-/* .trailWrapper {
-  height: 32px;
-} */
 
 .text {
   font-family: 'Gilroy';
@@ -32,9 +33,26 @@
   color: var(--text-light-color);
 }
 
-.link {
-  margin: 48px 0;
+.container {
+  max-width: 375px;
+}
+
+.downloadButtonWrapper {
+  display: flex;
   justify-content: center;
+  margin: 16px 0;
+}
+
+.downloadButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.termsLink {
+  display: block;
+  padding: 16px 0;
+  height: 32px;
 
   font-family: 'Gilroy';
   font-style: normal;
@@ -42,18 +60,21 @@
   font-size: 16px;
   line-height: 24px;
   display: flex;
-  align-items: center;
+
   letter-spacing: 0.24px;
   color: var(--big-button-color);
 }
 
-.link::after {
-  padding-left: 15px;
+.termsLink::after {
+  padding-left: 16px;
+
+  display: flex;
+  align-items: flex-end;
   content: url('../../images/arrowRight.svg');
 }
-.container {
-  max-width: 375px;
-  /* max-width: 343px; */
+
+.termsLink:hover {
+  color: #012756;
 }
 
 @media screen and (min-width: 1440px) {
@@ -62,10 +83,6 @@
     margin-bottom: 56px;
     padding: 48px 0 0 0;
   }
-
-  /* .trailWrapper {
-    height: 48px;
-  } */
 
   .pageWrapper {
     align-items: center;
@@ -79,11 +96,6 @@
     );
   }
 
-  .link {
-    justify-content: left;
-    margin: 96px 0 0 0;
-  }
-
   .container {
     display: flex;
     flex-direction: column;
@@ -93,5 +105,11 @@
     max-width: 1217px;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .downloadButtonWrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin: 88px 0 0 0;
   }
 }

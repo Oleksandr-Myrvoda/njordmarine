@@ -15,23 +15,6 @@ const ServicesBlock = () => {
   const [open, setOpen] = useState(false);
   const headerRef = useRef(null);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const element = headerRef.current;
-  //     if (element) {
-  //       const elementPosition = element.getBoundingClientRect().top;
-  //       const screenHeight = window.innerHeight;
-  //       const visibleThreshold = 0.9 * screenHeight;
-
-  //       if (elementPosition <= visibleThreshold) {
-  //         setOpen(true);
-  //       }
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
   useEffect(() => {
     const handleScroll = () => {
       const element = headerRef.current;
@@ -52,14 +35,6 @@ const ServicesBlock = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const animationTimer = setTimeout(() => {
-  //     setOpen(true);
-  //   }, 500);
-
-  //   return () => clearTimeout(animationTimer);
-  // }, []);
-
   return (
     <div className={s.servicesBlock}>
       <Container>
@@ -76,7 +51,6 @@ const ServicesBlock = () => {
                 <span>{t('servicesBlock.tagline1')}</span>
                 <span>{t('servicesBlock.tagline2')}</span>
               </Trail>
-              {/* <h2 className="tagline">{t('servicesBlock.tagline')}</h2> */}
             </div>
           </div>
 
@@ -87,9 +61,11 @@ const ServicesBlock = () => {
           )}
         </div>
 
-        <ServiceList />
+        <div className={s.serviceListWrapper}>
+          <ServiceList />
+        </div>
+        {!isDesktop && <SendInfo hideLink={true} />}
       </Container>
-      {!isDesktop && <SendInfo hideLink={true} />}
     </div>
   );
 };

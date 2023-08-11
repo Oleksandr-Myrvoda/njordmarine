@@ -10,7 +10,8 @@
   background-color: transparent;
 }
 
-.isHideLink {
+.isHideLink,
+.hideArrow::after {
   display: none;
 }
 
@@ -18,10 +19,15 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
+  /* flex-wrap: nowrap; */
+  /* display: inline-block; */
 }
 
 .link {
-  display: block;
+  display: flex;
+  flex-wrap: nowrap;
+  /* display: inline; */
   padding: 16px 0;
   height: 32px;
 
@@ -37,11 +43,7 @@
 }
 
 .link::after {
-  /* display: block; */
   padding-left: 16px;
-  /* width: 30px; */
-  /* height: 30px; */
-  /* align-items: center; */
   display: flex;
   align-items: flex-end;
   content: url('../../images/arrowRight.svg');

@@ -41,7 +41,7 @@ const SparesPage = ({ token }) => {
 
   return (
     <div className={s.pageWrapper}>
-      <div className={s.taglineWrapper}>
+      {/* <div className={s.taglineWrapper}>
         <div className={s.trailWrapper}>
           <Trail
             open={isAnimated}
@@ -54,9 +54,23 @@ const SparesPage = ({ token }) => {
         </div>
 
         {isDesktop && <BlockNavigation navConfig={sparesListConfig} />}
-      </div>
+      </div> */}
 
       <Container>
+        <div className={s.taglineWrapper}>
+          <div className={s.trailWrapper}>
+            <Trail
+              open={isAnimated}
+              // textStyle="taglineBig"
+              heightD={60}
+              heightMob={48}
+            >
+              <h1 className="taglineBig">{t('spares.taglineBig')}</h1>
+            </Trail>
+          </div>
+
+          {isDesktop && <BlockNavigation navConfig={sparesListConfig} />}
+        </div>
         <div className={s.pagesBlock}>
           <Suspense fallback={<Loader />}>
             <Switch>

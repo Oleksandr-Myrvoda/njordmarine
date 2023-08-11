@@ -125,16 +125,10 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
 
   return (
     <div className={s.blockWrapper}>
-      {/* <div className={s.trailWrapper}> */}
-      <Trail
-        open={isAnimated}
-        // textStyle="taglineBig"
-        heightD={60}
-        heightMob={48}
-      >
+      <Trail open={isAnimated} heightD={60} heightMob={48}>
         <h2 className={s.headTitle}>{name}</h2>
       </Trail>
-      {/* </div> */}
+
       <ItemsList
         items={spares}
         editData={editData}

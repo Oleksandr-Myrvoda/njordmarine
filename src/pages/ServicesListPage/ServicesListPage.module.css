@@ -14,8 +14,8 @@
 
   background-image: linear-gradient(
     to bottom,
-    var(--bg-medium-color) calc(250px),
-    var(--bg-light-color) 250px
+    var(--bg-medium-color) calc(300px),
+    var(--bg-light-color) 300px
   );
 }
 .energyBG {
@@ -23,21 +23,31 @@
 
   background-image: linear-gradient(
     to bottom,
-    var(--bg-medium-color) calc(350px),
-    var(--bg-light-color) 350px
+    var(--bg-medium-color) calc(400px),
+    var(--bg-light-color) 400px
   );
 }
 
 .taglineWrapper {
   display: flex;
   flex-direction: column;
-  padding: 48px 16px 48px 16px;
+  padding: 48px 0 24px 0;
+  /* padding: 48px 16px 48px 16px; */
   align-self: flex-start;
+
+  gap: 48px;
 }
 
-/* .trailWrapper {
-  height: 32px;
-} */
+.headTitle {
+  font-family: 'Ruberoid';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  letter-spacing: 0.24px;
+  color: var(--big-button-color);
+}
 
 .pagesBlock {
   /* padding: 0 16px 48px 16px; */

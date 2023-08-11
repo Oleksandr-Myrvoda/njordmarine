@@ -64,5 +64,6 @@
   .sendInfo {
     margin-top: 80px;
     align-self: center;
+    width: 600px;
   }
 }

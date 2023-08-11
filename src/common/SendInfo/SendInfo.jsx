@@ -38,12 +38,12 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
     <div className={s.contacts}>
       <Suspense fallback={<Loader />}>
         <BigButton onClick={openModal} text={t('sendInfo.bigBtn')} />
-        <button
-          className={clsx(s.buttonLink, hideLink && s.isHideLink)}
-          onClick={handleClick}
-        >
-          <div className={s.link}>{linkName}</div>
-        </button>
+
+        <div className={`${hideLink && s.isHideLink}`}>
+          <button className={s.buttonLink} onClick={handleClick}>
+            <div className={s.link}>{linkName}</div>
+          </button>
+        </div>
 
         {isModalOpen && (
           <Modal

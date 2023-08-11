@@ -42,10 +42,12 @@ const AdvantagesBlock = () => {
           </Trail>
           {/* <h2 className="tagline">{t('advantagesBlock.tagline')}</h2> */}
         </div>
+
         <AdvantagesList advantagesConfig={advantagesConfig} />
       </Container>
-
-      {!isDesktop && <SendInfo linkName="" linkPath="" hideLink={true} />}
+      <div className={s.advListWtapper}>
+        {!isDesktop && <SendInfo linkName="" linkPath="" hideLink={true} />}
+      </div>
     </div>
   );
 };

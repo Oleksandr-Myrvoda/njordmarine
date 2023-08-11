@@ -12,10 +12,9 @@
 
 @media screen and (min-width: 1440px) {
   .nav {
-    gap: 24px;
     flex-direction: row;
   }
   .navBlock {
-    gap: 24px;
+    gap: 0;
   }
 }
