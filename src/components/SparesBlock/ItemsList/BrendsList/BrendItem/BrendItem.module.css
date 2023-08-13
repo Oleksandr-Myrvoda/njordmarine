@@ -1,5 +1,6 @@
 .item,
-.formInput {
+.formInput,
+.itemEdited {
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
@@ -12,18 +13,34 @@
 }
 
 .item {
+  display: flex;
+  flex-direction: row;
   width: calc(48%);
 }
+
+.itemEdited {
+  display: flex;
+  flex-direction: column;
+  width: calc(48%);
+  gap: 4px;
+}
+
 .isLogin {
   cursor: pointer;
 }
 
-.brendItem::before,
-.formInputBlock::before {
+.item::before {
   padding-right: 5px;
   content: ' \2022 ';
   color: var(--text-color);
 }
+
+/* .brendItem::before,
+.formInputBlock::before {
+  padding-right: 5px;
+  content: ' \2022 ';
+  color: var(--text-color);
+} */
 .formInputBlock {
   display: flex;
   flex-direction: row;
@@ -31,13 +48,25 @@
 .formInputWrapper {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
 .formInput {
   border: none;
   border-radius: 8px;
-  width: calc(95%);
+  /* width: calc(95%); */
+  padding-left: 5px;
   background-color: var(--bg-light-color);
+}
+.brendDotLine::before {
+  padding-right: 5px;
+  content: ' \2022 ';
+  color: var(--text-color);
+}
+
+.brendItem {
+  display: flex;
+  flex-direction: row;
 }
 
 .dot {

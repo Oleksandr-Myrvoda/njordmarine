@@ -121,6 +121,7 @@ const Scheme = ({ schemeConfig }) => {
         </div>
 
         <ul className={s.list}>
+          <div className={s.stroke}></div>
           <li ref={itemRef1}>
             <div
               className={`${s.item} ${isAnimated1 ? s.animatedItem : ''}

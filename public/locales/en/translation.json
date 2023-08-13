@@ -336,7 +336,8 @@
     "placeholderRu": "In russian",
     "placeholderEn": "In english",
     "toast": "Wrong login or password",
-    "closeBtn": "Close"
+    "closeBtn": "Close",
+    "logout": "Logout"
   },
 
   "sendInfo": {

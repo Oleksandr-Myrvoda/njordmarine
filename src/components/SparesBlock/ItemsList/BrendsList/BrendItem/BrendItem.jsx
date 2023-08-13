@@ -46,7 +46,14 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
   };
 
   return (
-    <li ref={cardRef} key={id} className={`${s.item} ${isLogin && s.isLogin}`}>
+    <li
+      ref={cardRef}
+      key={id}
+      // className={`${s.item} ${isLogin && s.isLogin} ${
+      className={`${!isMenuOpen ? s.item : ''} 
+      ${isLogin && s.isLogin} 
+      ${isMenuOpen && s.itemEdited}`}
+    >
       {/* ================= */}
 
       {!editedData ? (

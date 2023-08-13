@@ -88,7 +88,7 @@ const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
                 type="button"
                 onClick={() => unsetToken()}
               >
-                Logout
+                {t('common.logout')}
               </button>
             )}
 
@@ -110,7 +110,7 @@ const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
                   type="button"
                   onClick={() => unsetToken()}
                 >
-                  Logout
+                  {t('common.logout')}
                 </button>
               )}
 

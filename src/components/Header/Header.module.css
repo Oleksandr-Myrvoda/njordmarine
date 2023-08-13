@@ -62,6 +62,7 @@
   font: inherit;
   background-color: transparent;
   cursor: pointer;
+  color: var(--sidebar-text-color);
 }
 
 .menuBtnText {
