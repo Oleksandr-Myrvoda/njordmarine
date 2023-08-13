@@ -1,5 +1,5 @@
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useState, useEffect } from 'react';
 
 import { ErrorProvider } from 'context/ErrorProvider';
 import Loader from 'common/Loader/Loader';
@@ -40,14 +40,30 @@ const NotFound = () => {
 const Main = ({ toggleSidebar }) => {
   const location = useLocation();
 
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // }, []);
+
   return (
     <main className={s.main}>
+      {/* <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
+        <Loader />
+      </div> */}
+
+      {/* <div className={`${loading ? s.contentStart : s.contentFinish}`}> */}
+      {/* <div className={`${loading ? s.content : s.loadedContent}`}> */}
       <Suspense fallback={<Loader />}>
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/home" />} />
 
           <Route exact path="/home">
+            {/* <div className={`${loading ? s.contentStart : s.contentFinish}`}> */}
             <HomePage />
+            {/* </div> */}
           </Route>
 
           {/*--- ABOUT COMPANY ----------------------*/}
@@ -84,6 +100,7 @@ const Main = ({ toggleSidebar }) => {
           <Route render={() => <Redirect to="/home" />} />
         </Switch>
       </Suspense>
+      {/* </div> */}
     </main>
   );
 };

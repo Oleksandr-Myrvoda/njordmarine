@@ -106,28 +106,28 @@ const Form = ({ isTitle, setEmailSended }) => {
   };
 
   // disabled btn
-  // const [formData, setFormData] = useState({
-  //   customerName: '',
-  //   email: '',
-  //   companyName: '',
-  // });
+  const [formData, setFormData] = useState({
+    customerName: '',
+    email: '',
+    companyName: '',
+  });
 
-  // const [isFormValid, setIsFormValid] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
 
-  // const handleInputChange = e => {
-  //   const { name, value } = e.target;
+  const handleInputChange = e => {
+    const { name, value } = e.target;
 
-  //   setFormData(prevData => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
 
-  //   const allRequiredFieldsFilled = Object.values(formData).every(
-  //     value => value !== '',
-  //   );
+    const allRequiredFieldsFilled = Object.values(formData).every(
+      value => value !== '',
+    );
 
-  //   setIsFormValid(allRequiredFieldsFilled);
-  // };
+    setIsFormValid(allRequiredFieldsFilled);
+  };
 
   return (
     <div className={s.container}>
@@ -206,7 +206,11 @@ const Form = ({ isTitle, setEmailSended }) => {
         </label>
 
         <div className={s.btns}>
-          <BigButton type="submit" text={t('form.bigBtn')} />
+          <BigButton
+            type="submit"
+            text={t('form.bigBtn')}
+            disabled={!formState.isValid}
+          />
 
           <a
             href={fileUrl[lang]}

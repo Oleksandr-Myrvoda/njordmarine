@@ -5,7 +5,7 @@ import s from './Measurements.module.css';
 const Card = ({ imgUrl, count, title, text, alt }) => {
   const { t } = useTranslation();
   return (
-    <div className={s.item}>
+    <div className={s.cardItem}>
       <img className={s.image} src={imgUrl} alt={t(alt)} />
       <div className={s.titleWrapper}>
         <p className={s.count}>{count}</p>

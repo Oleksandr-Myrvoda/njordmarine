@@ -3,8 +3,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { useEffect, useState } from 'react';
 
 import BtnsDotPagination from 'common/BtnsDotPagination';
@@ -14,7 +14,8 @@ import { useMediaQuery } from 'react-responsive';
 import { useSwipeable } from 'react-swipeable';
 import { useTranslation } from 'react-i18next';
 import s from './OurTeamList.module.css';
-import './swipeable.css';
+
+import 'styles/swipeable.css';
 
 const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }];
 
@@ -65,52 +66,20 @@ const OurTeamList = ({ ourTeamConfig: cards }) => {
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={10}
-              slidesPerView={1}
+              slidesPerView={1.2}
               pagination={{ clickable: true }}
+              centeredSlides={true}
             >
-              <SwiperSlide>
-                <Card
-                  imgUrl={cards[0].imgUrlMob}
-                  name={cards[0].name}
-                  position={cards[0].position}
-                  alt={cards[0].alt}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <Card
-                  imgUrl={cards[1].imgUrlMob}
-                  name={cards[1].name}
-                  position={cards[1].position}
-                  alt={cards[1].alt}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <Card
-                  imgUrl={cards[2].imgUrlMob}
-                  name={cards[2].name}
-                  position={cards[2].position}
-                  alt={cards[2].alt}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <Card
-                  imgUrl={cards[3].imgUrlMob}
-                  name={cards[3].name}
-                  position={cards[3].position}
-                  alt={cards[3].alt}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card
-                  imgUrl={cards[4].imgUrlMob}
-                  name={cards[4].name}
-                  position={cards[4].position}
-                  alt={cards[4].alt}
-                />
-              </SwiperSlide>
+              {cards.map(({ imgUrlMob, name, position, alt }) => (
+                <SwiperSlide key={imgUrlMob}>
+                  <Card
+                    imgUrl={imgUrlMob}
+                    name={name}
+                    position={position}
+                    alt={alt}
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
             {/* <div className={`${currentPage === 0 ? s.cardHide : s.prevCard}`}>
               <Card

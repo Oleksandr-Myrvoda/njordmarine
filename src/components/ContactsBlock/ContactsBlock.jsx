@@ -44,14 +44,20 @@ const ContactsBlock = () => {
       )}
 
       <div className={s.mapWrapper}>
-        <h2 className={s.mapTitle}>NJORDMARINE OÜ</h2>
-        <Contacts contactsConfig={contactsPageConfig} isContactsPage={true} />
+        <div className={s.mapContainer}>
+          <h2 className={s.mapTitle}>NJORDMARINE OÜ</h2>
+          <Contacts contactsConfig={contactsPageConfig} isContactsPage={true} />
 
-        <div className={s.map}>
-          {isLoaded ? <GoogleMaps center={defaultCenter} /> : <LoaderSpinner />}
+          <div className={s.map}>
+            {isLoaded ? (
+              <GoogleMaps center={defaultCenter} />
+            ) : (
+              <LoaderSpinner />
+            )}
+          </div>
+
+          <SocialBlock />
         </div>
-
-        <SocialBlock />
       </div>
 
       {isDesktop && (

@@ -17,7 +17,8 @@
   position: fixed;
   top: 0;
   width: 375px;
-  z-index: 500;
+  /* z-index: 500; */
+  z-index: 10;
   border: none;
   /* width: 100%; */
 
@@ -56,6 +57,14 @@
 }
 
 .menuBtn {
+  padding: 0;
+  border: none;
+  font: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menuBtnText {
   display: flex;
   font-family: 'Gilroy';
   font-weight: 500;
@@ -63,12 +72,6 @@
   line-height: 24px;
   letter-spacing: 0.24px;
   color: var(--sidebar-text-color);
-
-  padding: 0;
-  border: none;
-  font: inherit;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .menuBtn img {

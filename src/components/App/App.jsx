@@ -27,11 +27,24 @@ function App() {
     if (isDesktop) setIsOpen(false);
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isDesktop, isOpen]);
+  // =================================
+
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // }, []);
 
   return (
     <>
       <div className={s.emptyHeaderFull}></div>
       <div className={s.mainContainer}>
+        {/* <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
+          <Loader />
+        </div> */}
+        {/* <div className={`${loading ? s.contentStart : s.contentFinish}`}> */}
         {isDesktop && (
           <Suspense fallback={<Loader />}>
             <Sidebar />
@@ -69,8 +82,9 @@ function App() {
             {isDesktop && <Footer />}
           </div>
         </div>
-        <ToastContainer theme="colored" />
       </div>
+      <ToastContainer theme="colored" />
+      {/* </div> */}
       {!isDesktop && <Footer />}
       <div className={s.emptyFooter}></div>
     </>

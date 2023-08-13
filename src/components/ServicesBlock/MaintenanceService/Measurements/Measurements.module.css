@@ -33,7 +33,7 @@
   gap: 10px;
 }
 
-.item {
+.cardItem {
   /* 343-32*2=311, 270-32*2=238 */
   padding: 32px 16px;
   width: 311px;
@@ -113,15 +113,64 @@
     height: 420px;
     width: 100%;
   }
+  .listD {
+    /* display: flex;
+    flex-direction: column; */
+    /* gap: 64px; */
+    /* margin-bottom: 32px; */
+    /* max-width: 46rem; */
+    width: 1025px;
+    margin: auto;
+  }
+  .cards {
+    position: relative;
+    /* height: 515px; */
+    /* width: 1025px;
+    height: 500px;
+    background-color: aqua; */
+    /* padding: 8px; */
+    /* width: 100%; */
+    /* padding: 4rem; */
+    /* background-color: tomato; */
+  }
 
-  .prevCard,
+  .cardItem {
+    /* 420-36*2=348, 420-60*2=300 */
+    width: 348px;
+    height: 300px;
+    padding: 60px 36px;
+
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px 0px rgba(34, 62, 127, 0.3);
+    background-color: var(--bg-medium-color);
+    margin-top: 16px;
+    margin-bottom: 96px;
+  }
+
+  /* .prevCard,
   .currentCard,
   .nextCard {
     position: absolute;
     border-radius: 8px;
-  }
+  } */
 
-  .prevCard {
+  /* .prevCard {
+    left: 85px;
+    background-color: var(--card-bg);
+    scale: 0.95;
+  }
+  .currentSwiperCard {
+    width: 420px;
+    border-radius: 8px;
+    box-shadow: 0 8px 8px 8px rgba(123, 170, 241, 0.3);
+    background-color: var(--bg-medium-color);
+  }
+  .nextCard {
+    left: 510px;
+    background-color: var(--card-bg);
+    scale: 0.95;
+  } */
+  /* .prevCard {
     left: 85px;
     background-color: var(--card-bg);
     scale: 0.95;
@@ -136,7 +185,7 @@
     left: 510px;
     background-color: var(--card-bg);
     scale: 0.95;
-  }
+  } */
 
   .image {
     margin-bottom: 32px;
@@ -148,14 +197,7 @@
     line-height: 27px;
   }
 
-  .item {
-    /* 420-36*2=348, 420-58*2=303 */
-    padding: 58px 36px;
-    width: 348px;
-    height: 303px;
-    background-color: transparent;
-  }
-  .pagiBtnArrow {
+  /* .pagiBtnArrow {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -167,5 +209,5 @@
   .pagiBtnArrow:hover,
   .pagiBtnDot:hover {
     scale: 1.1;
-  }
+  } */
 }

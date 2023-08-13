@@ -1,6 +1,6 @@
 .options {
   width: 343px;
-  min-height: 340px;
+  min-height: 370px;
   background-repeat: no-repeat;
   background-image: url('../../../../../images/energy-onboard-bg-mob.png');
 }
@@ -23,7 +23,6 @@
   height: 34px;
   border: none;
   border-radius: 50%;
-  /* background-image: url('../../../../../images/energy-dots/round-button.png'); */
   background-image: url('../../../../../images/energy-dots/round-button.svg');
   background-size: cover;
   cursor: pointer;
@@ -109,7 +108,8 @@
 }
 
 .optionsTitle {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+  height: 100px;
 
   width: calc(87%);
   text-align: center;

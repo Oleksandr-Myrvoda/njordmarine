@@ -89,6 +89,7 @@ const ServiceList = () => {
                 alt={t('servicesBlock.list.alt1')}
               />
               <p className={s.descr}>{t('servicesBlock.list.text1')}</p>
+
               <p className={s.link}>{t('servicesBlock.list.link')}</p>
             </div>
           </NavLink>

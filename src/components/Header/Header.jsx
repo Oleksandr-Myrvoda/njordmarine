@@ -10,7 +10,7 @@ import Contacts from 'common/Contacts';
 import Sidebar from 'components/Sidebar';
 import { contactsConfig } from 'data/contacts';
 import burgerOpen from '../../images/List-Right.svg';
-import burgerClose from '../../images/List-Close.png';
+import burgerClose from '../../images/List-Close.svg';
 import logoHeaderMob from '../../images/Logo-header-mob.svg';
 import s from './Header.module.css';
 import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
@@ -126,8 +126,10 @@ const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
                 // onClick={handleClick}
                 // onClick={handleInsideClick}
               >
-                {t('navigation.mobileMenu')}
-                <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
+                <span className={s.menuBtnText}>
+                  {t('navigation.mobileMenu')}
+                  <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
+                </span>
               </button>
 
               {/* <Sidebar isOpen={isOpen} /> */}

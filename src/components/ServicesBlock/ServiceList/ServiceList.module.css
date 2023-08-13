@@ -50,7 +50,7 @@
   font-size: 16px;
   line-height: 24px;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   letter-spacing: 0.24px;
@@ -60,6 +60,8 @@
 .link::after {
   padding-left: 15px;
   content: url('../../../images/arrowRight.svg');
+
+  height: 20px;
 }
 
 @keyframes rotateClockwise {
@@ -100,24 +102,3 @@
     height: 80px;
   }
 }
-/* @media screen and (min-width: 1280px) {
-  .list {
-    padding-bottom: 0;
-    flex-direction: row;
-  }
-
-  .item {
-    width: 440px;
-    height: 245px;
-  }
-
-  .descr {
-    font-size: 26px;
-    line-height: 40px;
-  }
-
-  .image {
-    width: 80px;
-    height: 80px;
-  }
-} */

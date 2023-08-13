@@ -4,10 +4,49 @@
   border: none;
 }
 
+.contentStart {
+  transition: all 0.5s;
+  transform: translateX(100%);
+}
+
+.contentFinish {
+  transition: all 0.5s;
+  transform: translateX(0);
+}
+
+.loaderStart {
+  transition: all 0.5s;
+  transform: translateX(0);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.loaderFinish {
+  transform: translateX(-100%);
+  transition: all 0.5s;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2000;
+}
+
 @media screen and (min-width: 1440px) {
   .main {
-    /* width: 1217px; */
     min-width: 1217px;
     width: 100%;
+  }
+  .loaderStart,
+  .loaderFinish {
+    left: -225px;
   }
 }

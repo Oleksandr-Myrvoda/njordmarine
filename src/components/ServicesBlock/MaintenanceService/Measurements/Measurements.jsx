@@ -1,3 +1,22 @@
+// import Swiper from 'swiper';
+// import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {
+  A11y,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  EffectFade,
+  EffectCoverflow,
+} from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/effect-fade';
+import 'swiper/css/effect-coverflow';
+
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
@@ -10,8 +29,15 @@ import Card from './Card';
 import arrowRight from 'images/pagi-arrow-right.svg';
 import arrowLeft from 'images/pagi-arrow-left.svg';
 
+import Trail from 'common/Trail';
 import s from './Measurements.module.css';
-import Trail from 'common/Trail/Trail';
+import 'styles/swipeable.css';
+
+import magnifer from 'images/maint-magnifer.svg';
+import engeneer from 'images/maint-engeneer.svg';
+import angular from 'images/maint-ruler-angular.svg';
+import document from 'images/maint-document.svg';
+import pen from 'images/maint-ruler-pen.svg';
 
 const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
@@ -82,6 +108,18 @@ const Measurements = ({ measurementsConfig: cards }) => {
     };
   }, [isDesktop]);
 
+  // SWIPER ======================================
+  // const swiper = new Swiper('#swiper-2', {
+  //   effect: 'fade',
+  //   pagination: {
+  //     el: 'swiper-1 .swiper-pagination',
+  //     clickable: true,
+  //   },
+  //   slidesPerView: 1.5,
+  //   centeredSlides: true,
+  // });
+  // ======================================
+
   return (
     <div className={s.blockWrapper} ref={headerRef}>
       <Trail open={isAnimated} heightD={60} heightMob={64}>
@@ -93,7 +131,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
       {!isDesktop && (
         <ul className={s.list}>
           {cards.map(({ imgUrl, count, title, text, alt }, index) => (
-            <li key={index} className={s.item}>
+            <li key={index} className={s.cardItem}>
               <img className={s.image} src={imgUrl} alt={t(alt)} />
               <div className={s.titleWrapper}>
                 <p className={s.count}>{count}</p>
@@ -105,7 +143,187 @@ const Measurements = ({ measurementsConfig: cards }) => {
         </ul>
       )}
 
+      {/* {isDesktop && (
+        <section id="slider-2">
+          <div className="slider-container wide">
+            <div className="swiper" id="swiper-2">
+              <div className="swiper-slide"></div>
+            </div>
+          </div>
+        </section>
+      )} */}
+
       {isDesktop && (
+        <div className={s.listD}>
+          <div className={s.cards}>
+            <Swiper
+              modules={[Navigation, Pagination, EffectCoverflow]}
+              spaceBetween={10}
+              slidesPerView={2.2}
+              centeredSlides={true}
+              pagination={{ clickable: true }}
+              // pagination={{
+              //   clickable: true,
+              //   el: '.swiper-cuspom-pugination',
+              //   renderBullet: function (index, className) {
+              //     return `<div className=${className}>
+              //     <span className="number">${index + 1}</span>
+              //     <span className="line"></span>
+              //   </div>`;
+              //   },
+              // }}
+              navigation={true}
+
+              // loop={true}
+              // spaceBetween={30}
+              // effect={'fade'}
+              // navigation={true}
+              // pagination={{
+              //   clickable: true,
+              // }}
+              // effect={'coverflow'}
+              // grabCursor={true}
+              // centeredSlides={true}
+              // slidesPerView={'auto'}
+              // coverflowEffect={{
+              //   rotate: 50,
+              //   stretch: 0,
+              //   depth: 100,
+              //   modifier: 1,
+              //   slideShadows: true,
+              // }}
+              // pagination={true}
+            >
+              {cards.map(({ title, count, imgUrl, text, alt }) => (
+                <SwiperSlide key={imgUrl}>
+                  <Card
+                    title={title}
+                    count={count}
+                    imgUrl={imgUrl}
+                    text={text}
+                    alt={alt}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      )}
+      {/* {isDesktop && (
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={10}
+          slidesPerView={1}
+          pagination={{ clickable: true, el: '.swiper-pagination' }}
+        >
+          <SwiperSlide>
+            <div className={s.currentSwiperCard}>
+              <Card
+                title={t('measurements.title1')}
+                count="01."
+                imgUrl={magnifer}
+                text={t('measurements.text1')}
+                alt={t('measurements.alt1')}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              title={t('measurements.title2')}
+              count="02."
+              imgUrl={engeneer}
+              text={t('measurements.text2')}
+              alt={t('measurements.alt2')}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              title={t('measurements.title3')}
+              count="03."
+              imgUrl={angular}
+              text={t('measurements.text3')}
+              alt={t('measurements.alt3')}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              title={t('measurements.title4')}
+              count="04."
+              imgUrl={document}
+              text={t('measurements.text4')}
+              alt={t('measurements.alt4')}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              title={t('measurements.title5')}
+              count="05."
+              imgUrl={pen}
+              text={t('measurements.text5')}
+              alt={t('measurements.alt5')}
+            />
+          </SwiperSlide>
+        </Swiper>
+      )} */}
+      {/* {isDesktop && (
+        <section id="slider-1">
+          <div className="swiper" id="swiper-1">
+            <div className="swiper-wrapper">
+              <div
+                className="swiper-slide"
+                // className={s.list}
+              >
+                <Card
+                  title={t('measurements.title1')}
+                  count="01."
+                  imgUrl={magnifer}
+                  text={t('measurements.text1')}
+                  alt={t('measurements.alt1')}
+                />
+              </div>
+              <div className="swiper-slide">
+                <Card
+                  title={t('measurements.title2')}
+                  count="02."
+                  imgUrl={engeneer}
+                  text={t('measurements.text2')}
+                  alt={t('measurements.alt2')}
+                />
+              </div>
+              <div className="swiper-slide">
+                <Card
+                  title={t('measurements.title3')}
+                  count="03."
+                  imgUrl={angular}
+                  text={t('measurements.text3')}
+                  alt={t('measurements.alt3')}
+                />
+              </div>
+              <div className="swiper-slide">
+                <Card
+                  title={t('measurements.title4')}
+                  count="04."
+                  imgUrl={document}
+                  text={t('measurements.text4')}
+                  alt={t('measurements.alt4')}
+                />
+              </div>
+              <div className="swiper-slide">
+                <Card
+                  title={t('measurements.title5')}
+                  count="05."
+                  imgUrl={pen}
+                  text={t('measurements.text5')}
+                  alt={t('measurements.alt5')}
+                />
+              </div>
+            </div>
+            <div className="swiper-pagination"></div>
+          </div>
+        </section>
+      )} */}
+
+      {/* {isDesktop && (
         <>
           <div className={s.list}>
             <button
@@ -145,6 +363,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
                 alt={cards[nextCurrentPage].alt}
               />
             </div>
+
             <button
               className={s.pagiBtnArrow}
               onClick={nextPage}
@@ -160,7 +379,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
             setCurrentPage={setCurrentPage}
           />
         </>
-      )}
+      )} */}
     </div>
   );
 };

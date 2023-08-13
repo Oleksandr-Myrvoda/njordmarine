@@ -6,7 +6,7 @@ const BigButton = props => {
 
   return (
     <button
-      className={s.bigButton}
+      className={!disabled ? s.bigButton : s.disabledBtn}
       type={type}
       onClick={onClick}
       disabled={disabled}
