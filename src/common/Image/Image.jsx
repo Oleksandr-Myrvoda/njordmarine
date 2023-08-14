@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useEffect, useRef, useState } from 'react';
+
 import PropTypes from 'prop-types';
 import { useToggleImageLoading } from 'context/ImageLoaderProvider';
+import { v4 as uuidv4 } from 'uuid';
 
 const Image = props => {
   const toggleLoadImage = useToggleImageLoading();
@@ -12,9 +13,9 @@ const Image = props => {
     const image = idRef.current;
 
     if (isLoading) {
-      toggleLoadImage(image);
+      toggleLoadImage(image); // start
     } else {
-      toggleLoadImage(image);
+      toggleLoadImage(image); // start
     }
   }, [isLoading, toggleLoadImage]);
 

@@ -1,33 +1,34 @@
-import { LangProvider } from 'context/LangProvider';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { Suspense, useEffect, useRef, useState } from 'react';
+
 import { AdminProvider } from 'context/AdminProvider';
-import { useMediaQuery } from 'react-responsive';
-import { ToastContainer } from 'react-toastify';
 import Footer from 'components/Footer';
 import Header from 'components/Header/Header';
+import { LangProvider } from 'context/LangProvider';
+import Loader from 'common/Loader/Loader';
 import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
-import { Suspense, useState, useEffect, useRef } from 'react';
-import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
-import Loader from 'common/Loader/Loader';
-
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import s from './App.module.css';
+import { useMediaQuery } from 'react-responsive';
+import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 
-const StartLoader = ({ loading, setLoading }) => {
-  useEffect(() => {
-    console.log('loader start');
-    return () => {
-      setLoading(false);
-      console.log('loader finish');
-    };
-  }, [setLoading]);
+// const StartLoader = ({ loading, setLoading }) => {
+//   useEffect(() => {
+//     console.log('loader start');
+//     return () => {
+//       setLoading(false);
+//       console.log('loader finish');
+//     };
+//   }, [setLoading]);
 
-  return (
-    <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
-      <Loader />
-    </div>
-  );
-};
+//   return (
+//     <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
+//       <Loader />
+//     </div>
+//   );
+// };
 
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
