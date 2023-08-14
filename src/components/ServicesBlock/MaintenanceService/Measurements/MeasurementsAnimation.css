@@ -1,0 +1,135 @@
+.container-mmmmm {
+  padding: 2rem;
+  font-family: sans-serif;
+  text-align: center;
+  max-width: 100%;
+  background-color: green;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+}
+
+.modes {
+  margin-bottom: 1rem;
+}
+
+.button-container {
+  margin-bottom: 0.5rem;
+}
+
+.fromPrev-enter .box-mmmmmm {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.fromPrev-enter-active .box-mmmmmm {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fromPrev-exit .box-mmmmmm {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fromPrev-exit-active .box-mmmmmm {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fromPrev-enter-active .box-mmmmmm,
+.fromPrev-exit-active .box-mmmmmm {
+  transition: opacity 500ms, transform 500ms;
+}
+
+/* fromCurToRight */
+.fromCurToRight-enter .box-mmmmmm {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.fromCurToRight-enter-active .box-mmmmmm {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fromCurToRight-exit .box-mmmmmm {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fromCurToRight-exit-active .box-mmmmmm {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fromCurToRight-enter-active .box-mmmmmm,
+.fromCurToRight-exit-active .box-mmmmmm {
+  transition: opacity 500ms, transform 500ms;
+}
+/* fromCurToRight -END*/
+
+/* fromNextToRight */
+.fromNextToRight-enter .box-mmmmmm {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.fromNextToRight-enter-active .box-mmmmmm {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fromNextToRight-exit .box-mmmmmm {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fromNextToRight-exit-active .box-mmmmmm {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fromNextToRight-enter-active .box-mmmmmm,
+.fromNextToRight-exit-active .box-mmmmmm {
+  transition: opacity 500ms, transform 500ms;
+}
+/* fromNextToRight -END*/
+
+.box-mmmmmm {
+  background-color: red;
+}
+
+.prevCardToRight {
+  /* enter */
+  /* enter-active */
+  /* exit */
+  /* exit-active */
+}
+
+.currentCardToRight {
+  /* enter */
+  /* enter-active */
+  /* exit */
+  /* exit-active */
+}
+
+.nextCardToRight {
+  /* enter */
+  /* enter-active */
+  /* exit */
+  /* exit-active */
+}
+
+.prevCardToLeft {
+  /* enter */
+  /* enter-active */
+  /* exit */
+  /* exit-active */
+}
+
+.currentCardToLeft {
+  /* enter */
+  /* enter-active */
+  /* exit */
+  /* exit-active */
+}
+
+.nextCardToLeft {
+  /* enter */
+  /* enter-active */
+  /* exit */
+  /* exit-active */
+}

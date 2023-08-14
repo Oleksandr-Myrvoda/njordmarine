@@ -14,22 +14,6 @@ import s from './App.module.css';
 import { useMediaQuery } from 'react-responsive';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 
-// const StartLoader = ({ loading, setLoading }) => {
-//   useEffect(() => {
-//     console.log('loader start');
-//     return () => {
-//       setLoading(false);
-//       console.log('loader finish');
-//     };
-//   }, [setLoading]);
-
-//   return (
-//     <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
-//       <Loader />
-//     </div>
-//   );
-// };
-
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [isOpen, setIsOpen] = useState(false);

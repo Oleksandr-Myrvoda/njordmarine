@@ -174,7 +174,7 @@
     left: 85px;
     background-color: var(--card-bg);
     scale: 0.95;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     /* animation: slideRight 0.3s ease-in-out; */
   }
   .currentCard {
@@ -190,6 +190,23 @@
     opacity: 0.5;
     /* animation: slideLeft 0.3s ease-in-out; */
   }
+
+  /* CSSTRANSITION */
+  .fromPrevEnter {
+    opacity: 0;
+  }
+  .fromPrevEnterActive {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  .fromPrevExit {
+    opacity: 1;
+  }
+  .fromPrevExitActive {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+  /* CSSTRANSITION -END*/
 
   @keyframes slideLeft {
     from {
