@@ -134,8 +134,8 @@
     /* background-color: tomato; */
   }
 
+  /* 420-36*2=348, 420-60*2=300 */
   .cardItem {
-    /* 420-36*2=348, 420-60*2=300 */
     width: 348px;
     height: 300px;
     padding: 60px 36px;
@@ -147,46 +147,6 @@
     margin-bottom: 96px;
   }
 
-  /* .prevCard,
-  .currentCard,
-  .nextCard {
-    position: absolute;
-    border-radius: 8px;
-  } */
-
-  /* .prevCard {
-    left: 85px;
-    background-color: var(--card-bg);
-    scale: 0.95;
-  }
-  .currentSwiperCard {
-    width: 420px;
-    border-radius: 8px;
-    box-shadow: 0 8px 8px 8px rgba(123, 170, 241, 0.3);
-    background-color: var(--bg-medium-color);
-  }
-  .nextCard {
-    left: 510px;
-    background-color: var(--card-bg);
-    scale: 0.95;
-  } */
-  /* .prevCard {
-    left: 85px;
-    background-color: var(--card-bg);
-    scale: 0.95;
-  }
-  .currentCard {
-    left: 300px;
-    box-shadow: 0 8px 8px 8px rgba(123, 170, 241, 0.3);
-    background-color: var(--bg-medium-color);
-    z-index: 10;
-  }
-  .nextCard {
-    left: 510px;
-    background-color: var(--card-bg);
-    scale: 0.95;
-  } */
-
   .image {
     margin-bottom: 32px;
     width: 92px;
@@ -197,7 +157,59 @@
     line-height: 27px;
   }
 
-  /* .pagiBtnArrow {
+  .prevCard,
+  .currentCard,
+  .nextCard {
+    position: absolute;
+    border-radius: 8px;
+  }
+
+  .currentSwiperCard {
+    width: 420px;
+    border-radius: 8px;
+    box-shadow: 0 8px 8px 8px rgba(123, 170, 241, 0.3);
+    background-color: var(--bg-medium-color);
+  }
+  .prevCard {
+    left: 85px;
+    background-color: var(--card-bg);
+    scale: 0.95;
+    opacity: 0.5;
+    /* animation: slideRight 0.3s ease-in-out; */
+  }
+  .currentCard {
+    left: 300px;
+    box-shadow: 0 8px 8px 8px rgba(123, 170, 241, 0.3);
+    background-color: var(--bg-medium-color);
+    z-index: 2;
+  }
+  .nextCard {
+    left: 510px;
+    background-color: var(--card-bg);
+    scale: 0.95;
+    opacity: 0.5;
+    /* animation: slideLeft 0.3s ease-in-out; */
+  }
+
+  @keyframes slideLeft {
+    from {
+      left: 510px;
+    }
+    to {
+      left: 300px;
+    }
+  }
+
+  @keyframes slideRight {
+    from {
+      left: 85px;
+    }
+    to {
+      left: 300px;
+    }
+  }
+
+  .pagiBtnArrow {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -208,6 +220,18 @@
   }
   .pagiBtnArrow:hover,
   .pagiBtnDot:hover {
-    scale: 1.1;
+    box-shadow: 8px 8px 16px 0px rgba(123, 170, 241, 0.3);
+  }
+  .disabledBtn {
+    opacity: 0.5;
+  }
+
+  .hideCard {
+    display: none;
+  }
+  /* ======== TEST =========== */
+  /* .springTestBlock {
+    position: relative;
+    height: 200px;
   } */
 }

@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 
 import FileUploader from '../FileUploader';
 import s from './Item.module.css';
+import Modal from 'common/Modal/Modal';
 
 const Item = ({
   itemTitle,
@@ -23,7 +24,7 @@ const Item = ({
   const { isLogin } = useAuthContext();
   const { lang } = useLangContext();
   const { t } = useTranslation();
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const match = useRouteMatch();
   const history = useHistory();
 
@@ -31,8 +32,19 @@ const Item = ({
     setModalData({ brends, itemTitle, id });
     history.push({ pathname: `${match.url}/${id}` });
   };
-  const openEditSets = () => setEditedData({ imgUrl, itemTitle });
 
+  // const openEditSets = () => setEditedData({ imgUrl, itemTitle });
+
+  // MODAl
+  const openEditModal = () => {
+    setIsModalOpen(true);
+    setEditedData({ imgUrl, itemTitle });
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  // ========================
   const handleEditData = imgUrl => {
     const { itemTitle } = editedData;
     let data = null;
@@ -61,67 +73,127 @@ const Item = ({
     }));
 
   return (
-    <li key={id} className={s.item}>
-      <div className={s.imgWrapper}>
-        {!editedData ? (
-          <img className={s.img} src={imgUrl} alt={itemTitle}></img>
-        ) : (
-          <FileUploader
-            setImage={setImage}
-            editData={editData}
-            uploadData={handleEditData}
-          />
-        )}
-      </div>
+    <li key={id}>
+      <button onClick={openModal} className={s.button}>
+        <div className={s.item}>
+          <div className={s.imgWrapper}>
+            <img className={s.img} src={imgUrl} alt={itemTitle}></img>
+          </div>
 
-      <div className={s.itemMenu}>
-        {!editedData ? (
-          <p className={s.title}> {itemTitle[lang]}</p>
-        ) : (
-          <>
-            <input
-              type="text"
-              value={editedData.itemTitle.ru}
-              name="ru"
-              onChange={handleEditTitle}
-              placeholder={t('common.placeholderRu')}
-              autoComplete="off"
-            />
-            <input
-              type="text"
-              value={editedData.itemTitle.en}
-              name="en"
-              onChange={handleEditTitle}
-              placeholder={t('common.placeholderEn')}
-              autoComplete="off"
-            />
-          </>
-        )}
-        {!editedData && (
-          <button onClick={openModal} className={s.button}>
-            {t('spares.brandsBtn')}
-          </button>
-        )}
-      </div>
+          <div className={s.itemMenu}>
+            <p className={s.title}> {itemTitle[lang]}</p>
 
-      {isLogin &&
-        (editedData ? (
-          <button
-            className={s.buttonBack}
-            type="button"
-            onClick={() => setEditedData(null)}
-            aria-label="Menu"
-          >
-            Back
-          </button>
-        ) : (
+            <div className={s.watchBrends}>{t('spares.brandsBtn')}</div>
+          </div>
+        </div>
+      </button>
+
+      {isModalOpen && (
+        <Modal onClose={closeModal} title={itemTitle[lang]}>
+          <div className={s.editedModalItem}>
+            <div className={s.imgWrapper}>
+              <FileUploader
+                setImage={setImage}
+                editData={editData}
+                uploadData={handleEditData}
+              />
+            </div>
+
+            <div className={s.itemMenu}>
+              <input
+                className={s.editInput}
+                type="text"
+                value={editedData.itemTitle.ru}
+                name="ru"
+                onChange={handleEditTitle}
+                placeholder={t('common.placeholderRu')}
+                autoComplete="off"
+              />
+              <input
+                className={s.editInput}
+                type="text"
+                value={editedData.itemTitle.en}
+                name="en"
+                onChange={handleEditTitle}
+                placeholder={t('common.placeholderEn')}
+                autoComplete="off"
+              />
+            </div>
+          </div>
+        </Modal>
+      )}
+
+      {isLogin && (
+        <div className={s.cardWithMenu}>
           <CardWithMenu
-            isEditing={editedData?.itemTitle}
-            onEdit={openEditSets}
+            // isEditing={editedData?.itemTitle}
+            onEdit={openEditModal}
             onDelete={handleDeleteData}
           />
-        ))}
+        </div>
+      )}
     </li>
+    // <li key={id} className={s.item}>
+    //   <div className={s.imgWrapper}>
+    //     {!editedData ? (
+    //       <img className={s.img} src={imgUrl} alt={itemTitle}></img>
+    //     ) : (
+    //       <FileUploader
+    //         setImage={setImage}
+    //         editData={editData}
+    //         uploadData={handleEditData}
+    //       />
+    //     )}
+    //   </div>
+
+    //   <div className={s.itemMenu}>
+    //     {!editedData ? (
+    //       <p className={s.title}> {itemTitle[lang]}</p>
+    //     ) : (
+    //       <>
+    //         <input
+    //           type="text"
+    //           value={editedData.itemTitle.ru}
+    //           name="ru"
+    //           onChange={handleEditTitle}
+    //           placeholder={t('common.placeholderRu')}
+    //           autoComplete="off"
+    //         />
+    //         <input
+    //           type="text"
+    //           value={editedData.itemTitle.en}
+    //           name="en"
+    //           onChange={handleEditTitle}
+    //           placeholder={t('common.placeholderEn')}
+    //           autoComplete="off"
+    //         />
+    //       </>
+    //     )}
+    //     {!editedData && (
+    //       <button onClick={openModal} className={s.button}>
+    //         {t('spares.brandsBtn')}
+    //       </button>
+    //     )}
+    //   </div>
+
+    //   {isLogin &&
+    //     (editedData ? (
+    //       <button
+    //         className={s.buttonBack}
+    //         type="button"
+    //         onClick={() => setEditedData(null)}
+    //         aria-label="Menu"
+    //       >
+    //         Back
+    //       </button>
+    //     ) : (
+    //       <CardWithMenu
+    //         isEditing={editedData?.itemTitle}
+    //         onEdit={openEditSets}
+    //         onDelete={handleDeleteData}
+    //       />
+    //     ))}
+    // </li>
   );
 };
 

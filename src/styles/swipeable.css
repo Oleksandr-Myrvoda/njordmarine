@@ -54,6 +54,7 @@
   background: none;
   cursor: pointer;
   border: none;
+  margin-bottom: 50px;
 }
 .swiper-button-next:after {
   background-image: url('images/pagi-arrow-right.svg');

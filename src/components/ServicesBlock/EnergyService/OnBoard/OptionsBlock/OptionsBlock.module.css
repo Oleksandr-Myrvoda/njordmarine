@@ -18,7 +18,7 @@
 .btn3,
 .btn4 {
   position: absolute;
-  z-index: 10;
+  z-index: 2;
   width: 34px;
   height: 34px;
   border: none;
@@ -95,7 +95,7 @@
 }
 
 .active {
-  z-index: 10;
+  z-index: 1;
   width: 34px;
   height: 34px;
   scale: 1.5;

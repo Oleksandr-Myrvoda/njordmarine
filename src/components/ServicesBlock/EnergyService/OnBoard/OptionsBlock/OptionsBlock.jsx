@@ -38,7 +38,7 @@ const OptionsBlock = () => {
         className={`${s.btn1} ${
           activeButton === 'consumers' ? s.active : s.btn1
         }`}
-      >
+      > 
         <RoundButton onClick={setConfig} configName="consumers" />
       </div>
       <img

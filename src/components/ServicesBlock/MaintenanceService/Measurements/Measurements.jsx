@@ -33,6 +33,8 @@ import Trail from 'common/Trail';
 import s from './Measurements.module.css';
 import 'styles/swipeable.css';
 
+import { useTransition, animated } from 'react-spring';
+
 import magnifer from 'images/maint-magnifer.svg';
 import engeneer from 'images/maint-engeneer.svg';
 import angular from 'images/maint-ruler-angular.svg';
@@ -108,17 +110,36 @@ const Measurements = ({ measurementsConfig: cards }) => {
     };
   }, [isDesktop]);
 
-  // SWIPER ======================================
-  // const swiper = new Swiper('#swiper-2', {
-  //   effect: 'fade',
-  //   pagination: {
-  //     el: 'swiper-1 .swiper-pagination',
-  //     clickable: true,
-  //   },
-  //   slidesPerView: 1.5,
-  //   centeredSlides: true,
-  // });
-  // ======================================
+  // SWIPER
+
+  const [currentIndex, setCurrentIndex] = useState(2);
+
+  const cardsPosition = [
+    { id: 0, left: 85 },
+    { id: 1, left: 300 },
+    { id: 2, left: 510 },
+    { id: 3, left: 725 },
+    { id: 4, left: 940 },
+  ];
+  const visibleCards = cardsPosition.slice(currentIndex - 1, currentIndex + 2);
+
+  const cardTransitions = useTransition(visibleCards, {
+    key: card => card.id,
+    from: { left: 300, opacity: 1 },
+    enter: { left: item => item.left, opacity: 1 },
+    leave: { left: 300, opacity: 1 },
+  });
+  const handleNext = () => {
+    if (currentIndex < cards.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
 
   return (
     <div className={s.blockWrapper} ref={headerRef}>
@@ -127,6 +148,44 @@ const Measurements = ({ measurementsConfig: cards }) => {
           {t('services.meintenance.measurTagline')}:
         </h2>
       </Trail>
+
+      {/* {isDesktop && (
+        <div>
+          <button onClick={handlePrev}>Previous</button>
+          <button onClick={handleNext}>Next</button>
+          <div className={{ position: 'relative', height: '200px' }}>
+            {cardTransitions((style, card) => (
+              <animated.div
+                key={card.id}
+                className={`${s.cardItem} ${
+                  currentIndex === card.id
+                    ? s.currentCard
+                    : currentIndex < card.id
+                    ? s.nextCard
+                    : s.prevCard
+                }`}
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '100px',
+                  height: '100px',
+                  transform: 'translate(-50%, -50%)',
+                  backgroundColor: 'blue',
+                  boxShadow:
+                    card.id === currentIndex
+                      ? '0 8px 8px 8px rgba(123, 170, 241, 0.3)'
+                      : '',
+                  zIndex: card.id === currentIndex ? 10 : '',
+                  ...style,
+                }}
+              >
+                <h3>Card {card.id + 1}</h3>
+              </animated.div>
+            ))}
+          </div>
+        </div>
+      )} */}
 
       {!isDesktop && (
         <ul className={s.list}>
@@ -142,16 +201,6 @@ const Measurements = ({ measurementsConfig: cards }) => {
           ))}
         </ul>
       )}
-
-      {/* {isDesktop && (
-        <section id="slider-2">
-          <div className="slider-container wide">
-            <div className="swiper" id="swiper-2">
-              <div className="swiper-slide"></div>
-            </div>
-          </div>
-        </section>
-      )} */}
 
       {isDesktop && (
         <div className={s.listD}>
@@ -209,132 +258,21 @@ const Measurements = ({ measurementsConfig: cards }) => {
           </div>
         </div>
       )}
-      {/* {isDesktop && (
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={10}
-          slidesPerView={1}
-          pagination={{ clickable: true, el: '.swiper-pagination' }}
-        >
-          <SwiperSlide>
-            <div className={s.currentSwiperCard}>
-              <Card
-                title={t('measurements.title1')}
-                count="01."
-                imgUrl={magnifer}
-                text={t('measurements.text1')}
-                alt={t('measurements.alt1')}
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              title={t('measurements.title2')}
-              count="02."
-              imgUrl={engeneer}
-              text={t('measurements.text2')}
-              alt={t('measurements.alt2')}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              title={t('measurements.title3')}
-              count="03."
-              imgUrl={angular}
-              text={t('measurements.text3')}
-              alt={t('measurements.alt3')}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              title={t('measurements.title4')}
-              count="04."
-              imgUrl={document}
-              text={t('measurements.text4')}
-              alt={t('measurements.alt4')}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              title={t('measurements.title5')}
-              count="05."
-              imgUrl={pen}
-              text={t('measurements.text5')}
-              alt={t('measurements.alt5')}
-            />
-          </SwiperSlide>
-        </Swiper>
-      )} */}
-      {/* {isDesktop && (
-        <section id="slider-1">
-          <div className="swiper" id="swiper-1">
-            <div className="swiper-wrapper">
-              <div
-                className="swiper-slide"
-                // className={s.list}
-              >
-                <Card
-                  title={t('measurements.title1')}
-                  count="01."
-                  imgUrl={magnifer}
-                  text={t('measurements.text1')}
-                  alt={t('measurements.alt1')}
-                />
-              </div>
-              <div className="swiper-slide">
-                <Card
-                  title={t('measurements.title2')}
-                  count="02."
-                  imgUrl={engeneer}
-                  text={t('measurements.text2')}
-                  alt={t('measurements.alt2')}
-                />
-              </div>
-              <div className="swiper-slide">
-                <Card
-                  title={t('measurements.title3')}
-                  count="03."
-                  imgUrl={angular}
-                  text={t('measurements.text3')}
-                  alt={t('measurements.alt3')}
-                />
-              </div>
-              <div className="swiper-slide">
-                <Card
-                  title={t('measurements.title4')}
-                  count="04."
-                  imgUrl={document}
-                  text={t('measurements.text4')}
-                  alt={t('measurements.alt4')}
-                />
-              </div>
-              <div className="swiper-slide">
-                <Card
-                  title={t('measurements.title5')}
-                  count="05."
-                  imgUrl={pen}
-                  text={t('measurements.text5')}
-                  alt={t('measurements.alt5')}
-                />
-              </div>
-            </div>
-            <div className="swiper-pagination"></div>
-          </div>
-        </section>
-      )} */}
 
       {/* {isDesktop && (
         <>
           <div className={s.list}>
             <button
-              className={s.pagiBtnArrow}
+              className={`${s.pagiBtnArrow}
+               ${currentPage === 0 ? s.disabledBtn : ''}`}
               onClick={prevPage}
               disabled={currentPage === 0}
             >
               <img src={arrowLeft} alt="left" />
             </button>
-
-            <div className={s.prevCard}>
+            <div
+              className={`${prevCurrentPage === 4 ? s.hideCard : s.prevCard}`}
+            >
               <Card
                 title={cards[prevCurrentPage].title}
                 count={cards[prevCurrentPage].count}
@@ -353,8 +291,9 @@ const Measurements = ({ measurementsConfig: cards }) => {
                 alt={cards[currentPage].alt}
               />
             </div>
-
-            <div className={s.nextCard}>
+            <div
+              className={`${nextCurrentPage === 0 ? s.hideCard : s.nextCard}`}
+            >
               <Card
                 title={cards[nextCurrentPage].title}
                 count={cards[nextCurrentPage].count}
@@ -363,9 +302,9 @@ const Measurements = ({ measurementsConfig: cards }) => {
                 alt={cards[nextCurrentPage].alt}
               />
             </div>
-
             <button
-              className={s.pagiBtnArrow}
+              className={`${s.pagiBtnArrow}
+               ${currentPage === cards.length - 1 ? s.disabledBtn : ''}`}
               onClick={nextPage}
               disabled={currentPage === cards.length - 1}
             >

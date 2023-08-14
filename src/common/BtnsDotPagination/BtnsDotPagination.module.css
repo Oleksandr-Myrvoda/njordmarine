@@ -28,11 +28,11 @@
 
 .isActiveStyle {
   width: 24px;
-  height: 25px;
+  height: 24px;
   border-radius: 50%;
   background: none;
   cursor: pointer;
   border: none;
-  /* background-image: url(../../images/pagi-active-dot.svg); */
+  background-image: url(../../images/pagi-active-dot.svg);
   background-size: cover;
 }
