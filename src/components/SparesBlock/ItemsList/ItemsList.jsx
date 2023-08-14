@@ -22,6 +22,7 @@ const ItemsList = ({ items, editData, deleteData, setSpares, setImage }) => {
     // eslint-disable-next-line
   }, [items]);
 
+  console.log('items', items);
   return (
     <>
       <ul className={s.listWrapper}>

@@ -43,6 +43,7 @@ const Item = ({
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setEditedData(null);
   };
   // ========================
   const handleEditData = imgUrl => {
@@ -56,7 +57,8 @@ const Item = ({
       data = { itemTitle };
     } else return;
 
-    editData(id, data).finally(() => setEditedData(null));
+    editData(id, data);
+    // .finally(() => setEditedData(null));
   };
 
   const handleDeleteData = () => {
