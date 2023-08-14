@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 // import delivery from 'images/del-Icon.svg';
 // import delivery from 'images/del-Delivery2.svg';
 import s from './AdvantagesList.module.css';
+import Image from 'common/Image/Image';
 
 const AdvantagesList = ({ advantagesConfig }) => {
   const { t } = useTranslation();
@@ -31,13 +32,13 @@ const AdvantagesList = ({ advantagesConfig }) => {
 
   return (
     <ul className={s.list} ref={itemRef}>
-      {/* <img className={s.delivery} src={delivery} alt="delivery" /> */}
+      {/* <Image className={s.delivery} src={delivery} alt="delivery" /> */}
       {advantagesConfig.map(({ imgUrl, head, text, alt }, index) => (
         <li
           key={index}
           className={`${s.item} ${isAnimated ? s.animatedItem : ''}`}
         >
-          <img className={s.image} src={imgUrl} alt={t(alt)} />
+          <Image className={s.image} src={imgUrl} alt={t(alt)} />
           <p className={s.head}>{t(head)}</p>
           <p className={s.descr}>{t(text)}</p>
         </li>

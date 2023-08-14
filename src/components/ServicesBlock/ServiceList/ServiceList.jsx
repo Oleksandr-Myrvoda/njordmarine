@@ -8,6 +8,7 @@ import settings from 'images/service-Settings.svg';
 import tools from 'images/service-Tools.svg';
 import diagramUp from 'images/service-DiagramUp.svg';
 import s from './ServiceList.module.css';
+import Image from 'common/Image/Image';
 
 const ServiceList = () => {
   const { t } = useTranslation();
@@ -83,7 +84,7 @@ const ServiceList = () => {
               className={`${s.item} ${isAnimated1 ? s.animatedItem : ''} 
        `}
             >
-              <img
+              <Image
                 className={s.image}
                 src={refreshSquare}
                 alt={t('servicesBlock.list.alt1')}
@@ -102,7 +103,7 @@ const ServiceList = () => {
               className={`${s.item} ${isAnimated2 ? s.animatedItem : ''} 
        `}
             >
-              <img
+              <Image
                 className={s.image}
                 src={settings}
                 alt={t('servicesBlock.list.alt2')}
@@ -120,7 +121,7 @@ const ServiceList = () => {
               className={`${s.item} ${isAnimated3 ? s.animatedItem : ''} 
        `}
             >
-              <img
+              <Image
                 className={s.image}
                 src={tools}
                 alt={t('servicesBlock.list.alt3')}
@@ -138,7 +139,7 @@ const ServiceList = () => {
               className={`${s.item} ${isAnimated4 ? s.animatedItem : ''} 
        `}
             >
-              <img
+              <Image
                 className={s.image}
                 src={diagramUp}
                 alt={t('servicesBlock.list.alt4')}

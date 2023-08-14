@@ -15,6 +15,7 @@ import arrow3 from 'images/energy-dots/arrow3.svg';
 import arrow4 from 'images/energy-dots/arrow4.svg';
 
 import s from './OptionsBlock.module.css';
+import Image from 'common/Image/Image';
 
 const OptionsBlock = () => {
   const { t } = useTranslation();
@@ -38,10 +39,10 @@ const OptionsBlock = () => {
         className={`${s.btn1} ${
           activeButton === 'consumers' ? s.active : s.btn1
         }`}
-      > 
+      >
         <RoundButton onClick={setConfig} configName="consumers" />
       </div>
-      <img
+      <Image
         className={`${activeButton === 'consumers' ? s.arrow1 : s.arrowHide}`}
         src={isDesktop ? arrow1 : arrow1mob}
         alt="arrow"
@@ -53,7 +54,7 @@ const OptionsBlock = () => {
       >
         <RoundButton onClick={setConfig} configName="control" />
       </div>
-      <img
+      <Image
         className={`${activeButton === 'control' ? s.arrow2 : s.arrowHide}`}
         src={isDesktop ? arrow2 : arrow2mob}
         alt="arrow"
@@ -63,7 +64,7 @@ const OptionsBlock = () => {
       <div className={`${s.btn3} ${activeButton === 'option' ? s.active : ''}`}>
         <RoundButton onClick={setConfig} configName="option" />
       </div>
-      <img
+      <Image
         className={`${activeButton === 'option' ? s.arrow3 : s.arrowHide}`}
         src={isDesktop ? arrow3 : arrow3mob}
         alt="arrow"
@@ -75,7 +76,7 @@ const OptionsBlock = () => {
       >
         <RoundButton onClick={setConfig} configName="additional" />
       </div>
-      <img
+      <Image
         className={`${activeButton === 'additional' ? s.arrow4 : s.arrowHide}`}
         src={isDesktop ? arrow4 : arrow4mob}
         alt="arrow"

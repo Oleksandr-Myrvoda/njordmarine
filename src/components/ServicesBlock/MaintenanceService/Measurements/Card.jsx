@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import s from './Measurements.module.css';
+import Image from 'common/Image/Image';
 
 const Card = ({ imgUrl, count, title, text, alt }) => {
   const { t } = useTranslation();
   return (
     <div className={s.cardItem}>
-      <img className={s.image} src={imgUrl} alt={t(alt)} />
+      <Image className={s.image} src={imgUrl} alt={t(alt)} />
       <div className={s.titleWrapper}>
         <p className={s.count}>{count}</p>
         <p className={s.title}>{t(title)}</p>

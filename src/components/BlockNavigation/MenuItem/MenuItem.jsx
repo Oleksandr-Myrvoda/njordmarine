@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { NavLink, useRouteMatch } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import s from './MenuItem.module.css';
+import Image from 'common/Image/Image';
 
 const MenuItem = ({ imgUrl, name, alt, to }) => {
   const match = useRouteMatch();
@@ -34,7 +35,7 @@ const MenuItem = ({ imgUrl, name, alt, to }) => {
         className={`${s.item} ${isAnimated ? s.animatedItem : ''} 
        `}
       >
-        <img className={s.image} src={imgUrl} alt={alt} />
+        <Image className={s.image} src={imgUrl} alt={alt} />
         <span className={s.itemName}>{name}</span>
       </div>
     </NavLink>

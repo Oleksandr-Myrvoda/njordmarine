@@ -17,6 +17,7 @@ import s from './GeoBlock.module.css';
 import Trail from 'common/Trail/Trail';
 
 import { motion } from 'framer-motion';
+import Image from 'common/Image/Image';
 
 const GeoBlock = () => {
   const { t } = useTranslation();
@@ -139,13 +140,13 @@ const GeoBlock = () => {
           <p className={s.text}>{t('geoBlock.text')}</p>
         </div>
         <div className={s.earthContainer}>
-          <img className={s.earthImage} src={globeImage} alt="globe" />
+          <Image className={s.earthImage} src={globeImage} alt="globe" />
 
           {/* <div className={s.airplaneWrapper}> */}
-          {/* <div
+          <div
             className={s.airplane}
             style={{ top: satellitePosition.y, left: satellitePosition.x }}
-          /> */}
+          />
           {/* </div> */}
 
           {/* <div className={s.airplaneWtapper2}> */}

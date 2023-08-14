@@ -40,6 +40,7 @@ import engeneer from 'images/maint-engeneer.svg';
 import angular from 'images/maint-ruler-angular.svg';
 import document from 'images/maint-document.svg';
 import pen from 'images/maint-ruler-pen.svg';
+import Image from 'common/Image/Image';
 
 const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
@@ -191,7 +192,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
         <ul className={s.list}>
           {cards.map(({ imgUrl, count, title, text, alt }, index) => (
             <li key={index} className={s.cardItem}>
-              <img className={s.image} src={imgUrl} alt={t(alt)} />
+              <Image className={s.image} src={imgUrl} alt={t(alt)} />
               <div className={s.titleWrapper}>
                 <p className={s.count}>{count}</p>
                 <p className={s.title}>{t(title)}</p>
@@ -259,7 +260,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
         </div>
       )}
 
-      {/* {isDesktop && (
+      {isDesktop && (
         <>
           <div className={s.list}>
             <button
@@ -268,7 +269,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
               onClick={prevPage}
               disabled={currentPage === 0}
             >
-              <img src={arrowLeft} alt="left" />
+              <Image src={arrowLeft} alt="left" />
             </button>
             <div
               className={`${prevCurrentPage === 4 ? s.hideCard : s.prevCard}`}
@@ -308,7 +309,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
               onClick={nextPage}
               disabled={currentPage === cards.length - 1}
             >
-              <img src={arrowRight} alt="right" />
+              <Image src={arrowRight} alt="right" />
             </button>
           </div>
 
@@ -318,7 +319,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
             setCurrentPage={setCurrentPage}
           />
         </>
-      )} */}
+      )}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import SendInfo from 'common/SendInfo';
 import dot from '../../../../images/serv-auto-dotlist.svg';
 import s from './WorksList.module.css';
+import Image from 'common/Image/Image';
 
 const WorksList = ({ worksConfig }) => {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ const WorksList = ({ worksConfig }) => {
       <ul className={s.list}>
         {worksConfig.map(({ text }, index) => (
           <li key={index} className={s.item}>
-            <img className={s.dotMarker} src={dot} alt="dot"></img>
+            <Image className={s.dotMarker} src={dot} alt="dot" />
             <div className={s.text}>{t(text)}</div>
           </li>
         ))}

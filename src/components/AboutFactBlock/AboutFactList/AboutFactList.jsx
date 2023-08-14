@@ -6,6 +6,7 @@ import fact01 from 'images/about-company-fact01.png';
 import fact02 from 'images/about-company-fact02.png';
 import fact03 from 'images/about-company-fact03.png';
 import s from './AboutFactList.module.css';
+import Image from 'common/Image/Image';
 
 const AboutFactList = ({ aboutFactConfig }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -84,7 +85,7 @@ const AboutFactList = ({ aboutFactConfig }) => {
           className={`${s.item} ${isAnimated1 ? s.animatedItem : ''}
        `}
         >
-          <img
+          <Image
             className={s.image}
             src={fact01}
             alt={t('abotFactBlock.list.text1')}
@@ -98,7 +99,7 @@ const AboutFactList = ({ aboutFactConfig }) => {
           className={`${s.item} ${isAnimated2 ? s.animatedItem : ''}
        `}
         >
-          <img
+          <Image
             className={s.image}
             src={fact02}
             alt={t('abotFactBlock.list.text2')}
@@ -112,7 +113,7 @@ const AboutFactList = ({ aboutFactConfig }) => {
           className={`${s.item} ${isAnimated3 ? s.animatedItem : ''}
        `}
         >
-          <img
+          <Image
             className={s.image}
             src={fact03}
             alt={t('abotFactBlock.list.text3')}
@@ -129,7 +130,7 @@ const AboutFactList = ({ aboutFactConfig }) => {
     //         className={`${s.item} ${isAnimated1 ? s.animatedItem : ''}
     //    `}
     //       >
-    //         <img className={s.image} src={imgUrl} alt={t(alt)} />
+    //         <Image className={s.image} src={imgUrl} alt={t(alt)} />
     //         <p className={s.count}>{count}</p>
     //         <p className={s.descr}>{t(text)}</p>
     //       </div>

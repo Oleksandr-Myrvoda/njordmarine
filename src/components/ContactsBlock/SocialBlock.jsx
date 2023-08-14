@@ -1,5 +1,6 @@
 import { socConfig } from 'data/contacts';
 import s from './ContactsBlock.module.css';
+import Image from 'common/Image/Image';
 
 const SocialBlock = () => {
   const handleSocLinkClick = linkUrl => window.open(linkUrl, '_blank');
@@ -12,7 +13,7 @@ const SocialBlock = () => {
             className={s.socBtn}
             onClick={() => handleSocLinkClick(linkUrl)}
           >
-            <img className={s.img} src={imgUrl} alt={alt} />
+            <Image className={s.img} src={imgUrl} alt={alt} />
           </button>
         </li>
       ))}

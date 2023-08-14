@@ -1,12 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import s from './OurTeamList.module.css';
+import Image from 'common/Image/Image';
 
 const Card = ({ imgUrl, name, position, alt }) => {
   const { t } = useTranslation();
+
+  console.log('aor team card');
   return (
     <div className={s.item}>
-      <img className={s.image} src={imgUrl} alt={alt} />
+      <Image className={s.image} src={imgUrl} alt={alt} />
       <p className={s.name}>{t(name)}</p>
       <p className={s.position}>{t(position)}</p>
     </div>

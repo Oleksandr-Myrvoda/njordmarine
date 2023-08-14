@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 import s from './Contacts.module.css';
+import Image from 'common/Image/Image';
 
 const Contacts = ({ contactsConfig, isContactsPage, isHeader }) => {
   const listStyles = [s.list];
@@ -10,7 +11,7 @@ const Contacts = ({ contactsConfig, isContactsPage, isHeader }) => {
     <ul className={listStyles.join(' ')}>
       {contactsConfig.map(({ imgUrl, text, alt, href }, index) => (
         <li key={index} className={s.item}>
-          <img className={s.img} src={imgUrl} alt={alt} />
+          <Image className={s.img} src={imgUrl} alt={alt} />
           <p className={s.text}>
             <a
               className={`${s.href} ${isHeader && s.isHeader} ${
