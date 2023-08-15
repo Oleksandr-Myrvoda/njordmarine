@@ -34,4 +34,4 @@ const Image = props => {
 
 Image.propTypes = {};
 
-export default Image;
+// export default Image;

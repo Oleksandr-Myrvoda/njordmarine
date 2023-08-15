@@ -83,6 +83,7 @@
   .blockWrapper {
     padding: 48px 0;
     gap: 64px;
+    max-width: 1025px;
   }
 
   .tagline {
@@ -135,7 +136,7 @@
   }
 
   /* 420-36*2=348, 420-60*2=300 */
-  .cardItem {
+  /* .cardItem {
     width: 348px;
     height: 300px;
     padding: 60px 36px;
@@ -145,7 +146,7 @@
     background-color: var(--bg-medium-color);
     margin-top: 16px;
     margin-bottom: 96px;
-  }
+  } */
 
   .image {
     margin-bottom: 32px;
@@ -233,5 +234,107 @@
   /* .springTestBlock {
     position: relative;
     height: 200px;
+  } */
+
+  .cardWindow {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px 0px rgba(34, 62, 127, 0.3);
+
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .cardsContainer {
+    display: flex;
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .cardItem {
+    width: 348px;
+    height: 300px;
+    padding: 60px 36px;
+
+    border-radius: 8px;
+
+    background-color: var(--bg-medium-color);
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-420px);
+    }
+    40% {
+      transform: translateX(-840px);
+    }
+    60% {
+      transform: translateX(-1260px);
+    }
+    80% {
+      transform: translateX(-1680px);
+    }
+    100% {
+      transform: translateX(-2100px);
+    }
+  }
+
+  .swiperBlock {
+    position: relative;
+    width: 1025px;
+    height: 420px;
+  }
+  .swiperItemPrev {
+    position: absolute;
+    left: 50px;
+    opacity: 0.5;
+    z-index: 1;
+    scale: 0.95;
+  }
+  .swiperItemActive {
+    position: absolute;
+    left: 250px;
+    z-index: 2;
+  }
+  .swiperItemNext {
+    position: absolute;
+    left: 450px;
+    opacity: 0.5;
+    z-index: 1;
+    scale: 0.95;
+  }
+
+  .appear {
+    animation: appear 0.5s 0.4s ease-in-out forwards;
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* .card0 {
+    left: 0;
+  }
+  .card1 {
+    left: -420px;
+  }
+  .card2 {
+    left: -840px;
+  }
+  .card3 {
+    left: -1260px;
+  }
+  .card4 {
+    left: -1680px;
   } */
 }

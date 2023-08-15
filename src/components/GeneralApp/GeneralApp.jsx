@@ -54,4 +54,4 @@ const GeneralApp = props => {
 
 GeneralApp.propTypes = {};
 
-export default GeneralApp;
+// export default GeneralApp;

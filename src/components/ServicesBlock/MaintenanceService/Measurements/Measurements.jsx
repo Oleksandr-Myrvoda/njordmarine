@@ -31,15 +31,8 @@ import arrowLeft from 'images/pagi-arrow-left.svg';
 
 import Trail from 'common/Trail';
 import s from './Measurements.module.css';
+
 import 'styles/swipeable.css';
-
-import { useTransition, animated } from 'react-spring';
-
-import magnifer from 'images/maint-magnifer.svg';
-import engeneer from 'images/maint-engeneer.svg';
-import angular from 'images/maint-ruler-angular.svg';
-import document from 'images/maint-document.svg';
-import pen from 'images/maint-ruler-pen.svg';
 
 const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
@@ -112,33 +105,20 @@ const Measurements = ({ measurementsConfig: cards }) => {
 
   // SWIPER
 
-  const [currentIndex, setCurrentIndex] = useState(2);
-
-  const cardsPosition = [
-    { id: 0, left: 85 },
-    { id: 1, left: 300 },
-    { id: 2, left: 510 },
-    { id: 3, left: 725 },
-    { id: 4, left: 940 },
-  ];
-  const visibleCards = cardsPosition.slice(currentIndex - 1, currentIndex + 2);
-
-  const cardTransitions = useTransition(visibleCards, {
-    key: card => card.id,
-    from: { left: 300, opacity: 1 },
-    enter: { left: item => item.left, opacity: 1 },
-    leave: { left: 300, opacity: 1 },
-  });
-  const handleNext = () => {
-    if (currentIndex < cards.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(4);
+  const [nextIndex, setNextIndex] = useState(1);
+  const totalCards = 5;
+  const handlePrev = () => {
+    setCurrentIndex(prev => (prev - 1 + totalCards) % totalCards);
+    setPrevIndex(prev => (prev - 1 + totalCards) % totalCards);
+    setNextIndex(prev => (prev - 1 + totalCards) % totalCards);
   };
 
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+  const handleNext = () => {
+    setCurrentIndex(prev => (prev + 1) % totalCards);
+    setPrevIndex(prev => (prev + 1) % totalCards);
+    setNextIndex(prev => (prev + 1) % totalCards);
   };
 
   return (
@@ -148,44 +128,6 @@ const Measurements = ({ measurementsConfig: cards }) => {
           {t('services.meintenance.measurTagline')}:
         </h2>
       </Trail>
-
-      {/* {isDesktop && (
-        <div>
-          <button onClick={handlePrev}>Previous</button>
-          <button onClick={handleNext}>Next</button>
-          <div className={{ position: 'relative', height: '200px' }}>
-            {cardTransitions((style, card) => (
-              <animated.div
-                key={card.id}
-                className={`${s.cardItem} ${
-                  currentIndex === card.id
-                    ? s.currentCard
-                    : currentIndex < card.id
-                    ? s.nextCard
-                    : s.prevCard
-                }`}
-                style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  width: '100px',
-                  height: '100px',
-                  transform: 'translate(-50%, -50%)',
-                  backgroundColor: 'blue',
-                  boxShadow:
-                    card.id === currentIndex
-                      ? '0 8px 8px 8px rgba(123, 170, 241, 0.3)'
-                      : '',
-                  zIndex: card.id === currentIndex ? 10 : '',
-                  ...style,
-                }}
-              >
-                <h3>Card {card.id + 1}</h3>
-              </animated.div>
-            ))}
-          </div>
-        </div>
-      )} */}
 
       {!isDesktop && (
         <ul className={s.list}>
@@ -203,60 +145,112 @@ const Measurements = ({ measurementsConfig: cards }) => {
       )}
 
       {isDesktop && (
-        <div className={s.listD}>
-          <div className={s.cards}>
-            <Swiper
-              modules={[Navigation, Pagination, EffectCoverflow]}
-              spaceBetween={10}
-              slidesPerView={2.2}
-              centeredSlides={true}
-              pagination={{ clickable: true }}
-              // pagination={{
-              //   clickable: true,
-              //   el: '.swiper-cuspom-pugination',
-              //   renderBullet: function (index, className) {
-              //     return `<div className=${className}>
-              //     <span className="number">${index + 1}</span>
-              //     <span className="line"></span>
-              //   </div>`;
-              //   },
-              // }}
-              navigation={true}
-
-              // loop={true}
-              // spaceBetween={30}
-              // effect={'fade'}
-              // navigation={true}
-              // pagination={{
-              //   clickable: true,
-              // }}
-              // effect={'coverflow'}
-              // grabCursor={true}
-              // centeredSlides={true}
-              // slidesPerView={'auto'}
-              // coverflowEffect={{
-              //   rotate: 50,
-              //   stretch: 0,
-              //   depth: 100,
-              //   modifier: 1,
-              //   slideShadows: true,
-              // }}
-              // pagination={true}
+        <>
+          <div className={s.list}>
+            <button
+              className={`${s.pagiBtnArrow}
+               ${currentIndex === 0 ? s.disabledBtn : ''}`}
+              onClick={handlePrev}
+              disabled={currentIndex === 0}
             >
-              {cards.map(({ title, count, imgUrl, text, alt }) => (
-                <SwiperSlide key={imgUrl}>
-                  <Card
-                    title={title}
-                    count={count}
-                    imgUrl={imgUrl}
-                    text={text}
-                    alt={alt}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+              <img src={arrowLeft} alt="left" />
+            </button>
+
+            <div className={s.swiperBlock}>
+              <div
+                className={`${s.swiperItemPrev} ${
+                  currentIndex === 0 ? s.hideCard : ''
+                }`}
+              >
+                <div className={s.cardWindow}>
+                  <div
+                    className={s.cardsContainer}
+                    style={{
+                      transform: `translateX(${prevIndex * -420}px)`,
+                    }}
+                  >
+                    {cards.map(({ title, count, imgUrl, text, alt }) => (
+                      <div key={imgUrl}>
+                        <Card
+                          title={title}
+                          count={count}
+                          imgUrl={imgUrl}
+                          text={text}
+                          alt={alt}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className={s.swiperItemActive}>
+                <div className={s.cardWindow}>
+                  <div
+                    className={s.cardsContainer}
+                    style={{
+                      transform: `translateX(${currentIndex * -420}px)`,
+                    }}
+                  >
+                    {cards.map(({ title, count, imgUrl, text, alt }) => (
+                      <div key={imgUrl}>
+                        <Card
+                          title={title}
+                          count={count}
+                          imgUrl={imgUrl}
+                          text={text}
+                          alt={alt}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`${s.swiperItemNext} ${
+                  currentIndex === 4 ? s.hideCard : ''
+                }`}
+              >
+                <div className={s.cardWindow}>
+                  <div
+                    className={s.cardsContainer}
+                    style={{
+                      transform: `translateX(${nextIndex * -420}px)`,
+                    }}
+                  >
+                    {cards.map(({ title, count, imgUrl, text, alt }) => (
+                      <div key={imgUrl}>
+                        <Card
+                          title={title}
+                          count={count}
+                          imgUrl={imgUrl}
+                          text={text}
+                          alt={alt}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              className={`${s.pagiBtnArrow}
+               ${currentIndex === 4 ? s.disabledBtn : ''}`}
+              onClick={handleNext}
+              disabled={currentIndex === 4}
+            >
+              <img src={arrowRight} alt="right" />
+            </button>
           </div>
-        </div>
+
+          <BtnsDotPagination
+            buttonsList={buttonsList}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+            setPrevIndex={setPrevIndex}
+            setNextIndex={setNextIndex}
+          />
+        </>
       )}
 
       {/* {isDesktop && (
@@ -318,6 +312,63 @@ const Measurements = ({ measurementsConfig: cards }) => {
             setCurrentPage={setCurrentPage}
           />
         </>
+      )} */}
+
+      {/* {isDesktop && (
+        <div className={s.listD}>
+          <div className={s.cards}>
+            <Swiper
+              modules={[Navigation, Pagination, EffectCoverflow]}
+              spaceBetween={10}
+              slidesPerView={2.2}
+              centeredSlides={true}
+              pagination={{ clickable: true }}
+              // pagination={{
+              //   clickable: true,
+              //   el: '.swiper-cuspom-pugination',
+              //   renderBullet: function (index, className) {
+              //     return `<div className=${className}>
+              //     <span className="number">${index + 1}</span>
+              //     <span className="line"></span>
+              //   </div>`;
+              //   },
+              // }}
+              navigation={true}
+
+              // loop={true}
+              // spaceBetween={30}
+              // effect={'fade'}
+              // navigation={true}
+              // pagination={{
+              //   clickable: true,
+              // }}
+              // effect={'coverflow'}
+              // grabCursor={true}
+              // centeredSlides={true}
+              // slidesPerView={'auto'}
+              // coverflowEffect={{
+              //   rotate: 50,
+              //   stretch: 0,
+              //   depth: 100,
+              //   modifier: 1,
+              //   slideShadows: true,
+              // }}
+              // pagination={true}
+            >
+              {cards.map(({ title, count, imgUrl, text, alt }) => (
+                <SwiperSlide key={imgUrl}>
+                  <Card
+                    title={title}
+                    count={count}
+                    imgUrl={imgUrl}
+                    text={text}
+                    alt={alt}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
       )} */}
     </div>
   );
