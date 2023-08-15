@@ -17,7 +17,6 @@ import s from './GeoBlock.module.css';
 import Trail from 'common/Trail/Trail';
 
 import { motion } from 'framer-motion';
-import Image from 'common/Image/Image';
 
 const GeoBlock = () => {
   const { t } = useTranslation();
@@ -89,10 +88,7 @@ const GeoBlock = () => {
     anchor.click();
   };
   // +++++++++++++++++++++++++++++++++++++++++++++
-  const [satellitePosition, setSatellitePosition] = useState({
-    x: 0,
-    y: 0,
-  });
+  const [satellitePosition, setSatellitePosition] = useState({ x: 0, y: 0 });
   useEffect(() => {
     const orbitRadius = !isDesktop ? 150 : 264; // Радиус орбиты спутника
     const orbitSpeed = 0.03; // Скорость движения спутника по орбите
@@ -143,13 +139,13 @@ const GeoBlock = () => {
           <p className={s.text}>{t('geoBlock.text')}</p>
         </div>
         <div className={s.earthContainer}>
-          <Image className={s.earthImage} src={globeImage} alt="globe" />
+          <img className={s.earthImage} src={globeImage} alt="globe" />
 
           {/* <div className={s.airplaneWrapper}> */}
-          <div
+          {/* <div
             className={s.airplane}
             style={{ top: satellitePosition.y, left: satellitePosition.x }}
-          />
+          /> */}
           {/* </div> */}
 
           {/* <div className={s.airplaneWtapper2}> */}

@@ -9,7 +9,6 @@ import { contactsConfig } from 'data/contacts';
 import { Suspense, useState, useEffect, useRef } from 'react';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import s from './Sidebar.module.css';
-import Image from 'common/Image/Image';
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -38,7 +37,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
         <div ref={cardRef} className={clsx(s.sidebar, isOpen && s.isOpen)}>
           {isDesktop && (
             <NavLink to="/" className={s.logo}>
-              <Image src={logo} alt="logo" />
+              <img src={logo} alt="logo" />
             </NavLink>
           )}
           <div className={s.mobMenu}>

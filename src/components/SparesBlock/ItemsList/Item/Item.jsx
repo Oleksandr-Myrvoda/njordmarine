@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import FileUploader from '../FileUploader';
 import s from './Item.module.css';
 import Modal from 'common/Modal/Modal';
-import Image from 'common/Image/Image';
 
 const Item = ({
   itemTitle,
@@ -80,7 +79,7 @@ const Item = ({
       <button onClick={openModal} className={s.button}>
         <div className={s.item}>
           <div className={s.imgWrapper}>
-            <Image className={s.img} src={imgUrl} alt={itemTitle} />
+            <img className={s.img} src={imgUrl} alt={itemTitle}></img>
           </div>
 
           <div className={s.itemMenu}>
@@ -139,7 +138,7 @@ const Item = ({
     // <li key={id} className={s.item}>
     //   <div className={s.imgWrapper}>
     //     {!editedData ? (
-    //       <Image className={s.img} src={imgUrl} alt={itemTitle}></img>
+    //       <img className={s.img} src={imgUrl} alt={itemTitle}></img>
     //     ) : (
     //       <FileUploader
     //         setImage={setImage}

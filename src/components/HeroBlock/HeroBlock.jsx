@@ -8,7 +8,6 @@ import Container from 'common/Container/Container';
 import CounterAnimation from 'common/CounterAnimation/CounterAnimation';
 import s from './HeroBlock.module.css';
 import Trail from 'common/Trail/Trail';
-import Image from 'common/Image/Image';
 
 const HeroBlock = () => {
   const { t } = useTranslation();
@@ -47,7 +46,7 @@ const HeroBlock = () => {
             <p className={s.description}>{t('heroBlock.description')}</p>
           </div>
 
-          {!isDesktop && <Image src={ship} alt="ship" />}
+          {!isDesktop && <img src={ship} alt="ship" />}
 
           <SendInfo
             linkName={t('heroBlock.sendInfo')}

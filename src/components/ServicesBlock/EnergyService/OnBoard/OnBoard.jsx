@@ -5,7 +5,6 @@ import OptionsBlock from './OptionsBlock';
 import quotes from 'images/quotes.svg';
 import s from './OnBoard.module.css';
 import Trail from 'common/Trail/Trail';
-import Image from 'common/Image/Image';
 
 const OnBoard = () => {
   const { t } = useTranslation();
@@ -35,7 +34,7 @@ const OnBoard = () => {
       </div>
 
       <div className={s.descrWrapper}>
-        <Image className={s.quotes} src={quotes} alt="quotes" />
+        <img className={s.quotes} src={quotes} alt="quotes" />
 
         <p className={s.head}>{t('services.energy.onBoard.head')}</p>
         <p className={s.text}>{t('services.energy.onBoard.text')}</p>

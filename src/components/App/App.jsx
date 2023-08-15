@@ -13,22 +13,6 @@ import Loader from 'common/Loader/Loader';
 import 'react-toastify/dist/ReactToastify.css';
 import s from './App.module.css';
 
-const StartLoader = ({ loading, setLoading }) => {
-  useEffect(() => {
-    console.log('loader start');
-    return () => {
-      setLoading(false);
-      console.log('loader finish');
-    };
-  }, [setLoading]);
-
-  return (
-    <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
-      <Loader />
-    </div>
-  );
-};
-
 function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [isOpen, setIsOpen] = useState(false);
@@ -43,72 +27,65 @@ function App() {
     if (isDesktop) setIsOpen(false);
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isDesktop, isOpen]);
-
   // =================================
 
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // }, []);
 
   return (
     <>
       <div className={s.emptyHeaderFull}></div>
       <div className={s.mainContainer}>
-        <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
+        {/* <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
           <Loader />
-        </div>
-
-        <div className={`${loading ? s.contentStart : s.contentFinish}`}>
-          {isDesktop && (
-            // <Suspense fallback={<Loader />}>
-            <Suspense fallback={null}>
-              <Sidebar />
-            </Suspense>
-          )}
-          {!isDesktop && (
-            // <Suspense fallback={<Loader />}>
-            <Suspense fallback={null}>
-              <LangProvider>
-                <div ref={isOpen ? cardRef : null}>
-                  <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
-                </div>
-              </LangProvider>
-            </Suspense>
-          )}
-
-          <div className={s.mainWrapper}>
-            <div className={s.container}>
-              <div className={s.content}>
-                <AdminProvider>
-                  <LangProvider>
-                    {/* <Suspense fallback={<Loader />}> */}
-                    <Suspense fallback={null}>
-                      <div className={s.emptyHeader}></div>
-                      <Header
-                        toggleSidebar={toggleSidebar}
-                        isOpen={isOpen}
-                        setIsOpen={setIsOpen}
-                      />
-                    </Suspense>
-
-                    <Main />
-                  </LangProvider>
-                </AdminProvider>
+        </div> */}
+        {/* <div className={`${loading ? s.contentStart : s.contentFinish}`}> */}
+        {isDesktop && (
+          <Suspense fallback={<Loader />}>
+            <Sidebar />
+          </Suspense>
+        )}
+        {!isDesktop && (
+          <Suspense fallback={<Loader />}>
+            <LangProvider>
+              <div ref={isOpen ? cardRef : null}>
+                <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
               </div>
+            </LangProvider>
+          </Suspense>
+        )}
 
-              {isDesktop && <Footer />}
+        <div className={s.mainWrapper}>
+          <div className={s.container}>
+            <div className={s.content}>
+              <AdminProvider>
+                <LangProvider>
+                  <Suspense fallback={<Loader />}>
+                    <div className={s.emptyHeader}></div>
+                    <Header
+                      toggleSidebar={toggleSidebar}
+                      isOpen={isOpen}
+                      setIsOpen={setIsOpen}
+                    />
+                  </Suspense>
+
+                  <Main />
+                </LangProvider>
+              </AdminProvider>
             </div>
+
+            {isDesktop && <Footer />}
           </div>
         </div>
-        <ToastContainer theme="colored" />
       </div>
-      <div className={`${loading ? s.contentStart : s.contentFinish}`}>
-        {!isDesktop && <Footer />}
-      </div>
+      <ToastContainer theme="colored" />
+      {/* </div> */}
+      {!isDesktop && <Footer />}
       <div className={s.emptyFooter}></div>
     </>
   );

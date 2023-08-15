@@ -3,7 +3,6 @@ import loadMob from 'images/loader_logo_mob.png';
 import load from 'images/loader_logo.png';
 
 import s from './Loader.module.css';
-import Image from 'common/Image/Image';
 
 const Loader = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });

@@ -9,7 +9,6 @@ import cabinet from 'images/hero-bg-about-mob.png';
 import s from './HeroAboutBlock.module.css';
 import Container from 'common/Container/Container';
 import Trail from 'common/Trail/Trail';
-import Image from 'common/Image/Image';
 
 const HeroAboutBlock = () => {
   const { t } = useTranslation();
@@ -65,9 +64,7 @@ const HeroAboutBlock = () => {
             </Trail>
             <p className={s.description}>{t('heroAboutBlock.text')}</p>
           </div>
-          {!isDesktop && (
-            <Image className={s.img} src={cabinet} alt="cabinet" />
-          )}
+          {!isDesktop && <img className={s.img} src={cabinet} alt="cabinet" />}
 
           <button className={s.downloadButton} onClick={handleDownload}>
             <div className={s.link}>{t('common.brochureBtn')}</div>

@@ -4,7 +4,6 @@ import ScrollUp from 'common/ScrollUp/ScrollUp';
 import NavigationFooter from 'components/NavigationFooter';
 import logo from 'images/Logo_footer.svg';
 import s from './Footer.module.css';
-import Image from 'common/Image/Image';
 
 const Footer = () => {
   const date = new Date().getFullYear();
@@ -15,7 +14,7 @@ const Footer = () => {
   return (
     <div className={s.footer}>
       <NavLink to="/" className={s.logo} onClick={scrollToTop}>
-        <Image src={logo} alt="logo" />
+        <img src={logo} alt="logo" />
       </NavLink>
 
       <div>
@@ -25,7 +24,7 @@ const Footer = () => {
       <ul className={s.list}>
         {contactsConfig.map(({ imgUrl, text, alt, href }, index) => (
           <li key={index} className={s.item}>
-            <Image className={s.img} src={imgUrl} alt={alt} />
+            <img className={s.img} src={imgUrl} alt={alt} />
             <p className={s.text}>
               <a className={s.href} href={href}>
                 {text}

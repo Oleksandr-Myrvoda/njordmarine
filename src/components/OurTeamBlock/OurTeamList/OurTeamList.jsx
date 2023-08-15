@@ -16,7 +16,6 @@ import { useTranslation } from 'react-i18next';
 import s from './OurTeamList.module.css';
 
 import 'styles/swipeable.css';
-import Image from 'common/Image/Image';
 
 const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }];
 
@@ -121,7 +120,7 @@ const OurTeamList = ({ ourTeamConfig: cards }) => {
           {cards.map(({ imgUrl, name, position, alt }, index) => (
             <li key={index} className={s.item}>
               <div className={s.imageWrapper}>
-                <Image className={s.image} src={imgUrl} alt={alt} />
+                <img className={s.image} src={imgUrl} alt={alt} />
               </div>
               <p className={s.name}>{t(name)}</p>
               <p className={s.position}>{t(position)}</p>

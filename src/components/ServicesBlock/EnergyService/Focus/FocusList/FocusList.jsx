@@ -6,7 +6,6 @@ import satellite from 'images/serv-focus-satellite.svg';
 import headphones from 'images/serv-focus-headphones.svg';
 import doc from 'images/serv-focus-doc.svg';
 import s from './FocusList.module.css';
-import Image from 'common/Image/Image';
 
 const FocusList = () => {
   const { t } = useTranslation();
@@ -77,7 +76,11 @@ const FocusList = () => {
           className={`${s.item} ${isAnimated1 && s.animatedItem}
        `}
         >
-          <Image className={s.img} src={server} alt={t('focus.config.alt1')} />
+          <img
+            className={s.img}
+            src={server}
+            alt={t('focus.config.alt1')}
+          ></img>
           <p className={s.title}>{t('focus.config.title1')}</p>
           <p className={s.text}>{t('focus.config.text1')}</p>
         </div>
@@ -87,11 +90,11 @@ const FocusList = () => {
           className={`${s.item} ${isAnimated2 && s.animatedItem}
        `}
         >
-          <Image
+          <img
             className={s.img}
             src={satellite}
             alt={t('focus.config.alt2')}
-          />
+          ></img>
           <p className={s.title}>{t('focus.config.title2')}</p>
           <p className={s.text}>{t('focus.config.text2')}</p>
         </div>
@@ -101,11 +104,11 @@ const FocusList = () => {
           className={`${s.item} ${isAnimated3 && s.animatedItem}
        `}
         >
-          <Image
+          <img
             className={s.img}
             src={headphones}
             alt={t('focus.config.alt3')}
-          />
+          ></img>
           <p className={s.title}>{t('focus.config.title3')}</p>
           <p className={s.text}>{t('focus.config.text3')}</p>
         </div>
@@ -115,7 +118,7 @@ const FocusList = () => {
           className={`${s.item} ${isAnimated4 && s.animatedItem}
        `}
         >
-          <Image className={s.img} src={doc} alt={t('focus.config.alt4')} />
+          <img className={s.img} src={doc} alt={t('focus.config.alt4')}></img>
           <p className={s.title}>{t('focus.config.title4')}</p>
           <p className={s.text}>{t('focus.config.text4')}</p>
         </div>
@@ -124,7 +127,7 @@ const FocusList = () => {
     // <ul className={s.list}>
     //   {focusConfig.map(({ imgUrl, title, text, alt }, index) => (
     //     <li className={s.item} key={index}>
-    //       <Image className={s.img} src={imgUrl} alt={t(alt)}></img>
+    //       <img className={s.img} src={imgUrl} alt={t(alt)}></img>
     //       <p className={s.title}>{t(title)}</p>
     //       <p className={s.text}>{t(text)}</p>
     //     </li>

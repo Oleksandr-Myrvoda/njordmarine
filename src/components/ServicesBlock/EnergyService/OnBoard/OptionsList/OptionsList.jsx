@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import dot from 'images/serv-auto-dotlist.svg';
 import s from './OptionsList.module.css';
-import Image from 'common/Image/Image';
 
 const OptionsList = ({ config }) => {
   const { t } = useTranslation();
@@ -41,7 +40,7 @@ const OptionsList = ({ config }) => {
             className={`${s.item} ${isAnimated ? s.animatedItem : ''}
        `}
           >
-            <Image className={s.dotMarker} src={dot} alt="dot" />
+            <img className={s.dotMarker} src={dot} alt="dot"></img>
             <div className={s.text}>{t(text)}</div>
           </li>
         ))}

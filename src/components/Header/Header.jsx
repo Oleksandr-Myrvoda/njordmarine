@@ -15,7 +15,6 @@ import logoHeaderMob from '../../images/Logo-header-mob.svg';
 import s from './Header.module.css';
 import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
 import Loader from 'common/Loader/Loader';
-import Image from 'common/Image/Image';
 
 const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
@@ -102,7 +101,7 @@ const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
           <>
             <div className={s.headerMob}>
               <NavLink to="/">
-                <Image src={logoHeaderMob} alt="logo" />
+                <img src={logoHeaderMob} alt="logo" />
               </NavLink>
 
               {isLogin && (
@@ -129,7 +128,7 @@ const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
               >
                 <span className={s.menuBtnText}>
                   {t('navigation.mobileMenu')}
-                  <Image src={isOpen ? burgerClose : burgerOpen} alt="list" />
+                  <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
                 </span>
               </button>
 

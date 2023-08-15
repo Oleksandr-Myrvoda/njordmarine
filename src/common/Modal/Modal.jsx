@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import closeBtn from 'images/form-close-btn.svg';
 // import closeBtn from 'images/del-form-close-btn.png';
 import s from './Modal.module.css';
-import Image from 'common/Image/Image';
 
 const modalRootRef = document.querySelector('#modal-root');
 
@@ -41,7 +40,7 @@ const Modal = ({ onClose, title, children, isEmailSended, isBrends }) => {
           </div>
 
           <button className={s.closeBtn} onClick={onClose} aria-label="Close">
-            <Image src={closeBtn} alt="close" />
+            <img src={closeBtn} alt="close" />
           </button>
         </header>
 
