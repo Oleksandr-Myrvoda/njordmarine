@@ -128,7 +128,7 @@
     "phone": "Phone (optional)",
     "phoneInput": "Phone number",
     "companyName": "Company name*",
-    "subjMessageInput": "Company name",
+    "companyNameInput": "Company name",
     "message": "Message",
     "messageInput": "Message",
 

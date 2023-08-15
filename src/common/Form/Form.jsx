@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useLangContext } from 'context/LangProvider';
 import { useSetOtherError } from 'context/ErrorProvider';
-import { useForm } from 'react-hook-form';
 import { getTermsApi } from 'services/api';
 import emailjs from '@emailjs/browser';
 import BigButton from 'common/BigButton';
@@ -16,45 +16,15 @@ const {
   REACT_APP_FORM_USER_ID,
 } = process.env;
 
-// const textValidation = {
-//   required: 'This field is required',
-//   minLength: {
-//     value: 2,
-//     message: 'Field should have more than 1 letter',
-//   },
-// };
-
-// const emailValidation = {
-//   required: 'Email is required',
-//   pattern: {
-//     value:
-//       /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-//     message: 'Invalid email address',
-//   },
-// };
-// const phoneValidation = {
-//   pattern: {
-//     value:
-//       /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-//     message: 'Invalid phone number format',
-//   },
-// };
-
 const Form = ({ isTitle, setEmailSended }) => {
   const { t } = useTranslation();
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit, formState, trigger, clearErrors } = useForm();
   const { errors } = formState;
   const form = useRef();
 
   const { lang } = useLangContext();
   const setOtherError = useSetOtherError();
   const [fileUrl, setFileUrl] = useState({ ru: '', en: '' });
-  // const { brochureLink } = useAdminContext();
-  // const [fileUrl, setFileUrl] = useState(brochureLink);
-
-  // const requiredErrMsg = `${t('form.required')}`;
-  // const moreLettersErrMsg = `${t('form.moreLetters')}`;
-  // const invalidEmailErrMsg = `${t('form.invalidEmail')}`;
 
   const textValidation = {
     required: `${t('form.required')}`,
@@ -71,6 +41,16 @@ const Form = ({ isTitle, setEmailSended }) => {
         /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
       message: `${t('form.invalidEmail')}`,
     },
+  };
+
+  const handleBlur = async e => {
+    const name = e.target.name;
+    await trigger(name); // Выполняем валидацию с помощью trigger
+  };
+
+  const handleInput = e => {
+    const name = e.target.name;
+    clearErrors(name); // Очищаем ошибки при вводе
   };
 
   useEffect(() => {
@@ -105,30 +85,6 @@ const Form = ({ isTitle, setEmailSended }) => {
       );
   };
 
-  // disabled btn
-  const [formData, setFormData] = useState({
-    customerName: '',
-    email: '',
-    companyName: '',
-  });
-
-  const [isFormValid, setIsFormValid] = useState(false);
-
-  const handleInputChange = e => {
-    const { name, value } = e.target;
-
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value,
-    }));
-
-    const allRequiredFieldsFilled = Object.values(formData).every(
-      value => value !== '',
-    );
-
-    setIsFormValid(allRequiredFieldsFilled);
-  };
-
   return (
     <div className={s.container}>
       {isTitle && (
@@ -146,8 +102,10 @@ const Form = ({ isTitle, setEmailSended }) => {
             type="text"
             placeholder={t('form.nameInput')}
             {...register('customerName', textValidation)}
+            onBlur={handleBlur}
+            onInput={handleInput}
           />
-          {/* {errors.customerName && <ErrorMsg message={requiredErrMsg} />} */}
+
           {errors.customerName && (
             <ErrorMsg message={errors.customerName.message} />
           )}
@@ -161,8 +119,10 @@ const Form = ({ isTitle, setEmailSended }) => {
             type="text"
             placeholder={t('form.emailInput')}
             {...register('email', emailValidation)}
+            onBlur={handleBlur}
+            onInput={handleInput}
           />
-          {/* {errors.email && <ErrorMsg message={invalidEmailErrMsg} />} */}
+
           {errors.email && <ErrorMsg message={errors.email.message} />}
         </label>
 
@@ -173,10 +133,8 @@ const Form = ({ isTitle, setEmailSended }) => {
             name="phone"
             type="tel"
             placeholder={t('form.phoneInput')}
-            // {...register('phone', phoneValidation)}
             {...register('phone')}
           />
-          {/* {errors.phone && <ErrorMsg message={errors.phone.message} />} */}
         </label>
 
         <label>
@@ -185,11 +143,12 @@ const Form = ({ isTitle, setEmailSended }) => {
             className={s.formInput}
             name="companyName"
             type="text"
-            placeholder={t('form.subjMessageInput')}
+            placeholder={t('form.companyNameInput')}
             {...register('companyName', textValidation)}
+            onBlur={handleBlur}
+            onInput={handleInput}
           />
           {errors.companyName && (
-            // <ErrorMsg message={requiredErrMsg} />
             <ErrorMsg message={errors.companyName.message} />
           )}
         </label>
