@@ -14,7 +14,7 @@ const useToggleImageLoading = () => {
 
 const ImageLoadingProvider = ({ children }) => {
   const [loadingImage, setLoadingImage] = useState(null);
-  console.log('loadingImage', loadingImage);
+
   const toggleLoadImage = useCallback(imageId => {
     setLoadingImage(prev => {
       const isImageExist = prev?.includes(imageId) ?? false;

@@ -17,8 +17,8 @@ root.render(
     <AuthProvider>
       <ErrorProvider>
         <ImageLoadingProvider>
-          <GeneralApp />
-          {/* <App /> */}
+          {/* <GeneralApp /> */}
+          <App />
         </ImageLoadingProvider>
       </ErrorProvider>
     </AuthProvider>

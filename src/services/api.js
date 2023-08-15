@@ -40,7 +40,6 @@ const addItemApi = (endpoint, item, token) => {
 };
 
 const editItemApi = ({ endpoint, item, id, token }) => {
-  console.log('item', item);
   return axios
     .patch(`${endpoint}/${id}.json`, item, {
       params: {

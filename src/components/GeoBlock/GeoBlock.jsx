@@ -89,7 +89,10 @@ const GeoBlock = () => {
     anchor.click();
   };
   // +++++++++++++++++++++++++++++++++++++++++++++
-  const [satellitePosition, setSatellitePosition] = useState({ x: 0, y: 0 });
+  const [satellitePosition, setSatellitePosition] = useState({
+    x: 0,
+    y: 0,
+  });
   useEffect(() => {
     const orbitRadius = !isDesktop ? 150 : 264; // Радиус орбиты спутника
     const orbitSpeed = 0.03; // Скорость движения спутника по орбите

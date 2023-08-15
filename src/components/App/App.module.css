@@ -6,6 +6,7 @@
   overflow-x: hidden;
   background-color: var(--bg-light-color);
   border: none;
+  overflow-x: hidden;
 }
 
 .emptyHeaderFull {
@@ -25,11 +26,15 @@
 .contentStart {
   transition: all 0.5s;
   transform: translateX(100%);
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .contentFinish {
   transition: all 0.5s;
   transform: translateX(0);
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .loaderStart {

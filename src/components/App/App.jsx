@@ -46,67 +46,69 @@ function App() {
 
   // =================================
 
-  // const [loading, setLoading] = useState(true);
-  // console.log('loading', loading);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // }, []);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
 
   return (
     <>
       <div className={s.emptyHeaderFull}></div>
       <div className={s.mainContainer}>
-        {/* <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
+        <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
           <Loader />
-        </div> */}
+        </div>
 
-        {/* <div className={`${loading ? s.contentStart : s.contentFinish}`}> */}
-        {isDesktop && (
-          // <Suspense fallback={<Loader />}>
-          <Suspense fallback={null}>
-            <Sidebar />
-          </Suspense>
-        )}
-        {!isDesktop && (
-          // <Suspense fallback={<Loader />}>
-          <Suspense fallback={null}>
-            <LangProvider>
-              <div ref={isOpen ? cardRef : null}>
-                <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
+        <div className={`${loading ? s.contentStart : s.contentFinish}`}>
+          {isDesktop && (
+            // <Suspense fallback={<Loader />}>
+            <Suspense fallback={null}>
+              <Sidebar />
+            </Suspense>
+          )}
+          {!isDesktop && (
+            // <Suspense fallback={<Loader />}>
+            <Suspense fallback={null}>
+              <LangProvider>
+                <div ref={isOpen ? cardRef : null}>
+                  <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
+                </div>
+              </LangProvider>
+            </Suspense>
+          )}
+
+          <div className={s.mainWrapper}>
+            <div className={s.container}>
+              <div className={s.content}>
+                <AdminProvider>
+                  <LangProvider>
+                    {/* <Suspense fallback={<Loader />}> */}
+                    <Suspense fallback={null}>
+                      <div className={s.emptyHeader}></div>
+                      <Header
+                        toggleSidebar={toggleSidebar}
+                        isOpen={isOpen}
+                        setIsOpen={setIsOpen}
+                      />
+                    </Suspense>
+
+                    <Main />
+                  </LangProvider>
+                </AdminProvider>
               </div>
-            </LangProvider>
-          </Suspense>
-        )}
 
-        <div className={s.mainWrapper}>
-          <div className={s.container}>
-            <div className={s.content}>
-              <AdminProvider>
-                <LangProvider>
-                  {/* <Suspense fallback={<Loader />}> */}
-                  <Suspense fallback={null}>
-                    <div className={s.emptyHeader}></div>
-                    <Header
-                      toggleSidebar={toggleSidebar}
-                      isOpen={isOpen}
-                      setIsOpen={setIsOpen}
-                    />
-                  </Suspense>
-
-                  <Main />
-                </LangProvider>
-              </AdminProvider>
+              {isDesktop && <Footer />}
             </div>
-
-            {isDesktop && <Footer />}
           </div>
         </div>
+        <ToastContainer theme="colored" />
       </div>
-      <ToastContainer theme="colored" />
-      {/* </div> */}
-      {!isDesktop && <Footer />}
+      <div className={`${loading ? s.contentStart : s.contentFinish}`}>
+        {!isDesktop && <Footer />}
+      </div>
       <div className={s.emptyFooter}></div>
     </>
   );
