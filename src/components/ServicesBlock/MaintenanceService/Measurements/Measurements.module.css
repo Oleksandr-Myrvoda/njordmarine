@@ -241,7 +241,7 @@
     width: 420px;
     height: 420px;
     border-radius: 8px;
-    box-shadow: 0px 4px 20px 0px rgba(34, 62, 127, 0.3);
+    /* box-shadow: 0px 4px 20px 0px rgba(34, 62, 127, 0.3); */
 
     overflow: hidden;
     background: transparent;
@@ -300,6 +300,8 @@
     position: absolute;
     left: 250px;
     z-index: 2;
+    box-shadow: 0px 4px 20px 0px rgba(34, 62, 127, 0.3);
+    border-radius: 8px;
   }
   .swiperItemNext {
     position: absolute;

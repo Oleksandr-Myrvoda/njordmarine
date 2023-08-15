@@ -90,7 +90,7 @@ const GeoBlock = () => {
   // +++++++++++++++++++++++++++++++++++++++++++++
   const [satellitePosition, setSatellitePosition] = useState({ x: 0, y: 0 });
   useEffect(() => {
-    const orbitRadius = !isDesktop ? 150 : 264; // Радиус орбиты спутника
+    const orbitRadius = !isDesktop ? 150 : 240; // Радиус орбиты спутника
     const orbitSpeed = 0.03; // Скорость движения спутника по орбите
     let angle = 0;
 
@@ -141,12 +141,12 @@ const GeoBlock = () => {
         <div className={s.earthContainer}>
           <img className={s.earthImage} src={globeImage} alt="globe" />
 
-          {/* <div className={s.airplaneWrapper}> */}
-          {/* <div
-            className={s.airplane}
-            style={{ top: satellitePosition.y, left: satellitePosition.x }}
-          /> */}
-          {/* </div> */}
+          <div className={s.airplaneWrapper}>
+            <div
+              className={s.airplane}
+              style={{ top: satellitePosition.y, left: satellitePosition.x }}
+            />
+          </div>
 
           {/* <div className={s.airplaneWtapper2}> */}
           <motion.div
