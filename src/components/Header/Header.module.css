@@ -127,17 +127,15 @@
 
 @media screen and (min-width: 1440px) {
   .mainHeader {
-    /* position: absolute; */
     width: 1025px;
-    margin: 0 auto;
-    /* width: 84.5%; */
-    padding: 0 96px;
     height: 102px;
+
+    margin: 0 auto;
+    padding: 0 96px;
     background-color: transparent;
   }
 
   .fixedHeader {
-    /* margin-left: 16vw; */
     margin: 0 auto;
     width: 86%;
     transition: background-color 0.3s ease;
@@ -146,5 +144,13 @@
   .fixedHeaderScroll {
     background-color: var(--bg-light-color);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .mainHeader {
+    /* width: 2114px -96 -96; */
+    width: 1922px;
+    height: 204px;
   }
 }

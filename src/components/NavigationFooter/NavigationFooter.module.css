@@ -18,3 +18,9 @@
     gap: 0;
   }
 }
+@media screen and (min-width: 2560px) {
+  .nav,
+  .navBlock {
+    gap: 32px;
+  }
+}

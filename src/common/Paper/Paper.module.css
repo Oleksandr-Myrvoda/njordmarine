@@ -14,3 +14,8 @@
     padding: 32px;
   }
 }
+@media screen and (min-width: 2560px) {
+  .paper {
+    padding: 64px;
+  }
+}

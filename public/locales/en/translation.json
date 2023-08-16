@@ -135,7 +135,7 @@
     "bigBtn": "Send",
     "privacyTerms": "Terms and conditions",
     "required": "This field is required",
-    "moreLetters": "Field should have more than 1 letter",
+    "moreLetters": "Minimum 2 symbols",
     "invalidEmail": "Invalid email address"
   },
 

@@ -31,7 +31,6 @@ const AdvantagesList = ({ advantagesConfig }) => {
 
   return (
     <ul className={s.list} ref={itemRef}>
-      {/* <img className={s.delivery} src={delivery} alt="delivery" /> */}
       {advantagesConfig.map(({ imgUrl, head, text, alt }, index) => (
         <li
           key={index}

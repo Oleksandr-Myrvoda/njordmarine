@@ -37,10 +37,15 @@ const AdvantagesBlock = () => {
       <Container>
         <div className={s.textBlock} ref={headerRef}>
           <p className="headingBlock">{t('advantagesBlock.heading')}</p>
-          <Trail open={open} textStyle="tagline" heightD={40} heightMob={20}>
+          <Trail
+            open={open}
+            textStyle="tagline"
+            heightD={40}
+            heightMob={20}
+            heightBig={80}
+          >
             <span>{t('advantagesBlock.tagline')}</span>
           </Trail>
-          {/* <h2 className="tagline">{t('advantagesBlock.tagline')}</h2> */}
         </div>
 
         <AdvantagesList advantagesConfig={advantagesConfig} />

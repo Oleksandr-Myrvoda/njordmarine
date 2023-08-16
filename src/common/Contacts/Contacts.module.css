@@ -29,7 +29,6 @@
   .list {
     display: flex;
     flex-direction: row;
-    /* gap: 96px; */
   }
 
   .contactsPage {
@@ -47,5 +46,12 @@
   }
   .text {
     color: var(--text-color);
+  }
+}
+@media screen and (min-width: 2560px) {
+  .text {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
   }
 }

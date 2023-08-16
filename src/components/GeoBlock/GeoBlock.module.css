@@ -216,8 +216,76 @@
   }
 
   .earthImage {
-    /* Стили для статичной картинки земного шара */
-    width: 528px; /* Замените на нужный размер */
-    height: auto; /* Замените на нужный размер */
+    width: 528px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .geoBlock {
+    padding-top: 166px;
+    padding-bottom: 166px;
+  }
+
+  .earthImage {
+    background-size: cover;
+    width: 1074px;
+    height: auto;
+  }
+
+  .description {
+    gap: 104px;
+    padding-bottom: 185px;
+  }
+
+  .descriptionInside {
+    width: 744px;
+    gap: 40px;
+  }
+
+  .text {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .textBottom {
+    width: 590px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .contactUs {
+    gap: 36px;
+  }
+
+  .termsLink {
+    margin-top: 30px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .termsLink::after {
+    padding-left: 20px;
+    content: url('../../images/arrowRight-big.svg');
+    padding-top: 8px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .airplane2 {
+    width: 96px;
+    height: 96px;
+  }
+
+  .airplane2::before {
+    background-image: url('../../images/airplane.svg');
+    background-size: cover;
+    width: 96px;
+    height: 96px;
+  }
+
+  .airplaneWrapper {
+    position: absolute;
+    right: 535px;
+    top: 10px;
   }
 }

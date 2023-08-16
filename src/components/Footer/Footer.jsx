@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <div className={s.footer}>
       <NavLink to="/" className={s.logo} onClick={scrollToTop}>
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" className={s.logoImg} />
       </NavLink>
 
       <div>

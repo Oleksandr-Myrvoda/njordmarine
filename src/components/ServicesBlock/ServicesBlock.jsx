@@ -47,6 +47,7 @@ const ServicesBlock = () => {
                 textStyle="tagline"
                 heightD={40}
                 heightMob={55}
+                heightBig={70}
               >
                 <span>{t('servicesBlock.tagline1')}</span>
                 <span>{t('servicesBlock.tagline2')}</span>

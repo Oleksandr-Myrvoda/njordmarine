@@ -1,12 +1,14 @@
 @import url('/src/styles/fonts/gilroy/stylesheet.css');
 @import url('/src/styles/fonts/ruberoid/stylesheet.css');
 
-/* @media screen and (min-width: 1440px) {
+/* @media screen and (min-width: 1440px) {} */
+/* @media screen and (min-width: 2560px) {} */
 
-} */
-
-/* import { useMediaQuery } from 'react-responsive';
-const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' }); */
+/*
+ import { useMediaQuery } from 'react-responsive';
+const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+const isDesktopBig = useMediaQuery({ query: '(min-width: 2560px)' });
+*/
 
 /* <SendInfo linkName="Ознакомиться с услугами" linkPath="/" hideLink={true}/> */
 
@@ -19,7 +21,7 @@ const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' }); */
 
 /* className={`${s.text} ${isContactsPage && s.contactsPage}`} */
 
-/* <Trail open={open} textStyle="tagline" heightD={40} heightMob={55}> */
+/* <Trail open={open} textStyle="tagline" heightD={40} heightMob={55} heightBig={70}> */
 
 :root {
   --accent-color: #ff321b;

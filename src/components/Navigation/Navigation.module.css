@@ -8,9 +8,7 @@
 
 .insideMenu {
   margin-left: 16px;
-  /* width: 184px; */
   width: 200px;
-
   max-height: 0;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -24,5 +22,20 @@
     width: 16vw;
     align-content: center;
     padding-left: 60px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .nav {
+    padding-left: 0;
+  }
+
+  .insideMenu {
+    width: auto;
+  }
+
+  .nav {
+    /* width: 16vw;
+    align-content: center;
+    padding-left: 60px; */
   }
 }

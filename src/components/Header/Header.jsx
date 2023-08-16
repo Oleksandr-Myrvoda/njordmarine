@@ -2,50 +2,28 @@ import { useEffect, useState, useRef, Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import { useAuthContext } from 'context/AuthProvider';
+import { contactsConfig } from 'data/contacts';
 
 import BrochureButton from 'common/BrochureButton';
 import Contacts from 'common/Contacts';
-import Sidebar from 'components/Sidebar';
-import { contactsConfig } from 'data/contacts';
+import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
+import Loader from 'common/Loader/Loader';
+
 import burgerOpen from '../../images/List-Right.svg';
 import burgerClose from '../../images/List-Close.svg';
 import logoHeaderMob from '../../images/Logo-header-mob.svg';
 import s from './Header.module.css';
-import LanguageSwitcher from 'common/LanguageSwitcher/LanguageSwitcher';
-import Loader from 'common/Loader/Loader';
 
 const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const { t } = useTranslation();
-  // const [isOpen, setIsOpen] = useState(false);
+
   const { isLogin, unsetToken } = useAuthContext();
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollRef = useRef();
-  // console.log('toggleSidebar', toggleSidebar);
-  // const toggleSidebar = () => setIsOpen(prevIsOpen => !prevIsOpen);
 
   const cardRef = useRef(null);
-  // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
-
-  // useEffect(() => {
-  //   if (isDesktop) setIsOpen(false);
-  //   document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-  // }, [isDesktop, isOpen, setIsOpen]);
-
-  const handleClick = () => {
-    if (!isOpen) {
-      toggleSidebar();
-    }
-  };
-
-  // const handleInsideClick = event => {
-  //   if (event.target.tagName === 'BUTTON') {
-  //     setIsOpen(false);
-  //   }
-  //   toggleSidebar();
-  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -121,18 +99,13 @@ const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
               <button
                 type="button"
                 className={s.menuBtn}
-                // onClick={!isOpen ? toggleSidebar : null}
                 onClick={toggleSidebar}
-                // onClick={handleClick}
-                // onClick={handleInsideClick}
               >
                 <span className={s.menuBtnText}>
                   {t('navigation.mobileMenu')}
                   <img src={isOpen ? burgerClose : burgerOpen} alt="list" />
                 </span>
               </button>
-
-              {/* <Sidebar isOpen={isOpen} /> */}
             </div>
           </>
         )}

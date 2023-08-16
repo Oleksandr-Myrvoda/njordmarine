@@ -13,7 +13,7 @@
   border-top: 2px solid var(--footer-stroke);
 
   position: absolute;
-  left: 50%;
+  left: 50%; 
   bottom: 0;
   transform: translateX(-50%);
   width: 100vw; */
@@ -66,6 +66,7 @@
   .list {
     display: flex;
     flex-direction: row;
+    gap: 80px;
     margin-bottom: 16px;
   }
 
@@ -80,5 +81,44 @@
   .text {
     font-size: 14px;
     line-height: 20px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .footer {
+    padding-top: 72px;
+    padding-bottom: 224px;
+
+    gap: 70px;
+  }
+
+  .logoImg {
+    background-size: cover;
+    width: 108px;
+    height: 86px;
+  }
+
+  .list {
+    gap: 160px;
+    margin-bottom: 16px;
+  }
+
+  .img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+  }
+  .text {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .copyright {
+    font-size: 32px;
+    line-height: 40px;
   }
 }

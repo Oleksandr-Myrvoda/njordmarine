@@ -5,22 +5,21 @@ import { useEffect, useState, useRef } from 'react';
 
 import { useLangContext } from 'context/LangProvider';
 import { useSetOtherError } from 'context/ErrorProvider';
-import { getBrochureApi } from 'services/api';
+
 import { getTermsApi } from 'services/api';
 import BigButton from 'common/BigButton';
 import globe from 'images/globe.svg';
 import globeMob from 'images/globe-mob.svg';
-import airplaine from 'images/airplane.svg';
-// import globe from 'images/globe.png';
-// import globeMob from 'images/globe-mob.png';
-import s from './GeoBlock.module.css';
-import Trail from 'common/Trail/Trail';
-
 import { motion } from 'framer-motion';
+
+import Trail from 'common/Trail/Trail';
+import s from './GeoBlock.module.css';
 
 const GeoBlock = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+  const isDesktopBig = useMediaQuery({ query: '(min-width: 2560px)' });
+
   const setOtherError = useSetOtherError();
   const history = useHistory();
   const { lang } = useLangContext();
@@ -58,19 +57,6 @@ const GeoBlock = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  // BROCHURE
-  // useEffect(() => {
-  //   getBrochureApi()
-  //     .then(refs => {
-  //       const { id, ...rest } = refs;
-  //       setFileUrl(rest);
-  //     })
-  //     .catch(error => {
-  //       setOtherError(error.response.data);
-  //       console.log('setOtherErorr(error.response.data)');
-  //       console.dir(error);
-  //     });
-  // }, [setOtherError]);
 
   const globeImage = isDesktop ? globe : globeMob;
 
@@ -108,64 +94,60 @@ const GeoBlock = () => {
 
   // airplane diagonal +++++++++++++++++++++++++++++++++++++++++++++
   const [initialPosition, setInitialPosition] = useState({
-    x: !isDesktop ? 75 : 100,
-    y: !isDesktop ? -75 : -100,
+    x: (isDesktopBig && 125) || (isDesktop && 100) || (!isDesktop && 75),
+    y: (isDesktopBig && -125) || (isDesktop && -100) || (!isDesktop && -75),
   });
+
   const [animatePosition, setAnimatePosition] = useState({
-    x: !isDesktop ? 275 : 425,
-    y: !isDesktop ? -275 : -425,
+    x: (isDesktopBig && 900) || (isDesktop && 425) || (!isDesktop && 275),
+    y: (isDesktopBig && -900) || (isDesktop && -425) || (!isDesktop && -275),
   });
 
   useEffect(() => {
     setInitialPosition({
-      x: !isDesktop ? 75 : 100,
-      y: !isDesktop ? -75 : -100,
+      x: (isDesktopBig && 125) || (isDesktop && 100) || (!isDesktop && 75),
+      y: (isDesktopBig && -125) || (isDesktop && -100) || (!isDesktop && -75),
     });
     setAnimatePosition({
-      x: !isDesktop ? 275 : 425,
-      y: !isDesktop ? -275 : -425,
+      x: (isDesktopBig && 900) || (isDesktop && 425) || (!isDesktop && 275),
+      y: (isDesktopBig && -900) || (isDesktop && -425) || (!isDesktop && -275),
     });
-  }, [isDesktop]);
+  }, [isDesktop, isDesktopBig]);
 
   return (
     <div className={s.geoBlock}>
       <div className={s.description}>
         <div className={s.descriptionInside} ref={headerRef}>
           <p className="headingBlock">{t('geoBlock.heading')}</p>
-          <Trail open={open} textStyle="tagline" heightD={60} heightMob={50}>
+          <Trail
+            open={open}
+            textStyle="tagline"
+            heightD={60}
+            heightMob={50}
+            heightBig={150}
+          >
             <span>{t('geoBlock.tagline')}</span>
           </Trail>
-          {/* <h2 className="tagline">{t('geoBlock.tagline')}</h2> */}
+
           <p className={s.text}>{t('geoBlock.text')}</p>
         </div>
         <div className={s.earthContainer}>
           <img className={s.earthImage} src={globeImage} alt="globe" />
 
-          <div className={s.airplaneWrapper}>
-            <div
-              className={s.airplane}
-              style={{ top: satellitePosition.y, left: satellitePosition.x }}
-            />
-          </div>
-
-          {/* <div className={s.airplaneWtapper2}> */}
           <motion.div
             className={s.airplane2}
             initial={initialPosition}
-            // initial={{ x: !isDesktop ? 75 : 100, y: !isDesktop ? -75 : -100 }}
             animate={animatePosition}
-            // animate={{
-            //   x: !isDesktop ? 275 : 425,
-            //   y: !isDesktop ? -275 : -425,
-            // }}
             transition={{ duration: 5, repeat: Infinity, repeatType: 'loop' }}
           />
-          {/* </div> */}
         </div>
       </div>
+
       <div className={s.contactUs}>
         <p className="taglineBig">{t('geoBlock.taglineBig')}</p>
-        <p className={s.text}>{t('geoBlock.text2')}</p>
+        <p className={`${s.text} ${isDesktopBig ? s.textBottom : ''}`}>
+          {t('geoBlock.text2')}
+        </p>
         <BigButton onClick={toContacts} text={t('geoBlock.bigButtonText')} />
 
         <button className={s.downloadButton} onClick={handleDownload}>

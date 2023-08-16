@@ -14,6 +14,7 @@
   background-position: center;
   transition: all 200ms;
   cursor: pointer;
+  background-size: cover;
   background-image: url('../../images/arrowUp-d.svg');
 }
 
@@ -28,5 +29,14 @@
 
     width: 64px;
     height: 64px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .scroll {
+    bottom: 350px;
+    right: 96px;
+
+    width: 128px;
+    height: 128px;
   }
 }

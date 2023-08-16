@@ -33,8 +33,9 @@ const HeroBlock = () => {
                 <Trail
                   open={open}
                   textStyle="taglineBig"
-                  heightD={54}
                   heightMob={32}
+                  heightD={54}
+                  heightBig={100}
                 >
                   <span>{t('heroBlock.taglineBig1')}</span>
                   <span>{t('heroBlock.taglineBig2')}</span>

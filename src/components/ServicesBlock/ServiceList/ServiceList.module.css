@@ -102,3 +102,40 @@
     height: 80px;
   }
 }
+
+@media screen and (min-width: 2560px) {
+  .list {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .item {
+    width: 809px;
+    height: 466px;
+  }
+
+  .descr {
+    font-size: 52px;
+    line-height: 65px;
+  }
+
+  .image {
+    background-size: cover;
+    width: 160px;
+    height: 160px;
+  }
+
+  .link {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .link::after {
+    padding-left: 20px;
+    padding-top: 8px;
+    content: url('../../../images/arrowRight-big.svg');
+
+    height: 48px;
+    width: 48px;
+  }
+}

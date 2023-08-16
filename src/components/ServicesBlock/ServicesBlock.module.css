@@ -59,3 +59,18 @@
     align-self: self-end;
   }
 }
+@media screen and (min-width: 2560px) {
+  .servicesBlock {
+    padding-top: 168px;
+    padding-bottom: 168px;
+  }
+
+  .orderWrapepr {
+    width: 1925px;
+    margin-bottom: 108px;
+  }
+
+  .container {
+    height: 130px;
+  }
+}

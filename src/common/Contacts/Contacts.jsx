@@ -17,7 +17,7 @@ const Contacts = ({ contactsConfig, isContactsPage, isHeader }) => {
                 isContactsPage && s.contactsPage
               }`}
               href={href}
-            >
+            > 
               {text}
             </a>
           </p>

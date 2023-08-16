@@ -6,6 +6,7 @@
 
 .btnWrapper {
   min-width: 35px;
+  gap: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,5 +44,17 @@
   }
   .active {
     color: var(--text-color);
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .btnWrapper {
+    min-width: 64px;
+  }
+
+  .button,
+  .active {
+    font-size: 25px;
+    line-height: 32px;
   }
 }

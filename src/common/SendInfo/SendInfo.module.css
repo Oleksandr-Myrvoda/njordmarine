@@ -20,16 +20,15 @@
   border: none;
   cursor: pointer;
   display: flex;
-  /* flex-wrap: nowrap; */
-  /* display: inline-block; */
 }
 
 .link {
   display: flex;
   flex-wrap: nowrap;
-  /* display: inline; */
   padding: 16px 0;
-  height: 32px;
+  height: 24px;
+
+  align-items: center;
 
   font-family: 'Gilroy';
   font-style: normal;
@@ -43,6 +42,7 @@
 }
 
 .link::after {
+  padding-top: 4px;
   padding-left: 16px;
   display: flex;
   align-items: flex-end;
@@ -72,5 +72,23 @@
     display: flex;
     flex-direction: row;
     gap: 36px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .link {
+    padding: 16px 72px 16px 72px;
+    height: 80px;
+
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .link::after {
+    padding-top: 8px;
+    padding-left: 16px;
+    display: flex;
+    align-items: flex-end;
+    content: url('../../images/arrowRight-big.svg');
   }
 }

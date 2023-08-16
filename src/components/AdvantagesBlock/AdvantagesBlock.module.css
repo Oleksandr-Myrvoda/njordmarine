@@ -35,8 +35,24 @@
 
   .textBlock {
     gap: 24px;
-    /* padding-bottom: 88px; */
     height: 100px;
+  }
+
+  .advListWtapper {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .advantagesBlock {
+    padding-top: 168px;
+    padding-bottom: 168px;
+    gap: 72px;
+  }
+
+  .textBlock {
+    gap: 40px;
+    height: 156px;
+    margin-bottom: 100px;
   }
 
   .advListWtapper {

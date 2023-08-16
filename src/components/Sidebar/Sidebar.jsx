@@ -5,6 +5,7 @@ import BrochureButton from 'common/BrochureButton';
 import Contacts from 'common/Contacts';
 import Navigation from '../Navigation/Navigation';
 import logo from 'images/Logo.svg';
+import logoBig from 'images/logo-big.svg';
 import { contactsConfig } from 'data/contacts';
 import { Suspense, useState, useEffect, useRef } from 'react';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
@@ -12,7 +13,7 @@ import s from './Sidebar.module.css';
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
-
+  const isDesktopBig = useMediaQuery({ query: '(min-width: 2560px)' });
   const cardRef = useRef(null);
   // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
 
@@ -37,7 +38,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
         <div ref={cardRef} className={clsx(s.sidebar, isOpen && s.isOpen)}>
           {isDesktop && (
             <NavLink to="/" className={s.logo}>
-              <img src={logo} alt="logo" />
+              <img src={`${!isDesktopBig ? logo : logoBig}`} alt="logo" />
             </NavLink>
           )}
           <div className={s.mobMenu}>

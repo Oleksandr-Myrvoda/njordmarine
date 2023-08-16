@@ -25,3 +25,9 @@
     line-height: 60px;
   }
 }
+@media screen and (min-width: 2560px) {
+  .counterAnimation {
+    font-size: 80px;
+    line-height: 100px;
+  }
+}

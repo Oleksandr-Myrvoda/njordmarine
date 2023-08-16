@@ -4,7 +4,6 @@
   padding: 16px 16px 48px 16px;
   background-color: var(--bg-light-color);
   align-items: center;
-  /* text-align: center; */
 }
 
 .heroContent {
@@ -22,7 +21,6 @@
 .head {
   display: flex;
   align-items: flex-start;
-
   color: var(--text-light-color);
   font-family: 'Gilroy';
   font-weight: 600;
@@ -86,19 +84,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  /* gap: 14px; */
 }
 
 .listItem {
   display: flex;
   flex-direction: column;
-  /* text-align: left;   */
-  /* text-align: center; */
+
   align-items: center;
-  /* align-self: center; */
-  /* width: calc(30%); */
-  /* max-width: 120px; */
 }
 .topLine {
   display: flex;
@@ -139,16 +131,6 @@
 }
 .container {
   height: 105px;
-}
-.trailsText {
-  font-family: 'Ruberoid';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  letter-spacing: 0.24px;
-  text-transform: uppercase;
-  color: var(--text-color);
 }
 
 @media screen and (min-width: 1440px) {
@@ -205,7 +187,6 @@
   }
 
   .listItem {
-    /* max-width: 140px; */
     width: calc(26%);
     text-align: start;
     align-items: flex-start;
@@ -230,9 +211,73 @@
   .container {
     height: 180px;
   }
+}
 
-  .trailsText {
+@media screen and (min-width: 2560px) {
+  .heroBlock {
+    min-height: 1488px;
+    background-image: url('../../images/hero-bg-big.png');
+  }
+
+  .heroContent {
+    padding-top: 280px;
+  }
+
+  .head {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+
+    padding-bottom: 50px;
+  }
+
+  .head::before {
+    width: 20px;
+    height: 20px;
+    padding-right: 10px;
+    content: url('../../images/Ellipse-big.svg');
+  }
+
+  .description {
     font-size: 36px;
     line-height: 54px;
+
+    /* padding-bottom: 20px; */
+  }
+
+  .list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 80px;
+  }
+
+  .listItem {
+    width: calc(26%);
+    text-align: start;
+    align-items: flex-start;
+  }
+
+  .top {
+    font-size: 80px;
+    line-height: 100px;
+  }
+
+  .bot {
+    font-size: 32px;
+    line-height: 40px;
+
+    margin-top: 16px;
+    max-width: 250px;
+  }
+
+  .countLine1 {
+    width: 170px;
+  }
+  .countLine2 {
+    width: 60px;
+  }
+
+  .container {
+    height: 350px;
   }
 }

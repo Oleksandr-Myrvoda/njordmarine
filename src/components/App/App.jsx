@@ -1,3 +1,4 @@
+import { Suspense, useState, useEffect, useRef } from 'react';
 import { LangProvider } from 'context/LangProvider';
 import { AdminProvider } from 'context/AdminProvider';
 import { useMediaQuery } from 'react-responsive';
@@ -6,8 +7,6 @@ import Footer from 'components/Footer';
 import Header from 'components/Header/Header';
 import Main from 'components/Main';
 import Sidebar from 'components/Sidebar';
-import { Suspense, useState, useEffect, useRef } from 'react';
-import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import Loader from 'common/Loader/Loader';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,7 +20,6 @@ function App() {
   const closeSidebar = () => setIsOpen(false);
 
   const cardRef = useRef(null);
-  // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
 
   useEffect(() => {
     if (isDesktop) setIsOpen(false);

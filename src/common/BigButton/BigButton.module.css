@@ -47,6 +47,18 @@
   .bigButton,
   .disabledBtn {
     max-width: 216px;
+    /* min-width: 216px; */
     height: 56px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .bigButton,
+  .disabledBtn {
+    min-width: 397px;
+    height: 112px;
+
+    font-size: 32px;
+    line-height: 40px;
   }
 }

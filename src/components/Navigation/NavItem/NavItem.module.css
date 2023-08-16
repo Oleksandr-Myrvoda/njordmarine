@@ -8,13 +8,11 @@
   align-items: center;
   color: var(--sidebar-text-color);
   overflow: hidden;
-  /* cursor: pointer; */
 }
 
 .itemName::before {
   padding-right: 5px;
   content: ' \2022 ';
-  /* color: var(--accent-color); */
   color: var(--bg-dark-color);
   width: 6px;
   height: 6px;
@@ -75,4 +73,23 @@
   /* .NavItem {
     width: 100%;
   } */
+}
+@media screen and (min-width: 2560px) {
+  .NavItem {
+    width: auto;
+    padding-left: 0;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .NavItem.NavItemActive > .itemName {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .NavItem .itemName {
+    font-size: 32px;
+    line-height: 40px;
+  }
 }
