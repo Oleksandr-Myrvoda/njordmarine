@@ -37,26 +37,6 @@
   border-radius: 8px;
 }
 
-/* .serviceLink {
-  align-self: center;
-
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.24px;
-  color: var(--text-light-color);
-}
-
-.serviceLink::after {
-  padding-left: 10px;
-  content: url('../../images/arrow-right.svg');
-  text-align: center;
-} */
-
 .downloadButton {
   background-color: transparent;
   border: none;
@@ -118,8 +98,46 @@
     font-size: 18px;
     line-height: 27px;
   }
+}
+@media screen and (min-width: 2560px) {
+  .heroAboutBlock {
+    padding: 0;
+    /* min-height: 1278px; */
+    min-height: 1340px;
+    background-repeat: no-repeat;
+    background-image: url('../../images/hero-bg-about-big.png');
+    background-position: right;
+    background-size: auto;
+  }
 
-  .serviceLink {
-    align-self: flex-start;
+  .heroContent {
+    padding-top: 280px;
+    width: calc(40%);
+  }
+
+  .heroWrapper {
+    gap: 16px;
+    height: 850px;
+  }
+
+  .description {
+    font-size: 36px;
+    line-height: 54px;
+
+    /* padding-bottom: 20px; */
+  }
+
+  .link {
+    height: 54px;
+
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .link::after {
+    padding-top: 8px;
+    padding-left: 16px;
+
+    content: url('../../images/arrowRight-big.svg');
   }
 }

@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { aboutFactConfig } from 'data/about-fact';
-import { useMediaQuery } from 'react-responsive';
-import { useState, useEffect, useRef } from 'react';
-import ScrollUp from 'common/ScrollUp';
+
+import { useState, useEffect } from 'react';
 import SendInfo from 'common/SendInfo';
 import AboutFactList from './AboutFactList';
 import s from './AboutFactBlock.module.css';
@@ -11,7 +10,7 @@ import Trail from 'common/Trail/Trail';
 
 const AbotFactBlock = () => {
   const { t } = useTranslation();
-  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
+
   const [isAnimated, setIsAnimated] = useState(false);
 
   useEffect(() => {
@@ -31,6 +30,7 @@ const AbotFactBlock = () => {
             textStyle="taglineBig"
             heightD={32}
             heightMob={48}
+            heightBig={70}
           >
             <p className="tagline">{t('abotFactBlock.tagline')}</p>
           </Trail>
@@ -45,8 +45,6 @@ const AbotFactBlock = () => {
           />
         </div>
       </Container>
-
-      {/* {!isDesktop && <ScrollUp />} */}
     </div>
   );
 };

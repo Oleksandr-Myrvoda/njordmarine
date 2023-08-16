@@ -23,41 +23,6 @@ const OurTeamList = ({ ourTeamConfig: cards }) => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  // const [currentPage, setCurrentPage] = useState(0);
-  // const [prevCurrentPage, setPrevCurrentPage] = useState(3);
-  // const [nextCurrentPage, setNextCurrentPage] = useState(1);
-
-  // useEffect(() => {
-  //   currentPage === 0
-  //     ? setPrevCurrentPage(3)
-  //     : setPrevCurrentPage(currentPage - 1);
-
-  //   currentPage === 3
-  //     ? setNextCurrentPage(0)
-  //     : setNextCurrentPage(currentPage + 1);
-  // }, [currentPage]);
-
-  // // SWIPE
-
-  // const totalPages = cards.length;
-
-  // const handlers = useSwipeable({
-  //   onSwipedLeft: () => nextPage(),
-  //   onSwipedRight: () => prevPage(),
-  // });
-
-  // const nextPage = () => {
-  //   if (currentPage < totalPages - 1) {
-  //     setCurrentPage(prevPage => prevPage + 1);
-  //   }
-  // };
-
-  // const prevPage = () => {
-  //   if (currentPage > 0) {
-  //     setCurrentPage(prevPage => prevPage - 1);
-  //   }
-  // };
-
   return (
     <>
       {!isDesktop && (

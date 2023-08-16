@@ -56,6 +56,8 @@ const HeroAboutBlock = () => {
             <Trail
               open={isAnimated}
               textStyle="taglineBig"
+              heightBig={170}
+              // heightBig={90}
               heightD={80}
               heightMob={48}
             >

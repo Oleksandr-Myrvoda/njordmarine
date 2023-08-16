@@ -9,12 +9,6 @@
     var(--bg-light-color) calc(310px),
     var(--bg-medium-color) 310px
   );
-
-  /* background-color: var(--bg-light-color);
-  background-repeat: no-repeat;
-  background-image: url('../../images/out-team-bg-mob.png');
-  background-position: right;
-  background-size: cover; */
 }
 .descr {
   height: 130px;
@@ -64,5 +58,37 @@
     margin-top: 32px;
     align-self: center;
     width: 600px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .ourTeamBlock {
+    overflow: hidden;
+
+    padding: 0;
+    /* padding-top: 204px; */
+    padding-bottom: 166px;
+    gap: 60px;
+
+    background-image: linear-gradient(
+      150deg,
+      var(--bg-light-color) calc(1075px),
+      var(--bg-medium-color) 1075px
+    );
+  }
+  .descr {
+    height: 400px;
+    padding: 304px 96px 0 96px;
+  }
+  .description {
+    width: 975px;
+    margin-top: 32px;
+
+    font-size: 36px;
+    line-height: 54px;
+  }
+  .sendInfo {
+    margin-top: 64px;
+    align-self: center;
+    width: 1060px;
   }
 }

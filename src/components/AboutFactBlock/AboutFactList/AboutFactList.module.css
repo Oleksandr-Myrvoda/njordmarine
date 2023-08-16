@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   gap: 16px;
-  /* padding-bottom: 25px; */
 }
 
 .itemList {
@@ -31,18 +30,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-/* .item {
-  padding: 18px;
-  border-radius: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--bg-light-color);
-  gap: 16px;
-  text-align: start;
-  align-items: flex-start;
-} */
 
 .count {
   font-family: 'Ruberoid';
@@ -86,5 +73,41 @@
 
   .descr {
     width: 295px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .list {
+    gap: 32px;
+  }
+
+  .item {
+    width: 540px;
+    /* width: calc(30%); */
+    gap: 32px;
+  }
+  .itemList {
+    padding: 16px;
+  }
+
+  .image {
+    background-size: cover;
+    width: 540px;
+    height: auto;
+  }
+  .count {
+    font-size: 45px;
+    line-height: 50px;
+  }
+  .count::before {
+    padding-right: 5px;
+    content: url('../../../images/Ellipse-big.svg');
+  }
+
+  .descr {
+    width: 540px;
+
+    font-size: 32px;
+    line-height: 50px;
   }
 }

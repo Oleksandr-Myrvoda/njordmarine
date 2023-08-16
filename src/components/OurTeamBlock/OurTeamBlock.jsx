@@ -23,7 +23,7 @@ const OurTeamBlock = () => {
     <div className={s.ourTeamBlock}>
       <Container>
         <div className={s.descr}>
-          <Trail open={isAnimated} heightD={60} heightMob={32}>
+          <Trail open={isAnimated} heightBig={170} heightD={60} heightMob={32}>
             <h1 className="taglineBig">{t('ourTeamBlock.taglineBig')}</h1>
             <p className={s.description}>{t('ourTeamBlock.text')}</p>
           </Trail>
