@@ -29,3 +29,9 @@
 .edited:hover {
   background-color: var(--accent-color);
 }
+@media screen and (min-width: 2560px) {
+  .button {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}

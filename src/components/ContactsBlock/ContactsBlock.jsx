@@ -8,6 +8,7 @@ import LoaderSpinner from 'common/LoaderSpinner';
 import GoogleMaps from 'components/GoogleMaps';
 import SocialBlock from './SocialBlock';
 import { contactsPageConfig } from 'data/contacts';
+
 import s from './ContactsBlock.module.css';
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;

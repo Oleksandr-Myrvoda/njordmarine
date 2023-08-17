@@ -7,6 +7,7 @@ import { useSetOtherError } from 'context/ErrorProvider';
 import ContactsBlock from 'components/ContactsBlock';
 import s from './ContactsPage.module.css';
 import Trail from 'common/Trail/Trail';
+import company from 'images/company-photo.png';
 
 const ContactsPage = () => {
   const { t } = useTranslation();
@@ -62,6 +63,10 @@ const ContactsPage = () => {
           <button className={s.downloadButton} onClick={handleDownload}>
             <div className={s.brochureLink}>{t('common.brochureBtn')}</div>
           </button>
+        </div>
+
+        <div className={s.companyPhotoWrapper}>
+          <img className={s.companyPhoto} src={company} alt="company" />
         </div>
       </div>
     </div>

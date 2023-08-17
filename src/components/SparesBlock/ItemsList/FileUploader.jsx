@@ -3,7 +3,7 @@ import { useState } from 'react';
 import storage from '../../../services/firebaseConfig';
 import s from './FileUploader.module.css';
 
-const FileUploader = ({ setImage, editData, imgUrl, uploadData }) => {
+const FileUploader = ({ uploadData }) => {
   const [file, setFile] = useState(null);
   const [percent, setPercent] = useState(0);
 
@@ -47,13 +47,7 @@ const FileUploader = ({ setImage, editData, imgUrl, uploadData }) => {
 
   return (
     <>
-      <input
-        // value={imgUrl}
-        // value=""
-        type="file"
-        accept="image/*"
-        onChange={handleChange}
-      />
+      <input type="file" accept="image/*" onChange={handleChange} />
       {/* file || input */}
       <h3>{percent} %</h3>
       <button className={s.upload} type="button" onClick={() => handleUpload()}>

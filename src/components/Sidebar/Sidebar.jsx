@@ -8,23 +8,13 @@ import logo from 'images/Logo.svg';
 import logoBig from 'images/logo-big.svg';
 import { contactsConfig } from 'data/contacts';
 import { Suspense, useState, useEffect, useRef } from 'react';
-import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
+
 import s from './Sidebar.module.css';
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const isDesktopBig = useMediaQuery({ query: '(min-width: 2560px)' });
   const cardRef = useRef(null);
-  // useOutsideClickDetector(cardRef, toggleSidebar, isOpen);
-
-  // const handleInsideClick = event => {
-  //   if (event.target.tagName !== 'BUTTON') {
-  //     setIsOpen(false);
-  //   }
-  // };
-
-  // useOutsideClickDetector(cardRef, handleInsideClick, isOpen);
-  // useOutsideClickDetector(cardRef, closeSidebar, isOpen);
 
   const handleBackdropClick = e => {
     if (e.target === e.currentTarget) {

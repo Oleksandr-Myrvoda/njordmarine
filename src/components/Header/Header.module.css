@@ -17,15 +17,9 @@
   position: fixed;
   top: 0;
   width: 375px;
-  /* z-index: 500; */
+
   z-index: 10;
   border: none;
-  /* width: 100%; */
-
-  /* align-self: center; */
-
-  /* height: 68px; */
-  /* left: auto; */
 }
 
 .mainHeader {
@@ -152,5 +146,12 @@
     /* width: 2114px -96 -96; */
     width: 1922px;
     height: 204px;
+  }
+
+  .logoutBtn {
+    font-size: 32px;
+    line-height: 40px;
+    width: 397px;
+    height: 112px;
   }
 }

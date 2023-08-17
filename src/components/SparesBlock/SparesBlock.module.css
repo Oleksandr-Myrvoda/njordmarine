@@ -78,6 +78,7 @@
   border-radius: 8px;
   width: 100%;
   height: 48px;
+  padding-left: 8px;
   background-color: var(--bg-light-color);
   font-family: 'Gilroy';
   font-style: normal;
@@ -131,5 +132,17 @@
   .headTitle {
     font-size: 52px;
     line-height: 78px;
+  }
+
+  .addForm {
+    gap: 16px;
+  }
+  .addFormInput {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .addFormButton {
+    font-size: 32px;
+    line-height: 36px;
   }
 }

@@ -81,6 +81,14 @@
 .brochureLink:hover {
   color: #012756;
 }
+.companyPhotoWrapper {
+  margin: 0 auto;
+}
+.companyPhoto {
+  border-radius: 8px;
+  width: 343px;
+  height: auto;
+}
 
 @media screen and (min-width: 1440px) {
   .taglineWrapper {
@@ -115,9 +123,14 @@
   .downloadButtonWrapper {
     display: flex;
     justify-content: flex-start;
-    margin: 88px 0 0 0;
+    margin: 88px 0 32px 0;
+  }
+
+  .companyPhoto {
+    width: 1052px;
   }
 }
+
 @media screen and (min-width: 2560px) {
   .pageWrapper {
     align-items: center;
@@ -149,7 +162,7 @@
   }
 
   .downloadButtonWrapper {
-    margin: 166px 0 0 0;
+    margin: 166px 0 64px 0;
   }
 
   .brochureLink {
@@ -161,5 +174,13 @@
     padding-left: 20px;
     padding-top: 55px;
     content: url('../../images/arrowRight-big.svg');
+  }
+
+  .companyPhoto {
+    width: 1027px;
+  }
+
+  .companyPhoto {
+    width: 1922px;
   }
 }

@@ -49,7 +49,6 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
     <li
       ref={cardRef}
       key={id}
-      // className={`${s.item} ${isLogin && s.isLogin} ${
       className={`${!isMenuOpen ? s.item : ''} 
       ${isLogin && s.isLogin} 
       ${isMenuOpen && s.itemEdited}`}
@@ -60,7 +59,7 @@ const BrendItem = ({ brend, id, editBrend, deleteBrend }) => {
         <div
           className={s.brendItem}
           onClick={e => {
-            if (e.target !== e.currentTarget) return;
+            if (!isLogin || e.target !== e.currentTarget) return;
             setIsMenuOpen(prevState => !prevState);
           }}
         >
