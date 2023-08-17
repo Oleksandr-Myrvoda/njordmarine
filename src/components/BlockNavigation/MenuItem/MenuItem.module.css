@@ -21,10 +21,10 @@
     box-shadow: 0px 0px 20px 4px rgba(123, 170, 241, 0.6);
   }
 
-  .image {
+  /* .image {
     width: 40px;
     height: 40px;
-  }
+  } */
 
   .itemName {
     font-family: 'Gilroy';
@@ -68,5 +68,29 @@
   .animatedItem {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .NavItem {
+    gap: 32px;
+
+    width: 520px;
+    height: 160px;
+    padding: 48px 48px 80px 48px;
+  }
+
+  .itemName {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .item {
+    gap: 32px;
   }
 }

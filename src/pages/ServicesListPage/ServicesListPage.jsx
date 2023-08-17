@@ -73,7 +73,7 @@ const ServicesListPage = () => {
 
       <Container>
         <div className={s.taglineWrapper}>
-          <Trail open={isAnimated} heightD={60} heightMob={16}>
+          <Trail open={isAnimated} heightD={60} heightMob={16} heightBig={110}>
             <h1 className="taglineBig">{t('services.taglineBig')}</h1>
           </Trail>
 

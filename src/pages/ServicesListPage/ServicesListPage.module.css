@@ -69,9 +69,9 @@
     gap: 40px;
     /* height: 200px; */
   }
-  .trailWrapper {
+  /* .trailWrapper {
     height: 48px;
-  }
+  } */
 
   .pagesBlock {
     padding: 80px 96px 96px 96px;
@@ -85,6 +85,39 @@
       to bottom,
       var(--bg-medium-color) calc(600px),
       var(--bg-light-color) 600px
+    );
+  }
+  .energyBG {
+    background-image: linear-gradient(
+      to bottom,
+      var(--bg-medium-color) calc(800px),
+      var(--bg-light-color) 800px
+    );
+  }
+}
+@media screen and (min-width: 2560px) {
+  .pageWrapper {
+    margin-top: 204px;
+    padding-bottom: 0;
+  }
+
+  .taglineWrapper {
+    padding-top: 166px;
+    gap: 80px;
+  }
+
+  .pagesBlock {
+    padding: 80px 96px 96px 96px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .onBoardBG,
+  .focusBG {
+    background-image: linear-gradient(
+      to bottom,
+      var(--bg-medium-color) calc(1000px),
+      var(--bg-light-color) 1000px
     );
   }
   .energyBG {

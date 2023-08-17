@@ -12,3 +12,8 @@
     flex-wrap: wrap;
   }
 }
+@media screen and (min-width: 2560px) {
+  .listWrapper {
+    gap: 24px;
+  }
+}

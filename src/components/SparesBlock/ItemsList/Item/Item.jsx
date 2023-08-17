@@ -127,75 +127,10 @@ const Item = ({
 
       {isLogin && (
         <div className={s.cardWithMenu}>
-          <CardWithMenu
-            // isEditing={editedData?.itemTitle}
-            onEdit={openEditModal}
-            onDelete={handleDeleteData}
-          />
+          <CardWithMenu onEdit={openEditModal} onDelete={handleDeleteData} />
         </div>
       )}
     </li>
-    // <li key={id} className={s.item}>
-    //   <div className={s.imgWrapper}>
-    //     {!editedData ? (
-    //       <img className={s.img} src={imgUrl} alt={itemTitle}></img>
-    //     ) : (
-    //       <FileUploader
-    //         setImage={setImage}
-    //         editData={editData}
-    //         uploadData={handleEditData}
-    //       />
-    //     )}
-    //   </div>
-
-    //   <div className={s.itemMenu}>
-    //     {!editedData ? (
-    //       <p className={s.title}> {itemTitle[lang]}</p>
-    //     ) : (
-    //       <>
-    //         <input
-    //           type="text"
-    //           value={editedData.itemTitle.ru}
-    //           name="ru"
-    //           onChange={handleEditTitle}
-    //           placeholder={t('common.placeholderRu')}
-    //           autoComplete="off"
-    //         />
-    //         <input
-    //           type="text"
-    //           value={editedData.itemTitle.en}
-    //           name="en"
-    //           onChange={handleEditTitle}
-    //           placeholder={t('common.placeholderEn')}
-    //           autoComplete="off"
-    //         />
-    //       </>
-    //     )}
-    //     {!editedData && (
-    //       <button onClick={openModal} className={s.button}>
-    //         {t('spares.brandsBtn')}
-    //       </button>
-    //     )}
-    //   </div>
-
-    //   {isLogin &&
-    //     (editedData ? (
-    //       <button
-    //         className={s.buttonBack}
-    //         type="button"
-    //         onClick={() => setEditedData(null)}
-    //         aria-label="Menu"
-    //       >
-    //         Back
-    //       </button>
-    //     ) : (
-    //       <CardWithMenu
-    //         isEditing={editedData?.itemTitle}
-    //         onEdit={openEditSets}
-    //         onDelete={handleDeleteData}
-    //       />
-    //     ))}
-    // </li>
   );
 };
 

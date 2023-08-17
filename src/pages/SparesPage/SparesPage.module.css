@@ -50,3 +50,27 @@
     text-align: left;
   }
 }
+@media screen and (min-width: 2560px) {
+  .pageWrapper {
+    margin-top: 204px;
+    padding-bottom: 0;
+    background-image: linear-gradient(
+      to bottom,
+      var(--bg-medium-color) calc(1300px),
+      var(--bg-light-color) 1300px
+    );
+  }
+
+  .taglineWrapper {
+    padding-top: 166px;
+    gap: 80px;
+  }
+
+  .trailWrapper {
+    height: 96px;
+  }
+  .pagesBlock {
+    padding-top: 166px;
+    padding-bottom: 166px;
+  }
+}

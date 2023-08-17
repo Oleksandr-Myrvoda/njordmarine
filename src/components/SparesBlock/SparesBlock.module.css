@@ -4,10 +4,6 @@
   gap: 36px;
 }
 
-/* .trailWrapper {
-  height: 32px;
-} */
-
 .headTitle {
   font-family: 'Ruberoid';
   font-style: normal;
@@ -25,13 +21,6 @@
   gap: 10px;
 }
 
-.item {
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  gap: 32px;
-}
 .imgWrapper {
   align-self: center;
 }
@@ -82,9 +71,6 @@
 .addForm {
   display: flex;
   flex-direction: column;
-  /* text-align: center; */
-  /* align-items: center; */
-  /* padding: 8px; */
   gap: 8px;
 }
 .addFormInput {
@@ -125,10 +111,6 @@
     display: flex;
   }
 
-  /* .trailWrapper {
-    height: 48px;
-  } */
-
   .headTitle {
     font-size: 26px;
     line-height: 39px;
@@ -140,14 +122,14 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  .item {
-    width: 285px;
-    height: 281px;
-    justify-content: space-between;
+}
+@media screen and (min-width: 2560px) {
+  .blockWrapper {
+    gap: 96px;
   }
 
-  /* .addForm {
-    flex-direction: row;
-  } */
+  .headTitle {
+    font-size: 52px;
+    line-height: 78px;
+  }
 }

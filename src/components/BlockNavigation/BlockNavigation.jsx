@@ -10,7 +10,7 @@ const BlockNavigation = ({ navConfig }) => {
       {navConfig.map(({ imgUrl, name, alt, to }, index) => (
         <li key={index}>
           <MenuItem imgUrl={imgUrl} name={t(name)} alt={alt} to={to} />
-        </li> 
+        </li>
       ))}
     </ul>
   );
