@@ -1,4 +1,10 @@
 .error {
-  /* margin-bottom: 20px; */
   color: red;
+}
+
+@media screen and (min-width: 2560px) {
+  .error {
+    font-size: 20px;
+    line-height: 36px;
+  }
 }

@@ -91,4 +91,24 @@
     align-items: flex-end;
     content: url('../../images/arrowRight-big.svg');
   }
+
+  .afterBlock,
+  .afterTextWrapper {
+    gap: 32px;
+  }
+
+  .afterTextWrapper {
+    margin-bottom: 64px;
+  }
+
+  .afterText {
+    font-size: 26px;
+    line-height: 40px;
+  }
+
+  .afterImg {
+    width: 240px;
+    height: auto;
+    background-size: cover;
+  }
 }

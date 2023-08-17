@@ -40,7 +40,7 @@ const Modal = ({ onClose, title, children, isEmailSended, isBrends }) => {
           </div>
 
           <button className={s.closeBtn} onClick={onClose} aria-label="Close">
-            <img src={closeBtn} alt="close" />
+            <img className={s.closeBtnImg} src={closeBtn} alt="close" />
           </button>
         </header>
 

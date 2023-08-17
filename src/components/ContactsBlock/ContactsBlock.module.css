@@ -11,8 +11,6 @@
   display: flex;
   flex-direction: column;
   background-color: var(--card-bg);
-  /* gap: 32px;
-  padding: 16px; */
 
   width: 100vw;
 }
@@ -26,9 +24,7 @@
 
 .formWrapper {
   max-width: 343px;
-
   padding: 16px;
-  /* height: 752px; */
   height: auto;
 }
 
@@ -75,14 +71,9 @@
   .formWrapper {
     padding: 0;
     max-width: 576px;
-    /* width: 576px; */
-    /* width: Fill (543px)
-height: Fill (577px)
-gap: 20px */
   }
 
   .mapWrapper {
-    /* padding: 16px; */
     width: 412px;
     padding: 24px;
     gap: 36px;
@@ -90,7 +81,7 @@ gap: 20px */
 
     display: flex;
     flex-direction: column;
-    /* gap: 32px; */
+
     background-color: var(--card-bg);
     border-radius: 8px;
   }
@@ -98,5 +89,48 @@ gap: 20px */
   .map {
     width: 412px;
     height: 231px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .blockWrapper {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .formWrapper {
+    padding: 0;
+    max-width: 970px;
+  }
+
+  .mapWrapper {
+    width: 824px;
+    padding: 48px;
+    gap: 96px;
+  }
+
+  .mapTitle {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .map {
+    width: 824px;
+    height: 462px;
+  }
+
+  .socList {
+    gap: 32px;
+  }
+
+  .socItem,
+  .socBtn {
+    width: 68px;
+    height: 68px;
+  }
+
+  .img {
+    width: 68px;
+    height: 68px;
+    background-size: cover;
   }
 }

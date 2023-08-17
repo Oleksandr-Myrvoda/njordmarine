@@ -54,4 +54,12 @@
     font-size: 28px;
     line-height: 32px;
   }
+
+  .list {
+    gap: 32px;
+  }
+
+  .img {
+    margin-right: 16px;
+  }
 }

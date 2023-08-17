@@ -67,3 +67,21 @@
     height: auto;
   }
 }
+@media screen and (min-width: 2560px) {
+  .header {
+    display: flex;
+    margin-bottom: 64px;
+  }
+
+  .modal {
+    padding: 96px 64px;
+    max-width: 970px;
+    height: auto;
+  }
+
+  .closeBtnImg {
+    width: 80px;
+    height: auto;
+    background-size: cover;
+  }
+}

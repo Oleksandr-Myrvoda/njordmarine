@@ -94,7 +94,7 @@ const Form = ({ isTitle, setEmailSended }) => {
       )}
 
       <form ref={form} onSubmit={handleSubmit(onSubmit)} className={s.inner}>
-        <label>
+        <label className={s.labelWrapper}>
           <p className={s.label}>{t('form.name')}</p>
           <input
             className={s.formInput}
@@ -111,7 +111,7 @@ const Form = ({ isTitle, setEmailSended }) => {
           )}
         </label>
 
-        <label>
+        <label className={s.labelWrapper}>
           <p className={s.label}>{t('form.email')}</p>
           <input
             className={s.formInput}
@@ -126,7 +126,7 @@ const Form = ({ isTitle, setEmailSended }) => {
           {errors.email && <ErrorMsg message={errors.email.message} />}
         </label>
 
-        <label>
+        <label className={s.labelWrapper}>
           <p className={s.label}>{t('form.phone')}</p>
           <input
             className={s.formInput}
@@ -137,7 +137,7 @@ const Form = ({ isTitle, setEmailSended }) => {
           />
         </label>
 
-        <label>
+        <label className={s.labelWrapper}>
           <p className={s.label}>{t('form.companyName')}</p>
           <input
             className={s.formInput}

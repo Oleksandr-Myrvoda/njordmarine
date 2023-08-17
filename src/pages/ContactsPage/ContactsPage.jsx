@@ -50,17 +50,17 @@ const ContactsPage = () => {
     <div className={s.pageWrapper}>
       <div className={s.container}>
         <div className={s.taglineWrapper}>
-          <Trail open={isAnimated} heightD={60} heightMob={48}>
+          <Trail open={isAnimated} heightBig={110} heightD={60} heightMob={48}>
             <h1 className="taglineBig">{t('contacts.taglineBig')}</h1>
           </Trail>
 
-          <p>{t('contacts.text')}</p>
+          <p className={s.descr}>{t('contacts.text')}</p>
         </div>
         <ContactsBlock />
 
         <div className={s.downloadButtonWrapper}>
           <button className={s.downloadButton} onClick={handleDownload}>
-            <div className={s.termsLink}>{t('common.brochureBtn')}</div>
+            <div className={s.brochureLink}>{t('common.brochureBtn')}</div>
           </button>
         </div>
       </div>

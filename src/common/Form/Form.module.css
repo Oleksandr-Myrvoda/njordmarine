@@ -4,7 +4,6 @@
 
 .inner {
   margin-top: 8px;
-  gap: 16px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -12,6 +11,10 @@
 
 .taglineWrapper {
   margin-bottom: 24px;
+}
+
+.labelWrapper {
+  height: 90px;
 }
 
 .label {
@@ -46,7 +49,7 @@
   color: var(--text-light-color);
 }
 .textarea {
-  height: 184px;
+  height: 140px;
 }
 
 .formInput::placeholder,
@@ -95,8 +98,6 @@
     flex-direction: row;
     height: 100%;
     justify-content: space-between;
-
-    gap: 16px;
   }
 
   .formInput {
@@ -105,7 +106,7 @@
 
   .textarea {
     width: 552px;
-    height: 184px;
+    height: 154px;
   }
 
   .labelTextarea {
@@ -114,5 +115,55 @@
 
   .btns {
     margin-top: 24px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .formInput {
+    width: 256px;
+  }
+
+  .labelTextarea {
+    width: 100%;
+  }
+
+  .btns {
+    margin-top: 48px;
+  }
+
+  .labelWrapper {
+    height: 140px;
+  }
+
+  .label {
+    padding-left: 16px;
+
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .formInput,
+  .textarea {
+    border-radius: 4px;
+    width: 445px;
+    padding: 14px 12px 14px 12px;
+
+    font-size: 22px;
+    line-height: 40px;
+  }
+  .textarea {
+    height: 280px;
+    width: 945px;
+  }
+
+  .formInput::placeholder,
+  .textarea::placeholder {
+    font-size: 22px;
+    line-height: 40px;
+  }
+
+  .ternsLink {
+    font-size: 30px;
+    line-height: 48px;
   }
 }
