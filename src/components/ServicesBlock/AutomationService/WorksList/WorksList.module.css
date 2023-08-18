@@ -61,7 +61,6 @@
     /* gap: 36px; */
   }
   .title {
-    margin-bottom: 0;
     font-size: 26px;
     line-height: 40px;
     width: calc(45%);
@@ -84,19 +83,26 @@
   .blockWrapper {
     /* gap: 36px; */
   }
+  .list {
+    column-gap: 32px;
+  }
+
   .title {
-    margin-bottom: 0;
-    font-size: 26px;
-    line-height: 40px;
-    width: calc(45%);
+    font-size: 50px;
+    line-height: 72px;
     margin-bottom: 36px;
   }
-  .list {
-    flex-direction: row;
-    flex-wrap: wrap;
+
+  .dotMarker {
+    width: 48px;
+    height: 48px;
   }
-  .item {
-    width: calc(45%);
+
+  .text {
+    margin-left: 15px;
+
+    font-size: 36px;
+    line-height: 54px;
   }
   .sendInfo {
     margin-top: 64px;

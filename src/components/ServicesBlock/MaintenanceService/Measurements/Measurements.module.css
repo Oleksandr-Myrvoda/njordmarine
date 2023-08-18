@@ -20,12 +20,6 @@
   color: var(--text-color);
 }
 
-.listWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .list {
   display: flex;
   flex-direction: column;
@@ -96,13 +90,6 @@
     line-height: 36px;
   }
 
-  .listWrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 36px;
-  }
-
   .list {
     position: relative;
     flex-direction: row;
@@ -110,13 +97,6 @@
     justify-content: space-between;
     height: 420px;
     width: 100%;
-  }
-  .listD {
-    width: 1025px;
-    margin: auto;
-  }
-  .cards {
-    position: relative;
   }
 
   .image {
@@ -127,58 +107,6 @@
   .text {
     font-size: 18px;
     line-height: 27px;
-  }
-
-  .prevCard,
-  .currentCard,
-  .nextCard {
-    position: absolute;
-    border-radius: 8px;
-  }
-
-  .currentSwiperCard {
-    width: 420px;
-    border-radius: 8px;
-    box-shadow: 0 8px 8px 8px rgba(123, 170, 241, 0.3);
-    background-color: var(--bg-medium-color);
-  }
-  .prevCard {
-    left: 85px;
-    background-color: var(--card-bg);
-    scale: 0.95;
-    opacity: 0.5;
-    /* animation: slideRight 0.3s ease-in-out; */
-  }
-  .currentCard {
-    left: 300px;
-    box-shadow: 0 8px 8px 8px rgba(123, 170, 241, 0.3);
-    background-color: var(--bg-medium-color);
-    z-index: 2;
-  }
-  .nextCard {
-    left: 510px;
-    background-color: var(--card-bg);
-    scale: 0.95;
-    opacity: 0.5;
-    /* animation: slideLeft 0.3s ease-in-out; */
-  }
-
-  @keyframes slideLeft {
-    from {
-      left: 510px;
-    }
-    to {
-      left: 300px;
-    }
-  }
-
-  @keyframes slideRight {
-    from {
-      left: 85px;
-    }
-    to {
-      left: 300px;
-    }
   }
 
   .pagiBtnArrow {
@@ -275,17 +203,96 @@
     z-index: 1;
     scale: 0.95;
   }
-
-  /* .appear {
-    animation: appear 0.5s 0.4s ease-in-out forwards;
+}
+@media screen and (min-width: 2560px) {
+  .blockWrapper {
+    padding: 96px 0;
+    gap: 128px;
+    max-width: 1922px;
   }
 
-  @keyframes appear {
+  .tagline {
+    width: 1030px;
+    font-size: 48px;
+    line-height: 50px;
+  }
+
+  .pagiBtnArrow,
+  .pagiBtnArrowImg {
+    width: 96px;
+    height: auto;
+
+    background-size: cover;
+  }
+
+  .list {
+    height: 840px;
+  }
+
+  .image {
+    margin-bottom: 64px;
+    width: 184px;
+    height: 184px;
+  }
+
+  .count,
+  .title,
+  .text {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .cardWindow {
+    width: 840px;
+    height: 840px;
+    border-radius: 16px;
+  }
+
+  .cardItem {
+    width: 696px;
+    height: 600px;
+    padding: 120px 72px;
+
+    border-radius: 16px;
+
+    background-color: var(--bg-medium-color);
+  }
+
+  @keyframes slide {
     0% {
-      opacity: 1;
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-840px);
+    }
+    40% {
+      transform: translateX(-1680px);
+    }
+    60% {
+      transform: translateX(-2520px);
+    }
+    80% {
+      transform: translateX(-3360px);
     }
     100% {
-      opacity: 0;
+      transform: translateX(-4200px);
     }
-  } */
+  }
+
+  .swiperBlock {
+    position: relative;
+    width: 1922px;
+    height: 840px;
+  }
+  .swiperItemPrev {
+    left: 40px;
+  }
+  .swiperItemActive {
+    left: 440px;
+
+    border-radius: 16px;
+  }
+  .swiperItemNext {
+    left: 840px;
+  }
 }

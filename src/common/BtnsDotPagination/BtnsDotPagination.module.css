@@ -36,3 +36,25 @@
   background-image: url(../../images/pagi-active-dot.svg);
   background-size: cover;
 }
+
+@media screen and (min-width: 2560px) {
+  .btsDotsBlock {
+    gap: 8px;
+  }
+
+  .itemLi {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pagiBtnDot {
+    width: 24px;
+    height: 24px;
+  }
+
+  .isActiveStyle {
+    width: 48px;
+    height: 48px;
+    background-size: cover;
+  }
+}

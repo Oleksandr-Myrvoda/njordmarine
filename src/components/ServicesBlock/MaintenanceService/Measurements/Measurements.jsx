@@ -1,37 +1,16 @@
-// import Swiper from 'swiper';
-// import { Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import {
-  A11y,
-  Navigation,
-  Pagination,
-  Scrollbar,
-  EffectFade,
-  EffectCoverflow,
-} from 'swiper/modules';
-// import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/effect-fade';
-import 'swiper/css/effect-coverflow';
-
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
-
-import clsx from 'clsx';
 import PropTypes from 'prop-types';
+
 import BtnsDotPagination from 'common/BtnsDotPagination';
+import Trail from 'common/Trail';
 import Card from './Card';
 
 import arrowRight from 'images/pagi-arrow-right.svg';
 import arrowLeft from 'images/pagi-arrow-left.svg';
 
-import Trail from 'common/Trail';
 import s from './Measurements.module.css';
-
 import 'styles/swipeable.css';
 
 const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
@@ -39,34 +18,10 @@ const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 const Measurements = ({ measurementsConfig: cards }) => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
-  const [currentPage, setCurrentPage] = useState(0);
-  const [prevCurrentPage, setPrevCurrentPage] = useState(4);
-  const [nextCurrentPage, setNextCurrentPage] = useState(1);
+  const isDesktopBig = useMediaQuery({ query: '(min-width: 2560px)' });
 
   const [isAnimated, setIsAnimated] = useState(false);
   const headerRef = useRef(null);
-
-  useEffect(() => {
-    currentPage === 0
-      ? setPrevCurrentPage(4)
-      : setPrevCurrentPage(currentPage - 1);
-
-    currentPage === 4
-      ? setNextCurrentPage(0)
-      : setNextCurrentPage(currentPage + 1);
-  }, [currentPage]);
-
-  const nextPage = () => {
-    setCurrentPage(prevPage => Math.min(prevPage + 1, cards.length - 1));
-    setPrevCurrentPage(prevPage => Math.min(prevPage + 1, cards.length - 1));
-    setNextCurrentPage(prevPage => Math.min(prevPage + 1, cards.length - 1));
-  };
-
-  const prevPage = () => {
-    setCurrentPage(prevPage => Math.max(prevPage - 1, 0));
-    setPrevCurrentPage(prevPage => Math.max(prevPage - 1, 0));
-    setNextCurrentPage(prevPage => Math.max(prevPage - 1, 0));
-  };
 
   // ============= Header =============
 
@@ -123,7 +78,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
 
   return (
     <div className={s.blockWrapper} ref={headerRef}>
-      <Trail open={isAnimated} heightD={60} heightMob={64}>
+      <Trail open={isAnimated} heightBig={120} heightD={60} heightMob={64}>
         <h2 className={s.tagline}>
           {t('services.meintenance.measurTagline')}:
         </h2>
@@ -153,10 +108,11 @@ const Measurements = ({ measurementsConfig: cards }) => {
               onClick={handlePrev}
               disabled={currentIndex === 0}
             >
-              <img src={arrowLeft} alt="left" />
+              <img className={s.pagiBtnArrowImg} src={arrowLeft} alt="left" />
             </button>
 
             <div className={s.swiperBlock}>
+              {/* PREV */}
               <div
                 className={`${s.swiperItemPrev} ${
                   currentIndex === 0 ? s.hideCard : ''
@@ -166,7 +122,9 @@ const Measurements = ({ measurementsConfig: cards }) => {
                   <div
                     className={s.cardsContainer}
                     style={{
-                      transform: `translateX(${prevIndex * -420}px)`,
+                      transform: `translateX(${
+                        prevIndex * (isDesktopBig ? -840 : -420)
+                      }px)`,
                     }}
                   >
                     {cards.map(({ title, count, imgUrl, text, alt }) => (
@@ -183,12 +141,16 @@ const Measurements = ({ measurementsConfig: cards }) => {
                   </div>
                 </div>
               </div>
+
+              {/* ACTIVE */}
               <div className={s.swiperItemActive}>
                 <div className={s.cardWindow}>
                   <div
                     className={s.cardsContainer}
                     style={{
-                      transform: `translateX(${currentIndex * -420}px)`,
+                      transform: `translateX(${
+                        currentIndex * (isDesktopBig ? -840 : -420)
+                      }px)`,
                     }}
                   >
                     {cards.map(({ title, count, imgUrl, text, alt }) => (
@@ -205,6 +167,8 @@ const Measurements = ({ measurementsConfig: cards }) => {
                   </div>
                 </div>
               </div>
+
+              {/* NEXT */}
               <div
                 className={`${s.swiperItemNext} ${
                   currentIndex === 4 ? s.hideCard : ''
@@ -214,7 +178,9 @@ const Measurements = ({ measurementsConfig: cards }) => {
                   <div
                     className={s.cardsContainer}
                     style={{
-                      transform: `translateX(${nextIndex * -420}px)`,
+                      transform: `translateX(${
+                        nextIndex * (isDesktopBig ? -840 : -420)
+                      }px)`,
                     }}
                   >
                     {cards.map(({ title, count, imgUrl, text, alt }) => (
@@ -239,7 +205,7 @@ const Measurements = ({ measurementsConfig: cards }) => {
               onClick={handleNext}
               disabled={currentIndex === 4}
             >
-              <img src={arrowRight} alt="right" />
+              <img className={s.pagiBtnArrowImg} src={arrowRight} alt="right" />
             </button>
           </div>
 
@@ -252,124 +218,6 @@ const Measurements = ({ measurementsConfig: cards }) => {
           />
         </>
       )}
-
-      {/* {isDesktop && (
-        <>
-          <div className={s.list}>
-            <button
-              className={`${s.pagiBtnArrow}
-               ${currentPage === 0 ? s.disabledBtn : ''}`}
-              onClick={prevPage}
-              disabled={currentPage === 0}
-            >
-              <img src={arrowLeft} alt="left" />
-            </button>
-            <div
-              className={`${prevCurrentPage === 4 ? s.hideCard : s.prevCard}`}
-            >
-              <Card
-                title={cards[prevCurrentPage].title}
-                count={cards[prevCurrentPage].count}
-                imgUrl={cards[prevCurrentPage].imgUrl}
-                text={cards[prevCurrentPage].text}
-                alt={cards[prevCurrentPage].alt}
-              />
-            </div>
-
-            <div className={s.currentCard}>
-              <Card
-                title={cards[currentPage].title}
-                count={cards[currentPage].count}
-                imgUrl={cards[currentPage].imgUrl}
-                text={cards[currentPage].text}
-                alt={cards[currentPage].alt}
-              />
-            </div>
-            <div
-              className={`${nextCurrentPage === 0 ? s.hideCard : s.nextCard}`}
-            >
-              <Card
-                title={cards[nextCurrentPage].title}
-                count={cards[nextCurrentPage].count}
-                imgUrl={cards[nextCurrentPage].imgUrl}
-                text={cards[nextCurrentPage].text}
-                alt={cards[nextCurrentPage].alt}
-              />
-            </div>
-            <button
-              className={`${s.pagiBtnArrow}
-               ${currentPage === cards.length - 1 ? s.disabledBtn : ''}`}
-              onClick={nextPage}
-              disabled={currentPage === cards.length - 1}
-            >
-              <img src={arrowRight} alt="right" />
-            </button>
-          </div>
-
-          <BtnsDotPagination
-            buttonsList={buttonsList}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
-        </>
-      )} */}
-
-      {/* {isDesktop && (
-        <div className={s.listD}>
-          <div className={s.cards}>
-            <Swiper
-              modules={[Navigation, Pagination, EffectCoverflow]}
-              spaceBetween={10}
-              slidesPerView={2.2}
-              centeredSlides={true}
-              pagination={{ clickable: true }}
-              // pagination={{
-              //   clickable: true,
-              //   el: '.swiper-cuspom-pugination',
-              //   renderBullet: function (index, className) {
-              //     return `<div className=${className}>
-              //     <span className="number">${index + 1}</span>
-              //     <span className="line"></span>
-              //   </div>`;
-              //   },
-              // }}
-              navigation={true}
-
-              // loop={true}
-              // spaceBetween={30}
-              // effect={'fade'}
-              // navigation={true}
-              // pagination={{
-              //   clickable: true,
-              // }}
-              // effect={'coverflow'}
-              // grabCursor={true}
-              // centeredSlides={true}
-              // slidesPerView={'auto'}
-              // coverflowEffect={{
-              //   rotate: 50,
-              //   stretch: 0,
-              //   depth: 100,
-              //   modifier: 1,
-              //   slideShadows: true,
-              // }}
-              // pagination={true}
-            >
-              {cards.map(({ title, count, imgUrl, text, alt }) => (
-                <SwiperSlide key={imgUrl}>
-                  <Card
-                    title={title}
-                    count={count}
-                    imgUrl={imgUrl}
-                    text={text}
-                    alt={alt}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 };

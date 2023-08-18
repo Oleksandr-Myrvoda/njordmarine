@@ -71,7 +71,6 @@
 
 @media screen and (min-width: 1440px) {
   .blockWrapper {
-    /* padding: 48px 0; */
     gap: 64px;
   }
   .tagline {
@@ -87,5 +86,47 @@
 
   .list {
     gap: 90px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .blockWrapper {
+    gap: 96px;
+  }
+  .tagline {
+    font-size: 50px;
+    line-height: 70px;
+  }
+  .listWrapper {
+    gap: 72px;
+  }
+
+  .list {
+    gap: 180px;
+  }
+
+  .schemeBG {
+    width: 936px;
+    height: auto;
+  }
+
+  .image {
+    width: 128px;
+    height: auto;
+
+    margin-right: 24px;
+  }
+
+  .count,
+  .descr {
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .stroke {
+    border-left: 4px solid var(--footer-stroke);
+    height: 920px;
+    position: absolute;
+    left: 64px;
+    top: 64px;
   }
 }

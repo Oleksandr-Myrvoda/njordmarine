@@ -107,12 +107,7 @@ const Scheme = ({ schemeConfig }) => {
   }, []);
   return (
     <div className={s.blockWrapper}>
-      <Trail
-        open={isAnimated}
-        // textStyle="taglineBig"
-        heightD={60}
-        heightMob={48}
-      >
+      <Trail open={isAnimated} heightBig={120} heightD={60} heightMob={48}>
         <h2 className={s.tagline}>{t('services.auto.schemeTagline')}:</h2>
       </Trail>
       <div className={s.listWrapper}>
