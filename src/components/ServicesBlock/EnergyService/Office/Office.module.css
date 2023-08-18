@@ -117,3 +117,35 @@
     align-self: center;
   }
 }
+
+@media screen and (min-width: 2560px) {
+  .blockWrapper {
+    gap: 96px;
+  }
+
+  .hero {
+    margin-bottom: 96px;
+
+    width: 1922px;
+    height: 655px;
+  }
+
+  .title {
+    font-size: 52px;
+    line-height: 70px;
+  }
+
+  .head {
+    font-size: 36px;
+    line-height: 54px;
+  }
+  .text {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .sendInfo {
+    width: 1170px;
+    align-self: center;
+  }
+}

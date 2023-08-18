@@ -72,7 +72,6 @@ const FocusList = () => {
     <ul className={s.list}>
       <li className={s.itemList} ref={itemRef1}>
         <div
-          // className={`${s.item} ${isAnimated1 ? s.animatedItem : ''}
           className={`${s.item} ${isAnimated1 && s.animatedItem}
        `}
         >

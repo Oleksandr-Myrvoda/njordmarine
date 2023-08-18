@@ -80,3 +80,27 @@
     width: 560px;
   }
 }
+@media screen and (min-width: 2560px) {
+  .blockWrapper {
+    /* gap: 36px; */
+  }
+  .title {
+    margin-bottom: 0;
+    font-size: 26px;
+    line-height: 40px;
+    width: calc(45%);
+    margin-bottom: 36px;
+  }
+  .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .item {
+    width: calc(45%);
+  }
+  .sendInfo {
+    margin-top: 64px;
+
+    width: 1070px;
+  }
+}

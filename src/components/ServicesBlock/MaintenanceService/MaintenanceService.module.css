@@ -63,8 +63,6 @@
     border-radius: 0;
     background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
       url('../../../images/serv-mainten-bg.jpg');
-    /* background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
-      url('../../../images/serv-mainten-bg.png'); */
     background-size: cover;
   }
 
@@ -80,5 +78,33 @@
   .sendInfo {
     align-self: center;
     width: 600px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  /* .blockWrapper {
+    gap: 96px;
+  } */
+
+  .hero {
+    margin-bottom: 96px;
+
+    width: 1922px;
+    height: 655px;
+  }
+
+  .title {
+    font-size: 52px;
+    line-height: 70px;
+  }
+
+  .text {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .sendInfo {
+    align-self: center;
+    width: 1225px;
   }
 }

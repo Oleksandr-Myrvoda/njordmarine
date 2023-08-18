@@ -20,12 +20,7 @@ const MaintenanceService = () => {
   return (
     <div className={s.blockWrapper}>
       <div className={s.hero}>
-        <Trail
-          open={isAnimated}
-          // textStyle="taglineBig"
-          heightD={40}
-          heightMob={80}
-        >
+        <Trail open={isAnimated} heightBig={78} heightD={40} heightMob={80}>
           <p className={s.title}>{t('services.meintenance.title')}</p>
         </Trail>
       </div>

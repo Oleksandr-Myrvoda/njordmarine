@@ -22,12 +22,7 @@ const Focus = () => {
   return (
     <div className={s.blockWrapper}>
       <div className={s.hero}>
-        <Trail
-          open={isAnimated}
-          // textStyle="taglineBig"
-          heightD={40}
-          heightMob={100}
-        >
+        <Trail open={isAnimated} heightBig={78} heightD={40} heightMob={100}>
           <p className={s.title}>{t('focus.title')}</p>
         </Trail>
       </div>

@@ -67,7 +67,7 @@ const Office = () => {
   return (
     <div className={s.blockWrapper}>
       <div className={s.hero}>
-        <Trail open={isAnimated} heightD={40} heightMob={48}>
+        <Trail open={isAnimated} heightBig={78} heightD={40} heightMob={48}>
           <p className={s.title}>{t('office.title')}</p>
         </Trail>
       </div>
@@ -78,7 +78,7 @@ const Office = () => {
       </p>
 
       <div className={s.trailWrapper} ref={headerRef1}>
-        <Trail open={isAnimated1} heightD={80} heightMob={80}>
+        <Trail open={isAnimated1} heightBig={120} heightD={80} heightMob={80}>
           <h2 className={s.head}>{t('office.head')}:</h2>
         </Trail>
       </div>

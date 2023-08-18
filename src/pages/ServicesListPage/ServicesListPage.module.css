@@ -95,6 +95,7 @@
     );
   }
 }
+
 @media screen and (min-width: 2560px) {
   .pageWrapper {
     margin-top: 204px;
@@ -107,7 +108,8 @@
   }
 
   .pagesBlock {
-    padding: 80px 96px 96px 96px;
+    padding-top: 166px;
+    padding-bottom: 166px;
     align-items: flex-start;
     text-align: left;
   }
@@ -116,15 +118,15 @@
   .focusBG {
     background-image: linear-gradient(
       to bottom,
-      var(--bg-medium-color) calc(1000px),
-      var(--bg-light-color) 1000px
+      var(--bg-medium-color) calc(1150px),
+      var(--bg-light-color) 1150px
     );
   }
   .energyBG {
     background-image: linear-gradient(
       to bottom,
-      var(--bg-medium-color) calc(800px),
-      var(--bg-light-color) 800px
+      var(--bg-medium-color) calc(1400px),
+      var(--bg-light-color) 1400px
     );
   }
 }
