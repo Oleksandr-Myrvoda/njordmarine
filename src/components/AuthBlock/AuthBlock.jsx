@@ -36,7 +36,7 @@ const AuthBlock = () => {
       {!token ? (
         <form className={s.formWrapper} onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="">
-            <p>Email</p>
+            <p className={s.label}>Email</p>
             <input
               className={s.input}
               type="text"
@@ -46,7 +46,7 @@ const AuthBlock = () => {
           </label>
 
           <label htmlFor="">
-            <p>Password</p>
+            <p className={s.label}>Password</p>
             <input
               className={s.input}
               type={showPassword ? 'text' : 'password'}
@@ -56,8 +56,9 @@ const AuthBlock = () => {
           </label>
 
           <label htmlFor="showPasswordCheckbox">
-            <p>Show Password</p>
+            <p className={s.label}>Show Password</p>
             <input
+              className={s.check}
               type="checkbox"
               id="showPasswordCheckbox"
               onChange={togglePasswordVisibility}

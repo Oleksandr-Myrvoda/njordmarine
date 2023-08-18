@@ -5,14 +5,14 @@ import NavigationFooter from 'components/NavigationFooter';
 import logo from 'images/Logo_footer.svg';
 import s from './Footer.module.css';
 
-const Footer = () => {
+const Footer = ({ loading }) => {
   const date = new Date().getFullYear();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className={s.footer}>
+    <div className={`${s.footer} ${loading ? s.footerStart : s.footerFinish}`}>
       <NavLink to="/" className={s.logo} onClick={scrollToTop}>
         <img src={logo} alt="logo" className={s.logoImg} />
       </NavLink>

@@ -32,14 +32,23 @@
   transform: translateX(0);
 }
 
+.footerStart {
+  transition: all 0.5s;
+  transform: translateX(100%);
+}
+.footerFinish {
+  transition: all 0.5s;
+  transform: translateX(0);
+}
+
 .loaderStart {
   transition: all 0.5s;
   transform: translateX(0);
 }
 
 .loaderFinish {
-  transform: translateX(-100%);
   transition: all 0.5s;
+  transform: translateX(-100%);
 }
 
 @media screen and (min-width: 1440px) {

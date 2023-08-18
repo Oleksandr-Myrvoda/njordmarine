@@ -40,7 +40,7 @@ function App() {
       <div className={s.emptyHeaderFull}></div>
       <div className={s.mainContainer}>
         {/* <div className={`${loading ? s.loaderStart : s.loaderFinish}`}>
-          <Loader />
+        <Loader />
         </div> */}
         {/* <div className={`${loading ? s.contentStart : s.contentFinish}`}> */}
         {isDesktop && (
@@ -77,13 +77,21 @@ function App() {
               </AdminProvider>
             </div>
 
-            {isDesktop && <Footer />}
+            {isDesktop && (
+              <Footer
+              // loading={loading}
+              />
+            )}
           </div>
         </div>
       </div>
       <ToastContainer theme="colored" />
       {/* </div> */}
-      {!isDesktop && <Footer />}
+      {!isDesktop && (
+        <Footer
+        // loading={loading}
+        />
+      )}
       <div className={s.emptyFooter}></div>
     </>
   );

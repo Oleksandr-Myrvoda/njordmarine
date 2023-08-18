@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  addBrochureApi,
-  addTermsApi,
   editBrochureApi,
   getBrochureApi,
   editTermsApi,
@@ -24,8 +22,7 @@ const AdminBlock = ({ token }) => {
 
   const [refs, setRefs] = useState({ en: '', ru: '', id: null });
   const [termRefs, setTermRefs] = useState({ en: '', ru: '', id: null });
-  // console.log('refs', refs);
-  // console.log('termRefs', termRefs);
+
   const handleChange = e => {
     const { name, value } = e.target;
     setRefs(p => ({ ...p, [name]: value }));
@@ -35,23 +32,6 @@ const AdminBlock = ({ token }) => {
     const { name, value } = e.target;
     setTermRefs(p => ({ ...p, [name]: value }));
   };
-
-  // const handleAddRefs = (idToken = token) => {
-  //   addBrochureApi(refs, idToken)
-  //     .then(refs => setRefs(refs))
-  //     .catch(error => {
-  //       setError({ error, cb: token => handleAddRefs(token) });
-  //     });
-  // };
-
-  // const handleAddTermRefs = (idToken = token) => {
-  //   const { id, ...rest } = termRefs;
-  //   addTermsApi(rest, idToken)
-  //     .then(refs => setTermRefs(refs))
-  //     .catch(error => {
-  //       setError({ error, cb: token => handleAddTermRefs(token) });
-  //     });
-  // };
 
   // BROCHURE
   const editRefs = (idToken = token) => {
@@ -77,7 +57,6 @@ const AdminBlock = ({ token }) => {
         setRefs(refs);
       })
       .catch(error => {
-        // console.log('setOtherError(error.response.data)');
         setOtherError(error.response.data);
       });
   }, [setOtherError]);
@@ -106,7 +85,6 @@ const AdminBlock = ({ token }) => {
         setTermRefs(termRefs);
       })
       .catch(error => {
-        // console.log('setOtherError(error.response.data)');
         setOtherError(error.response.data);
       });
   }, [setOtherError]);
@@ -136,7 +114,7 @@ const AdminBlock = ({ token }) => {
           <Modal title={t('admin.brochureTitle')} onClose={closeModal}>
             <form onSubmit={handleEditRefs} className={s.editForm}>
               <label>
-                <p>{t('common.placeholderRu')}</p>
+                <p className={s.label}>{t('common.placeholderRu')}</p>
                 <input
                   className={s.editFormInput}
                   type="text"
@@ -147,7 +125,7 @@ const AdminBlock = ({ token }) => {
                 />
               </label>
               <label>
-                <p>{t('common.placeholderEn')}</p>
+                <p className={s.label}>{t('common.placeholderEn')}</p>
                 <input
                   className={s.editFormInput}
                   type="text"
@@ -157,14 +135,10 @@ const AdminBlock = ({ token }) => {
                   placeholder={t('common.placeholderEn')}
                 />
               </label>
-              <BigButton
-                // onClick={openBrochureModal}
-                type="submit"
-                text="Update"
-              />
-              {/* <button type="submit">Update</button> */}
-              <p>{t('admin.instroction')}:</p>
-              <ul>
+              <BigButton type="submit" text="Update" />
+
+              <p className={s.instructionTitle}>{t('admin.instroction')}:</p>
+              <ul className={s.instructionList}>
                 <li>
                   {t('admin.li1.1')}{' '}
                   <a
@@ -182,9 +156,6 @@ const AdminBlock = ({ token }) => {
                 <li>{t('admin.li5')}</li>
                 <li>{t('admin.li6')}</li>
               </ul>
-              {/* <button onClick={() => handleAddRefs()} type="button">
-              Post
-            </button> */}
             </form>
           </Modal>
         )}
@@ -193,7 +164,7 @@ const AdminBlock = ({ token }) => {
           <Modal title={t('admin.termsTitle')} onClose={closeModal}>
             <form onSubmit={handleEditTermsRefs} className={s.editForm}>
               <label>
-                <p>{t('common.placeholderRu')}</p>
+                <p className={s.label}>{t('common.placeholderRu')}</p>
                 <input
                   className={s.editFormInput}
                   type="text"
@@ -205,7 +176,7 @@ const AdminBlock = ({ token }) => {
               </label>
 
               <label>
-                <p>{t('common.placeholderEn')}</p>
+                <p className={s.label}>{t('common.placeholderEn')}</p>
                 <input
                   className={s.editFormInput}
                   type="text"
@@ -215,13 +186,9 @@ const AdminBlock = ({ token }) => {
                   placeholder="{t('common.placeholderEn')}"
                 />
               </label>
-              <BigButton
-                // onClick={openBrochureModal}
-                type="submit"
-                text="Update"
-              />
-              <p>{t('admin.instroction')}:</p>
-              <ul>
+              <BigButton type="submit" text="Update" />
+              <p className={s.instructionTitle}>{t('admin.instroction')}:</p>
+              <ul className={s.instructionList}>
                 <li>
                   {t('admin.li1.1')}{' '}
                   <a
@@ -239,10 +206,6 @@ const AdminBlock = ({ token }) => {
                 <li>{t('admin.li5')}</li>
                 <li>{t('admin.li6')}</li>
               </ul>
-              {/* <button type="submit">Update</button> */}
-              {/* <button onClick={() => handleAddTermRefs()} type="button">
-              Post
-            </button> */}
             </form>
           </Modal>
         )}

@@ -19,6 +19,15 @@
   width: 100vw; */
 }
 
+.footerStart {
+  transition: all 0.5s;
+  transform: translateX(100%);
+}
+.footerFinish {
+  transition: all 0.5s;
+  transform: translateX(0);
+}
+
 .copyright {
   font-family: 'Gilroy';
   font-style: normal;

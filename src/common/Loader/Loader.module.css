@@ -1,5 +1,6 @@
 .loaderBlock {
   background-color: var(--bg-dark-color);
+  /* background-color: tomato; */
 
   height: 100vh;
   width: 100vw;
@@ -67,5 +68,28 @@
 
   .loaderLine {
     width: 320px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .loaderBlock {
+    left: 0;
+    /* left: -225px; */
+
+    min-height: 1016px;
+  }
+
+  .loaderWrapper {
+    margin-top: 0;
+    justify-content: center;
+    min-height: 1016px;
+  }
+  .logo {
+    width: 480px;
+    height: 390px;
+  }
+  .loaderLine {
+    width: 640px;
+    height: 10px;
+    margin: 20px auto;
   }
 }

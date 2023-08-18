@@ -1,6 +1,5 @@
 import AuthBlock from 'components/AuthBlock';
 import s from './AdminPage.module.css';
-import Container from 'common/Container/Container';
 
 const AdminPage = () => {
   return (

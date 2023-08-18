@@ -104,11 +104,67 @@
     padding: 0 96px 96px 96px;
     width: 576px;
   }
-  .input {
-  }
 
   .login {
     width: 201px;
     height: 56px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .blockWrapper {
+    display: flex;
+    flex-direction: column;
+
+    padding: 166px 0 0 0;
+  }
+
+  .buttonsBlock {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .formWrapper {
+    gap: 64px;
+    padding: 0 96px 96px 96px;
+    width: 1152px;
+  }
+  .input,
+  .editFormInput {
+    border-radius: 8px;
+    width: 445px;
+    padding: 14px 12px 14px 12px;
+
+    font-size: 22px;
+    line-height: 40px;
+  }
+
+  .editFormInput {
+    width: 940px;
+  }
+
+  .label {
+    padding-left: 16px;
+
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .login {
+    width: 402px;
+    height: 112px;
+
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .check {
+    margin-left: 16px;
+    width: 32px;
+    height: 32px;
+  }
+  .instructionTitle,
+  .instructionList {
+    font-size: 30px;
+    line-height: 40px;
   }
 }
