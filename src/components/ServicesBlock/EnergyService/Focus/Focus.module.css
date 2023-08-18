@@ -160,7 +160,8 @@
   }
 
   .sendInfo {
-    width: 1170px;
-    align-self: center;
+    width: auto;
+    /* width: 1170px; */
+    /* align-self: center; */
   }
 }

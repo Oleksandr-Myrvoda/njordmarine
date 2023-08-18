@@ -100,19 +100,12 @@
     margin-left: 96px;
   }
 
-  .trailWrapper {
-    /* display: flex; */
-    /* margin: 0 auto; */
-    /* width: 100%; */
-    /* justify-content: center; */
-    /* align-self: center; */
-  }
-
   .text {
     width: calc(70%);
     margin-bottom: 0;
   }
   .sendInfo {
+    /* width: auto;  */
     width: 500px;
     align-self: center;
   }
@@ -145,7 +138,6 @@
   }
 
   .sendInfo {
-    width: 1170px;
-    align-self: center;
+    width: auto;
   }
 }

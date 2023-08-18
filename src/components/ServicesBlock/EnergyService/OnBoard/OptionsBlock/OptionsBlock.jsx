@@ -11,7 +11,7 @@ import arrow3mob from 'images/energy-dots/arrow-mob3.svg';
 import arrow4mob from 'images/energy-dots/arrow-mob4.svg';
 import arrow1 from 'images/energy-dots/arrow1.svg';
 import arrow2 from 'images/energy-dots/arrow2.svg';
-import arrow3 from 'images/energy-dots/arrow3.svg';
+import arrow3 from 'images/energy-dots/arrow3.svg'; 
 import arrow4 from 'images/energy-dots/arrow4.svg';
 
 import s from './OptionsBlock.module.css';

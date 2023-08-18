@@ -100,7 +100,6 @@
   height: 34px;
   scale: 1.5;
   background: transparent;
-  /* background-image: url('../../../../../images/energy-dots/round-button.png'); */
   background-image: url('../../../../../images/energy-dots/round-button.svg');
   background-size: cover;
   cursor: pointer;
@@ -108,7 +107,6 @@
 }
 
 .optionsTitle {
-  /* margin-bottom: 50px; */
   height: 100px;
 
   width: calc(87%);
@@ -168,5 +166,73 @@
     font-size: 26px;
     line-height: 39px;
     margin-bottom: 72px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .optionsTitle {
+    width: calc(65%);
+    font-size: 50px;
+    line-height: 70px;
+    margin-bottom: 144px;
+  }
+
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4,
+  .active {
+    width: 64px;
+    height: 64px;
+  }
+
+  .btn1 {
+    top: 1468px;
+    left: 1080px;
+  }
+  .btn2 {
+    top: 1240px;
+    left: 900px;
+  }
+  .btn3 {
+    top: 790px;
+    left: 1000px;
+  }
+  .btn4 {
+    top: 1349px;
+    left: 1402px;
+  }
+  .arrow1 {
+    top: 931px;
+    left: 327px;
+    width: 802px;
+    height: 570px;
+  }
+  .arrow2 {
+    top: 706px;
+    left: 323px;
+    width: 602px;
+    height: 566px;
+  }
+  .arrow3 {
+    top: 445px;
+    left: 915px;
+    width: 120px;
+    height: 400px;
+  }
+  .arrow4 {
+    top: 380px;
+    left: 915px;
+    width: 520px;
+    height: 1000px;
+  }
+
+  .options {
+    width: 1922px;
+    height: 1479px;
+    /* height: auto; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../../../../images/energy-onboard-bg.png');
   }
 }

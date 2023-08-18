@@ -83,8 +83,7 @@
     border-radius: 0;
     background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
       url('../../../../images/serv-energy-bg.jpg');
-    /* background-image: linear-gradient(var(--mask-bg), var(--mask-bg)),
-      url('../../../../images/serv-energy-bg.png'); */
+
     background-size: cover;
   }
 
@@ -126,7 +125,7 @@
 
   .quotes {
     position: absolute;
-    left: -166px;
+    left: -220px;
     top: -120px;
 
     width: 186px;
@@ -157,7 +156,8 @@
   }
 
   .sendInfo {
-    width: 1170px;
-    align-self: center;
+    width: auto;
+    /* width: 1170px;
+    align-self: center; */
   }
 }

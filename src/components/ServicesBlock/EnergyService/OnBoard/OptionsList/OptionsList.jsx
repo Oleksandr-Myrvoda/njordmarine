@@ -36,7 +36,6 @@ const OptionsList = ({ config }) => {
         {list.map(({ text }, index) => (
           <li
             key={index}
-            //  className={s.item}
             className={`${s.item} ${isAnimated ? s.animatedItem : ''}
        `}
           >
