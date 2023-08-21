@@ -46,37 +46,7 @@ const OurTeamList = ({ ourTeamConfig: cards }) => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            {/* <div className={`${currentPage === 0 ? s.cardHide : s.prevCard}`}>
-              <Card
-                imgUrl={cards[prevCurrentPage].imgUrlMob}
-                name={cards[prevCurrentPage].name}
-                position={cards[prevCurrentPage].position}
-                alt={cards[prevCurrentPage].alt}
-              />
-            </div>
-            <div className={s.currentCard}>
-              <Card
-                imgUrl={cards[currentPage].imgUrlMob}
-                name={cards[currentPage].name}
-                position={cards[currentPage].position}
-                alt={cards[currentPage].alt}
-              />
-            </div>
-            <div className={`${currentPage === 3 ? s.cardHide : s.nextCard}`}>
-              <Card
-                imgUrl={cards[nextCurrentPage].imgUrlMob}
-                name={cards[nextCurrentPage].name}
-                position={cards[nextCurrentPage].position}
-                alt={cards[nextCurrentPage].alt}
-              />
-            </div> */}
           </div>
-
-          {/* <BtnsDotPagination
-            buttonsList={buttonsList}
-            currentPage={currentPage} 
-            setCurrentPage={setCurrentPage}
-          /> */}
         </div>
       )}
 

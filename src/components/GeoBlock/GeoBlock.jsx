@@ -126,10 +126,14 @@ const GeoBlock = () => {
             heightMob={50}
             heightBig={150}
           >
-            <span>{t('geoBlock.tagline')}</span>
+            <div className={s.taglineTitle}>
+              <span>{t('geoBlock.tagline')}</span>
+            </div>
           </Trail>
 
-          <p className={s.text}>{t('geoBlock.text')}</p>
+          <p className={`${s.text} ${s.textCorrection}`}>
+            {t('geoBlock.text')}
+          </p>
         </div>
         <div className={s.earthContainer}>
           <img className={s.earthImage} src={globeImage} alt="globe" />

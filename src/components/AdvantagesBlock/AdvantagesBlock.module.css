@@ -16,7 +16,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 60px;
 
   height: 80px;
 }
@@ -36,6 +36,7 @@
   .textBlock {
     gap: 24px;
     height: 100px;
+    margin-bottom: 96px;
   }
 
   .advListWtapper {

@@ -5,7 +5,7 @@
 }
 
 .title {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 
   font-family: 'Gilroy';
   font-weight: 600;
@@ -33,7 +33,7 @@
   font-size: 18px;
   line-height: 27px;
   letter-spacing: 0.24px;
-  color: var(--text-color);
+  color: var(--text-light-color);
 }
 
 @keyframes pulse {
@@ -64,7 +64,7 @@
     font-size: 26px;
     line-height: 40px;
     width: calc(45%);
-    margin-bottom: 36px;
+    margin-bottom: 48px;
   }
   .list {
     flex-direction: row;
@@ -74,7 +74,7 @@
     width: calc(45%);
   }
   .sendInfo {
-    margin-top: 32px;
+    margin-top: 64px;
     align-self: center;
     width: 560px;
     /* width: auto; */
@@ -91,7 +91,7 @@
   .title {
     font-size: 50px;
     line-height: 72px;
-    margin-bottom: 36px;
+    margin-bottom: 64px;
   }
 
   .dotMarker {
@@ -106,8 +106,7 @@
     line-height: 54px;
   }
   .sendInfo {
-    margin-top: 64px;
+    margin-top: 128px;
     width: auto;
-    /* width: 1070px; */
   }
 }

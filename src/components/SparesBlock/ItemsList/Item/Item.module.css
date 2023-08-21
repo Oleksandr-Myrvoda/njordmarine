@@ -7,7 +7,7 @@
 }
 .item {
   background-color: #fff;
-
+  border: 1px solid var(--bg-medium-color);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -15,10 +15,7 @@
   gap: 32px;
   width: 300px;
 }
-/* .imgWrapper {
-  align-self: center;
-  background-color: #94a3c7;
-} */
+
 .img {
   width: 227px;
   height: 137px;
@@ -38,7 +35,7 @@
 
   text-align: left;
   letter-spacing: 0.24px;
-  color: var(--big-button-color);
+  color: var(--text-color);
 }
 .watchBrends {
   display: block;
@@ -109,9 +106,10 @@
 }
 @media screen and (min-width: 2560px) {
   .item {
-    width: 528px;
+    width: 524px;
     padding: 48px;
     gap: 64px;
+    border: 2px solid var(--bg-medium-color);
   }
   .img {
     width: 454px;

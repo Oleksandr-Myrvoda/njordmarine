@@ -72,10 +72,10 @@ const Office = () => {
         </Trail>
       </div>
 
-      <p className={s.text}>
+      <div className={s.text}>
         {t('office.text1')}
         <span className={s.focus}> “FOCUS Onshore”</span> {t('office.text2')}
-      </p>
+      </div>
 
       <div className={s.trailWrapper} ref={headerRef1}>
         <Trail open={isAnimated1} heightBig={120} heightD={80} heightMob={80}>

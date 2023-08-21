@@ -12,6 +12,11 @@
   line-height: 18px;
   letter-spacing: 0.24px;
   color: var(--text-color);
+  transition: all 200ms;
+}
+
+.navItem:hover {
+  font-weight: 500;
 }
 
 @media screen and (min-width: 1440px) {

@@ -1,4 +1,6 @@
 .error {
+  font-size: 12px;
+  line-height: 24px;
   color: red;
 }
 

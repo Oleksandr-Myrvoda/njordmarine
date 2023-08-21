@@ -12,9 +12,9 @@ import linked from 'images/contact-in.svg';
 const contactsConfig = [
   {
     imgUrl: phone,
-    text: '+372 5866 7396',
+    text: '+372 5866 7196',
     alt: 'phone',
-    href: 'tel:37258667396',
+    href: 'tel:37258667196',
   },
   {
     imgUrl: mail,
@@ -27,9 +27,9 @@ const contactsConfig = [
 const contactsPageConfig = [
   {
     imgUrl: phoneC,
-    text: '+372 5866 7396',
+    text: '+372 5866 7196',
     alt: 'phone',
-    href: 'tel:37258667396',
+    href: 'tel:37258667196',
   },
   {
     imgUrl: mailC,

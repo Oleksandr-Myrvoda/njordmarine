@@ -66,7 +66,7 @@ const HeroBlock = () => {
               </div>
               <p className={s.bot}>{t('heroBlock.bot1')}</p>
             </li>
-            <li className={s.listItem}>
+            <li className={`${s.listItem} ${!isDesktop && s.listItem2}`}>
               <div className={s.topLine}>
                 <div className={s.countLine2}>
                   <CounterAnimation endValue="5" />

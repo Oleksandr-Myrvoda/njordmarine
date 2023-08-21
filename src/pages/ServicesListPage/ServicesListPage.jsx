@@ -63,14 +63,6 @@ const ServicesListPage = () => {
       ${isFocus && s.focusBG} 
       ${isEnergy && s.energyBG}`}
     >
-      {/* <div className={s.taglineWrapper}>
-        <Trail open={isAnimated} heightD={60} heightMob={16}>
-          <h1 className="taglineBig">{t('services.taglineBig')}</h1>
-        </Trail>
-
-        {isDesktop && <BlockNavigation navConfig={servicesListConfig} />}
-      </div> */}
-
       <Container>
         <div className={s.taglineWrapper}>
           <Trail open={isAnimated} heightD={60} heightMob={16} heightBig={110}>
@@ -79,11 +71,11 @@ const ServicesListPage = () => {
 
           {!isDesktop && (
             <Trail open={isAnimated} heightD={60} heightMob={48}>
-              <h2 className={s.headTitle}>
-                {isAuto && t('navigation.servicesListConfig.name1')}
-                {isFocus && t('navigation.servicesListConfig.name2')}
-                {isEnergy && t('navigation.servicesListConfig.name3')}
-              </h2>
+              {isEnergy && (
+                <h2 className={s.headTitle}>
+                  {t('navigation.servicesListConfig.name3')}
+                </h2>
+              )}
             </Trail>
           )}
 

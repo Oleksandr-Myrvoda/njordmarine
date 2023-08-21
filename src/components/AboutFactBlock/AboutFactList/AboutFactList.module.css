@@ -9,10 +9,11 @@
 .itemList {
   background-color: var(--bg-light-color);
   border-radius: 8px;
+  border: 1px solid var(--footer-stroke);
 }
 
 .item {
-  padding: 18px;
+  padding: 18px 18px 32px 18px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -39,7 +40,7 @@
   line-height: 30px;
   letter-spacing: 0.24px;
   text-transform: uppercase;
-  color: var(--text-color);
+  color: var(--text-light-color);
 }
 .count::before {
   padding-right: 5px;
@@ -53,7 +54,7 @@
   font-size: 18px;
   line-height: 27px;
   letter-spacing: 0.24px;
-  color: var(--text-color);
+  color: var(--text-light-color);
 }
 
 @media screen and (min-width: 1440px) {
@@ -83,11 +84,13 @@
 
   .item {
     width: 540px;
-    /* width: calc(30%); */
+    padding-bottom: 64px;
     gap: 32px;
   }
   .itemList {
     padding: 16px;
+    border-radius: 16px;
+    border: 2px solid var(--footer-stroke);
   }
 
   .image {

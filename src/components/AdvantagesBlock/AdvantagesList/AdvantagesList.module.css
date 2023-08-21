@@ -14,6 +14,7 @@
 .item {
   padding: 30px;
   border-radius: 8px;
+  gap: 8px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -26,7 +27,7 @@
 }
 
 .head {
-  padding-top: 20px;
+  padding-top: 12px;
   padding-bottom: 4px;
   font-family: 'Gilroy';
   font-style: normal;
@@ -44,7 +45,7 @@
   text-align: center;
   letter-spacing: 0.24px;
 
-  color: var(--text-color);
+  color: var(--text-light-color);
 }
 
 .image {
@@ -74,6 +75,7 @@
     width: calc(33% - 23px);
     background-color: transparent;
     padding: 0;
+    gap: 16px;
   }
 
   .image {
@@ -86,6 +88,10 @@
     column-gap: 44px;
     row-gap: 136px;
     width: 1922px;
+  }
+
+  .item {
+    gap: 32px;
   }
 
   .head {

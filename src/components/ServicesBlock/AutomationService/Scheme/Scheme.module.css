@@ -6,6 +6,8 @@
 }
 
 .tagline {
+  margin-top: 32px;
+
   font-family: 'Ruberoid';
   font-weight: 600;
   font-size: 18px;
@@ -32,7 +34,7 @@
 
 .stroke {
   border-left: 2px solid var(--footer-stroke);
-  height: 420px;
+  height: 400px;
   position: absolute;
   left: 32px;
   top: 32px;
@@ -62,7 +64,7 @@
   line-height: 27px;
   letter-spacing: 0.24px;
   text-transform: uppercase;
-  color: var(--text-color);
+  color: var(--text-light-color);
 }
 
 .schemeBG {
@@ -74,6 +76,8 @@
     gap: 64px;
   }
   .tagline {
+    margin-top: 64px;
+
     font-size: 24px;
     line-height: 36px;
   }
@@ -86,6 +90,13 @@
 
   .list {
     gap: 90px;
+  }
+
+  .item {
+    align-items: center;
+  }
+  .stroke {
+    height: 450px;
   }
 }
 @media screen and (min-width: 2560px) {

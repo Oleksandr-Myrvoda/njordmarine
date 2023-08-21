@@ -69,10 +69,13 @@
   width: 100%;
 }
 
+.trailWrapper {
+  margin-top: 36px;
+}
+
 @media screen and (min-width: 1440px) {
   .blockWrapper {
-    gap: 60px;
-    /* justify-content: center; */
+    gap: 40px;
   }
 
   .hero {
@@ -84,8 +87,6 @@
   }
 
   .head {
-    /* display: flex; */
-    /* justify-content: center; */
     margin: 0 auto;
     align-self: center;
     width: calc(80%);
@@ -105,15 +106,18 @@
     margin-bottom: 0;
   }
   .sendInfo {
-    /* width: auto;  */
     width: 500px;
     align-self: center;
+  }
+
+  .trailWrapper {
+    margin-top: 36px;
   }
 }
 
 @media screen and (min-width: 2560px) {
   .blockWrapper {
-    gap: 96px;
+    gap: 80px;
   }
 
   .hero {
@@ -139,5 +143,9 @@
 
   .sendInfo {
     width: auto;
+  }
+
+  .trailWrapper {
+    margin-top: 96px;
   }
 }

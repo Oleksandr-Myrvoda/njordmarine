@@ -1,5 +1,5 @@
 .paper {
-  padding: 20px 30px 16px 30px;
+  padding: 20px 30px 32px 30px;
   border-radius: 8px;
   background-color: var(--bg-light-color);
   border: 2px solid var(--bg-light-color);
@@ -12,6 +12,7 @@
 @media screen and (min-width: 1440px) {
   .paper {
     padding: 32px;
+    padding-bottom: 40px;
   }
 }
 @media screen and (min-width: 2560px) {

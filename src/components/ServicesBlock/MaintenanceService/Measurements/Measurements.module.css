@@ -1,5 +1,5 @@
 .blockWrapper {
-  padding: 36px 0;
+  padding: 64px 0 36px 0;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -75,7 +75,7 @@
 
 @media screen and (min-width: 1440px) {
   .blockWrapper {
-    padding: 48px 0;
+    padding: 96px 0 48px 0;
     gap: 64px;
     max-width: 1025px;
   }
@@ -206,7 +206,7 @@
 }
 @media screen and (min-width: 2560px) {
   .blockWrapper {
-    padding: 96px 0;
+    padding: 182px 0 96px 0;
     gap: 128px;
     max-width: 1922px;
   }

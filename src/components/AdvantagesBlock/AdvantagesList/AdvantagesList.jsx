@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-// import delivery from 'images/del-Icon.svg';
-// import delivery from 'images/del-Delivery2.svg';
+
 import s from './AdvantagesList.module.css';
 
 const AdvantagesList = ({ advantagesConfig }) => {

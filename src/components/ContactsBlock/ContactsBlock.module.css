@@ -56,6 +56,10 @@
   background: none;
   border-radius: 50%;
 }
+.socBtn {
+  background: white;
+}
+
 .socBtn:hover {
   cursor: pointer;
   box-shadow: 0 0 8px 8px rgba(123, 170, 241, 0.3);
