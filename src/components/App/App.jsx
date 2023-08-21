@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     if (isDesktop) setIsOpen(false);
-    document.body.style.overflow = isOpen ? '' : 'auto';
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   }, [isDesktop, isOpen]);
   // useEffect(() => {
   //   if (isDesktop) setIsOpen(false);
