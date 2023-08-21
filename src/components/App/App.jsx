@@ -48,12 +48,16 @@ function App() {
         </div> */}
         {/* <div className={`${loading ? s.contentStart : s.contentFinish}`}> */}
         {isDesktop && (
-          <Suspense fallback={<Loader />}>
+          <Suspense
+          // fallback={<Loader />}
+          >
             <Sidebar />
           </Suspense>
         )}
         {!isDesktop && (
-          <Suspense fallback={<Loader />}>
+          <Suspense
+          // fallback={<Loader />}
+          >
             <LangProvider>
               <div ref={isOpen ? cardRef : null}>
                 <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
@@ -67,7 +71,9 @@ function App() {
             <div className={s.content}>
               <AdminProvider>
                 <LangProvider>
-                  <Suspense fallback={<Loader />}>
+                  <Suspense
+                  //  fallback={<Loader />}
+                  >
                     <div className={s.emptyHeader}></div>
                     <Header
                       toggleSidebar={toggleSidebar}

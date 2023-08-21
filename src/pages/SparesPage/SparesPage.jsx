@@ -57,7 +57,9 @@ const SparesPage = ({ token }) => {
           {isDesktop && <BlockNavigation navConfig={sparesListConfig} />}
         </div>
         <div className={s.pagesBlock}>
-          <Suspense fallback={<Loader />}>
+          <Suspense
+          //  fallback={<Loader />}
+          >
             <Switch>
               <Route
                 exact

@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   gap: 8px;
-  /* padding-bottom: 25px; */
 }
 
 .delivery {
@@ -49,6 +48,7 @@
 }
 
 .image {
+  border-radius: 14px;
   height: 56px;
   width: 56px;
 }

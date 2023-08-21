@@ -36,7 +36,9 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
 
   return (
     <div className={s.contacts}>
-      <Suspense fallback={<Loader />}>
+      <Suspense
+      // fallback={<Loader />}
+      >
         <BigButton onClick={openModal} text={t('sendInfo.bigBtn')} />
 
         <div className={`${hideLink && s.isHideLink}`}>

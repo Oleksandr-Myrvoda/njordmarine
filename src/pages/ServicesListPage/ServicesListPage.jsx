@@ -82,7 +82,9 @@ const ServicesListPage = () => {
           {isDesktop && <BlockNavigation navConfig={servicesListConfig} />}
         </div>
         <div className={s.pagesBlock}>
-          <Suspense fallback={<Loader />}>
+          <Suspense
+          //  fallback={<Loader />}
+          >
             <Switch>
               <Route
                 exact

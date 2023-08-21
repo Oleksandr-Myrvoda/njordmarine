@@ -70,7 +70,9 @@ const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
               </button>
             )}
 
-            <Suspense fallback={<Loader />}>
+            <Suspense
+            //  fallback={<Loader />}
+            >
               <LanguageSwitcher />
             </Suspense>
             <BrochureButton />
@@ -92,7 +94,9 @@ const Header = ({ toggleSidebar, isOpen, setIsOpen }) => {
                 </button>
               )}
 
-              <Suspense fallback={<Loader />}>
+              <Suspense
+              // fallback={<Loader />}
+              >
                 <LanguageSwitcher />
               </Suspense>
 
