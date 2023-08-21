@@ -6,7 +6,7 @@
 
   align-items: center;
   background-color: var(--bg-medium-color);
-  border-top: 2px solid var(--footer-stroke);
+  border-top: 1px solid var(--footer-stroke);
   gap: 16px;
 
   /* background-color: var(--bg-medium-color);
@@ -71,6 +71,7 @@
   .footer {
     padding: 80px 0;
     width: 84.5%;
+    border-top: 2px solid var(--footer-stroke);
   }
   .list {
     display: flex;
