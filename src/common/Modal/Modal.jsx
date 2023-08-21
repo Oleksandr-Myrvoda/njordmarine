@@ -43,17 +43,19 @@ const Modal = ({
   return createPortal(
     <div className={s.backdrop} onClick={handleBackdropClick}>
       <div className={`${s.modal} ${isBrends && s.modalBrends}`}>
-        <header className={s.header}>
-          <div className={s.lead}>
-            {!isEmailSended && <h3 className="tagline">{title}</h3>}
-          </div>
+        <div>
+          <header className={s.header}>
+            <div className={s.lead}>
+              {!isEmailSended && <h3 className="tagline">{title}</h3>}
+            </div>
 
-          <button className={s.closeBtn} onClick={onClose} aria-label="Close">
-            <img className={s.closeBtnImg} src={closeBtn} alt="close" />
-          </button>
-        </header>
+            <button className={s.closeBtn} onClick={onClose} aria-label="Close">
+              <img className={s.closeBtnImg} src={closeBtn} alt="close" />
+            </button>
+          </header>
 
-        <div className={s.content}>{children}</div>
+          <div className={s.content}>{children}</div>
+        </div>
       </div>
     </div>,
     modalRootRef,
