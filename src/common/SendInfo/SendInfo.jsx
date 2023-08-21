@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -20,10 +20,10 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
 
   const openModal = () => setIsModalOpen(true);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false);
     setEmailSended(false);
-  };
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

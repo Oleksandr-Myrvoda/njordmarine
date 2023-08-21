@@ -22,8 +22,17 @@ function App() {
   const cardRef = useRef(null);
 
   useEffect(() => {
-    if (isDesktop) setIsOpen(false);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (isDesktop) {
+      setIsOpen(false);
+
+      document.body.removeAttribute('style');
+    } else {
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.removeAttribute('style');
+      }
+    }
   }, [isDesktop, isOpen]);
   // useEffect(() => {
   //   if (isDesktop) setIsOpen(false);

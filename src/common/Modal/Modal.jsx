@@ -8,8 +8,15 @@ import s from './Modal.module.css';
 
 const modalRootRef = document.querySelector('#modal-root');
 
-const Modal = ({ onClose, title, children, isEmailSended, isBrends }) => {
-  useLockBodyScroll(true);
+const Modal = ({
+  onClose,
+  title,
+  children,
+  isEmailSended,
+  isBrends,
+  isModalOpen,
+}) => {
+  // useLockBodyScroll(true);
 
   useEffect(() => {
     const onEscPress = e => {
@@ -18,10 +25,12 @@ const Modal = ({ onClose, title, children, isEmailSended, isBrends }) => {
       }
     };
 
+    document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', onEscPress);
 
     return () => {
       window.removeEventListener('keydown', onEscPress);
+      document.body.removeAttribute('style');
     };
   }, [onClose]);
 
