@@ -15,10 +15,12 @@
 .heroWrapper {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  /* gap: 16px; */
 }
 
 .head {
+  padding-bottom: 16px;
+
   display: flex;
   align-items: flex-start;
   color: var(--text-light-color);
@@ -133,7 +135,7 @@
   color: var(--text-light-color);
 }
 .container {
-  height: 105px;
+  height: 110px;
 }
 
 @media screen and (min-width: 1440px) {

@@ -55,13 +55,18 @@ const HeroAboutBlock = () => {
           <div className={s.heroWrapper}>
             <Trail
               open={isAnimated}
-              textStyle="taglineBig"
-              heightBig={170}
-              // heightBig={90}
-              heightD={80}
+              heightBig={300}
+              heightD={110}
               heightMob={48}
             >
               <h1 className="taglineBig">{t('heroAboutBlock.taglineBig')}</h1>
+            </Trail>
+            <Trail
+              open={isAnimated}
+              heightBig={108}
+              heightD={48}
+              heightMob={48}
+            >
               <h2 className="tagline">{t('heroAboutBlock.tagline')}</h2>
             </Trail>
             <p className={s.description}>{t('heroAboutBlock.text')}</p>

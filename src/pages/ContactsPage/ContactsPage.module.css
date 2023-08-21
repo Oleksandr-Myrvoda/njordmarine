@@ -15,11 +15,15 @@
   );
 }
 
+.descr {
+  color: var(--text-light-color);
+}
+
 .taglineWrapper {
   display: flex;
   flex-direction: column;
   padding: 0 16px 0 16px;
-  max-width: 375px;
+  /* max-width: 375px; */
   gap: 8px;
   margin-bottom: 16px;
 }
