@@ -4,7 +4,8 @@
   align-items: center;
 
   background-color: var(--bg-medium-color);
-  height: 65vh;
+
+  min-height: 80dvh;
 }
 .taglineWrapper {
   padding: 48px 16px;
@@ -18,7 +19,8 @@
     margin-top: 102px;
   }
   .taglineWrapper {
-    padding: 96px 0;
+    padding: 0;
+    padding-bottom: 96px;
   }
   .container {
     display: flex;
@@ -35,6 +37,10 @@
   .pageWrapper {
     padding-bottom: 96px;
     margin-top: 204px;
+  }
+
+  .taglineWrapper {
+    padding-bottom: 166px;
   }
 
   .container {
