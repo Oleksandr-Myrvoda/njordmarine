@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 import bg from 'images/serv-auto-ship.svg';
 import bgMob from 'images/serv-auto-ship-mob.svg';
 import Trail from 'common/Trail';
@@ -11,7 +10,7 @@ import bell from 'images/serv-auto-bell.svg';
 import raports from 'images/serv-auto-raports.svg';
 import s from './Scheme.module.css';
 
-const Scheme = ({ schemeConfig }) => {
+const Scheme = () => {
   const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const [isAnimated, setIsAnimated] = useState(false);
@@ -166,31 +165,9 @@ const Scheme = ({ schemeConfig }) => {
             </div>
           </li>
         </ul>
-        {/* <ul className={s.list}>
-          {schemeConfig.map(({ imgUrl, count, text, alt }, index) => (
-            <li key={index} className={s.item}>
-              <img className={s.image} src={imgUrl} alt={t(alt)} />
-              <div>
-                <p className={s.count}>{count}</p>
-                <p className={s.descr}>{t(text)}</p>
-              </div>
-            </li>
-          ))}
-        </ul> */}
       </div>
     </div>
   );
-};
-
-Scheme.propTypes = {
-  schemeConfig: PropTypes.arrayOf(
-    PropTypes.shape({
-      imgUrl: PropTypes.string,
-      count: PropTypes.string,
-      text: PropTypes.string,
-      alt: PropTypes.string,
-    }),
-  ).isRequired,
 };
 
 export default Scheme;

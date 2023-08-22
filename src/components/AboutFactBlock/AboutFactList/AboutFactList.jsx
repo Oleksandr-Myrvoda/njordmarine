@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import PropTypes from 'prop-types';
+
 import fact01 from 'images/about-company-fact01.png';
 import fact02 from 'images/about-company-fact02.png';
 import fact03 from 'images/about-company-fact03.png';
 import s from './AboutFactList.module.css';
 
-const AboutFactList = ({ aboutFactConfig }) => {
+const AboutFactList = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
   const { t } = useTranslation();
   const [isAnimated1, setIsAnimated1] = useState(false);
@@ -122,32 +122,7 @@ const AboutFactList = ({ aboutFactConfig }) => {
         </div>
       </li>
     </ul>
-    // <ul className={s.list} ref={itemRef1}>
-    //   {aboutFactConfig.map(({ imgUrl, count, text, alt }, index) => (
-    //     <li key={index} className={s.itemList}>
-    //       <div
-    //         className={`${s.item} ${isAnimated1 ? s.animatedItem : ''}
-    //    `}
-    //       >
-    //         <img className={s.image} src={imgUrl} alt={t(alt)} />
-    //         <p className={s.count}>{count}</p>
-    //         <p className={s.descr}>{t(text)}</p>
-    //       </div>
-    //     </li>
-    //   ))}
-    // </ul>
   );
 };
-
-// AboutFactList.propTypes = {
-//   aboutFactConfig: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       imgUrl: PropTypes.string,
-//       count: PropTypes.string,
-//       text: PropTypes.string,
-//       alt: PropTypes.string,
-//     }),
-//   ).isRequired,
-// };
 
 export default AboutFactList;

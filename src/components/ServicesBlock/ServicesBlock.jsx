@@ -3,10 +3,8 @@ import { useMediaQuery } from 'react-responsive';
 import SendInfo from 'common/SendInfo';
 import ServiceList from './ServiceList';
 import React, { useState, useEffect, useRef } from 'react';
-import { useTrail, a } from '@react-spring/web';
 import s from './ServicesBlock.module.css';
 import Container from 'common/Container/Container';
-import HeadingTitle from 'common/HeadingTitle/HeadingTitle';
 import Trail from 'common/Trail/Trail';
 
 const ServicesBlock = () => {

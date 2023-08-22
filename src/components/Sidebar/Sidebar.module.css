@@ -24,11 +24,9 @@
   flex-direction: column;
   background-color: var(--bg-dark-color);
 
-  /* position: absolute; */
   position: fixed;
   width: 260px;
-  /* width: 60vw;
-  min-width: 260px; */
+
   padding-bottom: 36px;
   top: 58px;
   left: 100%;
@@ -39,13 +37,6 @@
   max-height: 90vh;
   overflow-y: auto;
   overflow-x: hidden;
-
-  /* position: fixed;
-  top: 60px; 
-  bottom: 0;
-  right: -250px; 
-  transform: translateX(0);
-  transition: transform 300ms linear; */
 }
 .mobMenu {
   display: flex;
@@ -58,15 +49,10 @@
   transform: translateX(-100%);
 }
 
-.logo {
-  /* padding-bottom: 179px; */
-}
-
 .mob {
   display: flex;
   flex-direction: column;
   gap: 64px;
-  /* align-items: center; */
   align-items: flex-start;
   margin-left: 36px;
 }
@@ -92,7 +78,6 @@
   }
 
   .logo {
-    /* padding-bottom: 179px; */
     align-self: center;
   }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { useTrail, a } from '@react-spring/web';
 import { useMediaQuery } from 'react-responsive';
 

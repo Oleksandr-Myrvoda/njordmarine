@@ -1,4 +1,4 @@
-import { focusConfig, focusOptionsConfig } from 'data/focus';
+import {  focusOptionsConfig } from 'data/focus';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 
@@ -36,7 +36,7 @@ const Focus = () => {
         <p className={s.text}>{t('focus.text2')}</p>
       </div>
 
-      <FocusList focusConfig={focusConfig} />
+      <FocusList  />
 
       <h2 className={s.titleBottom}>{t('focus.titleBottom')}</h2>
 

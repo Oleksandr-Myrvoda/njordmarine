@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import Scheme from './Scheme';
 import WorksList from './WorksList';
-import { schemeConfig } from 'data/scheme';
+
 import { worksConfig } from 'data/works';
 
 import s from './AutomationService.module.css';
@@ -35,7 +35,7 @@ const AutomationService = () => {
       </div>
 
       <div className={s.blockContent}>
-        <Scheme schemeConfig={schemeConfig} />
+        <Scheme />
         <WorksList worksConfig={worksConfig} />
       </div>
     </div>

@@ -1,19 +1,4 @@
-/* .container {
-  margin: 0 auto; 
-  max-width: 375px;
-  padding: 0 16px;
-}
-
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1217px;
-    padding: 0 96px;
-  }
-} */
-
-/* .............................................. */
 .container {
-  /* max-width: 375px; */
   max-width: 343px;
 }
 

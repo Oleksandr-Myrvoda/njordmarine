@@ -123,15 +123,6 @@ const FocusList = () => {
         </div>
       </li>
     </ul>
-    // <ul className={s.list}>
-    //   {focusConfig.map(({ imgUrl, title, text, alt }, index) => (
-    //     <li className={s.item} key={index}>
-    //       <img className={s.img} src={imgUrl} alt={t(alt)}></img>
-    //       <p className={s.title}>{t(title)}</p>
-    //       <p className={s.text}>{t(text)}</p>
-    //     </li>
-    //   ))}
-    // </ul>
   );
 };
 

@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { aboutFactConfig } from 'data/about-fact';
 
 import { useState, useEffect } from 'react';
 import SendInfo from 'common/SendInfo';
@@ -35,7 +34,7 @@ const AbotFactBlock = () => {
             <p className="tagline">{t('abotFactBlock.tagline')}</p>
           </Trail>
         </div>
-        <AboutFactList aboutFactConfig={aboutFactConfig} />
+        <AboutFactList />
 
         <div className={s.sendInfo}>
           <SendInfo
