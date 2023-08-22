@@ -4,7 +4,6 @@ import EnergyMenu from './EnergyMenu';
 import OnBoard from './OnBoard';
 import Focus from './Focus';
 import Office from './Office';
-import NotFound from 'pages/NotFound';
 import s from './EnergyService.module.css';
 
 const EnergyService = () => {

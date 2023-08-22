@@ -1,7 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Route, Switch, useRouteMatch, Redirect } from 'react-router-dom';
 import Loader from 'common/Loader/Loader';
-import LoaderSpinner from 'common/LoaderSpinner/LoaderSpinner';
 
 const HeroAboutBlock = lazy(() =>
   import(
@@ -21,9 +20,7 @@ const AboutCompanyPage = () => {
   return (
     <>
       <Suspense
-        // fallback={<h2>"Loading..."</h2>}
-        fallback={<Loader />}
-        // fallback={<LoaderSpinner />}
+      // fallback={<Loader />}
       >
         <Switch>
           <Route path={`${match.path}/about-us`}>

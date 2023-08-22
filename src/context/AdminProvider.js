@@ -12,10 +12,6 @@ const initData = {
   ru: '',
   en: '',
 };
-// const initData = {
-//   ru: 'https://drive.google.com/file/d/1xISlva0ukxmFUSBulM19hrlnO5b_n8uN/view?usp=drive_link',
-//   en: 'https://drive.google.com/file/d/1V0qyIzwr2qXe7Y6hNuwLSNY3iO9QOX7v/view?usp=sharing',
-// };
 
 const AdminProvider = ({ children }) => {
   const match = useRouteMatch();
@@ -25,7 +21,6 @@ const AdminProvider = ({ children }) => {
   const handleLinkChange = e => {
     e.preventDefault();
     const newData = { ...brochureLink, [e.target.name]: e.target.value };
-    // const newData = { ...brochureLink, [lang]: e.target.value };
 
     setBrochureLink(newData);
   };

@@ -3,8 +3,6 @@ import { Suspense, lazy } from 'react';
 
 import s from './Main.module.css';
 
-// import NotFound from 'pages/NotFound/NotFound';
-
 const HomePage = lazy(() =>
   import('pages/HomePage' /* webpackChunkName: "Home___page" */),
 );

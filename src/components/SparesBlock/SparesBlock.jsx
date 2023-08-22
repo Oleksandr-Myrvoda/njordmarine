@@ -42,7 +42,6 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
   // ADD =======
 
   const addData = async (imgUrl = null, newToken) => {
-    // e.preventDefault();
     try {
       const newSpare = await api.addItemApi(
         path,
@@ -56,13 +55,11 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
       setSpares(prevData => [...prevData, newSpare]);
     } catch (error) {
       setError({ error, cb: token => addData(imgUrl, token) });
-      // console.log(error.messgae);
     } finally {
       reset();
     }
   };
 
-  // const handleAddData = () => {};
   // EDIT =======
 
   const editData = (id, editedData, idToken = token) => {
@@ -125,7 +122,7 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
 
   return (
     <div className={s.blockWrapper}>
-      <Trail open={isAnimated} heightBig={110} heightD={60} heightMob={48}>
+      <Trail open={isAnimated} heightBig={110} heightD={60} heightMob={27}>
         <h2 className={s.headTitle}>{name}</h2>
       </Trail>
 

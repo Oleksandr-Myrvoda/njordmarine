@@ -7,7 +7,6 @@ const AddItemForm = ({ addData }) => {
   const [itemTitle, setItemTitle] = useState('');
   const [imgUrl, setImgUrl] = useState('');
 
-  console.log('itemTitle', itemTitle);
   return (
     <form onSubmit={addData}>
       <input

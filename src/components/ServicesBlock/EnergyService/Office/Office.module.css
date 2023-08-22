@@ -66,6 +66,7 @@
   color: var(--text-light-color);
 }
 .sendInfo {
+  margin-top: 24px;
   width: 100%;
 }
 
@@ -106,6 +107,7 @@
     margin-bottom: 0;
   }
   .sendInfo {
+    margin-top: 0;
     width: 500px;
     align-self: center;
   }

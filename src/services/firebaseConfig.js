@@ -24,28 +24,3 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 
 export default getStorage(app);
-
-// {
-//   "rules": {
-//         ".read": true,
-//          ".write": "auth !== null"
-//   }
-// }
-
-// {
-//   "rules": {
-//     "users": {
-//       "$uid": {
-//         ".read": "auth !== null && auth.uid === $uid",
-//         ".write": "auth !== null && auth.uid === $uid"
-//       }
-//     }
-//   }
-// }
-
-// {
-//   "rules": {
-//         ".read": true,
-//          ".write": "auth !== null"
-//   }
-// }

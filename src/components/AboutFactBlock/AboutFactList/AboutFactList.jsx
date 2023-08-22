@@ -139,15 +139,15 @@ const AboutFactList = ({ aboutFactConfig }) => {
   );
 };
 
-AboutFactList.propTypes = {
-  aboutFactConfig: PropTypes.arrayOf(
-    PropTypes.shape({
-      imgUrl: PropTypes.string,
-      count: PropTypes.string,
-      text: PropTypes.string,
-      alt: PropTypes.string,
-    }),
-  ).isRequired,
-};
+// AboutFactList.propTypes = {
+//   aboutFactConfig: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       imgUrl: PropTypes.string,
+//       count: PropTypes.string,
+//       text: PropTypes.string,
+//       alt: PropTypes.string,
+//     }),
+//   ).isRequired,
+// };
 
 export default AboutFactList;

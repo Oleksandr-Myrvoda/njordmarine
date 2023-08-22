@@ -4,7 +4,7 @@ import s from './MenuItem.module.css';
 
 const MenuItem = ({ name, to }) => {
   const match = useRouteMatch();
-  // console.log(match);
+
   const isActive = false;
 
   const navItemStyles = [s.NavItem];
@@ -12,7 +12,6 @@ const MenuItem = ({ name, to }) => {
 
   return (
     <NavLink
-      // to={to}
       to={`${match.url}/${to}`}
       className={navItemStyles.join(' ')}
       activeClassName={s.NavItemActive}

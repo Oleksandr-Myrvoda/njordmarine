@@ -102,7 +102,7 @@ const getBrochureApi = () => {
     } catch (error) {
       return { ru: '', en: '', id: null };
     }
-  }); // {"kjhkjhkjhkjh": {ru: "https://ru", en: "https://en"}}
+  });
 };
 
 const addBrochureApi = (refs = { en: '', ru: '' }, token) => {
@@ -136,17 +136,8 @@ const getTermsApi = () => {
     } catch (error) {
       return { ru: '', en: '', id: null };
     }
-  }); // {"kjhkjhkjhkjh": {ru: "https://ru", en: "https://en"}}
+  });
 };
-// const getTermsApi = () => {
-//   return axios.get('/terms.json').then(({ data }) => {
-//     try {
-//       return data ? Object.values(data) : { ru: '', en: '' };
-//     } catch (error) {
-//       return { ru: '', en: '' };
-//     }
-//   }); // {"kjhkjhkjhkjh": {ru: "https://ru", en: "https://en"}}
-// };
 
 const addTermsApi = (refs = { en: '', ru: '' }, token) => {
   return axios

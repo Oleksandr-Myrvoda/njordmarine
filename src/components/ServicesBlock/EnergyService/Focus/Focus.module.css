@@ -72,6 +72,7 @@
 }
 
 .titleBottom {
+  margin-top: 40px;
   justify-content: flex-start;
   align-items: flex-start;
   text-align: left;
@@ -86,6 +87,7 @@
 }
 
 .sendInfo {
+  margin-top: 24px;
   width: 100%;
 }
 
@@ -116,6 +118,7 @@
   }
 
   .titleBottom {
+    margin-top: 20px;
     font-size: 26px;
     line-height: 40px;
 
@@ -123,6 +126,7 @@
   }
 
   .sendInfo {
+    margin-top: 0;
     width: 500px;
     align-self: center;
   }
