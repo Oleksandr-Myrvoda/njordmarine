@@ -91,7 +91,7 @@
     display: flex;
     flex-direction: column;
 
-    padding: 96px 0 0 0;
+    padding: 0;
   }
 
   .buttonsBlock {
@@ -101,8 +101,9 @@
 
   .formWrapper {
     gap: 32px;
-    padding: 0 96px 96px 96px;
+
     width: 576px;
+    padding: 0;
   }
 
   .login {
@@ -114,8 +115,9 @@
   .blockWrapper {
     display: flex;
     flex-direction: column;
+    padding: 0;
 
-    padding: 166px 0 0 0;
+    margin-bottom: 166px;
   }
 
   .buttonsBlock {
@@ -125,7 +127,8 @@
 
   .formWrapper {
     gap: 64px;
-    padding: 0 96px 96px 96px;
+
+    padding: 0;
     width: 1152px;
   }
   .input,
