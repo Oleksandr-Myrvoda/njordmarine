@@ -105,14 +105,14 @@ const Navigation = ({ closeSidebar }) => {
 
       {/* ======= ADMIN ======= */}
 
-      <div
+      {/* <div
         onClick={() => {
           handleMenuClick('admin');
           !isDesktop && closeSidebar();
         }}
       >
         <NavItem name={'admin'} path="/admin" />
-      </div>
+      </div> */}
     </nav>
   );
 };
