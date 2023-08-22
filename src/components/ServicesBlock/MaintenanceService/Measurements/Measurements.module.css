@@ -61,7 +61,7 @@
   line-height: 27px;
   letter-spacing: 0.24px;
   text-transform: uppercase;
-  color: var(--text-color);
+  color: var(--text-light-color);
 }
 
 .text {
@@ -70,7 +70,7 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.24px;
-  color: var(--text-color);
+  color: var(--text-light-color);
 }
 
 @media screen and (min-width: 1440px) {
