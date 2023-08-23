@@ -47,10 +47,15 @@ const Modal = ({
     <div className={s.backdrop} onClick={handleBackdropClick}>
       <div
         className={`${s.modal} ${isModalWhiteBG && s.modalWhiteBG}
-         ${isEmailSended && !isDesktop && s.fullScreenMobileSize} 
+       
          ${isEmailSended && s.modalWhiteBG} 
-         ${isFullScreenMobileSize && s.fullScreenMobileSize}
+       
         ${isFullScreenMobileSize && s.modalWhiteBG}`}
+        // className={`${s.modal} ${isModalWhiteBG && s.modalWhiteBG}
+        //  ${isEmailSended && !isDesktop && s.fullScreenMobileSize}
+        //  ${isEmailSended && s.modalWhiteBG}
+        // ${isFullScreenMobileSize && s.fullScreenMobileSize}
+        // ${isFullScreenMobileSize && s.modalWhiteBG}`}
       >
         <div>
           <header className={s.header}>

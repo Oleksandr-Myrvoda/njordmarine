@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import React, { useState, useEffect } from 'react';
-import { useTrail, a } from '@react-spring/web';
 import ship from 'images/hero-bg-mob.png';
 import SendInfo from 'common/SendInfo';
 import Container from 'common/Container/Container';
@@ -47,7 +46,7 @@ const HeroBlock = () => {
             <p className={s.description}>{t('heroBlock.description')}</p>
           </div>
 
-          {!isDesktop && <img src={ship} alt="ship" />}
+          {!isDesktop && <img className={s.heroMobBG} src={ship} alt="ship" />}
 
           <SendInfo
             linkName={t('heroBlock.sendInfo')}

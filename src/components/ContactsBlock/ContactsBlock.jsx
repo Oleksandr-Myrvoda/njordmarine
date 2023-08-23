@@ -49,7 +49,7 @@ const ContactsBlock = () => {
             isContactsPage={true}
           />
           {isModalOpen && (
-            <Modal isFullScreenMobileSize={true}>
+            <Modal onClose={closeModal} isFullScreenMobileSize={true}>
               <AfterSendEmail closeModal={closeModal} />
             </Modal>
           )}
@@ -83,7 +83,7 @@ const ContactsBlock = () => {
           />
 
           {isModalOpen && (
-            <Modal isModalWhiteBG={true}>
+            <Modal onClose={closeModal} isModalWhiteBG={true}>
               <AfterSendEmail closeModal={closeModal} />
             </Modal>
           )}

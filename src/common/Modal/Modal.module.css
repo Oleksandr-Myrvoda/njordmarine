@@ -22,9 +22,15 @@
 
   box-shadow: 1px 1px 26px 0px rgba(0, 51, 98, 0.2);
 
-  max-height: calc(100vh - 48px * 2);
+  /* max-height: calc(100vh - 48px * 2); */
+
   overflow-y: auto;
   overflow-x: hidden;
+
+  min-width: calc(100vw - 16px * 2);
+  max-height: calc(100vh - 24px * 2);
+  height: 100dvh;
+  border-radius: 0;
 }
 
 .content {
@@ -71,7 +77,10 @@
   .modal {
     padding: 48px 32px 48px 32px;
     max-width: 576px;
+    width: 576px;
+    min-width: 576px;
     height: auto;
+    border-radius: 8px;
   }
 }
 @media screen and (min-width: 2560px) {
@@ -83,6 +92,9 @@
   .modal {
     padding: 96px 64px;
     max-width: 970px;
+
+    width: 970px;
+    min-width: 970px;
     height: auto;
   }
 

@@ -4,6 +4,8 @@
   flex-wrap: wrap;
   gap: 24px;
   align-items: center;
+  max-width: 343px;
+  margin: 0 auto;
 }
 
 .list {
@@ -54,11 +56,18 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .listWrapper {
+    max-width: 570px;
+  }
+
   .list {
     gap: 4px;
   }
 }
 @media screen and (min-width: 2560px) {
+  .listWrapper {
+    max-width: 970px;
+  }
   .list {
     gap: 16px;
   }

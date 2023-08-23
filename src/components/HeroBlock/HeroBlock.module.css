@@ -138,6 +138,12 @@
   height: 110px;
 }
 
+.heroMobBG {
+  border-radius: 5px;
+  width: 343px;
+  height: auto;
+}
+
 @media screen and (min-width: 1440px) {
   .heroBlock {
     padding: 0;
