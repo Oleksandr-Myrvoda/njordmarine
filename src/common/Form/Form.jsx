@@ -84,7 +84,7 @@ const Form = ({ isTitle, setEmailSended, openModal, isContactsPage }) => {
       .then(
         result => {
           setEmailSended(true);
-          console.log('isContactsPage', isContactsPage);
+
           if (isContactsPage) {
             openModal();
           }

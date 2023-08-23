@@ -100,13 +100,13 @@
 
 @media screen and (min-width: 1440px) {
   .item {
-    width: 285px;
+    width: 280px;
     justify-content: space-between;
   }
 }
 @media screen and (min-width: 2560px) {
   .item {
-    width: 524px;
+    width: 520px;
     padding: 48px;
     gap: 64px;
     border: 2px solid var(--bg-medium-color);

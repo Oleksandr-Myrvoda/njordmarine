@@ -49,35 +49,12 @@ const ContactsBlock = () => {
             isContactsPage={true}
           />
           {isModalOpen && (
-            <Modal>
+            <Modal isFullScreenMobileSize={true}>
               <AfterSendEmail closeModal={closeModal} />
             </Modal>
           )}
         </div>
       )}
-      {/* {!isDesktop && (
-        <div className={s.formWrapper}>
-          <Form isTitle={true} openModal={openModal} isContactsPage={true} />
-          {isModalOpen && (
-            <Modal>
-              <AfterSendEmail closeModal={closeModal} />
-            </Modal>
-          )}
-        </div>
-      )} */}
-
-      {/* {!isDesktop && (
-        <div className={s.formWrapper}>
-          {!isEmailSended ? (
-            <Form isTitle={true} setEmailSended={setEmailSended} />
-          ) : (
-            <AfterSendEmail
-              closeModal={confirmSending}
-              setEmailSended={setEmailSended}
-            />
-          )}
-        </div>
-      )} */}
 
       <div className={s.mapWrapper}>
         <div className={s.mapContainer}>
@@ -106,24 +83,12 @@ const ContactsBlock = () => {
           />
 
           {isModalOpen && (
-            <Modal>
+            <Modal isModalWhiteBG={true}>
               <AfterSendEmail closeModal={closeModal} />
             </Modal>
           )}
         </div>
       )}
-      {/* {isDesktop && (
-        <div className={s.formWrapper}>
-          {!isEmailSended ? (
-            <Form isTitle={true} setEmailSended={setEmailSended} />
-          ) : (
-            <AfterSendEmail
-              closeModal={confirmSending}
-              setEmailSended={setEmailSended}
-            />
-          )}
-        </div>
-      )} */}
     </div>
   );
 };

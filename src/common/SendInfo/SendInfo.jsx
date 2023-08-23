@@ -53,6 +53,7 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
             onClose={closeModal}
             isEmailSended={isEmailSended}
             isModalOpen={isModalOpen}
+            // isModalWhiteBG={true}
           >
             {!isEmailSended ? (
               <Form

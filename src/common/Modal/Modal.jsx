@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useLockBodyScroll } from 'react-use';
+import { useMediaQuery } from 'react-responsive';
 import PropTypes from 'prop-types';
 import closeBtn from 'images/form-close-btn.svg';
-// import closeBtn from 'images/del-form-close-btn.png';
+
 import s from './Modal.module.css';
 
 const modalRootRef = document.querySelector('#modal-root');
@@ -13,10 +14,12 @@ const Modal = ({
   title,
   children,
   isEmailSended,
-  isBrends,
-  isModalOpen,
+  isModalWhiteBG,
+  isFullScreenMobileSize,
 }) => {
   // useLockBodyScroll(true);
+
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   useEffect(() => {
     const onEscPress = e => {
@@ -42,7 +45,13 @@ const Modal = ({
 
   return createPortal(
     <div className={s.backdrop} onClick={handleBackdropClick}>
-      <div className={`${s.modal} ${isBrends && s.modalBrends}`}>
+      <div
+        className={`${s.modal} ${isModalWhiteBG && s.modalWhiteBG}
+         ${isEmailSended && !isDesktop && s.fullScreenMobileSize} 
+         ${isEmailSended && s.modalWhiteBG} 
+         ${isFullScreenMobileSize && s.fullScreenMobileSize}
+        ${isFullScreenMobileSize && s.modalWhiteBG}`}
+      >
         <div>
           <header className={s.header}>
             <div className={s.lead}>
