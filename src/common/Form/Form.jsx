@@ -16,9 +16,10 @@ const {
   REACT_APP_FORM_USER_ID,
 } = process.env;
 
-const Form = ({ isTitle, setEmailSended }) => {
+const Form = ({ isTitle, setEmailSended, openModal, isContactsPage }) => {
   const { t } = useTranslation();
-  const { register, handleSubmit, formState, trigger, clearErrors } = useForm();
+  const { register, handleSubmit, formState, trigger, clearErrors, reset } =
+    useForm();
   const { errors } = formState;
   const form = useRef();
 
@@ -77,7 +78,12 @@ const Form = ({ isTitle, setEmailSended }) => {
       .then(
         result => {
           setEmailSended(true);
+          console.log('isContactsPage', isContactsPage);
+          if (isContactsPage) {
+            openModal();
+          }
           console.log(result.text);
+          reset();
         },
         error => {
           console.log(error.text);

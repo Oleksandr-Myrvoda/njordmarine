@@ -55,7 +55,11 @@ const SendInfo = ({ linkName = '', linkPath = '', hideLink }) => {
             isModalOpen={isModalOpen}
           >
             {!isEmailSended ? (
-              <Form isTitle={false} setEmailSended={setEmailSended} />
+              <Form
+                isTitle={false}
+                setEmailSended={setEmailSended}
+                isContactsPage={false}
+              />
             ) : (
               <AfterSendEmail
                 closeModal={closeModal}

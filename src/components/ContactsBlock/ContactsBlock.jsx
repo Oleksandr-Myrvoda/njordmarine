@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useJsApiLoader } from '@react-google-maps/api';
 import AfterSendEmail from 'common/SendInfo/AfterSendEmail';
@@ -10,6 +10,7 @@ import SocialBlock from './SocialBlock';
 import { contactsPageConfig } from 'data/contacts';
 
 import s from './ContactsBlock.module.css';
+import Modal from 'common/Modal/Modal';
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;
 
@@ -19,10 +20,18 @@ const defaultCenter = {
 };
 
 const ContactsBlock = () => {
-  const [isEmailSended, setEmailSended] = useState(false);
+  // const [isEmailSended, setEmailSended] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  const confirmSending = () => setEmailSended(false);
+  // const confirmSending = () => setEmailSended(false);
+
+  const openModal = () => setIsModalOpen(true);
+
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
+    // setEmailSended(false);
+  }, []);
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -33,6 +42,27 @@ const ContactsBlock = () => {
     <div className={s.blockWrapper}>
       {!isDesktop && (
         <div className={s.formWrapper}>
+          <Form isTitle={true} openModal={openModal} isContactsPage={true} />
+          {isModalOpen && (
+            <Modal>
+              <AfterSendEmail closeModal={closeModal} />
+            </Modal>
+          )}
+        </div>
+      )}
+      {/* {!isDesktop && (
+        <div className={s.formWrapper}>
+          <Form isTitle={true} openModal={openModal} isContactsPage={true} />
+          {isModalOpen && (
+            <Modal>
+              <AfterSendEmail closeModal={closeModal} />
+            </Modal>
+          )}
+        </div>
+      )} */}
+
+      {/* {!isDesktop && (
+        <div className={s.formWrapper}>
           {!isEmailSended ? (
             <Form isTitle={true} setEmailSended={setEmailSended} />
           ) : (
@@ -42,7 +72,7 @@ const ContactsBlock = () => {
             />
           )}
         </div>
-      )}
+      )} */}
 
       <div className={s.mapWrapper}>
         <div className={s.mapContainer}>
@@ -63,6 +93,22 @@ const ContactsBlock = () => {
 
       {isDesktop && (
         <div className={s.formWrapper}>
+          <Form
+            isTitle={true}
+            openModal={openModal}
+            setEmailSended={() => {}}
+            isContactsPage={true}
+          />
+
+          {isModalOpen && (
+            <Modal>
+              <AfterSendEmail closeModal={closeModal} />
+            </Modal>
+          )}
+        </div>
+      )}
+      {/* {isDesktop && (
+        <div className={s.formWrapper}>
           {!isEmailSended ? (
             <Form isTitle={true} setEmailSended={setEmailSended} />
           ) : (
@@ -72,7 +118,7 @@ const ContactsBlock = () => {
             />
           )}
         </div>
-      )}
+      )} */}
     </div>
   );
 };
