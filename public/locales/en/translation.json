@@ -90,8 +90,8 @@
       "workTitle": "We perform the following types of automation works"
     },
     "meintenance": {
-      "title": "Technical meintenance",
-      "text1": "We provide ultrasonic thickness measurements services for all types of vessels and have relevant certificates from classification societies including BV, DNV, ABS, RINA and RMRS).",
+      "title": "Technical maintenance",
+      "text1": "We provide ultrasonic thickness measurements services for all types of vessels and have relevant certificates from classification societies including BV, DNV, ABS, RINA.",
       "text2": "Measurements at height are performed by our technical climbers, who are certified by the DNV and ABS classification societies to carry out the relevant work.",
       "measurTagline": "Thickness measurement services include the following steps"
     },
@@ -152,7 +152,7 @@
     },
     "servicesListConfig": {
       "name1": "Vessel automation services",
-      "name2": "Technical meintenance",
+      "name2": "Technical maintenance",
       "name3": "Vessel energy efficiency system"
     },
     "sparesListConfig": {

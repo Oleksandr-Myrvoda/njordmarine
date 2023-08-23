@@ -1,13 +1,13 @@
 import Urlikh from 'images/team/UrlihD.png';
 import Zamakhin from 'images/team/ZamahhinD.png';
 import Soboleva from 'images/team/SobolevaD.png';
-import Girsin from 'images/team/GiršinD.png';
+import Girsin from 'images/team/GirsinD.png';
 import Poluskin from 'images/team/PoluskinD.png';
 
 import UrlikhM from 'images/team/UrlihM.png';
 import ZamakhinM from 'images/team/ZamahhinM.png';
 import SobolevaM from 'images/team/SobolevaM.png';
-import GirsinM from 'images/team/GiršinM.png';
+import GirsinM from 'images/team/GirsinM.png';
 import PoluskinM from 'images/team/PoluskinM.png';
 
 export const ourTeamConfig = [
