@@ -19,7 +19,13 @@ const {
 const Form = ({ isTitle, setEmailSended, openModal, isContactsPage }) => {
   const { t } = useTranslation();
   const { register, handleSubmit, formState, trigger, clearErrors, reset } =
-    useForm();
+    useForm({
+      defaultValues: {
+        customerName: '', // Здесь укажите начальные значения для всех полей
+        email: '', // Здесь укажите начальные значения для всех полей
+        companyName: '', // Здесь укажите начальные значения для всех полей
+      },
+    });
   const { errors } = formState;
   const form = useRef();
 

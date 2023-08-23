@@ -42,7 +42,12 @@ const ContactsBlock = () => {
     <div className={s.blockWrapper}>
       {!isDesktop && (
         <div className={s.formWrapper}>
-          <Form isTitle={true} openModal={openModal} isContactsPage={true} />
+          <Form
+            isTitle={true}
+            openModal={openModal}
+            setEmailSended={() => {}}
+            isContactsPage={true}
+          />
           {isModalOpen && (
             <Modal>
               <AfterSendEmail closeModal={closeModal} />
