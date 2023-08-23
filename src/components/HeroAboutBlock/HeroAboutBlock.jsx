@@ -65,7 +65,7 @@ const HeroAboutBlock = () => {
               open={isAnimated}
               heightBig={108}
               heightD={48}
-              heightMob={48}
+              heightMob={28}
             >
               <h2 className="tagline">{t('heroAboutBlock.tagline')}</h2>
             </Trail>
