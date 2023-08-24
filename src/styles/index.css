@@ -74,6 +74,11 @@ p {
   color: var(--text-color);
 }
 
+input,
+textarea {
+  max-width: 100%; /* не допускать выход за пределы экрана */
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
