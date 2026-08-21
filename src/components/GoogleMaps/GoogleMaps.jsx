@@ -11,15 +11,25 @@ const containerStyleMob = {
   borderRadius: '8px',
 };
 const containerStyle = {
-  width: '412px',
+  width: '285px',
   height: '231px',
   borderRadius: '8px',
 };
+// const containerStyle = {
+//   width: '412px',
+//   height: '231px',
+//   borderRadius: '8px',
+// };
 const containerStyleBig = {
-  width: '824px',
-  height: '462px',
-  borderRadius: '8px',
+  width: '500px',
+  height: '400px',
+  borderRadius: '16px',
 };
+// const containerStyleBig = {
+//   width: '824px',
+//   height: '462px',
+//   borderRadius: '8px',
+// };
 
 const defaultOptions = {
   panControl: true,
@@ -42,25 +52,37 @@ const GoogleMaps = ({ center }) => {
   const [markerPosition, setMarkerPosition] = useState(center);
 
   useEffect(() => {
-    // Проверяем, есть ли сохраненные координаты маркера в localStorage
-    const savedMarkerPosition = localStorage.getItem('markerPosition');
-    if (savedMarkerPosition) {
-      setMarkerPosition(JSON.parse(savedMarkerPosition));
-    }
-  }, []);
+    setMarkerPosition(center);
+  }, [center]);
 
-  useEffect(() => {
-    // Сохраняем координаты маркера в localStorage
-    localStorage.setItem('markerPosition', JSON.stringify(markerPosition));
-  }, [markerPosition]);
-
-  const onLoad = useCallback(function callback(map) {
+  const onLoad = useCallback(map => {
     mapRef.current = map;
   }, []);
 
-  const onUnmount = useCallback(function callback(map) {
-    mapRef.current = undefined;
+  const onUnmount = useCallback(() => {
+    mapRef.current = null;
   }, []);
+
+  // useEffect(() => {
+  //   // Проверяем, есть ли сохраненные координаты маркера в localStorage
+  //   const savedMarkerPosition = localStorage.getItem('markerPosition');
+  //   if (savedMarkerPosition) {
+  //     setMarkerPosition(JSON.parse(savedMarkerPosition));
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   // Сохраняем координаты маркера в localStorage
+  //   localStorage.setItem('markerPosition', JSON.stringify(markerPosition));
+  // }, [markerPosition]);
+
+  // const onLoad = useCallback(function callback(map) {
+  //   mapRef.current = map;
+  // }, []);
+
+  // const onUnmount = useCallback(function callback(map) {
+  //   mapRef.current = undefined;
+  // }, []);
 
   return (
     <div className={s.container}>

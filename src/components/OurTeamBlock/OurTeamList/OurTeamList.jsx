@@ -5,19 +5,19 @@ import 'swiper/css/scrollbar';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
-import BtnsDotPagination from 'common/BtnsDotPagination';
+// import BtnsDotPagination from 'common/BtnsDotPagination';
 import Card from './Card';
 import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
-import { useSwipeable } from 'react-swipeable';
+// import { useSwipeable } from 'react-swipeable';
 import { useTranslation } from 'react-i18next';
 import s from './OurTeamList.module.css';
 
 import 'styles/swipeable.css';
 
-const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }];
+// const buttonsList = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }];
 
 const OurTeamList = ({ ourTeamConfig: cards }) => {
   const { t } = useTranslation();

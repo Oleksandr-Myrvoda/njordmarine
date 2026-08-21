@@ -105,14 +105,22 @@
 .countLine1 {
   width: 75px;
 }
-.countLine2 {
+/* .countLine2 {
   width: 30px;
+} */
+.oneDigit {
+  width: 30px;
+}
+.twoDigits {
+  width: 50px;
 }
 .countLine3 {
   width: 50px;
 }
 
 .top {
+  margin-left: 0.2em;
+
   font-family: 'Ruberoid';
   font-style: normal;
   font-weight: 600;
@@ -216,8 +224,14 @@
   .countLine1 {
     width: 90px;
   }
-  .countLine2 {
+  /* .countLine2 {
     width: 35px;
+  } */
+  .oneDigit {
+    width: 35px;
+  }
+  .twoDigits {
+    width: 55px;
   }
   .container {
     height: 180px;
@@ -284,8 +298,14 @@
   .countLine1 {
     width: 170px;
   }
-  .countLine2 {
+  /* .countLine2 {
     width: 60px;
+  } */
+  .oneDigit {
+    width: 60px;
+  }
+  .twoDigits {
+    width: 100px;
   }
 
   .container {

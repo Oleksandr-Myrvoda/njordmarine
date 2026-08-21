@@ -37,6 +37,7 @@ const SparesBlock = ({ path, name, linkName, linkPath }) => {
       setSpares(spares);
     };
     fetchSpares();
+    console.log('spares', spares);
   }, [path]);
 
   // ADD =======

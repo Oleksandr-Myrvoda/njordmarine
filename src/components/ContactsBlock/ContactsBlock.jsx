@@ -7,30 +7,45 @@ import Form from 'common/Form/Form';
 import LoaderSpinner from 'common/LoaderSpinner';
 import GoogleMaps from 'components/GoogleMaps';
 import SocialBlock from './SocialBlock';
-import { contactsPageConfig } from 'data/contacts';
+import {
+  contactsPageConfigEstonia,
+  contactsPageConfigGreece,
+} from 'data/contacts';
+import { useTranslation } from 'react-i18next';
 
 import s from './ContactsBlock.module.css';
 import Modal from 'common/Modal/Modal';
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;
 
-const defaultCenter = {
+const defaultCenterEstonia = {
   lat: 59.4431233,
   lng: 24.8521311,
 };
 
+const defaultCenterGreece = {
+  lat: 37.9573,
+  lng: 23.71815,
+};
+
+const estoniaConfig = {
+  contacts: contactsPageConfigEstonia,
+  center: defaultCenterEstonia,
+};
+const greeceConfig = {
+  contacts: contactsPageConfigGreece,
+  center: defaultCenterGreece,
+};
+
 const ContactsBlock = () => {
-  // const [isEmailSended, setEmailSended] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
-
-  // const confirmSending = () => setEmailSended(false);
+  const { t } = useTranslation();
 
   const openModal = () => setIsModalOpen(true);
 
   const closeModal = useCallback(() => {
     setIsModalOpen(false);
-    // setEmailSended(false);
   }, []);
 
   const { isLoaded } = useJsApiLoader({
@@ -56,22 +71,100 @@ const ContactsBlock = () => {
         </div>
       )}
 
-      <div className={s.mapWrapper}>
-        <div className={s.mapContainer}>
-          <h2 className={s.mapTitle}>NJORDMARINE OÜ</h2>
-          <Contacts contactsConfig={contactsPageConfig} isContactsPage={true} />
+      {!isDesktop && (
+        <div className={s.mapWrapper}>
+          <div className={`${s.mapContainer} ${s.mapContainerTop}`}>
+            <h2 className={s.mapTitle}>NJORDMARINE OÜ</h2>
 
-          <div className={s.map}>
+            <Contacts
+              contactsConfig={estoniaConfig.contacts}
+              isContactsPage={true}
+            />
+
             {isLoaded ? (
-              <GoogleMaps center={defaultCenter} />
+              <GoogleMaps center={estoniaConfig.center} />
+            ) : (
+              <LoaderSpinner />
+            )}
+
+            <div className={s.mapBtnsBlock}>
+              <SocialBlock />
+            </div>
+          </div>
+
+          <div className={s.mapContainer}>
+            <h2 className={s.mapTitle}>
+              {t('contacts.represent')}:<br />
+              Martechnic Navigation Limited
+            </h2>
+
+            <Contacts
+              contactsConfig={greeceConfig.contacts}
+              isContactsPage={true}
+            />
+
+            {isLoaded ? (
+              <GoogleMaps center={greeceConfig.center} />
+            ) : (
+              <LoaderSpinner />
+            )}
+
+            <div className={s.mapBtnsBlock}>
+              <SocialBlock />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* DESKTOP */}
+      {isDesktop && (
+        <div className={s.mapWrapper}>
+          <div className={`${s.mapContainer} ${s.mapContainerTop}`}>
+            <div className={s.mapBox}>
+              <h2 className={s.mapTitle}>NJORDMARINE OÜ</h2>
+
+              <Contacts
+                contactsConfig={estoniaConfig.contacts}
+                isContactsPage={true}
+              />
+
+              <div className={s.mapBtnsBlock}>
+                <SocialBlock />
+              </div>
+            </div>
+
+            {isLoaded ? (
+              <GoogleMaps center={estoniaConfig.center} />
             ) : (
               <LoaderSpinner />
             )}
           </div>
 
-          <SocialBlock />
+          <div className={s.mapContainer}>
+            <div className={s.mapBox}>
+              <h2 className={s.mapTitle}>
+                {t('contacts.represent')}:<br />
+                Martechnic Navigation Limited
+              </h2>
+
+              <Contacts
+                contactsConfig={greeceConfig.contacts}
+                isContactsPage={true}
+              />
+
+              <div className={s.mapBtnsBlock}>
+                <SocialBlock />
+              </div>
+            </div>
+
+            {isLoaded ? (
+              <GoogleMaps center={greeceConfig.center} />
+            ) : (
+              <LoaderSpinner />
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       {isDesktop && (
         <div className={s.formWrapper}>

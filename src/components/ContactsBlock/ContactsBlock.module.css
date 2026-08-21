@@ -16,10 +16,22 @@
 }
 
 .mapContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 32px;
   padding: 16px;
+
+  max-width: 375px;
+}
+.mapContainerTop::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: var(--form-text-color);
 }
 
 .formWrapper {
@@ -35,14 +47,7 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.24px;
-  text-transform: uppercase;
   color: var(--text-color);
-}
-
-.map {
-  border-radius: 8px;
-  width: 343px;
-  height: 231px;
 }
 
 .socList {
@@ -61,6 +66,13 @@
   background: white;
 }
 
+.mapBtnsBlock {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
 .socBtn:hover {
   cursor: pointer;
   box-shadow: 0 0 8px 8px rgba(123, 170, 241, 0.3);
@@ -70,6 +82,7 @@
 @media screen and (min-width: 1440px) {
   .blockWrapper {
     flex-direction: row;
+    align-items: center;
     gap: 16px;
   }
 
@@ -79,9 +92,8 @@
   }
 
   .mapWrapper {
-    width: 412px;
-    padding: 24px;
-    gap: 36px;
+    width: 492px;
+    padding: 12px;
     height: auto;
 
     display: flex;
@@ -91,36 +103,74 @@
     border-radius: 8px;
   }
 
-  .map {
-    width: 412px;
-    height: 231px;
+  .mapTitle {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.24px;
+    color: var(--text-color);
+  }
+
+  .mapContainer {
+    flex-direction: row;
+    gap: 6px;
+    padding: 16px 4px 16px 4px;
+    max-width: none;
+  }
+
+  .mapBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
   }
 }
 @media screen and (min-width: 2560px) {
   .blockWrapper {
     flex-direction: row;
+    align-items: center;
     gap: 32px;
   }
 
+  /* .formWrapper {
+    padding: 0;
+    max-width: 970px;
+  } */
   .formWrapper {
     padding: 0;
     max-width: 970px;
   }
 
-  .mapWrapper {
+  /* .mapWrapper {
     width: 824px;
     padding: 48px;
     gap: 96px;
+  } */
+
+  .mapWrapper {
+    width: 824px;
+    padding: 24px;
+
+    border-radius: 16px;
   }
 
-  .mapTitle {
+  /* .mapTitle {
     font-size: 32px;
     line-height: 40px;
+  } */
+
+  .mapTitle {
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.24px;
   }
 
-  .map {
-    width: 824px;
-    height: 462px;
+  .mapContainer {
+    gap: 12px;
+    padding: 16px 4px 16px 4px;
+  }
+
+  .mapBox {
+    gap: 6px;
   }
 
   .socList {
@@ -138,4 +188,15 @@
     height: 68px;
     background-size: cover;
   }
+  /* .socItem,
+  .socBtn {
+    width: 68px;
+    height: 68px;
+  }
+
+  .img {
+    width: 68px;
+    height: 68px;
+    background-size: cover;
+  } */
 }

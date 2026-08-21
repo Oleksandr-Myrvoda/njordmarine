@@ -21,6 +21,8 @@ const HeroBlock = () => {
     return () => clearTimeout(animationTimer);
   }, []);
 
+  const companyYears = new Date().getFullYear() - 2019 + 1;
+
   return (
     <div className={s.heroBlock}>
       <Container>
@@ -59,7 +61,7 @@ const HeroBlock = () => {
             <li className={s.listItem}>
               <div className={s.topLine}>
                 <div className={s.countLine1}>
-                  <CounterAnimation endValue="800" />
+                  <CounterAnimation endValue={800} />
                 </div>
                 <p className={s.top}>{t('heroBlock.top1')}</p>
               </div>
@@ -67,17 +69,19 @@ const HeroBlock = () => {
             </li>
             <li className={`${s.listItem} ${!isDesktop && s.listItem2}`}>
               <div className={s.topLine}>
-                <div className={s.countLine2}>
-                  <CounterAnimation endValue="5" />
+                <div
+                  className={`${companyYears >= 10 ? s.twoDigits : s.oneDigit}`}
+                >
+                  <CounterAnimation endValue={8} />
                 </div>
-                <p className={s.top}>{t('heroBlock.top2')}</p>
+                <span className={s.top}>{t('heroBlock.top2')}</span>
               </div>
               <p className={s.bot}>{t('heroBlock.bot2')}</p>
             </li>
             <li className={s.listItem}>
               <div className={s.topLine}>
                 <div className={s.countLine3}>
-                  <CounterAnimation endValue="20" />{' '}
+                  <CounterAnimation endValue={20} />{' '}
                 </div>
               </div>
               <p className={s.bot}>{t('heroBlock.bot3')}</p>

@@ -1,15 +1,18 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
 .item {
   display: flex;
   align-items: center;
+  width: 343px;
+  height: 48px;
 }
 .img {
   margin-right: 5px;
+  width: 28px;
+  height: 28px;
 }
 .text {
   font-weight: 500;
@@ -29,6 +32,7 @@
   .list {
     display: flex;
     flex-direction: row;
+    gap: 6px;
   }
 
   .contactsPage {
@@ -43,23 +47,33 @@
   .item {
     display: flex;
     align-items: center;
+    width: auto;
+    height: auto;
   }
   .text {
     color: var(--text-color);
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .img {
+    width: 16px;
+    height: 16px;
   }
 }
 @media screen and (min-width: 2560px) {
   .text {
     font-weight: 500;
-    font-size: 28px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 30px;
   }
 
   .list {
-    gap: 48px;
+    gap: 12px;
   }
 
   .img {
     margin-right: 16px;
+    width: 28px;
+    height: 28px;
   }
 }

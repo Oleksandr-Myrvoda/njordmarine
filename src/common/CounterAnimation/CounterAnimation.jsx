@@ -29,7 +29,7 @@ const CounterAnimation = ({ endValue }) => {
 };
 
 CounterAnimation.propTypes = {
-  endValue: PropTypes.string.isRequired,
+  endValue: PropTypes.number.isRequired,
 };
 
 export default CounterAnimation;

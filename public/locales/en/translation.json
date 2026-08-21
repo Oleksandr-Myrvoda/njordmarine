@@ -74,7 +74,7 @@
     "position2": "Head of Finance",
     "name3": "Anna Soboleva",
     "position3": "Head of Marketing and Development",
-    "name4": "Igor Giršin",
+    "name4": "Anisim Miljutin",
     "position4": "Operations Manager",
     "name5": "Oleg Poluskin",
     "position5": "Logistics Manager"
@@ -115,7 +115,10 @@
 
   "contacts": {
     "taglineBig": "Contacts",
-    "text": "Fill out the form and our team will contact you shortly."
+    "text": "Fill out the form and our team will contact you shortly.",
+    "represent": "Representative office in Greece",
+    "addressEE": "Tähesaju tee 9-208, 13917, Tallinn, Estonia",
+    "addressGR": "Sygrou Andr. Avenue 120, 11741 Athens, Greece"
   },
 
   "form": {

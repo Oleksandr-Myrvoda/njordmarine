@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import s from './Contacts.module.css';
 
 const Contacts = ({ contactsConfig, isContactsPage, isHeader }) => {
+  const { t } = useTranslation();
   const listStyles = [s.list];
   isContactsPage && listStyles.push(s.contactsPage);
 
@@ -17,8 +19,8 @@ const Contacts = ({ contactsConfig, isContactsPage, isHeader }) => {
                 isContactsPage && s.contactsPage
               }`}
               href={href}
-            > 
-              {text}
+            >
+              {t(text)}
             </a>
           </p>
         </li>

@@ -4,6 +4,8 @@ import mail from 'images/mail.svg';
 import mailC from 'images/contact-mail.svg';
 import phoneC from 'images/contact-phone.svg';
 import markerC from 'images/contact-marker.svg';
+import mobC from 'images/contact-mob.png';
+import personC from 'images/contact-person.png';
 
 import fb from 'images/contact-fb.svg';
 import insta from 'images/contact-insta.svg';
@@ -24,7 +26,7 @@ const contactsConfig = [
   },
 ];
 
-const contactsPageConfig = [
+const contactsPageConfigEstonia = [
   {
     imgUrl: phoneC,
     text: '+372 5866 7196',
@@ -39,7 +41,41 @@ const contactsPageConfig = [
   },
   {
     imgUrl: markerC,
-    text: 'Tähesaju tee 9-208, 13917, Tallinn, Estonia',
+    text: 'contacts.addressEE',
+    // text: 'Tähesaju tee 9-208, 13917, Tallinn, Estonia',
+    alt: 'marker',
+  },
+];
+
+const contactsPageConfigGreece = [
+  {
+    imgUrl: personC,
+    text: 'Vassilis K. Tyrogalas',
+    alt: 'name',
+    // href: 'tel:302104227267',
+  },
+  {
+    imgUrl: phoneC,
+    text: '+30 210 4227 267',
+    alt: 'phone',
+    href: 'tel:302104227267',
+  },
+  {
+    imgUrl: mobC,
+    text: '+30 6957 753134',
+    alt: 'phone',
+    href: 'tel:302104227267',
+  },
+  {
+    imgUrl: mailC,
+    text: 'hellas@njordmarine.eu',
+    alt: 'mail',
+    href: 'mailto:hellas@njordmarine.eu',
+  },
+  {
+    imgUrl: markerC,
+    text: 'contacts.addressGR',
+    // text: 'Sygrou Andr. Avenue 120, 11741 Athens, Greece',
     alt: 'marker',
   },
 ];
@@ -62,4 +98,9 @@ const socConfig = [
   },
 ];
 
-export { contactsConfig, contactsPageConfig, socConfig };
+export {
+  contactsConfig,
+  contactsPageConfigEstonia,
+  contactsPageConfigGreece,
+  socConfig,
+};

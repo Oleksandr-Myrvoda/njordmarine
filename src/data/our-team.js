@@ -1,13 +1,13 @@
 import Urlikh from 'images/team/UrlihD.png';
 import Zamakhin from 'images/team/ZamahhinD.png';
 import Soboleva from 'images/team/SobolevaD.png';
-import Girsin from 'images/team/GirsinD.png';
+import Miljutin from 'images/team/MiljutinD.jpg';
 import Poluskin from 'images/team/PoluskinD.png';
 
 import UrlikhM from 'images/team/UrlihM.png';
 import ZamakhinM from 'images/team/ZamahhinM.png';
 import SobolevaM from 'images/team/SobolevaM.png';
-import GirsinM from 'images/team/GirsinM.png';
+import MiljutinM from 'images/team/MiljutinM.jpg';
 import PoluskinM from 'images/team/PoluskinM.png';
 
 export const ourTeamConfig = [
@@ -33,8 +33,8 @@ export const ourTeamConfig = [
     alt: 'photo',
   },
   {
-    imgUrl: Girsin,
-    imgUrlMob: GirsinM,
+    imgUrl: MiljutinM,
+    imgUrlMob: MiljutinM,
     name: 'ourTeamBlock.name4',
     position: 'ourTeamBlock.position4',
     alt: 'photo',

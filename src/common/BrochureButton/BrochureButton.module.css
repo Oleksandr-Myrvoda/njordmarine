@@ -32,9 +32,9 @@
     width: 397px;
     height: 112px;
 
-    /* padding: 16px 72px 16px 72px; */
-
     font-size: 32px;
     line-height: 40px;
+
+    border-radius: 16px;
   }
 }

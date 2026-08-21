@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { useAuthContext } from 'context/AuthProvider';
 import { useLangContext } from 'context/LangProvider';
 import CardWithMenu from 'common/CardWithMenu';
-import PropTypes from 'prop-types';
 
 import FileUploader from '../FileUploader';
 import s from './Item.module.css';
@@ -34,7 +33,8 @@ const Item = ({
   };
 
   // const openEditSets = () => setEditedData({ imgUrl, itemTitle });
-
+  console.log('imgUrl:', imgUrl);
+  console.log('typeof:', typeof imgUrl);
   // MODAl
   const openEditModal = () => {
     setIsModalOpen(true);
